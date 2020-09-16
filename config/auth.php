@@ -83,7 +83,7 @@ return [
         //使用admins資料表
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Admin::class,
+            'model' => App\Admin::class,
         ],
 
         // 'users' => [

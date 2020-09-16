@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use \App\Http\ViewComposers\PostsIndexComposer;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        //註冊PostsIndexComposerost視圖共用變數
+        view()->composer('posts.index', PostsIndexComposer::class);
     }
 }

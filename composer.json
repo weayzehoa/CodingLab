@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel-lang/lang": "~5.0",
         "laravel/framework": "^6.18.35",
+        "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {

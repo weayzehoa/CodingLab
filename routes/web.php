@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //使用預設的Auth所有路由
 Auth::routes();
 
 //首頁及搜尋，連接Home控制器路由
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('index');
 Route::get('search', 'HomeController@search')->name('search');
 
 //admin用的路由 網址看起來就像 https://localhost/{admin}/{名稱}
@@ -63,7 +63,7 @@ Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store',
 // });
 
 // //訪客身分使用第三方登入路由
-// Route::prefix('login/social')->name('social.')->group(function(){
-//     Route::get('{provider}/redirect', 'Auth\SocialController@getSocialRedirect')->name('redirect');
-//     Route::get('{provider}/callback', 'Auth\SocialController@getSocialCallback')->name('callback');
-// });
+Route::prefix('login/social')->name('social.')->group(function(){
+    Route::get('{provider}/redirect', 'Auth\SocialController@getSocialRedirect')->name('redirect');
+    Route::get('{provider}/callback', 'Auth\SocialController@getSocialCallback')->name('callback');
+});

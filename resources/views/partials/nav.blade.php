@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top navbar-shadow">
 	<div class="container">
         <!-- 路由 index 到首頁 -->
-	    <a href="{{ route('home') }}" class="navbar-brand">CodingLab</a>
+	    <a href="{{ route('index') }}" class="navbar-brand">CodingLab</a>
         <!-- 路由 search 搜尋表單 -->
 	    <form action="{{ route('search') }}" method="GET" class="form-inline" role="search">
 	        <input type="search" class="form-control form-control-sm mr-sm-2" name="keyword" placeholder="搜尋文章" aria-label="Search">
@@ -18,11 +18,11 @@
             <ul class="navbar-nav ml-auto">
                 <!-- 驗證使用是否登入 在使用者未登入前 只會看到登入兩個字 登入後就會切換到 另一個下拉表單 -->
                 @auth
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a href="{{ route('users.showAvatar') }}" class="px-1">
                             <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle mt-1">
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             {{ Auth::user()->name }}

@@ -71,13 +71,13 @@
 
                         <hr>
 
-                        {{-- <div class="form-group row mb-0">
+                        <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-2 text-center">
                                 <p>其他登入方式</p>
                                 <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}" class="btn btn-md btn-primary btn-block">Facebook</a>
                                 <a href="{{ route('social.redirect', ['provider' => 'google']) }}" class="btn btn-md btn-danger btn-block">Google</a>
                             </div>
-                        </div> --}}
+                        </div>
 
                     </form>
                 </div>

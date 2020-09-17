@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'zh-tw',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +167,8 @@ return [
          */
         //第三方登入用
         Laravel\Socialite\SocialiteServiceProvider::class,
-
+        //Google reCaptcha 驗證器
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */

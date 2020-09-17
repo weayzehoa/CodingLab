@@ -117,6 +117,7 @@ return [
     'url'         => ':attribute 的格式錯誤。',
     'uuid'        => ':attribute 必須是有效的 UUID。',
 
+    'captcha'   => "機器人! 滾!",
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -131,6 +132,9 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+        ],
+        'g-recaptcha-response' => [
+            'required' => '尚未驗證',
         ],
     ],
 

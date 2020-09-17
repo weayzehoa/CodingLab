@@ -58,6 +58,19 @@
                         </span>
                         @endif
                     </div>
+                    <div class="input-group mb-3">
+                        <div>
+                        {!! no_captcha()->script()->toHtml() !!}
+                        {!! no_captcha()->display() !!}
+                        </div>
+                        <div>
+                        @if ($errors->has('g-recaptcha-response'))
+                        <span class="text-danger" role="">
+                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                        </span>
+                        @endif
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-8">
                             <div class="icheck-primary">

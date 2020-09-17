@@ -18,11 +18,11 @@
             <ul class="navbar-nav ml-auto">
                 <!-- 驗證使用是否登入 在使用者未登入前 只會看到登入兩個字 登入後就會切換到 另一個下拉表單 -->
                 @auth
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a href="{{ route('users.showAvatar') }}" class="px-1">
                             <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle mt-1">
                         </a>
-                    </li> --}}
+                    </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             {{ Auth::user()->name }}

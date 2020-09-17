@@ -60,7 +60,7 @@ class CreateCommentRequest extends FormRequest
 }
 /*
     建立 PostCommentController.php
-    php artisan make:controller PostCommentController --resource
+    php artisan make:controller PostCommentsController --resource
     這邊只會用到 儲存及刪除 因為只有管理者與該文章作者可修改
 */
 use Illuminate\Http\Request;

@@ -13,7 +13,7 @@ class PostTypesController extends Controller
 {
     //只要跟 post_types 資料表有關都須經過檢查 除了show() 以外
     public function __construct(){
-        $this->middleware(['auth','admin'], [
+        $this->middleware(['auth','user.admin'], [
             'except' => [
                 'show'
             ]

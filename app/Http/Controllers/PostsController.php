@@ -27,7 +27,7 @@ class PostsController extends Controller
             ]
         ]);
         //新增 admin 的 middleware 套用到 edit, update, destroy
-        $this->middleware(['admin'],[
+        $this->middleware(['user.admin'],[
             'only' => [
                 'edit','update','destroy'
             ]

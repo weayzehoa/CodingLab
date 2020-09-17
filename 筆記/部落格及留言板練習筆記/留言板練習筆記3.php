@@ -7,16 +7,16 @@
 /*
     Middleware 在指定的程式執行之前先做驗證
     php artisan make:middleware [中介層名稱]
-    使用下面指令建立 AdminAuthenticate 的 Middleware
-    php artisan make:middleware AdminAuthenticate
+    使用下面指令建立 UserAdminAuthenticate 的 Middleware
+    php artisan make:middleware UserAdminAuthenticate
 */
 /*
-    app\Http\MdminAuthenticate.php
+    app\Http\UserAdminAuthenticate.php
 */
 use Closure;
 use Auth;
 
-class AdminAuthenticate
+class UserAdminAuthenticate
 {
     /**
      * Handle an incoming request.
@@ -49,7 +49,7 @@ class AdminAuthenticate
 }
 /*
     將此Middleware加入到Kernel的routeMiddleware中，主要用來直接呼叫使用.
-    'admin' => \App\Http\Middleware\AdminAuthenticate::class,
+    'useradmin' => \App\Http\Middleware\UserAdminAuthenticate::class,
 
     將Middleware套用到需要判斷的地方，像是Post和PostType控制器
 */
@@ -70,8 +70,8 @@ class PostsController extends Controller
                 'index', 'show'
             ]
         ]);
-        //新增 admin 的 middleware 套用到 edit, update, destroy
-        $this->middleware(['admin'],[
+        //新增 user.admin 的 middleware 套用到 edit, update, destroy
+        $this->middleware(['user.admin'],[
             'only' => [
                 'edit','update','destroy'
             ]
@@ -87,7 +87,7 @@ class PostTypesController extends Controller
     //只要跟 post_types 資料表有關都須經過檢查 除了show() 以外
     public function __construct()
     {
-        $this->middleware(['auth','admin'], [
+        $this->middleware(['auth','user.admin'], [
             'except' => [
                 'show'
             ]

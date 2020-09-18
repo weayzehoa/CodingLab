@@ -169,6 +169,8 @@ return [
         Laravel\Socialite\SocialiteServiceProvider::class,
         //Google reCaptcha 驗證器
         Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+        //圖形驗證
+        Mews\Captcha\CaptchaServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -230,6 +232,8 @@ return [
 
         //第三方登入用 FaceBook or Google+
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        //Mews\Captcha 圖形驗證
+        'Captcha' => Mews\Captcha\Facades\Captcha::class,
     ],
 
 ];

@@ -46,10 +46,11 @@ class LoginController extends Controller
         $this->validate($request, [
             'email'   => 'required|email',
             'password' => 'required|min:4',
+            'captchacode' => 'required|captcha',
             'g-recaptcha-response' => ['required', new CaptchaRule],
         ]);
-        // 將表單資料送去Auth::gurard('admin')驗證
-        if (Auth::guard('user')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+        // 將表單資料送去Auth::gurard()驗證
+        if (Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             //驗證無誤轉入 index
             return redirect()->intended(route('index'));
         }

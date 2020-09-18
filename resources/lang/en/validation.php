@@ -117,7 +117,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
-    'captcha'   => "Robot! Get Out.",
+    'captcha'   => "Captcha Incorrect.",
 
     /*
     |--------------------------------------------------------------------------
@@ -136,6 +136,9 @@ return [
         ],
         'g-recaptcha-response' => [
             'required' => 'Checked it.',
+        ],
+        'captcha' => [
+            'required' => 'Input the Captcha.',
         ],
     ],
 

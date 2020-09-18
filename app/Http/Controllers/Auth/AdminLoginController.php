@@ -7,7 +7,10 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Route;
 
-use Arcanedev\NoCaptcha\Rules\CaptchaRule;
+use Response;
+use Session;
+use Gregwar\Captcha\CaptchaBuilder;
+use Gregwar\Captcha\PhraseBuilder;
 
 class AdminLoginController extends Controller
 {
@@ -24,6 +27,17 @@ class AdminLoginController extends Controller
     //登入
     public function login(Request $request)
     {
+        //獲得驗證碼
+        $captchaSession = $request->session()->get('captchaSession');
+        $captchacode = $request->input("captchacode");
+
+        //比對驗證碼與輸入的驗證碼不同就返回並將錯誤訊息拋出
+        if($captchaSession != $captchacode){
+            return redirect()->back()->withInput($request->only('email', 'remember'))->withErrors(['captchacode' => '驗證碼錯誤']);
+        }
+        //比對通過則清除Session裡面的資料
+        Session::forget('captchaSession');
+
         // 驗證表單資料
         $this->validate($request, [
             'email'   => 'required|email',
@@ -48,5 +62,26 @@ class AdminLoginController extends Controller
     {
         Auth::guard('admin')->logout();
         return redirect('/admin');
+    }
+    //重新產生驗證碼
+    public function captcha(Request $request){
+        // // 預設產生5個隨機英文與數字
+        // $builder = new CaptchaBuilder;
+
+        //只產生5個數字
+        $phraseBuilder = new PhraseBuilder(5, '0123456789');
+        $builder = new CaptchaBuilder(null, $phraseBuilder);
+
+        //寬度及高度參數
+        $builder->build(120,36);
+
+        // //把驗證碼内容存入Session中
+        $phrase = $builder->getPhrase();
+        $request->session()->flash('captchaSession', $phrase);
+
+        //清除缓存
+        ob_clean();
+        //產生出驗證碼圖片以jpeg格式輸出
+        return response($builder->output())->header('Content-type','image/jpeg');
     }
 }

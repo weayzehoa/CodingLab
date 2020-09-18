@@ -17,7 +17,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">電子信箱</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="email" type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -29,9 +29,8 @@
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">密碼</label>
-
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                                <input id="password" type="password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -40,9 +39,22 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">驗證</label>
 
+                        <div class="form-group row">
+                            <label for="captchacode" class="col-md-4 col-form-label text-md-right">驗證碼</label>
+                            <div class="col-md-6">
+                                <input id="captchacode" type="text" class="{{ $errors->has('captchacode') ? ' is-invalid' : '' }}" name="captchacode" required >
+                                <img src="{{ captcha_src() }}" alt="點擊刷新" onclick="this.src='{{ url('captcha/default') }}?s='+Math.random()"><br>
+                                @if ($errors->has('captchacode'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('captchacode') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Google驗證器</label>
                             <div class="col-md-6">
                                 <div>
                                     {!! no_captcha()->script()->toHtml() !!}

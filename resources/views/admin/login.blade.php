@@ -33,7 +33,7 @@
                 <form action="{{ route('admin.login.submit') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input id="email" type="email" placeholder="Email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                        <input id="email" type="email" placeholder="Email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
@@ -46,7 +46,7 @@
                         @endif
                     </div>
                     <div class="input-group mb-3">
-                        <input id="password" type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                        <input id="password" type="password" placeholder="Password" class="form-control {{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -58,17 +58,26 @@
                         </span>
                         @endif
                     </div>
+                    <div class="form-group mb-3 row">
+                        <input type="text" id="captchacode" name="captchacode" placeholder="Captcha" class="form-control col-6 {{ $errors->has('captchacode') ? ' is-invalid' : '' }}" required >　
+                        <img class="col-5" src="/admin/captcha" alt="點擊刷新" onclick="this.src='/admin/captcha?captchacode='+Math.random()">
+                        @if ($errors->has('captchacode'))
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $errors->first('captchacode') }}</strong>
+                            </span>
+                        @endif
+                    </div>
                     <div class="input-group mb-3">
                         <div>
-                        {!! no_captcha()->script()->toHtml() !!}
-                        {!! no_captcha()->display() !!}
+                            {!! no_captcha()->script()->toHtml() !!}
+                            {!! no_captcha()->display() !!}
                         </div>
                         <div>
-                        @if ($errors->has('g-recaptcha-response'))
-                        <span class="text-danger" role="">
-                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                        </span>
-                        @endif
+                            @if ($errors->has('g-recaptcha-response'))
+                            <span class="text-danger" role="">
+                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                            </span>
+                            @endif
                         </div>
                     </div>
                     <div class="row">

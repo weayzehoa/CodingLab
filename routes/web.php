@@ -22,6 +22,9 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('search', 'HomeController@search')->name('search');
 
+//圖形驗證碼刷新用
+// Route::get('/captcha', 'HomeController@captcha')->name('captcha');
+
 //文章內容及類型，對應resource控制器，PostTypes控制器不需要產生index方法，所以用except來排除
 //主要利用 php artisan make:controller PostsController --resource 直接產生七大function
 //然後排除掉 index 不使用, 這樣就不用寫一堆route
@@ -57,4 +60,5 @@ Route::prefix('admin')->group(function() {
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('admin');
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/captcha', 'Auth\AdminLoginController@captcha')->name('admin.captcha');
 }) ;

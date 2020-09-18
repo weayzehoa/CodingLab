@@ -116,8 +116,7 @@ return [
     'uploaded'    => ':attribute 上傳失敗。',
     'url'         => ':attribute 的格式錯誤。',
     'uuid'        => ':attribute 必須是有效的 UUID。',
-
-    'captcha'   => "機器人! 滾!",
+    'captcha' => '驗證錯誤.',
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines
@@ -135,6 +134,9 @@ return [
         ],
         'g-recaptcha-response' => [
             'required' => '尚未驗證',
+        ],
+        'captcha' => [
+            'required' => '請輸入驗證碼.',
         ],
     ],
 

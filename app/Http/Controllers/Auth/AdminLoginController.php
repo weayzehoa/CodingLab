@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use Route;
-
+use Arcanedev\NoCaptcha\Rules\CaptchaRule;
 use Response;
 use Session;
 use Gregwar\Captcha\CaptchaBuilder;

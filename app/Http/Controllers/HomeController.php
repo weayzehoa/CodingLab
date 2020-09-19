@@ -27,8 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // return view('home');
-        return Redirect::action('PostsController@index');
+        return view('welcome');
+        // return Redirect::action('PostsController@index');
     }
 
     public function post()
@@ -43,5 +43,13 @@ class HomeController extends Controller
         $keyword = $request->keyword;
         $posts = PostEloquent::where('title', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->paginate(5);
         return View::make('posts.index', compact('posts', 'keyword'));
+    }
+    public function AdminLTE($getPath)
+    {
+        if($getPath){
+            return View::make('AdminLTE.'.$getPath);
+        }else{
+            return View::make('AdminLTE.index');
+        }
     }
 }

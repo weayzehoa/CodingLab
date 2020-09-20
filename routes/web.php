@@ -19,18 +19,16 @@
 //首頁及搜尋，連接Home控制器路由
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('search', 'HomeController@search')->name('search');
+//圖形驗證碼刷新用
+// Route::get('/captcha', 'HomeController@captcha')->name('captcha');
+
+//AdminLTE 參考樣板
 Route::prefix('AdminLTE')->group(function() {
-    Route::get('/', function() {
-        return view('AdminLTE.index');
-    });
     Route::get('{name}', 'HomeController@AdminLTE');
 });
 
 //使用預設的Auth所有路由
 Auth::routes();
-
-//圖形驗證碼刷新用
-// Route::get('/captcha', 'HomeController@captcha')->name('captcha');
 
 //文章內容及類型，對應resource控制器，PostTypes控制器不需要產生index方法，所以用except來排除
 //主要利用 php artisan make:controller PostsController --resource 直接產生七大function
@@ -62,10 +60,21 @@ Route::prefix('login/social')->name('social.')->group(function(){
 
 //後台admin用的路由 網址看起來就像 https://localhost/{admin}/{名稱}
 Route::prefix('admin')->group(function() {
+    //登入登出
     Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
     Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('admin');
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::get('/captcha', 'Auth\AdminLoginController@captcha')->name('admin.captcha');
+    //後台用
+    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('/news', function () { return view('admin.news'); });
+    Route::get('/marquees', function () { return view('admin.marquees'); });
+    Route::get('/carousels', function () { return view('admin.carousels'); });
+    Route::get('/members', function () { return view('admin.members'); });
+    Route::get('/posts', function () { return view('admin.posts'); });
+    Route::get('/admins', function () { return view('admin.admins'); });
+    Route::get('/mails', function () { return view('admin.mails'); });
+    Route::get('/logs', function () { return view('admin.logs'); });
+    Route::get('/aboutme', function () { return view('admin.aboutme'); });
 }) ;

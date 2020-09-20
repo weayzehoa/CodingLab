@@ -15,8 +15,9 @@
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard v2</li>
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">後台管理系統</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ url('admin/dashboard') }}">資訊看板</a></li>
+                            <li class="breadcrumb-item active"></li>
                         </ol>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -815,7 +816,8 @@
                                 <ul class="products-list product-list-in-card pl-2 pr-2">
                                     <li class="item">
                                         <div class="product-img">
-                                            <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                            <img src="../dist/img/default-150x150.png" alt="Product Image"
+                                                class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">Samsung TV
@@ -828,7 +830,8 @@
                                     <!-- /.item -->
                                     <li class="item">
                                         <div class="product-img">
-                                            <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                            <img src="../dist/img/default-150x150.png" alt="Product Image"
+                                                class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">Bicycle
@@ -841,7 +844,8 @@
                                     <!-- /.item -->
                                     <li class="item">
                                         <div class="product-img">
-                                            <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                            <img src="../dist/img/default-150x150.png" alt="Product Image"
+                                                class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">
@@ -857,7 +861,8 @@
                                     <!-- /.item -->
                                     <li class="item">
                                         <div class="product-img">
-                                            <img src="../dist/img/default-150x150.png" alt="Product Image" class="img-size-50">
+                                            <img src="../dist/img/default-150x150.png" alt="Product Image"
+                                                class="img-size-50">
                                         </div>
                                         <div class="product-info">
                                             <a href="javascript:void(0)" class="product-title">PlayStation 4

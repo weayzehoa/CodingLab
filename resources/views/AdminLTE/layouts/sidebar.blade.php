@@ -20,13 +20,11 @@
           </div>
 
           <!-- Sidebar Menu -->
-          <nav class="mt-2">
-              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                  data-accordion="false">
-                  <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                  <li class="nav-item has-treeview">
-                      <a href="#" class="nav-link">
+          <nav id="sidebar" class="mt-2">
+              <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                  <!-- Add icons to the links using the .nav-icon classwith font-awesome or any other icon font library -->
+                  <li class="nav-item has-treeview ">
+                      <a href="#" class="nav-link ">
                           <i class="nav-icon fas fa-tachometer-alt"></i>
                           <p>
                               Dashboard
@@ -41,7 +39,7 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{ url('AdminLTE/index2') }}" class="nav-link">
+                              <a href="{{ url('AdminLTE/index2') }}" class="nav-link ">
                                   <i class="far fa-circle nav-icon"></i>
                                   <p>Dashboard v2</p>
                               </a>
@@ -55,7 +53,7 @@
                       </ul>
                   </li>
                   <li class="nav-item">
-                      <a href="{{ url('AdminLTE/widgets') }}" class="nav-link active">
+                      <a href="{{ url('AdminLTE/widgets') }}" class="nav-link">
                           <i class="nav-icon fas fa-th"></i>
                           <p>
                               Widgets

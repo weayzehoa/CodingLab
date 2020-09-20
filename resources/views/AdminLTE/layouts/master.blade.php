@@ -24,16 +24,16 @@
         @include('AdminLTE.layouts.footer')
     </div>
     @include('AdminLTE.layouts.js')
-
-    @include('AdminLTE.layouts.script')
-    @include('AdminLTE.layouts.script_chartjs')
+    {{-- @include('AdminLTE.layouts.script') --}}
+    {{-- @include('AdminLTE.layouts.script_chartjs')
     @include('AdminLTE.layouts.script_flot')
     @include('AdminLTE.layouts.script_jsgrid')
     @include('AdminLTE.layouts.script_mailbox')
     @include('AdminLTE.layouts.script_modals')
     @include('AdminLTE.layouts.script_ribbons')
     @include('AdminLTE.layouts.script_sliders')
-    @include('AdminLTE.layouts.script_validation')
+    @include('AdminLTE.layouts.script_validation') --}}
+    @include('AdminLTE.layouts.script_sidebar')
 
 </body>
 

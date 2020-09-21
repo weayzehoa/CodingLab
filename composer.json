@@ -16,7 +16,8 @@
         "laravel/framework": "^6.18.35",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
-        "mews/captcha": "^3.2"
+        "mews/captcha": "^3.2",
+        "spatie/laravel-activitylog": "^3.16"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

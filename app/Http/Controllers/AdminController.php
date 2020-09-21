@@ -32,7 +32,7 @@ class AdminController extends Controller
         \Debugbar::info(Auth::user());
         \Debugbar::error('Error!');
         \Debugbar::warning('Watch out…');
-        \Debugbar::addMessage($post_types);
+        \Debugbar::addMessage('I am debugbar message.');
         // \Debugbar::disable();
 
         return View::make('admin.dashboard', compact('adminuser'));

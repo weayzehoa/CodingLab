@@ -31,11 +31,26 @@
                     <div class="col-10">
                         <div class="card">
                             <div class="card-header">
-                                <div class="card-tools float-left">
+                                {{-- <div class="card-tools float-left">
                                     <div class="input-group">
                                         <div class="input-group-append">
                                             <a href="#" class="btn btn-primary"><i class="fas fa-plus mr-1"></i>新增</a>
                                         </div>
+                                    </div>
+                                </div> --}}
+                                <div class="card-tools float-left">
+                                    <div class="input-group">
+                                        <label>分類：</label>
+                                        <select class="form-control select2 select2-primary"
+                                            data-dropdown-css-class="select2-primary">
+                                            <option selected="selected">全部分類</option>
+                                            @foreach ($post_types as $post_type)
+                                                <option {{ isset($type) ? ($type->id == $post_type->id ? 'selected' : '') : '' }}>
+                                                    {{ $post_type->name }} ( {{ $post_type->posts->count() }} )
+                                                    </span>
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="card-tools">
@@ -81,7 +96,8 @@
                                             <td class="text-center align-middle">2021-09-18</td>
                                             <td class="text-center align-middle">
                                                 <div class="custom-control custom-switch custom-switch-on-success">
-                                                    <input type="checkbox" class="custom-control-input" id="isShow1" checked>
+                                                    <input type="checkbox" class="custom-control-input" id="isShow1"
+                                                        checked>
                                                     <label class="custom-control-label" for="isShow1"></label>
                                                 </div>
                                             </td>
@@ -92,11 +108,14 @@
                                                 </div>
                                             </td>
                                             <td class="text-center align-middle">
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-down text-lg"></i></a>
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-down text-lg"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                                <a href="#" class="btn btn-sm btn-danger"><i
+                                                        class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -113,7 +132,8 @@
                                             <td class="text-center align-middle">2021-09-18</td>
                                             <td class="text-center align-middle">
                                                 <div class="custom-control custom-switch custom-switch-on-success">
-                                                    <input type="checkbox" class="custom-control-input" id="isShow1" checked>
+                                                    <input type="checkbox" class="custom-control-input" id="isShow1"
+                                                        checked>
                                                     <label class="custom-control-label" for="isShow1"></label>
                                                 </div>
                                             </td>
@@ -124,11 +144,14 @@
                                                 </div>
                                             </td>
                                             <td class="text-center align-middle">
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-down text-lg"></i></a>
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-down text-lg"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                                <a href="#" class="btn btn-sm btn-danger"><i
+                                                        class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -145,7 +168,8 @@
                                             <td class="text-center align-middle">2021-09-18</td>
                                             <td class="text-center align-middle">
                                                 <div class="custom-control custom-switch custom-switch-on-success">
-                                                    <input type="checkbox" class="custom-control-input" id="isShow1" checked>
+                                                    <input type="checkbox" class="custom-control-input" id="isShow1"
+                                                        checked>
                                                     <label class="custom-control-label" for="isShow1"></label>
                                                 </div>
                                             </td>
@@ -156,11 +180,14 @@
                                                 </div>
                                             </td>
                                             <td class="text-center align-middle">
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-down text-lg"></i></a>
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-down text-lg"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                                <a href="#" class="btn btn-sm btn-danger"><i
+                                                        class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                         <tr>
@@ -177,7 +204,8 @@
                                             <td class="text-center align-middle">2021-09-18</td>
                                             <td class="text-center align-middle">
                                                 <div class="custom-control custom-switch custom-switch-on-success">
-                                                    <input type="checkbox" class="custom-control-input" id="isShow1" checked>
+                                                    <input type="checkbox" class="custom-control-input" id="isShow1"
+                                                        checked>
                                                     <label class="custom-control-label" for="isShow1"></label>
                                                 </div>
                                             </td>
@@ -188,11 +216,14 @@
                                                 </div>
                                             </td>
                                             <td class="text-center align-middle">
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
-                                                <a href="javascript:void(0)" class="text-navy"><i class="fas fa-arrow-alt-circle-down text-lg"></i></a>
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-up text-lg"></i></a>　
+                                                <a href="javascript:void(0)" class="text-navy"><i
+                                                        class="fas fa-arrow-alt-circle-down text-lg"></i></a>
                                             </td>
                                             <td class="text-center">
-                                                <a href="#" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
+                                                <a href="#" class="btn btn-sm btn-danger"><i
+                                                        class="far fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -212,46 +243,25 @@
                         </div>
                         <!-- /.card -->
                     </div>
+                    <!-- 右側文章類別清單建立 -->
                     <div class="col-2">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-tools">
-                                    <div class="input-group">
-                                        <input type="text" name="table_search" class="form-control float-right"
-                                            placeholder="新增文章類別">
-                                        <div class="input-group-append">
-                                            <a href="#" class="btn btn-info"><i class="fas fa-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-hover text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th class="text-left" width="85%">名稱</th>
-                                            <th class="text-center" width="15%">操作</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @if($post_types)
-                                        @foreach($post_types as $post_type)
-                                        <tr>
-                                            <td class="text-left align-middle"> {{ $post_type->name }} </td>
-                                            <td class="text-center align-middle">
-                                                <a href="#" type="button" class="btn btn-sm btn-primary"><i class="far fa-edit"></i></a>
-                                                <a href="#" type="button" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                        @endif
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.card-body -->
+                        <div class="list-group">
+                            <a href="{{ route('posts.index') }}"
+                                class=" list-group-item list-group-item-action d-flex justify-content-between align-items-center {{ isset($type) ? '' : 'active' }}">
+                                全部分類
+                                <span class="badge badge-secondary badge-pill">{{ $posts_total }}</span>
+                            </a>
+                            <!-- 顯示所有文章類別, 每一項都帶有$post_types的資料表id -->
+                            @foreach ($post_types as $post_type)
+                                <a href="{{ route('types.show', $post_type->id) }}"
+                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {{ isset($type) ? ($type->id == $post_type->id ? 'active' : '') : '' }}">
+                                    {{ $post_type->name }}
+                                    <span class="badge badge-secondary badge-pill">
+                                        {{ $post_type->posts->count() }}
+                                    </span>
+                                </a>
+                            @endforeach
                         </div>
-                        <!-- /.card -->
                     </div>
                 </div>
                 <!-- /.row -->

@@ -2,7 +2,8 @@
     "use strict";
 
     //側邊選單路徑與瀏覽位置相同時啟動顯示
-    var url = window.location;
+    var getUrl = window.location;
+    var url = getUrl.origin + getUrl.pathname;
     $('#sidebar').find('.active').removeClass('active');
     // $('#sidebar').find('.menu-open').removeClass('menu-open');
     $('#sidebar a').each(function () {
@@ -105,7 +106,7 @@
     })
 
     //Bootstrap Duallistbox
-    $('.duallistbox').bootstrapDualListbox()
+    // $('.duallistbox').bootstrapDualListbox();
 
     //Colorpicker
     $('.my-colorpicker1').colorpicker()

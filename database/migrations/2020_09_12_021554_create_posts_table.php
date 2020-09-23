@@ -22,8 +22,8 @@ class CreatePostsTable extends Migration
             $table->integer('approved')->default(0)->comment('審核狀態'); //0:Pendding 1:Approved 2:Denied
             $table->char('onlinedate', 20)->nullable()->comment('上線日期');
             $table->char('offlinedate', 20)->nullable()->comment('下線日期');
-            $table->boolean('isShow')->default(0)->comment('上下線'); //0:No 1:Yes
-            $table->boolean('isTop')->default(0)->comment('置頂'); //0:No 1:Yes
+            $table->boolean('isshow')->default(0)->comment('上下線'); //0:No 1:Yes
+            $table->boolean('istop')->default(0)->comment('置頂'); //0:No 1:Yes
             $table->float('sort')->default(99999)->comment('排序');
             $table->timestamps();
         });

@@ -19,6 +19,7 @@ class MemberPostsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth:admin');
+        // \Debugbar::Disable();
     }
     /**
      * Display a listing of the resource.
@@ -103,12 +104,30 @@ class MemberPostsController extends Controller
         $comments = CommentEloquent::where('post_id', $id)->delete();
         return Redirect::back();
     }
-    public function isshow(Request $request, $id)
+    public function isshow(Request $request)
     {
-        return Redirect::back();
+        // \Debugbar::info($request);
+        // \Debugbar::addMessage($request->isshow);
+        // \Debugbar::addMessage($request->id);
+        $id = $request->id;
+        $request->isshow == 'on' ? $isshow = 1 : $isshow = 0;
+        $post = PostEloquent::findOrFail($id);
+        $post->fill(['isshow' => $isshow]);
+        $post->save();
+        // \Debugbar::addMessage($post);
+        // $posts = PostEloquent::orderBy('istop','DESC')->orderBy('approved', 'ASC')->orderBy('created_at', 'DESC')->paginate(8);
+        // \Debugbar::addMessage($posts);
+        // return View::make('admin.mbposts.index', compact('posts'));
+        // return redirect()->action('Admin\MemberPostsController@index');
+        return redirect()->back();
     }
-    public function istop(Request $request, $id)
+    public function istop(Request $request)
     {
-        return Redirect::back();
+        $id = $request->id;
+        $request->istop == 'on' ? $istop = 1 : $istop = 0;
+        $post = PostEloquent::findOrFail($id);
+        $post->fill(['istop' => $istop]);
+        $post->save();
+        return redirect()->back();
     }
 }

@@ -14,7 +14,8 @@ class Post extends Model
 {
     //可讓使用者新增編輯的欄位名稱
   	protected $fillable = [
-		'title', 'type', 'content', 'user_id'
+        'title', 'type', 'content', 'user_id', 'approved',
+        'onlinedate', 'offlinedate', 'isshow', 'istop', 'sort'
 	];
     //與users資料表一對一關聯
 	public function user(){

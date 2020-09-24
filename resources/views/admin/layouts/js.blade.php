@@ -27,6 +27,3 @@
 <script src="{{ url('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 <!-- Bootstrap Switch -->
 <script src="{{ url('plugins/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
-
-{{-- Custom JS --}}
-<script src="{{ url('dist/js/custom.js') }}"></script>

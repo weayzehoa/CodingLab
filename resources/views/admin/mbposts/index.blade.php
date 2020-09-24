@@ -98,20 +98,26 @@
                                                 <td class="text-center align-middle">{{ $post->offlinedate }}</td>
                                                 <td class="text-center align-middle">
                                                     <div class="custom-control custom-switch custom-switch-on-success">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="isShow{{ $post->id }}"
-                                                            {{ $post->isshow == 1 ? 'checked' : '' }}>
-                                                        <label class="custom-control-label"
-                                                            for="isShow{{ $post->id }}"></label>
+                                                        <form action="{{ url('admin/mbposts/isshow/'.$post->id ) }}" method="POST">
+                                                            @csrf
+                                                            <input type="checkbox" name="isshow" class="custom-control-input"
+                                                                id="isShow{{ $post->id }}" onclick="submit(this)"
+                                                                {{ $post->isshow == 1 ? 'checked' : '' }}>
+                                                            <label class="custom-control-label"
+                                                                for="isShow{{ $post->id }}"></label>
+                                                        </form>
                                                     </div>
                                                 </td>
                                                 <td class="text-center align-middle">
                                                     <div class="custom-control custom-switch custom-switch-on-primary">
-                                                        <input type="checkbox" class="custom-control-input"
-                                                            id="isTop{{ $post->id }}"
-                                                            {{ $post->istop == 1 ? 'checked' : '' }}>
-                                                        <label class="custom-control-label"
-                                                            for="isTop{{ $post->id }}"></label>
+                                                        <form action="{{ url('admin/mbposts/istop/'.$post->id ) }}" method="POST">
+                                                            @csrf
+                                                            <input type="checkbox" name="istop" class="custom-control-input"
+                                                                id="isTop{{ $post->id }}" onclick="submit(this)"
+                                                                {{ $post->istop == 1 ? 'checked' : '' }}>
+                                                            <label class="custom-control-label"
+                                                                for="isTop{{ $post->id }}"></label>
+                                                        </form>
                                                     </div>
                                                 </td>
                                                 <td class="text-center align-middle">

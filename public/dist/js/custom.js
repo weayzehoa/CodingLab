@@ -8,7 +8,6 @@
     var path = getUrl.pathname.split('/');
     var newPath = path[0] + '/' + path[1] + '/' + path[2];
     var newUrl = ori + newPath;
-
     $('#sidebar').find('.active').removeClass('active');
     // $('#sidebar').find('.menu-open').removeClass('menu-open');
     $('#sidebar a').each(function () {

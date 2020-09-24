@@ -81,7 +81,7 @@
                                         @foreach ($posts as $post)
                                             <tr>
                                                 <td class="text-left align-middle">
-                                                    <a href="#"><b>{{ $post->title }}</b></a>
+                                                    <a href="{{ route('mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
                                                 </td>
                                                 <td class="text-left align-middle">{{ $post->postType->name }}</td>
                                                 <td class="text-left align-middle">{{ $post->User->name }}</td>
@@ -122,13 +122,14 @@
                                                         <i class="fas fa-arrow-alt-circle-down text-lg"></i>
                                                     </a>
                                                 </td>
-                                                <td class="text-center">
-                                                    <a href="#" class="btn btn-sm btn-primary">
-                                                        <i class="far fa-edit"></i>
-                                                    </a>
-                                                    <a href="#" class="btn btn-sm btn-danger">
-                                                        <i class="far fa-trash-alt"></i>
-                                                    </a>
+                                                <td class="text-center align-middle">
+                                                    <form action="{{ route('mbposts.destroy', $post->id) }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="_method" value="DELETE">
+                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                            <i class="far fa-trash-alt"></i>
+                                                        </button>
+                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach

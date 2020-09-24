@@ -18,11 +18,7 @@ use Redirect; //轉向
 class MemberPostsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth:admin', [
-            'except' => [
-                // 'index', 'show'
-            ]
-        ]);
+        $this->middleware('auth:admin');
     }
     /**
      * Display a listing of the resource.
@@ -31,7 +27,7 @@ class MemberPostsController extends Controller
      */
     public function index()
     {
-        $posts = PostEloquent::orderBy('istop','DESC')->orderBy('approved', 'ASC')->orderBy('created_at', 'DESC')->paginate(10);
+        $posts = PostEloquent::orderBy('istop','DESC')->orderBy('approved', 'ASC')->orderBy('created_at', 'DESC')->paginate(8);
         // \Debugbar::addMessage($posts);
         return View::make('admin.mbposts.index', compact('posts'));
     }
@@ -76,7 +72,10 @@ class MemberPostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //先找出要編輯的資料並拋出到編輯頁面
+        $post = PostEloquent::findOrFail($id);
+        $post_types = PostTypeEloquent::orderBy('name' , 'ASC')->get();
+        return View::make('admin.mbposts.edit', compact('post', 'post_types'));
     }
 
     /**
@@ -102,6 +101,14 @@ class MemberPostsController extends Controller
         //透過id找到文章後在找出相關的留言刪除
         $post = PostEloquent::where('id', $id)->delete();
         $comments = CommentEloquent::where('post_id', $id)->delete();
+        return Redirect::back();
+    }
+    public function isshow(Request $request, $id)
+    {
+        return Redirect::back();
+    }
+    public function istop(Request $request, $id)
+    {
         return Redirect::back();
     }
 }

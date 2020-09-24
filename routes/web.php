@@ -63,6 +63,7 @@ Route::prefix('admin')->group(function() {
     //後台用
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
     Route::resource('/mbposts', 'Admin\MemberPostsController');
+
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });
     Route::get('/carousels', function () { return view('admin.carousels'); });

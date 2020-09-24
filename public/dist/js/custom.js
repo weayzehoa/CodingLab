@@ -3,11 +3,16 @@
 
     //側邊選單路徑與瀏覽位置相同時啟動顯示
     var getUrl = window.location;
-    var url = getUrl.origin + getUrl.pathname;
+    var url = getUrl.href;
+    var ori = getUrl.origin;
+    var path = getUrl.pathname.split('/');
+    var newPath = path[0] + '/' + path[1] + '/' + path[2];
+    var newUrl = ori + newPath;
+
     $('#sidebar').find('.active').removeClass('active');
     // $('#sidebar').find('.menu-open').removeClass('menu-open');
     $('#sidebar a').each(function () {
-        if (this.href == url) {
+        if (this.href == url || this.href == newUrl) {
             $(this).addClass('active');
             if ($(this).parents('ul').length == 2) {
                 $(this).parent().parent().parent().addClass('menu-open');

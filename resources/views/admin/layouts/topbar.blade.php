@@ -51,7 +51,7 @@
                 class="nav-link dropdown-toggle">會員專區</a>
             <ul aria-labelledby="memberSubMenu1" class="dropdown-menu border-0 shadow">
                 <li><a href="{{ url('admin/members') }}" class="dropdown-item">會員管理</a></li>
-                <li><a href="{{ url('admin/posts') }}" class="dropdown-item">會員文章</a></li>
+                <li><a href="{{ url('admin/mbposts') }}" class="dropdown-item">會員文章</a></li>
             </ul>
         </li>
         {{-- 系統管理 --}}

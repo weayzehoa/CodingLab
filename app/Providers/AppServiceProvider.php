@@ -27,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
         //註冊PostsIndexComposerost視圖共用變數
         view()->composer('posts.index', PostsIndexComposer::class);
         //將PostsIndexComposerost視圖共用變數拋給 admin.posts.* 所有視圖 (主要是給post用)
-        view()->composer('admin.posts.*', PostsIndexComposer::class);
+        view()->composer('admin.mbposts.*', PostsIndexComposer::class);
     }
 }

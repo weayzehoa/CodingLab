@@ -15,10 +15,14 @@ use Auth;   //使用者驗證
 use View;   //視圖
 use Redirect; //轉向
 
-class PostsController extends Controller
+class MemberPostsController extends Controller
 {
     public function __construct(){
-        $this->middleware('auth:admin');
+        $this->middleware('auth:admin', [
+            'except' => [
+                // 'index', 'show'
+            ]
+        ]);
     }
     /**
      * Display a listing of the resource.
@@ -29,8 +33,8 @@ class PostsController extends Controller
     {
         $posts = PostEloquent::orderBy('istop','DESC')->orderBy('approved', 'ASC')->orderBy('created_at', 'DESC')->paginate(10);
         // \Debugbar::addMessage($posts);
-        return View::make('admin.posts.index', compact('posts'));
-   }
+        return View::make('admin.mbposts.index', compact('posts'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -95,6 +99,9 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //透過id找到文章後在找出相關的留言刪除
+        $post = PostEloquent::where('id', $id)->delete();
+        $comments = CommentEloquent::where('post_id', $id)->delete();
+        return Redirect::back();
     }
 }

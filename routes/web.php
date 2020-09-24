@@ -62,7 +62,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/captcha', 'Auth\AdminLoginController@captcha')->name('admin.captcha');
     //後台用
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-    Route::resource('/posts', 'Admin\PostsController');
+    Route::resource('/mbposts', 'Admin\MemberPostsController');
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });
     Route::get('/carousels', function () { return view('admin.carousels'); });

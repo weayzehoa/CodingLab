@@ -154,7 +154,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url('admin/posts') }}" class="nav-link">
+                            <a href="{{ url('admin/mbposts') }}" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>會員文章</p>
                                 <span class="right badge badge-info">{{ $posts_total ?? '' }}</span>

@@ -14,7 +14,7 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">後台管理系統</a></li>
-                            <li class="breadcrumb-item active"><a href="{{ url('admin/posts') }}">會員文章</a></li>
+                            <li class="breadcrumb-item active"><a href="{{ url('admin/mbposts') }}">會員文章</a></li>
                             <li class="breadcrumb-item active">清單</li>
                         </ol>
                     </div>

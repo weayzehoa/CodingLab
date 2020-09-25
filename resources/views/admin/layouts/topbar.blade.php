@@ -94,6 +94,7 @@
                 class="nav-link dropdown-toggle">開發者專區</a>
             <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
                 <li><a href="{{ url('admin/aboutme') }}" class="dropdown-item">關於我</a></li>
+                <li><a href="https://codinglab.rvt.idv.tw" class="dropdown-item">我的筆記</a></li>
                 <li><a href="{{ url('AdminLTE/index2') }}" class="dropdown-item">AdminLTE參考樣板</a></li>
                 <li class="dropdown-divider"></li>
                 <li class="dropdown-submenu dropdown-hover">

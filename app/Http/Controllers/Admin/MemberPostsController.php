@@ -76,7 +76,12 @@ class MemberPostsController extends Controller
         //先找出要編輯的資料並拋出到編輯頁面
         $post = PostEloquent::findOrFail($id);
         $post_types = PostTypeEloquent::orderBy('name' , 'ASC')->get();
-        return View::make('admin.mbposts.edit', compact('post', 'post_types'));
+        $comments = CommentEloquent::where('post_id',$post->id)->orderBy('created_at','DESC')->paginate(5);
+        \Debugbar::addMessage($post);
+        \Debugbar::addMessage($comments);
+        \Debugbar::addMessage($post_types);
+
+        return View::make('admin.mbposts.edit', compact('post', 'post_types', 'comments'));
     }
 
     /**
@@ -182,13 +187,24 @@ class MemberPostsController extends Controller
         搜尋標題
     */
     public function search(Request $request){
-        \Debugbar::info($request);
-        // if(!$request->has('keyword')){
-        //     return Redirect::back();
-        // }
-        // $keyword = $request->keyword;
-        // $posts = PostEloquent::where('title', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->get();
-        // return View::make('admin.mbposts.index', compact('posts', 'keyword'));
-        return View::make('admin.mbposts.index');
+        if(!$request->has('keyword')){
+            return Redirect::back();
+        }
+        $keyword = $request->keyword;
+        $posts = PostEloquent::where('title', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->paginate(8);
+        return View::make('admin.mbposts.index', compact('posts', 'keyword'));
+    }
+    /*
+        搜尋分類
+    */
+    public function selectType(Request $request){
+        $type = $request->type;
+        if(!$type){
+            // $posts = PostEloquent::orderBy('sort','asc')->paginate(8);
+            // return View::make('admin.mbposts.index', compact('posts'));
+            return redirect('admin/mbposts');
+        }
+        $posts = PostEloquent::where('type', '=', $type)->orderBy('created_at', 'DESC')->paginate(8);
+        return View::make('admin.mbposts.index', compact('posts', 'type'));
     }
 }

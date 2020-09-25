@@ -250,6 +250,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="https://codinglab.rvt.idv.tw" class="nav-link" target="_blank">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            我的筆記
+                            <span class="right badge badge-danger"><i class="fas fa-thumbs-up"></i></span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ url('AdminLTE/index1') }}" class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-th"></i>
                         <p>

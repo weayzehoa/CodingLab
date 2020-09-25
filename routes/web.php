@@ -27,6 +27,8 @@ Route::prefix('AdminLTE')->group(function() {
     Route::get('{name}', 'HomeController@AdminLTE');
 });
 
+// Route::get('admin/mbposts/search','Admin\MemberPostsController@search');
+
 //使用預設的Auth所有路由
 Auth::routes();
 
@@ -62,12 +64,15 @@ Route::prefix('admin')->group(function() {
     Route::get('/captcha', 'Auth\AdminLoginController@captcha')->name('admin.captcha');
     //後台用
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
-    Route::resource('/mbposts', 'Admin\MemberPostsController');
+
+    //相關的路由放在 resource 之前較好，避免與 resource 的 get 衝突
+    Route::get('/mbposts/search','Admin\MemberPostsController@search');
+    Route::get('/mbposts/selectType','Admin\MemberPostsController@selectType');
     Route::post('/mbposts/isshow/{id}','Admin\MemberPostsController@isshow');
     Route::post('/mbposts/istop/{id}','Admin\MemberPostsController@istop');
     Route::get('/mbposts/sortup/{id}','Admin\MemberPostsController@sortup');
     Route::get('/mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
-    Route::get('/mbposts/search','Admin\MemberPostsController@search');
+    Route::resource('/mbposts', 'Admin\MemberPostsController');
 
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });

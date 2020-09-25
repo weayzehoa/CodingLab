@@ -37,39 +37,39 @@
                                 <div class="card-tools float-left">
                                     <div class="input-group">
                                         <label>分類：</label>
-                                        <select class="form-control select2 select2-primary"
-                                            data-dropdown-css-class="select2-primary">
-                                            <option selected="selected">全部分類</option>
-                                            @foreach ($post_types as $post_type)
-                                                <option
-                                                    {{ isset($type) ? ($type->id == $post_type->id ? 'selected' : '') : '' }}>
-                                                    {{ $post_type->name }} ( {{ $post_type->posts->count() }} )
-                                                    </span>
-                                                </option>
-                                            @endforeach
-                                        </select>
+                                        <form id="posttype" action="{{ url('/admin/mbposts/selectType') }}" method="GET"
+                                            class="form-inline" role="posttype">
+                                            <select class="form-control select2 select2-primary"
+                                                data-dropdown-css-class="select2-primary" name="type">
+                                                <option value="" selected="selected">全部分類</option>
+                                                @foreach ($post_types as $post_type)
+                                                    <option value="{{ $post_type->id }}"
+                                                        {{ isset($type) ? ($type == $post_type->id ? 'selected' : '') : '' }}>
+                                                        {{ $post_type->name }} ( {{ $post_type->posts->count() }} )
+                                                        </span>
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </form>
+                                        <script>
+                                            $('select[name=type]').change(function(e) {
+                                                $('#posttype').submit();
+                                            });
+
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="card-tools">
-                                    <form action="{{ url('/admin/mbposts/search') }}" method="GET" class="form-inline" role="search">
-                                        <input type="search" class="form-control form-control-sm mr-sm-2" name="keyword" placeholder="搜尋文章" aria-label="Search">
+                                    <form action="{{ url('/admin/mbposts/search') }}" method="GET" class="form-inline"
+                                        role="search">
+                                        <input type="search" class="form-control form-control-sm mr-sm-2" name="keyword"
+                                            value="{{ isset($keyword) ? $keyword : '' }}" placeholder="搜尋文章"
+                                            aria-label="Search">
                                         <button type="submit" class="btn btn-sm btn-info my-2 my-sm-0">
                                             <i class="fas fa-search"></i>
                                             搜尋
                                         </button>
                                     </form>
-
-                                    {{-- <form action="{{ url('admin/mbposts/search/') }}" method="POST">
-                                        <div class="input-group">
-                                            <input type="text" name="keyword" class="form-control float-right"
-                                                placeholder="搜尋標題">
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-info">
-                                                    <i class="fas fa-search"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form> --}}
                                 </div>
                             </div>
                             <div class="card-body table-responsive p-0">

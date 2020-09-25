@@ -65,6 +65,9 @@ Route::prefix('admin')->group(function() {
     Route::resource('/mbposts', 'Admin\MemberPostsController');
     Route::post('/mbposts/isshow/{id}','Admin\MemberPostsController@isshow');
     Route::post('/mbposts/istop/{id}','Admin\MemberPostsController@istop');
+    Route::get('/mbposts/sortup/{id}','Admin\MemberPostsController@sortup');
+    Route::get('/mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
+    Route::get('/mbposts/search','Admin\MemberPostsController@search');
 
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });

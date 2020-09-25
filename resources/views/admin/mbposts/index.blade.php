@@ -51,20 +51,34 @@
                                     </div>
                                 </div>
                                 <div class="card-tools">
-                                    <div class="input-group">
-                                        <input type="text" name="posts_search" class="form-control float-right"
-                                            placeholder="搜尋標題或會員">
-                                        <div class="input-group-append">
-                                            <a href="#" class="btn btn-info"><i class="fas fa-search"></i></a>
+                                    <form action="{{ url('/admin/mbposts/search') }}" method="GET" class="form-inline" role="search">
+                                        <input type="search" class="form-control form-control-sm mr-sm-2" name="keyword" placeholder="搜尋文章" aria-label="Search">
+                                        <button type="submit" class="btn btn-sm btn-info my-2 my-sm-0">
+                                            <i class="fas fa-search"></i>
+                                            搜尋
+                                        </button>
+                                    </form>
+
+                                    {{-- <form action="{{ url('admin/mbposts/search/') }}" method="POST">
+                                        <div class="input-group">
+                                            <input type="text" name="keyword" class="form-control float-right"
+                                                placeholder="搜尋標題">
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-info">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </form> --}}
                                 </div>
                             </div>
                             <div class="card-body table-responsive p-0">
-                                {{-- 文字不斷行 table中加上 class="text-nowrap" --}}
+                                {{-- 文字不斷行 table中加上 class="text-nowrap"
+                                --}}
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
+                                            <th class="text-left" width="25">編號</th>
                                             <th class="text-left" width="25">標題</th>
                                             <th class="text-left" width="10%">類別</th>
                                             <th class="text-left" width="15%">會員</th>
@@ -74,14 +88,18 @@
                                             <th class="text-center" width="5%">上線</th>
                                             <th class="text-center" width="5%">置頂</th>
                                             <th class="text-center" width="7%">排序</th>
-                                            <th class="text-center" width="10%">刪除</th>
+                                            <th class="text-center" width="5%">刪除</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($posts as $post)
                                             <tr>
                                                 <td class="text-left align-middle">
-                                                    <a href="{{ route('mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
+                                                    {{ $post->id }}
+                                                </td>
+                                                <td class="text-left align-middle">
+                                                    <a
+                                                        href="{{ route('mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
                                                 </td>
                                                 <td class="text-left align-middle">{{ $post->postType->name }}</td>
                                                 <td class="text-left align-middle">{{ $post->User->name }}</td>
@@ -98,10 +116,12 @@
                                                 <td class="text-center align-middle">{{ $post->offlinedate }}</td>
                                                 <td class="text-center align-middle">
                                                     <div class="custom-control custom-switch custom-switch-on-success">
-                                                        <form action="{{ url('admin/mbposts/isshow/'.$post->id ) }}" method="POST">
+                                                        <form action="{{ url('admin/mbposts/isshow/' . $post->id) }}"
+                                                            method="POST">
                                                             @csrf
-                                                            <input type="checkbox" name="isshow" class="custom-control-input"
-                                                                id="isShow{{ $post->id }}" onclick="submit(this)"
+                                                            <input type="checkbox" name="isshow"
+                                                                class="custom-control-input" id="isShow{{ $post->id }}"
+                                                                onclick="submit(this)"
                                                                 {{ $post->isshow == 1 ? 'checked' : '' }}>
                                                             <label class="custom-control-label"
                                                                 for="isShow{{ $post->id }}"></label>
@@ -110,7 +130,8 @@
                                                 </td>
                                                 <td class="text-center align-middle">
                                                     <div class="custom-control custom-switch custom-switch-on-primary">
-                                                        <form action="{{ url('admin/mbposts/istop/'.$post->id ) }}" method="POST">
+                                                        <form action="{{ url('admin/mbposts/istop/' . $post->id) }}"
+                                                            method="POST">
                                                             @csrf
                                                             <input type="checkbox" name="istop" class="custom-control-input"
                                                                 id="isTop{{ $post->id }}" onclick="submit(this)"
@@ -121,10 +142,12 @@
                                                     </div>
                                                 </td>
                                                 <td class="text-center align-middle">
-                                                    <a href="javascript:void(0)" class="text-navy">
+                                                    <a href="{{ url('admin/mbposts/sortup/' . $post->id) }}"
+                                                        class="text-navy">
                                                         <i class="fas fa-arrow-alt-circle-up text-lg"></i>
                                                     </a>　
-                                                    <a href="javascript:void(0)" class="text-navy">
+                                                    <a href="{{ url('admin/mbposts/sortdown/' . $post->id) }}"
+                                                        class="text-navy">
                                                         <i class="fas fa-arrow-alt-circle-down text-lg"></i>
                                                     </a>
                                                 </td>

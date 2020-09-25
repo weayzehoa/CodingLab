@@ -28,7 +28,7 @@ class MemberPostsController extends Controller
      */
     public function index()
     {
-        $posts = PostEloquent::orderBy('istop','DESC')->orderBy('approved', 'ASC')->orderBy('created_at', 'DESC')->paginate(8);
+        $posts = PostEloquent::orderBy('sort','asc')->paginate(8);
         // \Debugbar::addMessage($posts);
         return View::make('admin.mbposts.index', compact('posts'));
     }
@@ -104,6 +104,9 @@ class MemberPostsController extends Controller
         $comments = CommentEloquent::where('post_id', $id)->delete();
         return Redirect::back();
     }
+    /*
+        上線按鈕開關
+    */
     public function isshow(Request $request)
     {
         // \Debugbar::info($request);
@@ -121,6 +124,9 @@ class MemberPostsController extends Controller
         // return redirect()->action('Admin\MemberPostsController@index');
         return redirect()->back();
     }
+    /*
+        置頂按鈕開關
+    */
     public function istop(Request $request)
     {
         $id = $request->id;
@@ -129,5 +135,60 @@ class MemberPostsController extends Controller
         $post->fill(['istop' => $istop]);
         $post->save();
         return redirect()->back();
+    }
+    /*
+        向上排序
+        此方法似乎不太理想，需要改關聯方式
+    */
+    public function sortup(Request $request)
+    {
+        $id = $request->id;
+        $post = PostEloquent::findOrFail($id);
+        $up = ($post->sort) - 1.5;
+        $post->fill(['sort' => $up]);
+        $post->save();
+
+        $posts = PostEloquent::orderBy('sort','ASC')->get();
+        $i = 1;
+        foreach ($posts as $po) {
+            $id = $po->id;
+            PostEloquent::where('id', '=', $id)->update(['sort' => $i]);
+            $i++;
+        }
+        return redirect()->back();
+    }
+    /*
+        向下排序
+        此方法似乎不太理想，需要改關聯方式
+    */
+    public function sortdown(Request $request)
+    {
+        $id = $request->id;
+        $post = PostEloquent::findOrFail($id);
+        $up = ($post->sort) + 1.5;
+        $post->fill(['sort' => $up]);
+        $post->save();
+
+        $posts = PostEloquent::orderBy('sort','ASC')->get();
+        $i = 1;
+        foreach ($posts as $po) {
+            $id = $po->id;
+            PostEloquent::where('id', '=', $id)->update(['sort' => $i]);
+            $i++;
+        }
+        return redirect()->back();
+    }
+    /*
+        搜尋標題
+    */
+    public function search(Request $request){
+        \Debugbar::info($request);
+        // if(!$request->has('keyword')){
+        //     return Redirect::back();
+        // }
+        // $keyword = $request->keyword;
+        // $posts = PostEloquent::where('title', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->get();
+        // return View::make('admin.mbposts.index', compact('posts', 'keyword'));
+        return View::make('admin.mbposts.index');
     }
 }

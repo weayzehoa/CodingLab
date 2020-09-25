@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hant-TW">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Log in</title>
-    <!-- Tell the browser to be responsive to screen width -->
+    <title>後台管理系統 | 登入</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome -->
@@ -20,16 +19,15 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page bg-navy">
     <div class="login-box">
         <div class="login-logo">
-            {{-- <a href="index2.html"><b>Admin</b>LTE</a> --}}
+            <a href="javascript:" class="text-white"><b>後台管理系統</b></a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                {{-- <p class="login-box-msg">Sign in to start your session</p> --}}
-
+                <p class="login-box-msg">請輸入 Email 與 密碼 及 驗證碼</p>
                 <form action="{{ route('admin.login.submit') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
@@ -58,27 +56,27 @@
                         </span>
                         @endif
                     </div>
-                    <div class="form-group mb-3 row">
-                        <input type="text" id="captchacode" name="captchacode" placeholder="Captcha" class="form-control col-6 {{ $errors->has('captchacode') ? ' is-invalid' : '' }}" required >　
-                        <img class="col-5" src="/admin/captcha" alt="點擊刷新" onclick="this.src='/admin/captcha?captchacode='+Math.random()">
-                        @if ($errors->has('captchacode'))
+                    <div class="row mb-3">
+                        <div class="col-7">
+                            <input type="text" id="captchacode" name="captchacode" placeholder="Captcha" class="form-control {{ $errors->has('captchacode') ? ' is-invalid' : '' }}" required >
+                            @if ($errors->has('captchacode'))
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $errors->first('captchacode') }}</strong>
                             </span>
-                        @endif
-                    </div>
-                    <div class="input-group mb-3">
-                        <div>
-                            {!! no_captcha()->script()->toHtml() !!}
-                            {!! no_captcha()->display() !!}
-                        </div>
-                        <div>
-                            @if ($errors->has('g-recaptcha-response'))
-                            <span class="text-danger" role="">
-                                <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                            </span>
                             @endif
                         </div>
+                        <div class="col-5">
+                            <img src="/admin/captcha" alt="點擊刷新" onclick="this.src='/admin/captcha?captchacode='+Math.random()">
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        {!! no_captcha()->script()->toHtml() !!}
+                        {!! no_captcha()->display() !!}
+                        @if ($errors->has('g-recaptcha-response'))
+                        <span class="text-danger" role="">
+                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                        </span>
+                        @endif
                     </div>
                     <div class="row">
                         <div class="col-8">
@@ -89,14 +87,11 @@
                                 </label>
                             </div>
                         </div>
-                        <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
-                        <!-- /.col -->
                     </div>
                 </form>
-
                 {{-- <div class="social-auth-links text-center mb-3">
                     <p>- OR -</p>
                     <a href="#" class="btn btn-block btn-primary">
@@ -105,26 +100,20 @@
                     <a href="#" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
                     </a>
-                </div> --}}
-                <!-- /.social-auth-links -->
-
-                {{-- <p class="mb-1">
+                </div>
+                <p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
                 </p> --}}
             </div>
-            <!-- /.login-card-body -->
         </div>
     </div>
-    <!-- /.login-box -->
 
-    <!-- jQuery -->
+    {{-- REQUIRED SCRIPTS --}}
     <script src="../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.min.js"></script>
 
 </body>

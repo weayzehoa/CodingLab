@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 //將需要使用到的 Request、Eloquent、套件及Facade寫入
 use App\Http\Requests\PostRequest;
 use App\Post as PostEloquent; //posts資料表
+use App\User as UserEloquent; //posts資料表
 use App\PostType as PostTypeEloquent; //post_types資料表
 use App\Comment as CommentEloquent; //comments資料表
 use Carbon\Carbon; //時間格式套件
@@ -76,12 +77,14 @@ class MemberPostsController extends Controller
         //先找出要編輯的資料並拋出到編輯頁面
         $post = PostEloquent::findOrFail($id);
         $post_types = PostTypeEloquent::orderBy('name' , 'ASC')->get();
+        $user = UserEloquent::where('id',$post->user_id)->get();
         $comments = CommentEloquent::where('post_id',$post->id)->orderBy('created_at','DESC')->paginate(5);
+        \Debugbar::addMessage($user);
         \Debugbar::addMessage($post);
         \Debugbar::addMessage($comments);
         \Debugbar::addMessage($post_types);
 
-        return View::make('admin.mbposts.edit', compact('post', 'post_types', 'comments'));
+        return View::make('admin.mbposts.edit', compact('user', 'post', 'post_types', 'comments'));
     }
 
     /**

@@ -76,12 +76,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
 
     Route::resource('comments', 'Admin\CommentsController');
 
-    // Route::get('/news', function () { return view('admin.news'); });
-    // Route::get('/marquees', function () { return view('admin.marquees'); });
-    // Route::get('/carousels', function () { return view('admin.carousels'); });
-    // Route::get('/members', function () { return view('admin.members'); });
-    // Route::get('/admins', function () { return view('admin.admins'); });
-    // Route::get('/mails', function () { return view('admin.mails'); });
-    // Route::get('/logs', function () { return view('admin.logs'); });
-    // Route::get('/aboutme', function () { return view('admin.aboutme'); });
+    Route::get('/news', function () { return view('admin.news'); });
+    Route::get('/marquees', function () { return view('admin.marquees'); });
+    Route::get('/carousels', function () { return view('admin.carousels'); });
+    Route::get('/members', function () { return view('admin.members'); });
+    Route::get('/admins', function () { return view('admin.admins'); });
+    Route::get('/mails', function () { return view('admin.mails'); });
+    Route::get('/logs', function () { return view('admin.logs'); });
+    Route::get('/aboutme', function () { return view('admin.aboutme'); });
 }) ;

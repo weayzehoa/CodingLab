@@ -41,7 +41,8 @@ class MemberPostsController extends Controller
      */
     public function create()
     {
-        //
+        //用不到直接返回，避免出現錯誤
+        return redirect()->back();
     }
 
     /**
@@ -52,7 +53,8 @@ class MemberPostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //用不到直接返回，避免出現錯誤
+        return redirect()->back();
     }
 
     /**
@@ -63,7 +65,8 @@ class MemberPostsController extends Controller
      */
     public function show($id)
     {
-        //
+        //用不到直接返回，避免出現錯誤
+        return redirect()->back();
     }
 
     /**
@@ -81,10 +84,10 @@ class MemberPostsController extends Controller
         $users = UserEloquent::all();
         $comments = CommentEloquent::where('post_id',$post->id)->orderBy('created_at','DESC')->paginate(4);
         $comments_total = CommentEloquent::where('post_id',$post->id)->count();
-        \Debugbar::addMessage($user);
-        \Debugbar::addMessage($post);
-        \Debugbar::addMessage($comments);
-        \Debugbar::addMessage($post_types);
+        // \Debugbar::addMessage($user);
+        // \Debugbar::addMessage($post);
+        // \Debugbar::addMessage($comments);
+        // \Debugbar::addMessage($post_types);
 
         return View::make('admin.mbposts.edit', compact('user', 'post', 'post_types', 'users', 'comments', 'comments_total'));
     }
@@ -209,9 +212,7 @@ class MemberPostsController extends Controller
     public function selectType(Request $request){
         $type = $request->type;
         if(!$type){
-            // $posts = PostEloquent::orderBy('sort','asc')->paginate(8);
-            // return View::make('admin.mbposts.index', compact('posts'));
-            return redirect('admin/mbposts');
+            return Redirect::route('admin.mbposts.index');
         }
         $posts = PostEloquent::where('type', '=', $type)->orderBy('created_at', 'DESC')->paginate(8);
         return View::make('admin.mbposts.index', compact('posts', 'type'));

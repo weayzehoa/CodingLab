@@ -15,176 +15,189 @@
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">後台管理系統</a></li>
                             <li class="breadcrumb-item active"><a href="{{ url('admin/mbposts') }}">會員文章</a></li>
-                            <li class="breadcrumb-item active">修改</li>
+                            <li class="breadcrumb-item active">{{ $post ? '修改' : '新增' }}</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
-        {{ $post }}
-        {{ $user }}
-        {{ $comments }}
-    <!-- Main content -->
-    <section class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <!-- left column -->
-            <div class="col-md-6">
-              <!-- general form elements -->
-              <div class="card card-primary">
-                <div class="card-header">
-                  <h3 class="card-title">文章資料</h3>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">文章資料</h3>
+                            </div>
+                            <form role="form">
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">標題</label>
+                                        <input type="text" class="form-control" id="title" name="title"
+                                            value="{{ $post->title }}" placeholder="輸入標題" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="type">分類</label>
+                                        <select class="form-control select2 select2-primary"
+                                            data-dropdown-css-class="select2-primary" name="type">
+                                            <option value="" selected="selected">全部分類</option>
+                                            @foreach ($post_types as $post_type)
+                                                <option value="{{ $post_type->id }}"
+                                                    {{ $post->type == $post_type->id ? 'selected' : '' }}>
+                                                    {{ $post_type->name }}
+                                                    </span>
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>內容</label>
+                                        <textarea class="form-control" rows="3" id="content" name="content"
+                                            placeholder="Enter ...">{{ $post->content }}</textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-6">
+                                            <label for="onlinedate">上線日期時間</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="onlinedate" name="onlinedate"
+                                                    value="{{ $post ? $post->onlinedate : '' }}" placeholder="上線日期時間"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-6">
+                                            <label for="offlinedate">下線日期時間</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text"><i
+                                                            class="far fa-calendar-alt"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" id="offlinedate" name="offlinedate"
+                                                    value="{{ $post ? $post->offlinedate : '' }}" placeholder="下線日期時間">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-6" style="background-color:#f0f0f0">
+                                            <label for="onlinedate">審核</label>
+                                            <div class="form-group clearfix">
+                                                <div class="icheck-secondary d-inline mr-2">
+                                                    <input type="radio" id="approved_wait" name="approved"
+                                                        {{ $post->approved == 0 ? 'checked' : '' }}>
+                                                    <label for="approved_wait">等待中</label>
+                                                </div>
+                                                <div class="icheck-green d-inline mr-2">
+                                                    <input type="radio" id="approved_pass" name="approved"
+                                                        {{ $post->approved == 1 ? 'checked' : '' }}>
+                                                    <label for="approved_pass">通過</label>
+                                                </div>
+                                                <div class="icheck-danger d-inline mr-2">
+                                                    <input type="radio" id="approved_denie" name="approved"
+                                                        {{ $post->approved == 2 ? 'checked' : '' }}>
+                                                    <label for="approved_denie">拒絕</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="offlinedate">上線狀態</label>
+                                            <div class="input-group">
+                                                <input type="checkbox" name="isshow" data-bootstrap-switch
+                                                    data-off-color="secondary" data-on-color="success"
+                                                    {{ $post->isshow == 1 ?? 'checked' }}>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-3">
+                                            <label for="offlinedate">置頂狀態</label>
+                                            <div class="input-group">
+                                                <input type="checkbox" name="istop" checked data-bootstrap-switch
+                                                    data-off-color="secondary" data-on-color="primary"
+                                                    {{ $post->istop == 1 ?? 'checked' }}>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <button type="submit" class="btn btn-primary">{{ $post ? '修改' : '新增' }}</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card card-success">
+                            <div class="card-header">
+                                <h3 class="card-title">會員資料</h3>
+                            </div>
+                            <div class="card-body row">
+                                <div class="card card-primary card-outline col-4">
+                                    <div class="card-body box-profile">
+                                        <div class="text-center">
+                                            <img class="profile-user-img img-fluid img-circle"
+                                                src="{{ ($post->user->avatar ? url($post->user->avatar) : $post->user->gender == 1) ? url('dist/img/avatar5.png') : url('dist/img/avatar2.png') }}"
+                                                alt="User profile picture">
+                                        </div>
+                                        <h3 class="profile-username text-center">{{ $post->user->name }}</h3>
+                                        <p class="text-muted text-center">Software Engineer</p>
+                                    </div>
+                                </div>
+                                <div class="card card-primary card-outline col-4">
+                                    <div class="card-body box-profile">
+                                        <div class="text-center">
+                                            <img class="profile-user-img img-fluid img-circle"
+                                                src="{{ ($post->user->avatar ? url($post->user->avatar) : $post->user->gender == 1) ? url('dist/img/user2-160x160.jpg') : url('dist/img/user3-128x128.jpg') }}"
+                                                alt="User profile picture">
+                                        </div>
+                                        <h3 class="profile-username text-center">{{ $post->user->name }}</h3>
+                                        <p class="text-muted text-center">Hardware Engineer</p>
+                                    </div>
+                                </div>
+                                <div class="card card-primary card-outline col-4">
+                                    <div class="card-body box-profile">
+                                        <div class="text-center">
+                                            <img class="profile-user-img img-fluid img-circle"
+                                                src="{{ ($post->user->avatar ? url($post->user->avatar) : $post->user->gender == 1) ? url('dist/img/user2-160x160.jpg') : url('dist/img/user3-128x128.jpg') }}"
+                                                alt="User profile picture">
+                                        </div>
+                                        <h3 class="profile-username text-center">{{ $post->user->name }}</h3>
+                                        <p class="text-muted text-center">Database Engineer</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title">相關留言</h3>
+                                <span class="right badge badge-danger">{{ $comments_total }}</span>
+                            </div>
+                            <div class="card-body">
+                                @foreach($comments as $comment)
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm"
+                                            src="{{ ($comment->user->avatar ? url($comment->user->avatar) : $comment->user->gender == 1) ? url('dist/img/avatar5.png') : url('dist/img/avatar2.png') }}" alt="User Image">
+                                        <span class="username">
+                                            <a href="#">{{ $comment->user->name }}</a>
+                                        </span>
+                                        <a href="#" class="float-right btn-tool text-danger"><i
+                                                class="fas fa-trash"></i></a>
+                                        <span class="description">{{ $comment->created_at }} 留言</span>
+                                    </div>
+                                    <p>{{ $comment->content }}</p>
+                                </div>
+                                @endforeach
+                                <div class="post clearfix float-right">
+                                @isset($comments)
+                                {{ $comments->render() }}
+                                @endisset
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form role="form">
-                  <div class="card-body">
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputFile">File input</label>
-                      <div class="input-group">
-                        <div class="custom-file">
-                          <input type="file" class="custom-file-input" id="exampleInputFile">
-                          <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                        </div>
-                        <div class="input-group-append">
-                          <span class="input-group-text" id="">Upload</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                  </div>
-                  <!-- /.card-body -->
-
-                  <div class="card-footer">
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </div>
-                </form>
-              </div>
-              <!-- /.card -->
-              <!-- general form elements disabled -->
-              <div class="card card-warning">
-                <div class="card-header">
-                  <h3 class="card-title">文章內容</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <form role="form">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <!-- text input -->
-                        <div class="form-group">
-                          <label>Text</label>
-                          <input type="text" class="form-control" placeholder="Enter ...">
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Text Disabled</label>
-                          <input type="text" class="form-control" placeholder="Enter ..." disabled>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <!-- textarea -->
-                        <div class="form-group">
-                          <label>Textarea</label>
-                          <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <div class="form-group">
-                          <label>Textarea Disabled</label>
-                          <textarea class="form-control" rows="3" placeholder="Enter ..." disabled></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.card-body -->
-              </div>
             </div>
-            <!--/.col (left) -->
-            <!-- right column -->
-            <div class="col-md-6">
-              <!-- Form Element sizes -->
-              <div class="card card-success">
-                <div class="card-header">
-                  <h3 class="card-title">會員資料</h3>
-                </div>
-                <div class="card-body">
-                  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
-                  <br>
-                  <input class="form-control" type="text" placeholder="Default input">
-                  <br>
-                  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
-              <!-- /.card -->
-              <!-- general form elements disabled -->
-              <div class="card card-secondary">
-                <div class="card-header">
-                  <h3 class="card-title">相關留言</h3>
-                  <span class="right badge badge-danger">{{ count($comments) }}</span>
-                </div>
-                <div class="card-body">
-                  <form role="form">
-                    <div class="row">
-                      <div class="col-sm-6">
-                        <!-- checkbox -->
-                        <div class="form-group">
-                          <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="customCheckbox1" value="option1">
-                            <label for="customCheckbox1" class="custom-control-label">Custom Checkbox</label>
-                          </div>
-                          <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="customCheckbox2" checked>
-                            <label for="customCheckbox2" class="custom-control-label">Custom Checkbox checked</label>
-                          </div>
-                          <div class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox" id="customCheckbox3" disabled>
-                            <label for="customCheckbox3" class="custom-control-label">Custom Checkbox disabled</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-6">
-                        <!-- radio -->
-                        <div class="form-group">
-                          <div class="custom-control custom-radio">
-                            <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio">
-                            <label for="customRadio1" class="custom-control-label">Custom Radio</label>
-                          </div>
-                          <div class="custom-control custom-radio">
-                            <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" checked>
-                            <label for="customRadio2" class="custom-control-label">Custom Radio checked</label>
-                          </div>
-                          <div class="custom-control custom-radio">
-                            <input class="custom-control-input" type="radio" id="customRadio3" disabled>
-                            <label for="customRadio3" class="custom-control-label">Custom Radio disabled</label>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
 
 @endsection

@@ -78,13 +78,15 @@ class MemberPostsController extends Controller
         $post = PostEloquent::findOrFail($id);
         $post_types = PostTypeEloquent::orderBy('name' , 'ASC')->get();
         $user = UserEloquent::where('id',$post->user_id)->get();
-        $comments = CommentEloquent::where('post_id',$post->id)->orderBy('created_at','DESC')->paginate(5);
+        $users = UserEloquent::all();
+        $comments = CommentEloquent::where('post_id',$post->id)->orderBy('created_at','DESC')->paginate(4);
+        $comments_total = CommentEloquent::where('post_id',$post->id)->count();
         \Debugbar::addMessage($user);
         \Debugbar::addMessage($post);
         \Debugbar::addMessage($comments);
         \Debugbar::addMessage($post_types);
 
-        return View::make('admin.mbposts.edit', compact('user', 'post', 'post_types', 'comments'));
+        return View::make('admin.mbposts.edit', compact('user', 'post', 'post_types', 'users', 'comments', 'comments_total'));
     }
 
     /**

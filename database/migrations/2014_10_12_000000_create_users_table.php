@@ -16,11 +16,12 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->comment('姓名');
+            $table->boolean('gender')->default(0)->comment('性別'); //1男 2女 0未知
             $table->string('email')->unique()->comment('電子郵件');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->comment('密碼');
             $table->string('avatar')->nullable()->comment('頭像'); //頭像功能,可為空值
-            $table->integer('type')->unsigned()->default(0)->comment('類型'); //身分判別 0 為一般使用者
+            $table->boolean('type')->unsigned()->default(0)->comment('類型'); //身分判別 0 為一般使用者
             $table->rememberToken();
             $table->timestamps();
         });

@@ -96,9 +96,13 @@ class MemberPostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PostRequest $request, $id)
     {
-        //
+        //透過id將進來的資料填寫到資料庫後返回index()
+        $post = PostEloquent::findOrFail($id);
+        $post->fill($request->all());
+        $post->save();
+        return Redirect::route('admin.mbposts.index');
     }
 
     /**

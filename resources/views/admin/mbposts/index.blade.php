@@ -99,7 +99,7 @@
                                                 </td>
                                                 <td class="text-left align-middle">
                                                     <a
-                                                        href="{{ route('mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
+                                                        href="{{ route('admin.mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
                                                 </td>
                                                 <td class="text-left align-middle">{{ $post->postType->name }}</td>
                                                 <td class="text-left align-middle">{{ $post->User->name }}</td>
@@ -152,7 +152,7 @@
                                                     </a>
                                                 </td>
                                                 <td class="text-center align-middle">
-                                                    <form action="{{ route('mbposts.destroy', $post->id) }}" method="POST">
+                                                    <form action="{{ route('admin.mbposts.destroy', $post->id) }}" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <button type="submit" class="btn btn-sm btn-danger">

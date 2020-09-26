@@ -55,31 +55,33 @@ Route::prefix('login/social')->name('social.')->group(function(){
 });
 
 //後台admin用的路由 網址看起來就像 https://localhost/{admin}/{名稱}
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->name('admin.')->group(function() {
     //登入登出
-    Route::get('/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    Route::get('/', 'Auth\AdminLoginController@showLoginForm')->name('admin');
-    Route::get('/captcha', 'Auth\AdminLoginController@captcha')->name('admin.captcha');
+    Route::get('login','Auth\AdminLoginController@showLoginForm')->name('login');
+    Route::post('login', 'Auth\AdminLoginController@login')->name('login.submit');
+    Route::get('logout', 'Auth\AdminLoginController@logout')->name('logout');
+    Route::get('', 'Auth\AdminLoginController@showLoginForm');
+    Route::get('captcha', 'Auth\AdminLoginController@captcha')->name('captcha');
     //後台用
-    Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');
+    Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
 
     //相關的路由放在 resource 之前較好，避免與 resource 的 get 衝突
-    Route::get('/mbposts/search','Admin\MemberPostsController@search');
-    Route::get('/mbposts/selectType','Admin\MemberPostsController@selectType');
-    Route::post('/mbposts/isshow/{id}','Admin\MemberPostsController@isshow');
-    Route::post('/mbposts/istop/{id}','Admin\MemberPostsController@istop');
-    Route::get('/mbposts/sortup/{id}','Admin\MemberPostsController@sortup');
-    Route::get('/mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
-    Route::resource('/mbposts', 'Admin\MemberPostsController');
+    Route::get('mbposts/search','Admin\MemberPostsController@search');
+    Route::get('mbposts/selectType','Admin\MemberPostsController@selectType');
+    Route::post('mbposts/isshow/{id}','Admin\MemberPostsController@isshow');
+    Route::post('mbposts/istop/{id}','Admin\MemberPostsController@istop');
+    Route::get('mbposts/sortup/{id}','Admin\MemberPostsController@sortup');
+    Route::get('mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
+    Route::resource('mbposts', 'Admin\MemberPostsController');
 
-    Route::get('/news', function () { return view('admin.news'); });
-    Route::get('/marquees', function () { return view('admin.marquees'); });
-    Route::get('/carousels', function () { return view('admin.carousels'); });
-    Route::get('/members', function () { return view('admin.members'); });
-    Route::get('/admins', function () { return view('admin.admins'); });
-    Route::get('/mails', function () { return view('admin.mails'); });
-    Route::get('/logs', function () { return view('admin.logs'); });
-    Route::get('/aboutme', function () { return view('admin.aboutme'); });
+    Route::resource('comments', 'Admin\CommentsController');
+
+    // Route::get('/news', function () { return view('admin.news'); });
+    // Route::get('/marquees', function () { return view('admin.marquees'); });
+    // Route::get('/carousels', function () { return view('admin.carousels'); });
+    // Route::get('/members', function () { return view('admin.members'); });
+    // Route::get('/admins', function () { return view('admin.admins'); });
+    // Route::get('/mails', function () { return view('admin.mails'); });
+    // Route::get('/logs', function () { return view('admin.logs'); });
+    // Route::get('/aboutme', function () { return view('admin.aboutme'); });
 }) ;

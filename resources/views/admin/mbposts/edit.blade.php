@@ -29,7 +29,10 @@
                             <div class="card-header">
                                 <h3 class="card-title">文章資料</h3>
                             </div>
-                            <form role="form">
+                            {{-- update 必須使用 隱藏 _method 欄位 value="PATCH" --}}
+                            <form action="{{ route('admin.mbposts.update', $post->id) }}" method="POST" role="form">
+                                <input type="hidden" name="_method" value="PATCH">
+                                @csrf
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">標題</label>
@@ -39,8 +42,8 @@
                                     <div class="form-group">
                                         <label for="type">分類</label>
                                         <select class="form-control select2 select2-primary"
-                                            data-dropdown-css-class="select2-primary" name="type">
-                                            <option value="" selected="selected">全部分類</option>
+                                            data-dropdown-css-class="select2-primary" name="type" required>
+                                            <option value="0" selected="selected">選擇分類</option>
                                             @foreach ($post_types as $post_type)
                                                 <option value="{{ $post_type->id }}"
                                                     {{ $post->type == $post_type->id ? 'selected' : '' }}>
@@ -85,17 +88,17 @@
                                             <label for="onlinedate">審核</label>
                                             <div class="form-group clearfix">
                                                 <div class="icheck-secondary d-inline mr-2">
-                                                    <input type="radio" id="approved_wait" name="approved"
+                                                    <input type="radio" id="approved_wait" name="approved" value="0"
                                                         {{ $post->approved == 0 ? 'checked' : '' }}>
                                                     <label for="approved_wait">等待中</label>
                                                 </div>
                                                 <div class="icheck-green d-inline mr-2">
-                                                    <input type="radio" id="approved_pass" name="approved"
+                                                    <input type="radio" id="approved_pass" name="approved" value="1"
                                                         {{ $post->approved == 1 ? 'checked' : '' }}>
                                                     <label for="approved_pass">通過</label>
                                                 </div>
                                                 <div class="icheck-danger d-inline mr-2">
-                                                    <input type="radio" id="approved_denie" name="approved"
+                                                    <input type="radio" id="approved_denie" name="approved" value="2"
                                                         {{ $post->approved == 2 ? 'checked' : '' }}>
                                                     <label for="approved_denie">拒絕</label>
                                                 </div>
@@ -104,17 +107,17 @@
                                         <div class="form-group col-3">
                                             <label for="offlinedate">上線狀態</label>
                                             <div class="input-group">
-                                                <input type="checkbox" name="isshow" data-bootstrap-switch
+                                                <input type="checkbox" name="isshow" value="1" data-bootstrap-switch
                                                     data-off-color="secondary" data-on-color="success"
-                                                    {{ $post->isshow == 1 ?? 'checked' }}>
+                                                    {{ $post->isshow == 1 ? 'checked' : '' }}>
                                             </div>
                                         </div>
                                         <div class="form-group col-3">
                                             <label for="offlinedate">置頂狀態</label>
                                             <div class="input-group">
-                                                <input type="checkbox" name="istop" checked data-bootstrap-switch
+                                                <input type="checkbox" name="istop" value="1" data-bootstrap-switch
                                                     data-off-color="secondary" data-on-color="primary"
-                                                    {{ $post->istop == 1 ?? 'checked' }}>
+                                                    {{ $post->istop == 1 ? 'checked' : '' }}>
                                             </div>
                                         </div>
                                     </div>
@@ -180,8 +183,11 @@
                                         <span class="username">
                                             <a href="#">{{ $comment->user->name }}</a>
                                         </span>
-                                        <a href="#" class="float-right btn-tool text-danger"><i
-                                                class="fas fa-trash"></i></a>
+                                        <form action="{{ route('admin.comments.destroy', $comment->id ) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE">
+                                        <button type="submit" class="float-right btn btn-sm text-danger"><i class="fas fa-trash"></i></button>
+                                        </form>
                                         <span class="description">{{ $comment->created_at }} 留言</span>
                                     </div>
                                     <p>{{ $comment->content }}</p>

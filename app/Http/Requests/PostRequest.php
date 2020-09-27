@@ -31,7 +31,7 @@ class PostRequest extends FormRequest
         return [
             'title'=>'required|string|max:100',
             'type'=>'required|integer|exists:post_types,id',
-            'content'=>'required|string',
+            'content'=>'required|string|max:500',
             'onlinedate' => 'date_format:Y-m-d H:i:s',
             'offlinedate' => 'date_format:Y-m-d H:i:s',
         ];

@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark"><b>會員文章</b></h1>
+                        <h1 class="m-0 text-dark"><b>{{ $post ? '修改' : '新增' }}會員文章</b></h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -30,7 +30,7 @@
                                 <h3 class="card-title">文章資料</h3>
                             </div>
                             {{-- update 必須使用 隱藏 _method 欄位 value="PATCH" --}}
-                            <form action="{{ route('admin.mbposts.update', $post->id) }}" method="POST" role="form">
+                            <form id="myform" action="{{ route('admin.mbposts.update', $post->id) }}" method="POST" role="form">
                                 <input type="hidden" name="_method" value="PATCH">
                                 @csrf
                                 <div class="card-body">
@@ -65,9 +65,14 @@
                                     </div>
                                     <div class="form-group">
                                         <label>內容</label>
-                                        <textarea class="form-control" rows="3" id="content" name="content"
+                                        <textarea class="form-control {{ $errors->has('content') ? ' is-invalid' : '' }} " rows="3" id="content" name="content"
                                             placeholder="Enter ..." required>{{ $post->content ?? '' }}</textarea>
-                                    </div>
+                                        @if ($errors->has('content'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('content') }}</strong>
+                                        </span>
+                                        @endif
+                                        </div>
                                     <div class="row">
                                         <div class="form-group col-6">
                                             <label for="onlinedate">上線日期時間</label>
@@ -226,4 +231,6 @@
         </section>
     </div>
 
+    {!! JsValidator::formRequest('App\Http\Requests\PostRequest', '#myform'); !!}
+    {{-- {!! JsValidator::formRequest('App\Http\Requests\PostRequest'); !!} --}}
 @endsection

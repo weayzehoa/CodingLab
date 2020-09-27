@@ -181,5 +181,8 @@ return [
         'title'                 => '標題',
         'username'              => '使用者名稱',
         'year'                  => '年',
+        'type'                  => '類別',
+        'onlinedate'            => '上線日期',
+        'offlinedate'           => '下線日期',
     ],
 ];

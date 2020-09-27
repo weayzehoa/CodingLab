@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "arcanedev/no-captcha": "10.x",
+        "ckeditor/ckeditor": "^4.15",
         "fideloper/proxy": "^4.0",
         "gregwar/captcha": "1.*",
         "laravel-lang/lang": "~5.0",

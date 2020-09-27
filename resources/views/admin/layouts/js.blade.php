@@ -27,8 +27,8 @@
 {{-- 以下尚未使用 --}}
 {{-- Advance Form Page Plugins --}}
 <!-- InputMask -->
-<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
-<script src="{{ asset('plugins/inputmask/min/jquery.inputmask.bundle.min.js') }}"></script>
+{{-- <script src="{{ asset('plugins/moment/moment.min.js') }}"></script> --}}
+{{-- <script src="{{ asset('plugins/inputmask/min/jquery.inputmask.bundle.min.js') }}"></script> --}}
 <!-- date-range-picker -->
 {{-- <script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script> --}}
 <!-- bootstrap color picker -->

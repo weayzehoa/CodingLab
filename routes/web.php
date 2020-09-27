@@ -61,8 +61,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::post('login', 'Auth\AdminLoginController@login')->name('login.submit');
     Route::get('logout', 'Auth\AdminLoginController@logout')->name('logout');
     Route::get('', 'Auth\AdminLoginController@showLoginForm');
+    //圖形驗證碼刷新用
     Route::get('captcha', 'Auth\AdminLoginController@captcha')->name('captcha');
-    //後台用
+    //後台登入後資訊看板
     Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
 
     //相關的路由放在 resource 之前較好，避免與 resource 的 get 衝突

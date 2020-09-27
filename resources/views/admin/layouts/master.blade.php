@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>CodingLab管理系統 - @yield('title')</title>
     @include('admin.layouts.css')
     @include('admin.layouts.js')
@@ -22,7 +24,9 @@
 
         @include('admin.layouts.footer')
     </div>
-    <script src="{{ url('dist/js/custom.js') }}"></script>
+    {{-- 兩種寫法都可以 --}}
+    {{-- <script src="{{ url('dist/js/custom.js') }}"></script> --}}
+    <script src="{{ asset('js/custom.js') }}"></script>
 </body>
 
 </html>

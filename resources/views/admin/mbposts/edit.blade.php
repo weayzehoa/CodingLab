@@ -36,12 +36,17 @@
                                 <div class="card-body">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">標題</label>
-                                        <input type="text" class="form-control" id="title" name="title"
+                                        <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" id="title" name="title"
                                             value="{{ $post->title }}" placeholder="輸入標題" required>
+                                        @if ($errors->has('title'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('title') }}</strong>
+                                            </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label for="type">分類</label>
-                                        <select class="form-control select2 select2-primary"
+                                        <select class="form-control select2 select2-primary {{ $errors->has('type') ? ' is-invalid' : '' }}"
                                             data-dropdown-css-class="select2-primary" name="type" required>
                                             <option value="0" selected="selected">選擇分類</option>
                                             @foreach ($post_types as $post_type)
@@ -52,11 +57,16 @@
                                                 </option>
                                             @endforeach
                                         </select>
+                                        @if ($errors->has('type'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('type') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
                                     <div class="form-group">
                                         <label>內容</label>
                                         <textarea class="form-control" rows="3" id="content" name="content"
-                                            placeholder="Enter ...">{{ $post->content }}</textarea>
+                                            placeholder="Enter ..." required>{{ $post->content ?? '' }}</textarea>
                                     </div>
                                     <div class="row">
                                         <div class="form-group col-6">
@@ -66,9 +76,14 @@
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" id="onlinedate" name="onlinedate"
-                                                    value="{{ $post ? $post->onlinedate : '' }}" placeholder="上線日期時間"
+                                                <input type="text" class="form-control datetimepicker {{ $errors->has('onlinedate') ? ' is-invalid' : '' }}" id="onlinedate" name="onlinedate"
+                                                    value="{{ $post->onlinedate ?? '' }}" placeholder="上線日期時間"
                                                     required>
+                                                    @if ($errors->has('onlinedate'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('onlinedate') }}</strong>
+                                                        </span>
+                                                    @endif
                                             </div>
                                         </div>
                                         <div class="form-group col-6">
@@ -78,8 +93,13 @@
                                                     <span class="input-group-text"><i
                                                             class="far fa-calendar-alt"></i></span>
                                                 </div>
-                                                <input type="text" class="form-control" id="offlinedate" name="offlinedate"
-                                                    value="{{ $post ? $post->offlinedate : '' }}" placeholder="下線日期時間">
+                                                <input type="text" class="form-control datetimepicker {{ $errors->has('offlinedate') ? ' is-invalid' : '' }}" id="offlinedate" name="offlinedate"
+                                                    value="{{ $post->offlinedate ?? '' }}" placeholder="下線日期時間">
+                                                    @if ($errors->has('offlinedate'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('offlinedate') }}</strong>
+                                                        </span>
+                                                    @endif
                                             </div>
                                         </div>
                                     </div>

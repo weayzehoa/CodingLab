@@ -29,9 +29,11 @@ class PostRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=>'required|string',
+            'title'=>'required|string|max:100',
             'type'=>'required|integer|exists:post_types,id',
-            'content'=>'required|string'
+            'content'=>'required|string',
+            'onlinedate' => 'date_format:Y-m-d H:i:s',
+            'offlinedate' => 'date_format:Y-m-d H:i:s',
         ];
     }
 }

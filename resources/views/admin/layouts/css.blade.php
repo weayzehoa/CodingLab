@@ -1,17 +1,17 @@
-{{-- Font Awesome Icons --}}
-<link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-{{-- overlayScrollbars --}}
-<link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 {{-- Theme style --}}
 <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+{{-- Font Awesome Icons --}}
+<link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
+{{-- overlayScrollbars --}}
+<link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 {{-- iCheck for checkboxes and radio inputs --}}
-<link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 {{-- Select2 --}}
-<link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/select2/dist/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css') }}">
 {{-- 時分秒日曆 --}}
-<link rel="stylesheet" href="{{ asset('plugins/jquery-ui/jquery-ui.min.css') }}">
-<link rel="stylesheet" href="{{ asset('plugins/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/jquery-ui/jquery-ui.min.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.css') }}">
 
 
 

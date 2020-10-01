@@ -1,9 +1,19 @@
 @extends('admin.layouts.master')
 
+@section('css')
+    {{-- iCheck for checkboxes and radio inputs --}}
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    {{-- Select2 --}}
+    <link rel="stylesheet" href="{{ asset('vendor/select2/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css') }}">
+    {{-- 時分秒日曆 --}}
+    <link rel="stylesheet" href="{{ asset('vendor/jquery-ui/jquery-ui.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.css') }}">
+@endsection
+
 @section('title', '會員文章')
 
 @section('content')
-
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
@@ -234,7 +244,22 @@
         </div>
     </section>
 </div>
+@endsection
 
-{!! JsValidator::formRequest('App\Http\Requests\PostRequest', '#myform'); !!}
-{{-- {!! JsValidator::formRequest('App\Http\Requests\PostRequest'); !!} --}}
+@section('JsValidator')
+    {!! JsValidator::formRequest('App\Http\Requests\PostRequest', '#myform'); !!}
+    {{-- {!! JsValidator::formRequest('App\Http\Requests\PostRequest'); !!} --}}
+@endsection
+
+@section('script')
+    {{-- Select2 --}}
+    <script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
+    {{-- Bootstrap Switch --}}
+    <script src="{{ asset('vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+    {{-- 時分秒日曆 --}}
+    <script src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-Timepicker/dist/i18n/jquery-ui-timepicker-zh-TW.js') }}"></script>
+    {{-- Jquery Validation Plugin --}}
+    <script src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 @endsection

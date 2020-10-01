@@ -51,12 +51,15 @@
                                                 @endforeach
                                             </select>
                                         </form>
+                                        {{-- 放在這邊主要為了靠近相關的使用，比較容易辨識該處有使用script，
+                                            實際上會因為主視圖有設定@yield('CustomScript')會將其挪到下方 --}}
+                                        @section('CustomScript')
                                         <script>
                                             $('select[name=type]').change(function(e) {
                                                 $('#posttype').submit();
                                             });
-
                                         </script>
+                                        @endsection
                                     </div>
                                 </div>
                                 <div class="card-tools">
@@ -73,8 +76,7 @@
                                 </div>
                             </div>
                             <div class="card-body table-responsive p-0">
-                                {{-- 文字不斷行 table中加上 class="text-nowrap"
-                                --}}
+                                {{-- 文字不斷行 table中加上 class="text-nowrap" --}}
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>

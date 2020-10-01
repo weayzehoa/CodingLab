@@ -892,7 +892,9 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
+@endsection
 
+@section('script')
     {{-- Dashboard PAGE PLUGINS --}}
     <script src="{{ asset('plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
     <script src="{{ asset('plugins/raphael/raphael.min.js') }}"></script>
@@ -900,5 +902,4 @@
     <script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
-
 @endsection

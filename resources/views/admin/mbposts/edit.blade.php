@@ -86,6 +86,16 @@
                                         <strong>{{ $errors->first('content') }}</strong>
                                     </span>
                                     @endif
+                                    @section('CustomScript')
+                                    <script src="{{ asset('vendor/ckeditor/ckeditor.js') }}"></script>
+                                    <script>
+                                        var editor = CKEDITOR.replace( 'content');
+                                        editor.on( 'required', function( evt ) {
+                                            editor.showNotification( '請輸入資料再按儲存.', 'warning' );
+                                            evt.cancel();
+                                        } );
+                                    </script>
+                                    @endsection
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-6">

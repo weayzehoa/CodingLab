@@ -15,10 +15,11 @@
 //     return view('welcome');
 // });
 
-
 //首頁及搜尋，連接Home控制器路由
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('search', 'HomeController@search')->name('search');
+Route::get('aboutme', function () { return view('aboutme'); });
+
 //圖形驗證碼刷新用
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');
 
@@ -26,8 +27,6 @@ Route::get('search', 'HomeController@search')->name('search');
 Route::prefix('AdminLTE')->group(function() {
     Route::get('{name}', 'HomeController@AdminLTE');
 });
-
-// Route::get('admin/mbposts/search','Admin\MemberPostsController@search');
 
 //使用預設的Auth所有路由
 Auth::routes();

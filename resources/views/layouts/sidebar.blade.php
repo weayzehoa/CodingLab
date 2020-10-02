@@ -1,10 +1,14 @@
+<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary bg-navy elevation-4">
+    <!-- Brand Logo -->
     <a href=" {{ route('admin.dashboard') }} " class="brand-link bg-navy text-center">
         {{-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
         <span class="brand-text font-weight-light  text-yellow">CodingLab 後台管理系統</span>
     </a>
+    <!-- Sidebar -->
     <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
                 <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
@@ -14,8 +18,11 @@
                 <a href="javascript:" class="d-block">{{ Auth::user()->email ?? '' }}</a>
             </div>
         </div>
+        <!-- Sidebar Menu -->
         <nav id="sidebar" class="mt-2 nav-compact">
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat" data-widget="treeview"
+                role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
                     <a href="javascript:" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -232,7 +239,65 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-header">開發者專區</li>
+                <li class="nav-item">
+                    <a href="{{ url('admin/aboutme') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            關於我
+                            <span class="right badge badge-danger"><i class="fas fa-thumbs-up"></i></span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://codinglab.rvt.idv.tw" class="nav-link" target="_blank">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            我的筆記
+                            <span class="right badge badge-danger"><i class="fas fa-thumbs-up"></i></span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    {{-- <a href="{{ url('AdminLTE/index1') }}" class="nav-link" target="_blank"> --}}
+                    <a href="https://temp.rvt.idv.tw/AdminLTE-3.0.5/" class="nav-link" target="_blank">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            AdminLTE 樣板
+                            <span class="right badge badge-info">Info</span>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="javascript:" class="nav-link ">
+                        <i class="nav-icon fas fa-book"></i>
+                        <p>
+                            線上參考文件
+                            <i class="fas fa-angle-left right"></i>
+                            <span class="badge badge-info right">3</span>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="https://laravel.com/docs" class="nav-link" target="_blank">
+                                <i class="nav-icon fab fa-laravel text-info"></i>
+                                <p>Laravel</p>
+                            </a>
+                        </li>
+                        <li class="nav-item treeview">
+                            <a href="https://fontawesome.com/icons?d=gallery&m=free" class="nav-link" target="_blank">
+                                <i class="nav-icon fas fa-icons text-info"></i>
+                                <p>Font Awesome 5</p>
+                            </a>
+                        </li>
+                        <li class="nav-item treeview">
+                            <a href="https://adminlte.io/docs/3.0" class="nav-link" target="_blank">
+                                <i class="nav-icon fas fa-book text-info"></i>
+                                <p>AdminLTE 3</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('admin.logout') }}" class="nav-link">
                         <i class="nav-icon fas fa-door-open text-danger"></i>
@@ -241,12 +306,7 @@
                 </li>
             </ul>
         </nav>
+        <!-- /.sidebar-menu -->
     </div>
+    <!-- /.sidebar -->
 </aside>
-
-
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->

@@ -39,7 +39,7 @@
                                         <label>分類：</label>
                                         <form id="posttype" action="{{ url('/admin/mbposts/selectType') }}" method="GET"
                                             class="form-inline" role="posttype">
-                                            <select class="form-control select2 select2-primary"
+                                            <select class="form-control select2bs4 select2-primary"
                                                 data-dropdown-css-class="select2-primary" name="type">
                                                 <option value="" selected="selected">全部分類</option>
                                                 @foreach ($post_types as $post_type)
@@ -52,9 +52,18 @@
                                             </select>
                                         </form>
                                         {{-- 放在這邊主要為了靠近相關的使用，比較容易辨識該處有使用script，
-                                            實際上會因為主視圖有設定@yield('CustomScript')會將其挪到下方 --}}
+                                            實際上會因為主視圖有設定@yield('CustomScript')會將其挪到下方，
+                                            另外同樣也可以將所有script放到一個檔案中再引進來 --}}
                                         @section('CustomScript')
                                         <script>
+                                            //Initialize Select2 Elements
+                                            $('.select2').select2();
+
+                                            //Initialize Select2 Elements
+                                            $('.select2bs4').select2({
+                                            theme: 'bootstrap4'
+                                            });
+
                                             $('select[name=type]').change(function(e) {
                                                 $('#posttype').submit();
                                             });
@@ -184,5 +193,15 @@
             </div>
         </section>
     </div>
+@endsection
 
+@section('css')
+    {{-- Select2 --}}
+    <link rel="stylesheet" href="{{ asset('vendor/select2/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css') }}">
+@endsection
+
+@section('script')
+    {{-- Select2 --}}
+    <script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
 @endsection

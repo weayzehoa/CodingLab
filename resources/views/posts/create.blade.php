@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master_old')
 
 @section('title', '新增文章')
 

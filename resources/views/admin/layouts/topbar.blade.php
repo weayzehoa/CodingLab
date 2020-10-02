@@ -20,7 +20,6 @@
                 <li><a href="#" class="dropdown-item">Level 1-1</a></li>
                 <li><a href="#" class="dropdown-item">Level 1-2</a></li>
                 <li class="dropdown-divider"></li>
-                <!-- Level two dropdown-->
                 <li class="dropdown-submenu dropdown-hover">
                     <a id="menuSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" class="dropdown-item dropdown-toggle">Level 2</a>
@@ -31,7 +30,6 @@
                         <li>
                             <a href="#" class="dropdown-item" target="_blank">Level 2-2</a>
                         </li>
-                        <!-- Level three dropdown-->
                         <li class="dropdown-submenu">
                             <a id="menuSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false" class="dropdown-item dropdown-toggle">Level 3</a>
@@ -42,7 +40,6 @@
                         </li>
                     </ul>
                 </li>
-                <!-- End Level two -->
             </ul>
         </li>
         {{-- 會員管理 --}}
@@ -72,7 +69,6 @@
                 <li><a href="#" class="dropdown-item">統計表</a></li>
                 <li><a href="#" class="dropdown-item">統計圖</a></li>
                 <li class="dropdown-divider"></li>
-                <!-- Level two dropdown-->
                 <li class="dropdown-submenu dropdown-hover">
                     <a id="accSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false" class="dropdown-item dropdown-toggle">網站瀏覽統計</a>
@@ -85,45 +81,6 @@
                         </li>
                     </ul>
                 </li>
-                <!-- End Level two -->
-            </ul>
-        </li>
-        {{-- 開發者專區 --}}
-        <li class="nav-item dropdown">
-            <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                class="nav-link dropdown-toggle">開發者專區</a>
-            <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
-                <li><a href="{{ url('admin/aboutme') }}" class="dropdown-item">關於我</a></li>
-                <li><a href="https://codinglab.rvt.idv.tw" class="dropdown-item">我的筆記</a></li>
-                <li><a href="{{ url('AdminLTE/index2') }}" class="dropdown-item">AdminLTE參考樣板</a></li>
-                <li class="dropdown-divider"></li>
-                <li class="dropdown-submenu dropdown-hover">
-                    <a id="devSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                        aria-expanded="false" class="dropdown-item dropdown-toggle">線上參考文件</a>
-                    <ul aria-labelledby="devSubMenu2" class="dropdown-menu border-0 shadow">
-                        <li>
-                            <a tabindex="-3" href="https://laravel.com/docs" class="dropdown-item"
-                                target="_blank">Laravel Document</a>
-                        </li>
-                        <li>
-                            <a tabindex="-2" href="https://fontawesome.com/icons?d=gallery&m=free" class="dropdown-item"
-                                target="_blank">Font Awesome 5</a>
-                        </li>
-                        <li>
-                            <a tabindex="-1" href="https://adminlte.io/docs/3.0" class="dropdown-item"
-                                target="_blank">AdminLTE 3 Document</a>
-                        </li>
-                        {{-- <li class="dropdown-submenu">
-                            <a id="devSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" class="dropdown-item dropdown-toggle">第三層保留</a>
-                            <ul aria-labelledby="devSubMenu3" class="dropdown-menu border-0 shadow">
-                                <li><a href="#" class="dropdown-item">3rd level</a></li>
-                                <li><a href="#" class="dropdown-item">3rd level</a></li>
-                            </ul>
-                        </li> --}}
-                    </ul>
-                </li>
-                <!-- End Level two -->
             </ul>
         </li>
     </ul>
@@ -138,22 +95,19 @@
             </div>
         </div>
     </form>
-    <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown user-menu">
+        {{-- <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <img src="{{ url('dist/img/user2-160x160.jpg') }}" class="user-image img-circle elevation-2" alt="User Image">
                 <span class="d-none d-md-inline">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <!-- User image -->
                 <li class="user-header bg-primary">
                     <img src="{{ url('../../dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     <p>
                         Alexander Pierce - Web Developer<small>Member since Nov. 2012</small>
                     </p>
                 </li>
-                <!-- Menu Body -->
                 <li class="user-body">
                     <div class="row">
                         <div class="col-4 text-center">
@@ -166,16 +120,13 @@
                             <a href="#">Friends</a>
                         </div>
                     </div>
-                    <!-- /.row -->
                 </li>
-                <!-- Menu Footer-->
                 <li class="user-footer">
                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                     <a href="#" class="btn btn-default btn-flat float-right">Sign out</a>
                 </li>
             </ul>
         </li>
-        <!-- Messages Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-comments"></i>
@@ -183,7 +134,6 @@
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="#" class="dropdown-item">
-                    <!-- Message Start -->
                     <div class="media">
                         <img src="{{ url('../../dist/img/user1-128x128.jpg') }}" alt="User Avatar"
                             class="img-size-50 mr-3 img-circle">
@@ -196,11 +146,9 @@
                             <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
-                    <!-- Message End -->
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <!-- Message Start -->
                     <div class="media">
                         <img src="{{ url('../../dist/img/user8-128x128.jpg') }}" alt="User Avatar"
                             class="img-size-50 img-circle mr-3">
@@ -213,11 +161,9 @@
                             <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
                         </div>
                     </div>
-                    <!-- Message End -->
                 </a>
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
-                    <!-- Message Start -->
                     <div class="media">
                         <img src="{{ url('../../dist/img/user3-128x128.jpg') }}" alt="User Avatar"
                             class="img-size-50 img-circle mr-3">
@@ -236,7 +182,6 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
             </div>
         </li>
-        <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
                 <i class="far fa-bell"></i>
@@ -262,12 +207,12 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
-        </li>
-        {{-- <li class="nav-item">
+        </li> --}}
+        <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
                 <i class="fas fa-th-large"></i>
             </a>
-        </li> --}}
+        </li>
         <li class="nav-item">
             <a href="javascript:" id="fullscreen-button" title="擴展成全螢幕" class="nav-link" data-widget="fullscreen" data-slide="true" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
@@ -275,4 +220,3 @@
         </li>
     </ul>
 </nav>
-<!-- /.navbar -->

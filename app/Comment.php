@@ -13,6 +13,16 @@ class Comment extends Model
         'post_id', 'user_id', 'content',
     ];
 
+    //要記錄的欄位 ['*'] 全部
+    protected static $logAttributes = ['*'];
+    //只記錄有改變的欄位
+    protected static $logOnlyDirty = true;
+    //將此模型命名在 activity 資料表的 log_name 欄位
+    public function getLogNameToUse(string $eventName = ''): string
+    {
+        return '文章留言';
+    }
+
     public function user(){
         return $this->belongsTo(UserEloquent::class);
     }

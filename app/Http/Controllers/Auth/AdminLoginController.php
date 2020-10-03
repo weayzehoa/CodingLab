@@ -11,6 +11,7 @@ use Response;
 use Session;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;
+use App\Admin as AdminEloquent;
 
 class AdminLoginController extends Controller
 {
@@ -47,9 +48,16 @@ class AdminLoginController extends Controller
 
         // 將表單資料送去Auth::gurard('admin')驗證
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+            //登入成功紀錄
+            $adminuser = AdminEloquent::find(Auth::guard('admin')->id());
+            activity('後台管理')->causedBy($adminuser)->log('登入成功');
             //驗證無誤轉入 admin.dashboard
             return redirect()->intended(route('admin.dashboard'));
         }
+
+        //登入失敗紀錄
+        $adminuser = AdminEloquent::where('email','=',$request->email)->first();
+        activity('後台管理')->causedBy($adminuser)->log('登入失敗');
 
         // 驗證失敗 返回並拋出表單內容 只拋出 email 與 remember 欄位資料,
         // withErrors(['email' => trans('auth.failed')])用來覆蓋掉email欄位的錯誤訊息
@@ -60,6 +68,13 @@ class AdminLoginController extends Controller
     //登出
     public function logout()
     {
+        //登出成功紀錄
+        // $id = Auth::guard('admin')->id();
+        // $adminuser = AdminEloquent::find($id);
+        $adminuser = AdminEloquent::find(Auth::guard('admin')->id());
+        activity('後台管理')->causedBy($adminuser)->log('登出成功');
+
+        //清除紀錄並轉向回 /admin
         Auth::guard('admin')->logout();
         return redirect('/admin');
     }

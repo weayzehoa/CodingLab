@@ -8,13 +8,15 @@ use Illuminate\Http\Request;
 //將需要使用到的 Request、Eloquent、套件及Facade寫入
 use App\Http\Requests\PostRequest;
 use App\Post as PostEloquent; //posts資料表
-use App\User as UserEloquent; //posts資料表
+use App\User as UserEloquent; //users資料表
 use App\PostType as PostTypeEloquent; //post_types資料表
 use App\Comment as CommentEloquent; //comments資料表
+use App\Admin as AdminEloquent; //admins資料表
 use Carbon\Carbon; //時間格式套件
 use Auth;   //使用者驗證
 use View;   //視圖
 use Redirect; //轉向
+use Spatie\Activitylog\Models\Activity; //使用Activity資料表
 
 class MemberPostsController extends Controller
 {
@@ -105,6 +107,18 @@ class MemberPostsController extends Controller
         $post = PostEloquent::findOrFail($id);
         $post->fill($request->all());
         $post->save();
+
+        //紀錄
+        // $adminuser = AdminEloquent::find(Auth::guard('admin')->id());
+        // activity()
+        // ->causedBy($adminuser)
+        // ->performedOn($post)
+        // ->withProperties($request)
+        // ->tap(function(Activity $activity) { $activity->ip = request()->ip();})
+        // ->log('編輯');
+        // //activity placehloder 描述欄位裡面可以直接放入被修改的欄位資料或者其他資料
+        // ->log('編輯,標題 :subject.title, 管理者 :causer.name');
+
         return Redirect::route('admin.mbposts.index');
     }
 
@@ -117,7 +131,7 @@ class MemberPostsController extends Controller
     public function destroy($id)
     {
         //透過id找到文章後在找出相關的留言刪除
-        $post = PostEloquent::where('id', $id)->delete();
+        $post = PostEloquent::find($id)->delete();
         $comments = CommentEloquent::where('post_id', $id)->delete();
         return Redirect::back();
     }

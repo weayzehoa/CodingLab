@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use View;
 
 use App\Post as PostEloquent; //posts資料表
-
+use Spatie\Activitylog\Models\Activity;
 class AdminController extends Controller
 
 {
@@ -27,14 +27,18 @@ class AdminController extends Controller
     public function dashboard()
     {
         $adminuser = Auth::user();
+        $id = Auth::id();
+        $guarder = $_SERVER['REMOTE_ADDR'];
+        $lastActivity = Activity::all()->last()->properties;
 
         //Debugbar用
         \Debugbar::info(Auth::user());
         \Debugbar::error('Error!');
-        \Debugbar::warning('Watch out…');
-        \Debugbar::addMessage('I am debugbar message.');
+        \Debugbar::warning(Auth::guard('admin'));
+        \Debugbar::addMessage($id);
+        \Debugbar::addMessage($lastActivity);
         // \Debugbar::disable();
 
-        return View::make('admin.dashboard', compact('adminuser'));
+        return View::make('admin.dashboard', compact('adminuser','lastActivity'));
     }
 }

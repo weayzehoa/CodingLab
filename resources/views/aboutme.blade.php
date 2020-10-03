@@ -67,15 +67,15 @@
                     <div class="card">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#professional" data-toggle="tab">主要專業</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#timeline" data-toggle="tab">工作經歷</a></li>
-                                <li class="nav-item"><a class="nav-link" href="#achievement" data-toggle="tab">專案成就</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#professional" data-toggle="tab">主要專業</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">工作經歷</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#achievement" data-toggle="tab">網站專案</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#products" data-toggle="tab">產品開發</a></li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="professional">
+                                <div class="tab-pane" id="professional">
                                     <h5 class="col-10 offset-1">過去我的專業主要是在電子產品企劃開發（繪圖板、數位筆記本、數位筆及電容筆相關技術），現在我的專業專注在網站程式設計。</h5>
                                     <div class="row">
                                         <div class="card card-primary card-outline col-4">
@@ -203,7 +203,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="timeline">
+                                <div class="tab-pane active" id="timeline">
                                     <div class="timeline timeline-inverse">
                                         <div class="time-label">
                                             <span class="bg-info">Apr. 2019 ~ Now</span>
@@ -391,11 +391,217 @@
                                 </div>
 
                                 <div class="tab-pane" id="achievement">
-                                    專案成就待完成
+                                    <div class="row">
+                                        <div class="post col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-primary">
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://fihrmap.nhrm.gov.tw/" target="_blank" title="FIHRM-ASIA PACIFIC" class="text-yellow">FIHRM-ASIA PACIFIC</a></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/fihrmap.jpg') }}" data-toggle="lightbox"
+                                                        data-title="FIHRM-ASIA PACIFIC" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/fihrmap.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-primary">
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://www.gender.edu.tw/" target="_blank" title="性別平等教育全球資訊網" class="text-yellow">性別平等教育全球資訊網</a></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/gender.jpg') }}" data-toggle="lightbox"
+                                                        data-title="性別平等教育全球資訊網" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/gender.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-info">
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://farmcity.taipei/" target="_blank" title="田園銀行網路平台" class="text-yellow">田園銀行網路平台</a></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/farmcity.jpg') }}" data-toggle="lightbox"
+                                                        data-title="田園銀行網路平台" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/farmcity.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-info">
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://parks.taipei/" target="_blank" title="公園走透透‧台北新花漾" class="text-yellow">公園走透透‧台北新花漾</a></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/parks.jpg') }}" data-toggle="lightbox"
+                                                        data-title="公園走透透‧台北新花漾" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/parks.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-danger">
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://kiosk.rvt.idv.tw/" target="_blank" title="司法院查詢機專案" class="text-yellow">司法院查詢機專案</a></h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/kiosk2.jpg') }}" data-toggle="lightbox"
+                                                        data-title="司法院查詢機專案" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/kiosk2.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
 
                                 <div class="tab-pane" id="products">
-                                    產品開發待完成
+                                    <div class="row">
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-primary">
+                                                    <h3 class="card-title">DigiMemo – Digital Note with Memory and Tablet Combo</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/l2.jpg') }}" data-toggle="lightbox"
+                                                        data-title="DigiMemo – Digital Note with Memory and Tablet Combo" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/l2.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/l2.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="DigiMemo – Digital Note with Memory and Tablet Combo" target="_blank">產品型錄</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-primary">
+                                                    <h3 class="card-title">PenPaper – Bluetooth Digital Notepad and Pen Tablet for Win</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/penpaper.jpg') }}" data-toggle="lightbox"
+                                                        data-title="PenPaper – Bluetooth Digital Notepad and Pen Tablet for Win" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/penpaper.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/penpaper.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="PenPaper – Bluetooth Digital Notepad and Pen Tablet for Win" target="_blank">產品型錄</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-purple">
+                                                    <h3 class="card-title">DigiMemo – Digital Note with Memory</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/a5.jpg') }}" data-toggle="lightbox"
+                                                        data-title="DigiMemo – Digital Note with Memory" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/a5.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/a5.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="DigiMemo – Digital Note with Memory" target="_blank">產品型錄</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-purple">
+                                                    <h3 class="card-title">AceDialer – Bluetooth Speed Dial Controller</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/acedialer.jpg') }}" data-toggle="lightbox"
+                                                        data-title="AceDialer – Bluetooth Speed Dial Controller" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/acedialer.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/acedialer.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="AceDialer – Bluetooth Speed Dial Controller" target="_blank">產品型錄</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-warning">
+                                                    <h3 class="card-title">專利發明1</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/p1.jpg') }}" data-toggle="lightbox"
+                                                        data-title="專利發明1" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/p1.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/p1-t.pdf') }}" class="btn btn-sm btn-primary mr-3"
+                                                        title="專利發明1" target="_blank">台灣證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p1-u.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="專利發明1" target="_blank">美國證書</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 post">
+                                            <div class="card">
+                                                <div class="card-header bg-warning">
+                                                    <h3 class="card-title">專利發明2</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/p2.jpg') }}" data-toggle="lightbox"
+                                                        data-title="專利發明2" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/p2.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/p2-t.pdf') }}" class="btn btn-sm btn-primary mr-3"
+                                                        title="專利發明2" target="_blank">台灣證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p2-c.pdf') }}" class="btn btn-sm btn-primary"
+                                                        title="專利發明2" target="_blank">大陸證書</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-info">
+                                                    <h3 class="card-title">手寫板 - flair2</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/flair2.jpg') }}" data-toggle="lightbox"
+                                                        data-title="手寫板 - flair2" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/flair2.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                    <a href="{{ asset('img/aboutme/product/flair2-t.pdf') }}" class="btn btn-sm btn-primary mr-3"
+                                                        title="手寫板 - flair2" target="_blank">產品型錄</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <div class="card-header bg-info">
+                                                    <h3 class="card-title">HP Executive Tablet Pen R2 ODM Project</h3>
+                                                </div>
+                                                <div class="card-body">
+                                                    <a href="{{ asset('img/aboutme/product/hppen.jpg') }}" data-toggle="lightbox"
+                                                        data-title="HP Executive Tablet Pen R2 ODM Project" data-gallery="gallery">
+                                                        <img class="img-fluid" src="{{ asset('img/aboutme/product/hppen.jpg') }}" alt="Photo">
+                                                    </a>
+                                                </div>
+                                                <div class="card-foot text-center">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -407,4 +613,33 @@
     </section>
 </div>
 
+@endsection
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('plugins/ekko-lightbox/ekko-lightbox.css') }}">
+@endsection
+
+@section('script')
+<script src="{{ asset('plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
+@endsection
+
+@section('CustomScript')
+<script>
+    $(function() {
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true
+            });
+        });
+
+        $('.filter-container').filterizr({
+            gutterPixels: 3
+        });
+        $('.btn[data-filter]').on('click', function() {
+            $('.btn[data-filter]').removeClass('active');
+            $(this).addClass('active');
+        });
+    })
+</script>
 @endsection

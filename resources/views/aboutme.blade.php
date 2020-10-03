@@ -395,11 +395,12 @@
                                         <div class="post col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-primary">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://fihrmap.nhrm.gov.tw/" target="_blank" title="FIHRM-ASIA PACIFIC" class="text-yellow">FIHRM-ASIA PACIFIC</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://fihrmap.nhrm.gov.tw/"
+                                                            target="_blank" title="FIHRM-ASIA PACIFIC" class="text-yellow">FIHRM-ASIA PACIFIC</a></h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/fihrmap.jpg') }}" data-toggle="lightbox"
-                                                        data-title="FIHRM-ASIA PACIFIC" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/fihrmap.jpg') }}" data-toggle="lightbox" data-title="FIHRM-ASIA PACIFIC"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/fihrmap.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
@@ -408,11 +409,12 @@
                                         <div class="post col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-primary">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://www.gender.edu.tw/" target="_blank" title="性別平等教育全球資訊網" class="text-yellow">性別平等教育全球資訊網</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://www.gender.edu.tw/"
+                                                            target="_blank" title="性別平等教育全球資訊網" class="text-yellow">性別平等教育全球資訊網</a></h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/gender.jpg') }}" data-toggle="lightbox"
-                                                        data-title="性別平等教育全球資訊網" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/gender.jpg') }}" data-toggle="lightbox" data-title="性別平等教育全球資訊網"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/gender.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
@@ -421,11 +423,12 @@
                                         <div class="post col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-info">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://farmcity.taipei/" target="_blank" title="田園銀行網路平台" class="text-yellow">田園銀行網路平台</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://farmcity.taipei/"
+                                                            target="_blank" title="田園銀行網路平台" class="text-yellow">田園銀行網路平台</a></h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/farmcity.jpg') }}" data-toggle="lightbox"
-                                                        data-title="田園銀行網路平台" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/farmcity.jpg') }}" data-toggle="lightbox" data-title="田園銀行網路平台"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/farmcity.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
@@ -434,11 +437,12 @@
                                         <div class="post col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-info">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://parks.taipei/" target="_blank" title="公園走透透‧台北新花漾" class="text-yellow">公園走透透‧台北新花漾</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://parks.taipei/" target="_blank"
+                                                            title="公園走透透‧台北新花漾" class="text-yellow">公園走透透‧台北新花漾</a></h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/parks.jpg') }}" data-toggle="lightbox"
-                                                        data-title="公園走透透‧台北新花漾" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/parks.jpg') }}" data-toggle="lightbox" data-title="公園走透透‧台北新花漾"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/parks.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
@@ -447,11 +451,12 @@
                                         <div class="post col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-danger">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://kiosk.rvt.idv.tw/" target="_blank" title="司法院查詢機專案" class="text-yellow">司法院查詢機專案</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://kiosk.rvt.idv.tw/"
+                                                            target="_blank" title="司法院查詢機專案" class="text-yellow">司法院查詢機專案</a></h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/kiosk2.jpg') }}" data-toggle="lightbox"
-                                                        data-title="司法院查詢機專案" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/kiosk2.jpg') }}" data-toggle="lightbox" data-title="司法院查詢機專案"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/kiosk2.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
@@ -537,16 +542,16 @@
                                                     <h3 class="card-title">專利發明1</h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/product/p1.jpg') }}" data-toggle="lightbox"
-                                                        data-title="專利發明1" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/product/p1.jpg') }}" data-toggle="lightbox" data-title="專利發明1"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/product/p1.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
                                                 <div class="card-foot text-center">
-                                                    <a href="{{ asset('img/aboutme/product/p1-t.pdf') }}" class="btn btn-sm btn-primary mr-3"
-                                                        title="專利發明1" target="_blank">台灣證書</a>
-                                                    <a href="{{ asset('img/aboutme/product/p1-u.pdf') }}" class="btn btn-sm btn-primary"
-                                                        title="專利發明1" target="_blank">美國證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p1-t.pdf') }}" class="btn btn-sm btn-primary mr-3" title="專利發明1"
+                                                        target="_blank">台灣證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p1-u.pdf') }}" class="btn btn-sm btn-primary" title="專利發明1"
+                                                        target="_blank">美國證書</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -556,16 +561,16 @@
                                                     <h3 class="card-title">專利發明2</h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/product/p2.jpg') }}" data-toggle="lightbox"
-                                                        data-title="專利發明2" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/product/p2.jpg') }}" data-toggle="lightbox" data-title="專利發明2"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/product/p2.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>
                                                 <div class="card-foot text-center">
-                                                    <a href="{{ asset('img/aboutme/product/p2-t.pdf') }}" class="btn btn-sm btn-primary mr-3"
-                                                        title="專利發明2" target="_blank">台灣證書</a>
-                                                    <a href="{{ asset('img/aboutme/product/p2-c.pdf') }}" class="btn btn-sm btn-primary"
-                                                        title="專利發明2" target="_blank">大陸證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p2-t.pdf') }}" class="btn btn-sm btn-primary mr-3" title="專利發明2"
+                                                        target="_blank">台灣證書</a>
+                                                    <a href="{{ asset('img/aboutme/product/p2-c.pdf') }}" class="btn btn-sm btn-primary" title="專利發明2"
+                                                        target="_blank">大陸證書</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -575,8 +580,8 @@
                                                     <h3 class="card-title">手寫板 - flair2</h3>
                                                 </div>
                                                 <div class="card-body">
-                                                    <a href="{{ asset('img/aboutme/product/flair2.jpg') }}" data-toggle="lightbox"
-                                                        data-title="手寫板 - flair2" data-gallery="gallery">
+                                                    <a href="{{ asset('img/aboutme/product/flair2.jpg') }}" data-toggle="lightbox" data-title="手寫板 - flair2"
+                                                        data-gallery="gallery">
                                                         <img class="img-fluid" src="{{ asset('img/aboutme/product/flair2.jpg') }}" alt="Photo">
                                                     </a>
                                                 </div>

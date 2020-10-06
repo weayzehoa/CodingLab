@@ -103,7 +103,7 @@
             {{-- 開發者專區 --}}
             <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理系統</a></li>
             <li class="nav-item"><a href="{{ url('aboutme') }}" class="nav-link">關於我</a></li>
-            <li class="nav-item"><a href="https://codinglab.rvt.idv.tw" class="nav-link" target="_blank">我的筆記</a></li>
+            <li class="nav-item"><a href="https://roger.rvt.idv.tw" class="nav-link" target="_blank">我的筆記</a></li>
             <li class="nav-item dropdown">
                 <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">參考資料</a>
                 <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">

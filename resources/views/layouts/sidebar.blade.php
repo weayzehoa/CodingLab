@@ -250,7 +250,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://codinglab.rvt.idv.tw" class="nav-link" target="_blank">
+                    <a href="https://roger.rvt.idv.tw" class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             我的筆記

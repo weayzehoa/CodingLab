@@ -4,39 +4,69 @@
 
 @section('content')
 
-    <div class="content-wrapper">
-        <div class="content-header">
-            <div class="container">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">首頁</h1>
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0 text-dark">首頁</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="{{ route('index') }}">CodingLab</a></li>
+                        <li class="breadcrumb-item active"><a href="{{ route('index') }}">首頁</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card card-danger card-outline">
+                        <div class="card-body box-profile">
+                            <h3 class="profile-username text-center">CodingLab 程式設計測試站台</h3>
+                            <i class="fas fa-info text-danger"></i> 此網站是我用來做程式設計練習及測試用，平常大部分功能都可以正常運作，但也有可能我在做其他試驗時會莫名其妙壞掉，請見諒。
+                        </div>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('index') }}">CodingLab</a></li>
-                            <li class="breadcrumb-item active"><a href="{{ route('index') }}">首頁</a></li>
-                       </ol>
+                </div>
+                <div class="col-9">
+                    <div class="card card-primary card-outline">
+                        <h3 class="profile-username text-center">主要使用技術</h3>
+                        <div class="card-body box-profile">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="callout callout-info">
+                                        <h5><i class="fas fa-info"></i> 前端: HTML & CSS & Bootstrap</h5>
+                                        <h5><i class="fas fa-info"></i> 程式: Javascript & Query</h5>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="callout callout-info">
+                                        <h5><i class="fas fa-info"></i> 後端: PHP & MySQL & Apache</h5>
+                                        <h5><i class="fas fa-info"></i> 框架: Laravel Framwork</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <h3 class="profile-username text-center"><i class="fas fa-info"></i>nformation</h3>
+                            <ul class="list-group list-group-unbordered mb-3">
+                                <li class="list-group-item">
+                                    <b>你目前的 IP 位置: </b>{{ $_SERVER['REMOTE_ADDR'] }}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <section class="content">
-            <div class="container">
-                <div class="row">
-
-                </div>
-            </div>
-        </section>
-    </div>
+    </section>
+</div>
 @endsection
 
-@section('script')
-    {{-- Dashboard PAGE PLUGINS --}}
-    <script src="{{ asset('plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
-    <script src="{{ asset('plugins/raphael/raphael.min.js') }}"></script>
-    <script src="{{ asset('plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
-    <script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
-    <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('dist/js/pages/dashboard2.js') }}"></script>
-@endsection

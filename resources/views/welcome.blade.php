@@ -58,7 +58,13 @@
                             <h3 class="profile-username text-center"><i class="fas fa-info"></i>nformation</h3>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
+                                    <b><span  id="showtime" ></span></b>
+                                </li>
+                                <li class="list-group-item">
                                     <b>你目前的 IP 位置: </b>{{ $_SERVER['REMOTE_ADDR'] }}
+                                </li>
+                                <li class="list-group-item">
+                                    <b>你的瀏覽器資訊: </b><br>{{ $_SERVER['HTTP_USER_AGENT'] }}
                                 </li>
                             </ul>
                         </div>
@@ -70,3 +76,23 @@
 </div>
 @endsection
 
+@section('CustomScript')
+<script>
+    ShowTime();
+    //顯示今日日期及時間
+    function ShowTime()
+    {
+    var NowDate = new Date();
+    var d = NowDate.getDay();
+    var NowTime = new Date();
+    var NowHour = NowTime.getHours();
+    var NowMin = NowTime.getMinutes();
+    var NowSec = NowTime.getSeconds();
+    var NowNow = '現在時間: '+NowHour+':'+NowMin+':'+NowSec;
+    // var NowNow = NowDate.toLocaleString();
+    var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+    document.getElementById('showtime').innerHTML = NowNow + '（'+dayNames[d]+'）';
+    setTimeout('ShowTime()', 1000);
+    }
+</script>
+@endsection

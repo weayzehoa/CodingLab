@@ -4,8 +4,8 @@
 
 @section('content')
 
-<div class="content-wrapper">
-    <div class="content-header">
+<div class="content-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{ asset('img/bg.jpg') }});">
+    {{-- <div class="content-header">
         <div class="container">
             <div class="row mb-2">
                 <div class="col-sm-6">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <section class="content">
         <div class="container">
             <div class="row">
@@ -74,25 +74,37 @@
         </div>
     </section>
 </div>
+<div id="particles-js"></div>
+@endsection
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+@endsection
+
+@section('script')
+    {{-- VincentGarreau/particles.js --}}
+    <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
 @endsection
 
 @section('CustomScript')
-<script>
-    ShowTime();
-    //顯示今日日期及時間
-    function ShowTime()
-    {
-    var NowDate = new Date();
-    var d = NowDate.getDay();
-    var NowTime = new Date();
-    var NowHour = NowTime.getHours();
-    var NowMin = NowTime.getMinutes();
-    var NowSec = NowTime.getSeconds();
-    var NowNow = '現在時間: '+NowHour+':'+NowMin+':'+NowSec;
-    // var NowNow = NowDate.toLocaleString();
-    var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-    document.getElementById('showtime').innerHTML = NowNow + '（'+dayNames[d]+'）';
-    setTimeout('ShowTime()', 1000);
-    }
-</script>
+    <script>
+        ShowTime();
+        //顯示今日日期及時間
+        function ShowTime()
+        {
+        var NowDate = new Date();
+        var d = NowDate.getDay();
+        var NowTime = new Date();
+        var NowHour = NowTime.getHours();
+        var NowMin = NowTime.getMinutes();
+        var NowSec = NowTime.getSeconds();
+        var NowNow = '現在時間: '+NowHour+':'+NowMin+':'+NowSec;
+        // var NowNow = NowDate.toLocaleString();
+        var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+        document.getElementById('showtime').innerHTML = NowNow + '（'+dayNames[d]+'）';
+        setTimeout('ShowTime()', 1000);
+        }
+        //背景動畫
+        particlesJS.load('particles-js', './js/particles.json');
+    </script>
 @endsection

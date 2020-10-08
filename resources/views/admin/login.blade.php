@@ -6,25 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>後台管理系統 | 登入</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
+    {{-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> --}}
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition login-page bg-navy">
+<body class="hold-transition login-page bg-navy" style="background-image: url({{ asset('img/bg.jpg') }});">
     <div class="login-box">
         <div class="login-logo">
-            <a href="javascript:" class="text-white"><b>後台管理系統</b></a>
+            <a href="javascript:" class="text-yellow"><b>CodingLab<br>後台管理系統</b></a>
         </div>
-        <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">請輸入 Email 與 密碼 及 驗證碼</p>
@@ -110,11 +105,18 @@
             </div>
         </div>
     </div>
+    <div id="particles-js"></div>
 
     {{-- REQUIRED SCRIPTS --}}
-    <script src="../plugins/jquery/jquery.min.js"></script>
-    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../dist/js/adminlte.min.js"></script>
+    <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    {{-- VincentGarreau/particles.js --}}
+    <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
+    {{-- 背景動畫 --}}
+    <script>
+        particlesJS.load('particles-js', "{{ asset('./js/particles.json') }}");
+    </script>
 
 </body>
 

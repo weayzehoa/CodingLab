@@ -4,7 +4,8 @@
 
 @section('content')
 
-<div class="content-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{ asset('img/bg.jpg') }});">
+{{-- <div class="content-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{ asset('img/bg.jpg') }});"> --}}
+<div class="content-wrapper" style="background-image: url({{ asset('img/bg.jpg') }});">
     {{-- <div class="content-header">
         <div class="container">
             <div class="row mb-2">
@@ -21,7 +22,7 @@
         </div>
     </div> --}}
     <section class="content">
-        <div class="container">
+        <div class="container bg-white">
             <div class="row">
                 <div class="col-12">
                     <div class="card card-danger card-outline">
@@ -98,8 +99,9 @@
         var NowHour = NowTime.getHours();
         var NowMin = NowTime.getMinutes();
         var NowSec = NowTime.getSeconds();
-        var NowNow = '現在時間: '+NowHour+':'+NowMin+':'+NowSec;
+        MyTime = ('0' + NowDate.getHours()).slice(-2) +':'+ ('0' + NowDate.getMinutes()).slice(-2) +':'+ ('0' + NowDate.getSeconds()).slice(-2);
         // var NowNow = NowDate.toLocaleString();
+        var NowNow = '現在時間: '+MyTime;
         var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
         document.getElementById('showtime').innerHTML = NowNow + '（'+dayNames[d]+'）';
         setTimeout('ShowTime()', 1000);

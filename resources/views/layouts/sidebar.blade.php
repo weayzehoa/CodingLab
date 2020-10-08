@@ -260,7 +260,7 @@
                 </li>
                 <li class="nav-item">
                     {{-- <a href="{{ url('AdminLTE/index1') }}" class="nav-link" target="_blank"> --}}
-                    <a href="https://temp.rvt.idv.tw/AdminLTE-3.0.5/" class="nav-link" target="_blank">
+                    <a href="https://template.rvt.idv.tw/AdminLTE-3.0.5/" class="nav-link" target="_blank">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             AdminLTE 樣板

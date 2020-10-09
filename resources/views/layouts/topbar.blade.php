@@ -135,6 +135,7 @@
                     <!-- End Level two -->
                 </ul>
             </li>
+            <li class="nav-item"><a href="{{ route('parktaipei') }}" class="nav-link">台北公園</a></li>
             </ul>
             {{-- <form class="form-inline ml-0 ml-md-3">
           <div class="input-group input-group-sm">

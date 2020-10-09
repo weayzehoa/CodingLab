@@ -19,6 +19,7 @@
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
+Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
 
 //圖形驗證碼刷新用
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');

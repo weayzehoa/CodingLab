@@ -75,16 +75,19 @@
                         @endif
                     </div>
                     <div class="row">
-                        <div class="col-8">
+                        <div class="col-4">
                             <div class="icheck-primary">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label for="remember">
-                                    Remember Me
+                                    記住我
                                 </label>
                             </div>
                         </div>
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <a href="{{ url('/') }}" type="button" class="btn btn-info btn-block">回前台</a>
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block">登入</button>
                         </div>
                     </div>
                 </form>

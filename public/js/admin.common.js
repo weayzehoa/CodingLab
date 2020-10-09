@@ -55,4 +55,10 @@
 			}
 		}
     });
+    //自動關閉警告訊息
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 2000);
 })(jQuery);

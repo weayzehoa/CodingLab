@@ -6,6 +6,8 @@
 <div class="content-wrapper">
     <div class="content-header">
         <div class="container-fluid">
+            {{-- alert訊息 --}}
+            @include('admin.layouts.alert_message')
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1 class="m-0 text-dark"><b>{{ $post ? '修改' : '新增' }}會員文章</b></h1>

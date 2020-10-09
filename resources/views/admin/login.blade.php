@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-
 </head>
 
 <body class="hold-transition login-page bg-navy" style="background-image: url({{ asset('img/bg.jpg') }});">
+    {{-- alert訊息 --}}
+    @include('admin.layouts.alert_message')
     <div class="login-box">
         <div class="login-logo">
             <a href="javascript:" class="text-yellow"><b>CodingLab<br>後台管理系統</b></a>
@@ -113,11 +114,11 @@
     <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
     {{-- VincentGarreau/particles.js --}}
     <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
+    <script src="{{ asset('js/admin.common.js') }}"></script>
     {{-- 背景動畫 --}}
     <script>
         particlesJS.load('particles-js', "{{ asset('./js/particles.json') }}");
     </script>
-
 </body>
 
 </html>

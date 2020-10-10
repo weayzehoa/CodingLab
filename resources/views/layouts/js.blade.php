@@ -4,3 +4,5 @@
     <script src="{{ asset('vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     {{-- AdminLTE App --}}
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+    {{-- VincentGarreau/particles.js --}}
+    <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>

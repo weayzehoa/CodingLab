@@ -13,98 +13,12 @@
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" title="縮小側邊選單" class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i></a>
+                    <a href="#" title="側邊選單" class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i>側邊選單</a>
                 </li>
-                {{-- <li class="nav-item dropdown">
-                <a id="homeSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="nav-link dropdown-toggle">首頁管理</a>
-                <ul aria-labelledby="homeSubMenu1" class="dropdown-menu border-0 shadow">
-                    <li><a href="{{ url('admin/news') }}" class="dropdown-item">最新消息管理</a></li>
-                <li><a href="{{ url('admin/marquees') }}" class="dropdown-item">跑馬燈管理</a></li>
-                <li><a href="{{ url('admin/carousels') }}" class="dropdown-item">輪播管理</a></li>
-            </ul>
-            </li> --}}
-            {{-- 選單及內容管理 --}}
-            {{-- <li class="nav-item dropdown">
-                <a id="menuSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="nav-link dropdown-toggle">選單及內容管理</a>
-                <ul aria-labelledby="menuSubMenu1" class="dropdown-menu border-0 shadow">
-                    <li><a href="#" class="dropdown-item">Level 1-1</a></li>
-                    <li><a href="#" class="dropdown-item">Level 1-2</a></li>
-                    <li class="dropdown-divider"></li>
-                    <!-- Level two dropdown-->
-                    <li class="dropdown-submenu dropdown-hover">
-                        <a id="menuSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" class="dropdown-item dropdown-toggle">Level 2</a>
-                        <ul aria-labelledby="menuSubMenu2" class="dropdown-menu border-0 shadow">
-                            <li>
-                                <a href="#" class="dropdown-item" target="_blank">Level 2-1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="dropdown-item" target="_blank">Level 2-2</a>
-                            </li>
-                            <!-- Level three dropdown-->
-                            <li class="dropdown-submenu">
-                                <a id="menuSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false" class="dropdown-item dropdown-toggle">Level 3</a>
-                                <ul aria-labelledby="menuSubMenu3" class="dropdown-menu border-0 shadow">
-                                    <li><a href="#" class="dropdown-item">Level 3-1</a></li>
-                                    <li><a href="#" class="dropdown-item">Level 3-2</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- End Level two -->
-                </ul>
-            </li> --}}
-            {{-- 會員管理 --}}
-            {{-- <li class="nav-item dropdown">
-                <a id="memberSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="nav-link dropdown-toggle">會員專區</a>
-                <ul aria-labelledby="memberSubMenu1" class="dropdown-menu border-0 shadow">
-                    <li><a href="{{ url('admin/members') }}" class="dropdown-item">會員管理</a></li>
-            <li><a href="{{ url('admin/mbposts') }}" class="dropdown-item">會員文章</a></li>
-            </ul>
-            </li> --}}
-            {{-- 系統管理 --}}
-            {{-- <li class="nav-item dropdown">
-                <a id="systemSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="nav-link dropdown-toggle">系統管理</a>
-                <ul aria-labelledby="systemSubMenu1" class="dropdown-menu border-0 shadow ">
-                    <li><a href="{{ url('admin/admins') }}" class="dropdown-item">管理員管理</a></li>
-            <li><a href="{{ url('admin/mails') }}" class="dropdown-item">發信管理</a></li>
-            <li><a href="{{ url('admin/logs') }}" class="dropdown-item">維護紀錄</a></li>
-            </ul>
-            </li> --}}
-            {{-- 統計圖表 --}}
-            {{-- <li class="nav-item dropdown">
-                <a id="accSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                    class="nav-link dropdown-toggle">統計圖表</a>
-                <ul aria-labelledby="accSubMenu1" class="dropdown-menu border-0 shadow">
-                    <li><a href="#" class="dropdown-item">統計表</a></li>
-                    <li><a href="#" class="dropdown-item">統計圖</a></li>
-                    <li class="dropdown-divider"></li>
-                    <!-- Level two dropdown-->
-                    <li class="dropdown-submenu dropdown-hover">
-                        <a id="accSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false" class="dropdown-item dropdown-toggle">網站瀏覽統計</a>
-                        <ul aria-labelledby="accSubMenu2" class="dropdown-menu border-0 shadow">
-                            <li>
-                                <a href="" class="dropdown-item" target="_blank">網站瀏覽統計表</a>
-                            </li>
-                            <li>
-                                <a href="" class="dropdown-item" target="_blank">網站瀏覽統計圖</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- End Level two -->
-                </ul>
-            </li> --}}
-            {{-- 開發者專區 --}}
-            <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理系統</a></li>
-            <li class="nav-item"><a href="{{ url('aboutme') }}" class="nav-link">關於我</a></li>
-            <li class="nav-item"><a href="https://roger.rvt.idv.tw" class="nav-link" target="_blank">我的筆記</a></li>
-            <li class="nav-item dropdown">
+                <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理系統</a></li>
+                <li class="nav-item"><a href="{{ url('aboutme') }}" class="nav-link">關於我</a></li>
+                <li class="nav-item"><a href="https://roger.rvt.idv.tw" class="nav-link" target="_blank">我的筆記</a></li>
+                <li class="nav-item dropdown">
                 <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">參考資料</a>
                 <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
                     <li><a href="https://template.rvt.idv.tw/AdminLTE-3.0.5/" class="dropdown-item" target="_blank">AdminLTE參考樣板</a></li>
@@ -132,110 +46,43 @@
                             </li> --}}
                         </ul>
                     </li>
-                    <!-- End Level two -->
                 </ul>
             </li>
-            <li class="nav-item"><a href="{{ route('parktaipei') }}" class="nav-link">台北公園</a></li>
+            <li class="nav-item"><a href="{{ url('test') }}" class="nav-link">測試用</a></li>
             </ul>
-            {{-- <form class="form-inline ml-0 ml-md-3">
-          <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-navbar" type="submit">
-                <i class="fas fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </form> --}}
         </div>
-
-        <!-- Right navbar links -->
         <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-            <!-- Messages Dropdown Menu -->
-            {{-- <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="fas fa-comments"></i>
-                    <span class="badge badge-danger navbar-badge">3</span>
+            {{-- 驗證使用是否登入 在使用者未登入前 只會看到登入兩個字 登入後就會切換到 另一個下拉表單 --}}
+            @auth
+            <li class="nav-item dropdown">
+                <a id="userSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
+                    @if(Auth::user()->avatar)
+                    <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle">
+                    @endif
+                    {{ Auth::user()->name }}
                 </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Brad Diesel
-                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">Call me whenever you can...</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    John Pierce
-                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">I got your message bro</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Nora Silvester
-                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">The subject goes here</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                </div>
-            </li> --}}
-            <!-- Notifications Dropdown Menu -->
-            {{-- <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <span class="dropdown-header">15 Notifications</span>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-envelope mr-2"></i> 4 new messages
-                        <span class="float-right text-muted text-sm">3 mins</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-users mr-2"></i> 8 friend requests
-                        <span class="float-right text-muted text-sm">12 hours</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <i class="fas fa-file mr-2"></i> 3 new reports
-                        <span class="float-right text-muted text-sm">2 days</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                </div>
-            </li> --}}
+                <ul aria-labelledby="userSubMenu1" class="dropdown-menu border-0 shadow">
+                    <li>
+                        <a href="{{ route('users.showAvatar') }}" class="dropdown-item">修改頭像</a>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li>
+                        {{-- 登出按鈕 下方表單被CSS隱藏, 當按下按鈕後 利用onclick將表單送出到 路由 logout 執行 --}}
+                        <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); $('#logout-form').submit();"><i class="nav-icon fas fa-door-open text-danger"></i> 登出</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </li>
+                </ul>
+            </li>
+            @else
+            <li class="nav-item">
+                <a href="{{ route('login') }}" class="nav-link">登入</a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('register') }}" class="nav-link">註冊</a>
+            </li>
+            @endauth
             <li class="nav-item">
                 <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-th-large"></i></a>
             </li>
@@ -248,8 +95,5 @@
     </div>
 </nav>
 
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
+{{-- Control Sidebar  --}}
+<aside class="control-sidebar control-sidebar-dark"></aside>

@@ -17,9 +17,11 @@
 
 //首頁及搜尋，連接Home控制器路由
 Route::get('/', 'HomeController@index')->name('index');
+Route::get('home', 'HomeController@index')->name('home');
 Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
 Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
+Route::get('test', function () { return view('test'); })->name('test');
 
 //圖形驗證碼刷新用
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');

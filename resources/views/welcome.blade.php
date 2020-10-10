@@ -4,23 +4,7 @@
 
 @section('content')
 
-{{-- <div class="content-wrapper" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url({{ asset('img/bg.jpg') }});"> --}}
-<div class="content-wrapper" style="background-image: url({{ asset('img/bg.jpg') }});">
-    {{-- <div class="content-header">
-        <div class="container">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">首頁</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">CodingLab</a></li>
-                        <li class="breadcrumb-item active"><a href="{{ route('index') }}">首頁</a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div> --}}
+<div class="content-wrapper">
     <section class="content">
         <div class="container bg-white">
             <div class="row">

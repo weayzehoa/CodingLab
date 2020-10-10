@@ -19,7 +19,6 @@
             }
         }
     });
-
     //上方選單路徑與瀏覽位置相同時啟動
     $('#topbar').find('.active').removeClass('active');
     $('#topbar a').each(function () {
@@ -62,4 +61,8 @@
             $(this).remove();
         });
     }, 2000);
+
+    //背景動畫
+    particlesJS.load('particles-js', 'js/particles.json');
+
 })(jQuery);

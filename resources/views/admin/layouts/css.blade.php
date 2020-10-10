@@ -5,4 +5,4 @@
     {{-- overlayScrollbars --}}
     <link rel="stylesheet" href="{{ asset('vendor/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.custom.css') }}">

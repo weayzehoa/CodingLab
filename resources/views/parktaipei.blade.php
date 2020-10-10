@@ -5,26 +5,16 @@
 @section('content')
 
 <div class="content-wrapper">
-    <div class="content-header">
-        <div class="container">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">台北公園資訊</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">CodingLab</a></li>
-                        <li class="breadcrumb-item active"><a href="{{ route('parktaipei') }}">台北公園資訊</a></li>
-                    </ol>
+    <section class="content">
+        <div class="container bg-white">
+            <div class="card card-danger card-outline">
+                <div class="card-body box-profile">
+                    <h3 class="profile-username text-center">台北公園資訊資料撈取方式</h3>
+                    <i class="fas fa-info text-danger"></i> 這邊用了兩種方式撈取資料，一個是站內跨資料庫方式讀取，另一個使用Curl方式直接抓取資料。並且使用 DataTable 套件來呈現。
                 </div>
             </div>
-        </div>
-    </div>
-    <section class="content">
-        <div class="container">
-            {{-- 這邊開始放置 內容頁面 --}}
             @if($parks)
-            <div class="card">
+            <div class="card card-blue card-outline">
                 <div class="card-header">
                     <h3 class="card-title">台北公園資訊 (跨資料庫撈取)</h3>
                 </div>
@@ -57,7 +47,7 @@
             </div>
             @endif
             @if($parks2)
-            <div class="card">
+            <div class="card card-info card-outline">
                 <div class="card-header">
                     <h3 class="card-title">台北公園資訊 (Curl串接資料)</h3>
                 </div>
@@ -90,9 +80,9 @@
             </div>
             @endif
         </div>
+    </section>
 </div>
-</section>
-</div>
+
 @endsection
 
 @section('css')

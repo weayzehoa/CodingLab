@@ -5,24 +5,8 @@
 @section('content')
 
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0 text-dark"><b>關於我</b></h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">CodingLab</a></li>
-                        <li class="breadcrumb-item active"><a href="{{ url('aboutme') }}">關於我</a></li>
-                    </ol>
-                </div>
-            </div>
-        </div>
-    </div>
     <section class="content">
-        <div class="container">
+        <div class="container bg-white">
             <div class="row">
                 <div class="col-md-3">
                     <div class="card card-primary card-outline">
@@ -64,7 +48,7 @@
                 </div>
 
                 <div class="col-md-9">
-                    <div class="card">
+                    <div class="card card-danger card-outline">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
                                 <li class="nav-item"><a class="nav-link" href="#professional" data-toggle="tab">主要專業</a></li>
@@ -636,14 +620,6 @@
             $(this).ekkoLightbox({
                 alwaysShowClose: true
             });
-        });
-
-        $('.filter-container').filterizr({
-            gutterPixels: 3
-        });
-        $('.btn[data-filter]').on('click', function() {
-            $('.btn[data-filter]').removeClass('active');
-            $(this).addClass('active');
         });
     })
 </script>

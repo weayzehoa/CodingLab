@@ -22,6 +22,7 @@
         @show
 
         @include('layouts.footer')
+        <div id="particles-js"></div>
     </div>
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <script src="{{ asset('js/web.common.js') }}"></script>

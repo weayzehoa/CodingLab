@@ -10,7 +10,7 @@
             {{-- 這邊開始放置 內容頁面 --}}
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">標題</h3>
+                    <h3 class="profile-username text-center">測試用</h3>
                     <i class="fas fa-info text-danger"></i> 說明
                 </div>
             </div>

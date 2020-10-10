@@ -8,6 +8,7 @@ use App\PostType as PostTypeEloquent;
 use Redirect;
 use View;
 use DB;
+use Ixudra\Curl\Facades\Curl;
 class HomeController extends Controller
 {
     /**
@@ -34,11 +35,16 @@ class HomeController extends Controller
     /*
         跨資料庫測試
         use DB;
+        使用cUrl
+        use Ixudra\Curl\Facades\Curl;
     */
     public function parktaipei()
     {
         $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
-        return view('parktaipei',compact('parks'));
+        $jsonString = Curl::to('https://parks.taipei/parks/api/')->get();
+        $parks2 = json_decode($jsonString);
+
+        return view('parktaipei',compact('parks','parks2'));
     }
 
     public function post()

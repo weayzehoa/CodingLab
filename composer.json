@@ -13,6 +13,7 @@
         "ckeditor/ckeditor": "^4.15",
         "fideloper/proxy": "^4.0",
         "gregwar/captcha": "1.*",
+        "ixudra/curl": "^6.21",
         "laravel-lang/lang": "~5.0",
         "laravel/framework": "^6.18.35",
         "laravel/socialite": "^5.0",

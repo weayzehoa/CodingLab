@@ -65,7 +65,7 @@ class SocialController extends Controller
                     'email' => $socialite_user->email,
                     'password' => bcrypt(Str::random(8)),
                     'name' => $socialite_user->name,
-                      'avatar' => $socialite_user->avatar,
+                    'avatar' => $socialite_user->avatar,
                 ]);
                 $login_user->socialUser = SocialUserEloquent::create([
                     'provider_user_id' => $socialite_user->id,

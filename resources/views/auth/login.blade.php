@@ -112,7 +112,7 @@
                                 <i class="fab fa-google-plus mr-2"></i> 使用 Google+ 帳號登入
                             </a>
                             <a href="{{ route('redirect', ['provider' => 'github']) }}" class="btn btn-block btn-secondary">
-                                <i class="fab fa-google-plus mr-2"></i> 使用 GitHub 帳號登入
+                                <i class="fab fa-github mr-2"></i> 使用 GitHub 帳號登入
                             </a>
                         </div>
                         <span class="float-left">

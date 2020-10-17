@@ -92,16 +92,13 @@
                         <div class="social-auth-links text-center">
                             <hr>
                             <a href="{{ route('redirect', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary">
-                                <i class="fab fa-facebook mr-2"></i>
-                                使用 Facebook 帳號註冊
+                                <i class="fab fa-facebook mr-2"></i> 使用 Facebook 帳號註冊
                             </a>
                             <a href="{{ route('redirect', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
-                                <i class="fab fa-google-plus mr-2"></i>
-                                使用 Google+ 帳號註冊
+                                <i class="fab fa-google-plus mr-2"></i> 使用 Google+ 帳號註冊
                             </a>
                             <a href="{{ route('redirect', ['provider' => 'github']) }}" class="btn btn-block btn-secondary">
-                                <i class="fab fa-google-plus mr-2"></i>
-                                使用 Github 帳號註冊
+                                <i class="fab fa-github mr-2"></i> 使用 Github 帳號註冊
                             </a>
                         </div>
                     </div>

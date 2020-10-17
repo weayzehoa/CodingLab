@@ -20,9 +20,14 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
-Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
 
-//圖形驗證碼刷新用
+//台北市公園資訊
+Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei')->middleware('verified');
+
+//測試用
+Route::get('test', function () { return view('test'); });
+
+//圖形驗證碼刷新用 (使用套件內建路徑)
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');
 
 //AdminLTE 參考樣板
@@ -32,7 +37,8 @@ Route::prefix('AdminLTE')->group(function() {
 
 //使用預設的Auth所有路由
 // Auth::routes();
-//新增驗證email方法
+
+//開啟驗證email方法
 Auth::routes(['verify' => true]);
 
 //文章內容及類型，對應resource控制器，PostTypes控制器不需要產生index方法，所以用except來排除
@@ -48,7 +54,7 @@ Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store',
 // //處理顯示與上傳使用者頭像路由
 Route::prefix('users')->name('users.')->group(function(){
     // 加上 ->middleware('password.confirm') 代表在進入這個 Route 之前先輸入密碼作驗證
-    Route::get('avatar', 'UsersController@showAvatar')->middleware('password.confirm')->name('showAvatar');
+    Route::get('avatar', 'UsersController@showAvatar')->middleware('verified')->middleware('password.confirm')->name('showAvatar');
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });
 
@@ -78,9 +84,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('mbposts/sortup/{id}','Admin\MemberPostsController@sortup');
     Route::get('mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
     Route::resource('mbposts', 'Admin\MemberPostsController');
-
     Route::resource('comments', 'Admin\CommentsController');
-
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });
     Route::get('/carousels', function () { return view('admin.carousels'); });

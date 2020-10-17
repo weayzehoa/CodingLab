@@ -26,14 +26,20 @@ class PostsController extends Controller
                 'index', 'show'
             ]
         ]);
+
         //新增 admin 的 middleware 套用到 edit, update, destroy
         $this->middleware(['user.admin'],[
             'only' => [
                 'edit','update','destroy'
             ]
         ]);
+
         //檢查email是否驗證過
-        $this->middleware('verified');
+        $this->middleware('verified', [
+            'except' => [
+                'index', 'show'
+            ]
+        ]);
     }
     /**
      * Display a listing of the resource.

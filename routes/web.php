@@ -22,7 +22,7 @@ Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
 
 //台北市公園資訊
-Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei')->middleware('verified');
+Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
 
 //測試用
 Route::get('test', function () { return view('test'); });

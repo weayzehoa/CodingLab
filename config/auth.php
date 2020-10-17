@@ -114,6 +114,8 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        //重設密碼連結
+        'reset_url' => env('PASSSWORD_RESET_URL', 'https://localhost/password/reset/'),
     ],
 
     /*

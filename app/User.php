@@ -5,9 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
 use URL; //新增
 use App\Post as PostEloquent;
+
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
+use Illuminate\Support\Facades\Lang;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -65,5 +68,31 @@ class User extends Authenticatable implements MustVerifyEmail
                 return $this->avatar;
             }
         }
+    }
+
+    //修改 寄出密碼重設通知
+    public function sendPasswordResetNotification($token)
+    {
+        $notification = new ResetPasswordNotification($token);
+
+        //使用 Illuminate\Auth\Notifications\ResetPassword 預留的 public static method toMailUsing()
+        $notification::toMailUsing(function (User $notifiable, string $token) {
+            // 建立「重設密碼」的 URL
+            $passwordResetUrl = url(
+                sprintf(config('auth.passwords.reset_url') . '%s?email=%s', $token, $notifiable->getEmailForPasswordReset())
+            );
+
+            // 重建 MailMessage
+            // getFromJson 已在 v6 後併入 get() 須改用，並執行 php artisan view:clear 與 php artisan view:cache
+            return (new MailMessage())
+                    ->subject(Lang::get('Reset Password Notification'))
+                    ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
+                    ->action(Lang::get('Reset Password'), $passwordResetUrl)
+                    ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.users.expire')]))
+                    ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+        });
+
+        // 依照原本的方式執行 notify
+        $this->notify($notification);
     }
 }

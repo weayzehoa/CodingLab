@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.custom.css') }}">
 </head>
 
 <body class="hold-transition login-page bg-navy" style="background-image: url({{ asset('img/bg.jpg') }});">

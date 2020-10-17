@@ -21,7 +21,6 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
 Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
-Route::get('test', function () { return view('test'); })->name('test');
 
 //圖形驗證碼刷新用
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');
@@ -32,7 +31,9 @@ Route::prefix('AdminLTE')->group(function() {
 });
 
 //使用預設的Auth所有路由
-Auth::routes();
+// Auth::routes();
+//新增驗證email方法
+Auth::routes(['verify' => true]);
 
 //文章內容及類型，對應resource控制器，PostTypes控制器不需要產生index方法，所以用except來排除
 //主要利用 php artisan make:controller PostsController --resource 直接產生七大function
@@ -46,7 +47,8 @@ Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store',
 
 // //處理顯示與上傳使用者頭像路由
 Route::prefix('users')->name('users.')->group(function(){
-    Route::get('avatar', 'UsersController@showAvatar')->name('showAvatar');
+    // 加上 ->middleware('password.confirm') 代表在進入這個 Route 之前先輸入密碼作驗證
+    Route::get('avatar', 'UsersController@showAvatar')->middleware('password.confirm')->name('showAvatar');
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });
 

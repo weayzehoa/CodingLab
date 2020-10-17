@@ -31,9 +31,11 @@ return [
     |
     */
 
+    //SESSION存活時間(分鐘)
     'lifetime' => env('SESSION_LIFETIME', 120),
 
-    'expire_on_close' => false,
+    //關閉瀏覽器清除SESSION
+    'expire_on_close' => true,
 
     /*
     |--------------------------------------------------------------------------

@@ -32,6 +32,8 @@ class PostsController extends Controller
                 'edit','update','destroy'
             ]
         ]);
+        //檢查email是否驗證過
+        $this->middleware('verified');
     }
     /**
      * Display a listing of the resource.

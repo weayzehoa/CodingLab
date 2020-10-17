@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use URL; //新增
 use App\Post as PostEloquent;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','avatar'
+        'name', 'email', 'password', 'avatar',
     ];
 
     /**

@@ -22,6 +22,16 @@
     </div>
     <section class="content">
         <div class="container">
+            @if ($errors->has('message'))
+            <div class="row justify-content-center">
+                <div class="alert-float alert alert-danger alert-dismissible fade show col-6" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="text-center"><strong>{{ $errors->first('message') }}</strong></div>
+                </div>
+            </div>
+            @endif
             <div class="row justify-content-center">
                 <div class="card col-5">
                     <div class="card-body login-card-body">

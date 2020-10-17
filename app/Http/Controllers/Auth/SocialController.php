@@ -42,6 +42,7 @@ class SocialController extends Controller
         if(!empty($s_u)){
             $login_user = $s_u->user;
         }else{
+
             if (empty($socialite_user->email)) {
                 return Redirect::route('login')->withErrors([
                     'msg' => '很抱歉，我們無法從您的' . $provider . '帳號抓到信箱，請用其他方式註冊帳號謝謝!'
@@ -49,22 +50,10 @@ class SocialController extends Controller
             }
             //比對是否有使用者紀錄
             $user = UserEloquent::where('email', $socialite_user->email)->first();
-
-            if(!empty($user)){
-                $login_user = $user;
-                $s_user = $login_user->socialUser;
-
-                if (!empty($s_user)) {
-                    return Redirect::route('login')->withErrors([
-                            'msg' => '此email已被其他帳號綁定了，請使用其他登入方式'
-                        ]);
-                }else{
-                    $login_user->socialUser = SocialUserEloquent::create([
-                        'provider_user_id' => $socialite_user->id,
-                        'provider' => $provider,
-                        'user_id' => $login_user->id
-                    ]);
-                }
+            if($user){
+                return Redirect::route('login')->withErrors([
+                    'message' => "抱歉!! email帳號: $user->email 已被綁定了，請使用其他登入方式"
+                ]);
             }else{ //如果沒有使用者紀錄 將資料建立在 User 資料表中
                 $login_user = UserEloquent::create([
                     'email' => $socialite_user->email,
@@ -72,7 +61,6 @@ class SocialController extends Controller
                     'name' => $socialite_user->name,
                       'avatar' => $socialite_user->avatar,
                 ]);
-
                 $login_user->socialUser = SocialUserEloquent::create([
                     'provider_user_id' => $socialite_user->id,
                     'provider' => $provider,

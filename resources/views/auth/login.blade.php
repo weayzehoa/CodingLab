@@ -105,11 +105,14 @@
                         </form>
                         <div class="social-auth-links text-center mb-3">
                             <hr>
-                            <a href="{{ route('social.redirect', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary">
+                            <a href="{{ route('redirect', ['provider' => 'facebook']) }}" class="btn btn-block btn-primary">
                                 <i class="fab fa-facebook mr-2"></i> 使用 Facebook 帳號登入
                             </a>
-                            <a href="{{ route('social.redirect', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
+                            <a href="{{ route('redirect', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
                                 <i class="fab fa-google-plus mr-2"></i> 使用 Google+ 帳號登入
+                            </a>
+                            <a href="{{ route('redirect', ['provider' => 'github']) }}" class="btn btn-block btn-secondary">
+                                <i class="fab fa-google-plus mr-2"></i> 使用 GitHub 帳號登入
                             </a>
                         </div>
                         <span class="float-left">

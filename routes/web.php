@@ -50,9 +50,9 @@ Route::prefix('users')->name('users.')->group(function(){
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });
 
-// //訪客身分使用第三方登入路由
-Route::prefix('login/social')->name('social.')->group(function(){
-    Route::get('{provider}/redirect', 'Auth\SocialController@getSocialRedirect')->name('redirect');
+//訪客身分使用第三方登入路由，利用 {provider} 將所有的第三方登入共用同一個 redirect function
+Route::prefix('login')->group(function(){
+    Route::get('{provider}', 'Auth\SocialController@getSocialRedirect')->name('redirect');
     Route::get('{provider}/callback', 'Auth\SocialController@getSocialCallback')->name('callback');
 });
 

@@ -3,11 +3,14 @@
         {{-- 驗證使用者是否登入 --}}
         @auth
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            嗨!!
+            @if(Auth::user()->avatar)
             <div class="image">
                 <a href="{{ route('users.showAvatar') }}" class="px-1">
                     <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle mt-1">
                 </a>
             </div>
+            @endif
             <div class="info">
                 <a href="javascript:" class="d-block">{{ Auth::user()->name ?? '' }}</a>
                 {{-- <a href="javascript:" class="d-block">{{ Auth::user()->email ?? '' }}</a> --}}

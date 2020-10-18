@@ -12,7 +12,9 @@
                     <div class="card card-danger card-outline">
                         <div class="card-body box-profile">
                             <h3 class="profile-username text-center">CodingLab 程式設計測試站台</h3>
-                            <i class="fas fa-info text-danger"></i> 此網站是我用來做程式設計練習及測試用，平常大部分功能都可以正常運作，但也有可能我在做其他試驗時會莫名其妙壞掉，請見諒。
+                            <i class="fas fa-info text-primary"></i> 此網站主要是用來做 Laravel 程式設計練習及測試用，平常大部分功能都可以正常運作，但也有可能我在做其他試驗時會莫名其妙壞掉。<br>
+                            <i class="fas fa-info text-danger"></i> 版面設計不是我專業，可能有些地方不是很美觀或存在錯版問題，請見諒。<br>
+                            <i class="fas fa-info text-info"></i> 後台管理帳號 admin@mail.com 密碼 admin，前台測試帳號 user@mail.com 密碼 user 或 使用第三方登入測試 (可能隨時會被清除)
                         </div>
                     </div>
                 </div>
@@ -24,7 +26,7 @@
                                 <div class="col-6">
                                     <div class="callout callout-info">
                                         <h5><i class="fas fa-info"></i> 前端: HTML & CSS & Bootstrap</h5>
-                                        <h5><i class="fas fa-info"></i> 程式: Javascript & Query</h5>
+                                        <h5><i class="fas fa-info"></i> 程式: Javascript & JQuery</h5>
                                     </div>
                                 </div>
                                 <div class="col-6">

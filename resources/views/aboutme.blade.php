@@ -51,16 +51,15 @@
                     <div class="card card-danger card-outline">
                         <div class="card-header p-2">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link" href="#professional" data-toggle="tab">主要專業</a></li>
-                                <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">工作經歷</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#timeline" data-toggle="tab">專業及經歷</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#achievement" data-toggle="tab">網站專案</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#products" data-toggle="tab">產品開發</a></li>
                             </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content">
-                                <div class="tab-pane" id="professional">
-                                    <h5 class="col-10 offset-1">過去我的專業主要是在電子產品企劃開發（繪圖板、數位筆記本、數位筆及電容筆相關技術），現在我的專業專注在網站程式設計。</h5>
+                                <div class="tab-pane active" id="timeline">
+                                    <h5 class="col-10 offset-1">過去我的專業主要是在電子產品企劃開發（繪圖板、數位筆記本、數位筆及電容筆相關技術），現在我的專業專注在PHP程式設計。</h5>
                                     <div class="row">
                                         <div class="card card-primary card-outline col-4">
                                             <div class="card-header">
@@ -72,53 +71,6 @@
                                                     <li>CSS框架：BootStrap</li>
                                                     <li>程式語言：JavaScript、JQuery</li>
                                                 </ul>
-                                                <div class="col-12">
-                                                    <div class="progress-wrap">
-                                                        <h5>HTML</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:90%">
-                                                                <span>90%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>CSS</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:75%">
-                                                                <span>75%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>Bootstrap</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:75%">
-                                                                <span>75%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>JQuery</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-red" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:85%">
-                                                                <span>85%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>JavaScript</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:75%">
-                                                                <span>75%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card card-danger card-outline col-4">
@@ -132,44 +84,6 @@
                                                     <li>資料庫：MySQL</li>
                                                     <li>伺服器：Apache</li>
                                                 </ul>
-                                                <div class="col-12">
-                                                    <div class="progress-wrap">
-                                                        <h5>PHP</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:90%">
-                                                                <span>90%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>MySQL</h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-red" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:85%">
-                                                                <span>85%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>CodeIgniter <span class="right badge badge-info text-xs">2.x</span></h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-yellow" role="progressbar" aria-valuenow="75" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:75%">
-                                                                <span>75%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="progress-wrap">
-                                                        <h5>Laravel <span class="right badge badge-danger text-xs">自學中</span></h5>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-purple" role="progressbar" aria-valuenow="85" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width:55%">
-                                                                <span>55%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                         <div class="card card-info card-outline col-4">
@@ -186,8 +100,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-pane active" id="timeline">
                                     <div class="timeline timeline-inverse">
                                         <div class="time-label">
                                             <span class="bg-info">Apr. 2019 ~ Now</span>

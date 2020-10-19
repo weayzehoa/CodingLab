@@ -30,11 +30,6 @@ Route::get('test', function () { return view('test'); });
 //圖形驗證碼刷新用 (使用套件內建路徑)
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');
 
-//AdminLTE 參考樣板
-Route::prefix('AdminLTE')->group(function() {
-    Route::get('{name}', 'HomeController@AdminLTE');
-});
-
 //使用預設的Auth所有路由
 // Auth::routes();
 
@@ -45,15 +40,16 @@ Auth::routes(['verify' => true]);
 //主要利用 php artisan make:controller PostsController --resource 直接產生七大function
 //然後排除掉 index 不使用, 這樣就不用寫一堆route
 Route::resource('posts', 'PostsController');
-Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
 
 //新增留言板用resource路由
 //路由形式會是 posts/{post}/comments , 因為留言是隸屬post之下
 Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store', 'destroy']]);
+Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
 
-// //處理顯示與上傳使用者頭像路由
+// 處理顯示與上傳使用者頭像路由
+// 加上 ->middleware('verified') 代表在進入這個 Route 之前使用者必須通過Email驗證
+// 加上 ->middleware('password.confirm') 代表在進入這個 Route 之前先輸入密碼作驗證
 Route::prefix('users')->name('users.')->group(function(){
-    // 加上 ->middleware('password.confirm') 代表在進入這個 Route 之前先輸入密碼作驗證
     Route::get('avatar', 'UsersController@showAvatar')->middleware('verified')->middleware('password.confirm')->name('showAvatar');
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });

@@ -12,6 +12,8 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Support\Facades\Lang;
 
+use App\Notifications\VerifyEmailNotification as VerifyEmailNotification;
+
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
@@ -95,4 +97,11 @@ class User extends Authenticatable implements MustVerifyEmail
         // 依照原本的方式執行 notify
         $this->notify($notification);
     }
+
+    //修改 寄出驗證信件通知
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmailNotification());
+    }
+
 }

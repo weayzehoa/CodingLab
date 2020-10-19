@@ -44,6 +44,7 @@ Route::resource('posts', 'PostsController');
 //新增留言板用resource路由
 //路由形式會是 posts/{post}/comments , 因為留言是隸屬post之下
 Route::resource('posts.comments', 'PostCommentsController', ['only' => ['store', 'destroy']]);
+Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
 
 // 處理顯示與上傳使用者頭像路由
 // 加上 ->middleware('verified') 代表在進入這個 Route 之前使用者必須通過Email驗證

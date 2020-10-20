@@ -102,13 +102,13 @@
                                     </div>
                                     <div class="timeline timeline-inverse">
                                         <div class="time-label">
-                                            <span class="bg-info">Apr. 2019 ~ Now</span>
+                                            <span class="bg-info">Apr. 2019 ~ Nov. 2020</span>
                                             <span class="bg-info">康百企業網路多媒體部</span>
                                         </div>
                                         <div>
                                             <i class="fas fa-network-wired bg-info"></i>
                                             <div class="timeline-item">
-                                                <span class="time"><i class="far fa-clock"></i> Apr. 2019 ~ Now</span>
+                                                <span class="time"><i class="far fa-clock"></i> Apr. 2019 ~ Nov. 2020</span>
                                                 <div class="timeline-header">
                                                     <span><b>網站設計工程師</b></span>
                                                 </div>

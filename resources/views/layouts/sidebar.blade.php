@@ -10,11 +10,15 @@
                     <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle mt-1">
                 </a>
             </div>
-            @endif
             <div class="info">
                 <a href="javascript:" class="d-block">{{ Auth::user()->name ?? '' }}</a>
-                {{-- <a href="javascript:" class="d-block">{{ Auth::user()->email ?? '' }}</a> --}}
             </div>
+            @else
+            <div class="info">
+                <i class="fas fa-user mr-2"></i>{{ Auth::user()->name ?? '' }}
+            </div>
+            @endif
+
         </div>
         @endif
         <nav id="sidebar" class="mt-2 nav-compact">

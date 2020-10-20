@@ -13,7 +13,8 @@
                         <div class="card-body box-profile">
                             <h3 class="profile-username text-center">CodingLab 程式設計測試站台</h3>
                             <i class="fas fa-info text-primary"></i> 此網站主要是用來做 Laravel 程式設計練習及測試用，平常大部分功能都可以正常運作，但也有可能我在做其他試驗時會莫名其妙壞掉。<br>
-                            <i class="fas fa-info text-danger"></i> 版面設計不是我專業，可能有些地方不是很美觀或存在錯版問題，請見諒。<br>
+                            <i class="fas fa-info text-danger"></i> <span class="text-danger">此網站內容來源僅供測試研究用，並非真實完整資料或資訊，請勿以此網站內容當作依據參考，網站內容若有不妥請來信告知移除。</span><br>
+                            <i class="fas fa-info text-purple"></i> 版面設計不是我強項，可能有些地方不是很美觀或存在錯版問題，請見諒。<br>
                             <i class="fas fa-info text-info"></i> 後台管理帳號 admin@mail.com 密碼 admin，前台測試帳號 user@mail.com 密碼 user 或 使用第三方登入測試 (可能隨時會被清除)
                         </div>
                     </div>
@@ -35,6 +36,41 @@
                                         <h5><i class="fas fa-info"></i> 框架: Laravel Framwork</h5>
                                     </div>
                                 </div>
+                                <div class="col-6">
+                                    <div class="card card-primary card-outline">
+                                        <div class="card-body">
+                                            <h6 class="text-center"><i class="fas fa-info text-primary mr-2"></i>前端 JS 套件</h6>
+                                            <ul>
+                                                <li>ckeditor</li>
+                                                <li>datatables</li>
+                                                <li>fontawesome</li>
+                                                <li>icheck-bootstrap</li>
+                                                <li>jquery-mousewheel</li>
+                                                <li>jquery-Timepicker</li>
+                                                <li>jquery-ui</li>
+                                                <li>overlayScrollbars</li>
+                                                <li>particles.js</li>
+                                                <li>select2</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card card-primary card-outline">
+                                        <div class="card-body">
+                                            <h6 class="text-center"><i class="fas fa-info text-danger mr-2"></i> Laravel 後端套件</h6>
+                                            <ul>
+                                                <li>ARCANEDEV/noCAPTCHA - Google 驗證器</li>
+                                                <li>mews/captcha - 圖形驗證</li>
+                                                <li>gregwar/captcha - 圖形驗證</li>
+                                                <li>barryvdh/laravel-debugbar - 除錯Bar</li>
+                                                <li>proengsoft/laravel-jsvalidation - 共用驗證</li>
+                                                <li>Laravel-activitylog - 紀錄用戶行為</li>
+                                                <li>laravel/socialite - 第三方登入</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +81,7 @@
                             <h3 class="profile-username text-center"><i class="fas fa-info"></i>nformation</h3>
                             <ul class="list-group list-group-unbordered mb-3">
                                 <li class="list-group-item">
-                                    <b><span  id="showtime" ></span></b>
+                                    <b><span id="showtime"></span></b>
                                 </li>
                                 <li class="list-group-item">
                                     <b>你目前的 IP 位置: </b>{{ $_SERVER['REMOTE_ADDR'] }}
@@ -65,34 +101,33 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 @endsection
 
 @section('script')
-    {{-- VincentGarreau/particles.js --}}
-    <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
+{{-- VincentGarreau/particles.js --}}
+<script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
 @endsection
 
 @section('CustomScript')
-    <script>
-        ShowTime();
-        //顯示今日日期及時間
-        function ShowTime()
-        {
+<script>
+    ShowTime();
+    //顯示今日日期及時間
+    function ShowTime() {
         var NowDate = new Date();
         var d = NowDate.getDay();
         var NowTime = new Date();
         var NowHour = NowTime.getHours();
         var NowMin = NowTime.getMinutes();
         var NowSec = NowTime.getSeconds();
-        MyTime = ('0' + NowDate.getHours()).slice(-2) +':'+ ('0' + NowDate.getMinutes()).slice(-2) +':'+ ('0' + NowDate.getSeconds()).slice(-2);
+        MyTime = ('0' + NowDate.getHours()).slice(-2) + ':' + ('0' + NowDate.getMinutes()).slice(-2) + ':' + ('0' + NowDate.getSeconds()).slice(-2);
         // var NowNow = NowDate.toLocaleString();
-        var NowNow = '現在時間: '+MyTime;
+        var NowNow = '現在時間: ' + MyTime;
         var dayNames = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
-        document.getElementById('showtime').innerHTML = NowNow + '（'+dayNames[d]+'）';
+        document.getElementById('showtime').innerHTML = NowNow + '（' + dayNames[d] + '）';
         setTimeout('ShowTime()', 1000);
-        }
-        //背景動畫
-        particlesJS.load('particles-js', './js/particles.json');
-    </script>
+    }
+    //背景動畫
+    particlesJS.load('particles-js', './js/particles.json');
+</script>
 @endsection

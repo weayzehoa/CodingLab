@@ -58,10 +58,15 @@
                 <a id="userSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">
                     @if(Auth::user()->avatar)
                     <img src="{{ Auth::user()->getAvatarUrl() }}" style="width: 30px; height: 30px;" class="rounded-circle">
+                    @else
+                    <i class="fas fa-user"></i>
                     @endif
                     {{ Auth::user()->name }}
                 </a>
                 <ul aria-labelledby="userSubMenu1" class="dropdown-menu border-0 shadow">
+                    <li>
+                        <a href="{{ route('users.profile') }}" class="dropdown-item">個人資料</a>
+                    </li>
                     <li>
                         <a href="{{ route('users.showAvatar') }}" class="dropdown-item">修改頭像</a>
                     </li>

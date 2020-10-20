@@ -50,6 +50,8 @@ Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
 // 加上 ->middleware('verified') 代表在進入這個 Route 之前使用者必須通過Email驗證
 // 加上 ->middleware('password.confirm') 代表在進入這個 Route 之前先輸入密碼作驗證
 Route::prefix('users')->name('users.')->group(function(){
+    Route::get('profile', 'UsersController@profile')->name('profile');
+    Route::post('profile', 'UsersController@updateProfile')->name('updateProfile');
     Route::get('avatar', 'UsersController@showAvatar')->middleware('verified')->middleware('password.confirm')->name('showAvatar');
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });

@@ -1,7 +1,7 @@
 <nav id="topbar" class="main-header navbar navbar-expand navbar-dark bg-navy">
     <div class="container">
         <a href="{{ route('index') }}" class="navbar-brand">
-            {{-- <img src="../../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
+            {{-- <img src="../../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
             <span class="brand-text font-weight-light">CodingLab</span>
         </a>
 

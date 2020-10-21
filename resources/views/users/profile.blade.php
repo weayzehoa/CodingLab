@@ -21,7 +21,7 @@
                         </div>
                         @else
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle myavatar" src="{{ asset('dist/img/noavatar.png') }}" alt="User profile picture">
+                            <img class="profile-user-img img-fluid img-circle myavatar" src="{{ asset('img/noavatar.png') }}" alt="User profile picture">
                         </div>
                         @endif
                         <h3 class="profile-username text-center mb-4">{{ Auth::user()->name }}</h3>

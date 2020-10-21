@@ -48,7 +48,7 @@
                 <li class="nav-item dropdown">
                     <a id="frontLabMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">前端實驗</a>
                     <ul aria-labelledby="frontLabMenu1" class="dropdown-menu border-0 shadow">
-                        <li><a href="#" class="dropdown-item">TEST1</a></li>
+                        <li><a href="{{ url('wowbgtest') }}" class="dropdown-item">WoW 背景動畫測試</a></li>
                         <li><a href="#" class="dropdown-item">TEST2</a></li>
                         <li class="dropdown-divider"></li>
                         <li class="dropdown-submenu dropdown-hover">

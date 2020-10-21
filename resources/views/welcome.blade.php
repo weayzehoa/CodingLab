@@ -52,6 +52,8 @@
                                                 <li>particles.js</li>
                                                 <li>select2</li>
                                                 <li>ekko-lightbox</li>
+                                                <li>WoW.js</li>
+                                                <li>animate.css</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -48,7 +48,7 @@
                 </li>
                 <li class="nav-header">前端實驗室</li>
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link"><i class="nav-icon fas fa-tools"></i>TEST-1</a>
+                    <a href="{{ url('wowbgtest') }}" class="nav-link"><i class="nav-icon fas fa-tools"></i>WoW 背景動畫測試</a>
                 </li>
                 <li class="nav-item">
                     <a href="javascript:" class="nav-link"><i class="nav-icon fas fa-tools"></i>TEST-2</a>

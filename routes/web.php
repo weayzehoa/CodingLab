@@ -28,6 +28,9 @@ Route::get('parktaipei2', 'HomeController@parktaipei2')->name('parktaipei2');
 //測試用
 Route::get('test', function () { return view('test'); });
 
+//背景動畫測試
+Route::get('wowbgtest', function () { return view('wowbgtest'); });
+
 //圖形驗證碼刷新用 (使用套件內建路徑)
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');
 

@@ -51,7 +51,7 @@
                     <a href="{{ url('wowbgtest') }}" class="nav-link"><i class="nav-icon fas fa-tools"></i>WoW 背景動畫測試</a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:" class="nav-link"><i class="nav-icon fas fa-tools"></i>TEST-2</a>
+                    <a href="{{ url('clocktest') }}" class="nav-link"><i class="nav-icon fas fa-tools"></i>JS Clock 測試</a>
                 </li>
                 <li class="nav-item has-treeview">
                     <a href="javascript:" class="nav-link">

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/fontawesome/css/all.min.css') }}">
     {{-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> --}}
     <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
     <link rel="stylesheet" href="{{ asset('css/admin.custom.css') }}">
 </head>
@@ -113,7 +113,7 @@
 
     {{-- REQUIRED SCRIPTS --}}
     <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
     {{-- VincentGarreau/particles.js --}}
     <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>

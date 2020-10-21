@@ -7,11 +7,19 @@
 <div class="content-wrapper">
     <section class="content">
         <div class="container">
-            {{-- 這邊開始放置 內容頁面 --}}
-            <div class="card card-danger card-outline">
-                <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">測試用</h3>
-                    <i class="fas fa-info text-danger"></i> 說明
+            <div class="container bg-white">
+                <div class="card card-danger card-outline">
+                    <div class="card-body box-profile">
+                        <h3 class="profile-username text-center">空白測試頁面</h3>
+                        <i class="fas fa-info text-danger"></i> 說明
+                    </div>
+                </div>
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                    {{-- 這邊開始放置 內容頁面 --}}
+
+
+                    </div>
                 </div>
             </div>
         </div>

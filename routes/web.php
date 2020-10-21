@@ -30,6 +30,8 @@ Route::get('test', function () { return view('test'); });
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });
+//JS Clock 測試
+Route::get('clocktest', function () { return view('clocktest'); });
 
 //圖形驗證碼刷新用 (使用套件內建路徑)
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');

@@ -30,7 +30,7 @@
         @include('admin.layouts.footer')
     </div>
     {{-- 全站共用的JS --}}
-    <script src="{{ asset('dist/js/demo.js') }}"></script>
+    <script src="{{ asset('js/demo.js') }}"></script>
     <script src="{{ asset('js/admin.common.js') }}"></script>
     {{-- 頁面上有需要使用時才載入的JS Validator --}}
     @yield('JsValidator')

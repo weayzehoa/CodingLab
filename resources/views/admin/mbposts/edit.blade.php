@@ -250,9 +250,9 @@
 
 @section('script')
     {{-- Select2 --}}
-    <script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/js/select2.full.min.js') }}"></script>
     {{-- Bootstrap Switch --}}
-    <script src="{{ asset('vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
     {{-- 時分秒日曆 --}}
     <script src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.js') }}"></script>

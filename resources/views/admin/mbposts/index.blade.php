@@ -158,7 +158,7 @@
                                                     <a href="{{ url('admin/mbposts/sortup/' . $post->id) }}"
                                                         class="text-navy">
                                                         <i class="fas fa-arrow-alt-circle-up text-lg"></i>
-                                                    </a>　
+                                                    </a>
                                                     <a href="{{ url('admin/mbposts/sortdown/' . $post->id) }}"
                                                         class="text-navy">
                                                         <i class="fas fa-arrow-alt-circle-down text-lg"></i>
@@ -205,5 +205,5 @@
 
 @section('script')
     {{-- Select2 --}}
-    <script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/js/select2.full.min.js') }}"></script>
 @endsection

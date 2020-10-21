@@ -113,8 +113,8 @@
 
     {{-- REQUIRED SCRIPTS --}}
     <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('js/adminlte.min.js') }}"></script>
     {{-- VincentGarreau/particles.js --}}
     <script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
     <script src="{{ asset('js/admin.common.js') }}"></script>

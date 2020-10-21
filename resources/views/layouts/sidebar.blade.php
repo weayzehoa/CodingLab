@@ -18,9 +18,8 @@
                 <i class="fas fa-user mr-2"></i>{{ Auth::user()->name ?? '' }}
             </div>
             @endif
-
         </div>
-        @endif
+        @endauth
         <nav id="sidebar" class="mt-2 nav-compact">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">

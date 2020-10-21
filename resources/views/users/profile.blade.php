@@ -93,7 +93,7 @@
 @section('css')
 {{-- 這邊放置 CSS 用 (在頁面上方) --}}
 {{-- iCheck for checkboxes and radio inputs --}}
-  <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 @endsection
 
 @section('script')

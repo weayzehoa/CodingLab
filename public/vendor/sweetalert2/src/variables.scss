@@ -82,8 +82,13 @@ $swal2-input-transition: border-color .3s, box-shadow .3s !default;
 $swal2-textarea-height: 6.75em !default;
 $swal2-textarea-padding: .75em !default;
 
+// INPUT LABEL
+$swal2-input-label-margin: 1em auto !default;
+$swal2-input-label-justify-content: center !default;
+
 // VALIDATION MESSAGE
 $swal2-validation-message-justify-content: center !default;
+$swal2-validation-message-margin: 0 -2.7em !default;
 $swal2-validation-message-padding: .625em !default;
 $swal2-validation-message-background: lighten($swal2-black, 94) !default;
 $swal2-validation-message-color: lighten($swal2-black, 40) !default;
@@ -94,6 +99,9 @@ $swal2-validation-message-icon-color: $swal2-white !default;
 $swal2-validation-message-icon-zoom: null !default;
 
 // PROGRESS STEPS
+$swal2-progress-steps-flex-wrap: wrap !default;
+$swal2-progress-steps-align-items: center !default;
+$swal2-progress-steps-max-width: 100% !default;
 $swal2-progress-steps-background: inherit !default;
 $swal2-progress-steps-margin: 0 0 1.25em !default;
 $swal2-progress-steps-padding: 0 !default;
@@ -104,7 +112,7 @@ $swal2-progress-step-height: 2em;
 $swal2-progress-step-border-radius: 2em;
 $swal2-progress-step-background: #add8e6 !default;
 $swal2-progress-step-color: $swal2-white !default;
-$swal2-active-step-background: #3085d6 !default;
+$swal2-active-step-background: #2778c4 !default;
 $swal2-active-step-color: $swal2-white !default;
 
 // FOOTER
@@ -152,7 +160,7 @@ $swal2-actions-padding: 0 1.6em !default;
 $swal2-confirm-button-order: null !default;
 $swal2-confirm-button-border: 0 !default;
 $swal2-confirm-button-border-radius: .25em !default;
-$swal2-confirm-button-background-color: #3085d6 !default;
+$swal2-confirm-button-background-color: #2778c4 !default;
 $swal2-confirm-button-color: $swal2-white !default;
 $swal2-confirm-button-font-size: 1.0625em !default;
 
@@ -160,7 +168,7 @@ $swal2-confirm-button-font-size: 1.0625em !default;
 $swal2-deny-button-order: null !default;
 $swal2-deny-button-border: 0 !default;
 $swal2-deny-button-border-radius: .25em !default;
-$swal2-deny-button-background-color: #dd6b55 !default;
+$swal2-deny-button-background-color: #d14529 !default;
 $swal2-deny-button-color: $swal2-white !default;
 $swal2-deny-button-font-size: 1.0625em !default;
 
@@ -168,7 +176,7 @@ $swal2-deny-button-font-size: 1.0625em !default;
 $swal2-cancel-button-order: null !default;
 $swal2-cancel-button-border: 0 !default;
 $swal2-cancel-button-border-radius: .25em !default;
-$swal2-cancel-button-background-color: #aaa !default;
+$swal2-cancel-button-background-color: #757575 !default;
 $swal2-cancel-button-color: $swal2-white !default;
 $swal2-cancel-button-font-size: 1.0625em !default;
 
@@ -189,7 +197,7 @@ $swal2-loader-animation: swal2-rotate-loading 1.5s linear 0s infinite normal !de
 $swal2-loader-border-width: .25em !default;
 $swal2-loader-border-style: solid !default;
 $swal2-loader-border-radius: 100% !default;
-$swal2-loader-border-color: #3085d6 transparent #3085d6 transparent !default;
+$swal2-loader-border-color: #2778c4 transparent #2778c4 transparent !default;
 
 // TOASTS
 $swal2-toast-show-animation: swal2-toast-show .5s !default;

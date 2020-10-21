@@ -1,3 +1,58 @@
+## [10.6.1](https://github.com/sweetalert2/sweetalert2/compare/v10.6.0...v10.6.1) (2020-10-16)
+
+
+### Bug Fixes
+
+* **types:** make returnInputValueOnDeny optional ([9237bbc](https://github.com/sweetalert2/sweetalert2/commit/9237bbca23b549b98ed35da1d57ec84da98365bf))
+
+# [10.6.0](https://github.com/sweetalert2/sweetalert2/compare/v10.5.1...v10.6.0) (2020-10-15)
+
+
+### Bug Fixes
+
+* make button colors WCAG compliant ([#2085](https://github.com/sweetalert2/sweetalert2/issues/2085)) ([0b1e4b4](https://github.com/sweetalert2/sweetalert2/commit/0b1e4b48ae284efb0a81437a58f3ce93e1c00085))
+* set display: inline block for confirm button ([#2086](https://github.com/sweetalert2/sweetalert2/issues/2086)) ([43fdf17](https://github.com/sweetalert2/sweetalert2/commit/43fdf1732e8838c1a4469f721a6b456a75aae7e6))
+
+
+### Features
+
+* add returnInputValueOnDeny param ([#2084](https://github.com/sweetalert2/sweetalert2/issues/2084)) ([f0833e8](https://github.com/sweetalert2/sweetalert2/commit/f0833e8ea755bfe6a0c5ecb9d9c297edf12fec57))
+
+## [10.5.1](https://github.com/sweetalert2/sweetalert2/compare/v10.5.0...v10.5.1) (2020-10-13)
+
+
+### Bug Fixes
+
+* **types:** inputValue can be number or boolean ([#2083](https://github.com/sweetalert2/sweetalert2/issues/2083)) ([fa1ac2b](https://github.com/sweetalert2/sweetalert2/commit/fa1ac2b2ccb7763ed18751fd72c2ce0a1e21498d))
+
+# [10.5.0](https://github.com/sweetalert2/sweetalert2/compare/v10.4.0...v10.5.0) (2020-10-12)
+
+
+### Features
+
+* add customClass.validationMessage ([#2081](https://github.com/sweetalert2/sweetalert2/issues/2081)) ([76e54e4](https://github.com/sweetalert2/sweetalert2/commit/76e54e4861ce35e8c976f0f45347ade7142b8b03))
+
+# [10.4.0](https://github.com/sweetalert2/sweetalert2/compare/v10.3.7...v10.4.0) (2020-10-11)
+
+
+### Features
+
+* add `inputLabel` parameter ([#2078](https://github.com/sweetalert2/sweetalert2/issues/2078)) ([a437376](https://github.com/sweetalert2/sweetalert2/commit/a4373763a2cc512408bb8a40c0b7a2c71167e688))
+
+## [10.3.7](https://github.com/sweetalert2/sweetalert2/compare/v10.3.6...v10.3.7) (2020-10-09)
+
+
+### Bug Fixes
+
+* do not prevent events for Apple Pencil ([#2075](https://github.com/sweetalert2/sweetalert2/issues/2075)) ([88dd4c7](https://github.com/sweetalert2/sweetalert2/commit/88dd4c7d236603f7fce20cf5b19bf40b261debfb))
+
+## [10.3.6](https://github.com/sweetalert2/sweetalert2/compare/v10.3.5...v10.3.6) (2020-10-08)
+
+
+### Bug Fixes
+
+* wrap progress steps when they aren't fitting one row ([#2074](https://github.com/sweetalert2/sweetalert2/issues/2074)) ([fa695bf](https://github.com/sweetalert2/sweetalert2/commit/fa695bffd9d9e45629e7f84c3e73112764f93f7f))
+
 ## [10.3.5](https://github.com/sweetalert2/sweetalert2/compare/v10.3.4...v10.3.5) (2020-09-25)
 
 

@@ -323,6 +323,23 @@ describe('Input', () => {
     })
   })
 
+  it('returnInputValueOnDeny: true should pass the input value as result.value', (done) => {
+    SwalWithoutAnimation.fire({
+      input: 'text',
+      inputValue: 'returnInputValueOnDeny',
+      returnInputValueOnDeny: true,
+    }).then((result) => {
+      expect(result).to.eql({
+        value: 'returnInputValueOnDeny',
+        isConfirmed: false,
+        isDenied: true,
+        isDismissed: false,
+      })
+      done()
+    })
+    Swal.clickDeny()
+  })
+
   it('disable/enable input', () => {
     Swal.fire('(disable/enable)Input should not fail if there is no input')
     Swal.disableInput()
@@ -369,7 +386,10 @@ describe('Validation', () => {
       inputAttributes: {
         pattern: '[0-9]{3}-[0-9]{3}-[0-9]{4}'
       },
-      validationMessage: 'Invalid phone number'
+      validationMessage: 'Invalid phone number',
+      customClass: {
+        validationMessage: 'my-validation-message'
+      },
     }).then(result => {
       expect(result.value).to.equal('123-456-7890')
       done()
@@ -382,6 +402,7 @@ describe('Validation', () => {
       expect(Swal.getCancelButton().disabled).to.be.false
       expect(isVisible(Swal.getValidationMessage())).to.be.true
       expect(Swal.getValidationMessage().textContent).to.equal('Invalid phone number')
+      expect(Swal.getValidationMessage().classList.contains('my-validation-message')).to.be.true
       Swal.getInput().value = '123-456-7890'
       Swal.clickConfirm()
     }, TIMEOUT)

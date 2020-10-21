@@ -46,7 +46,7 @@ class UsersController extends Controller
         }
 
         $file = $request->file('avatar');
-        $destPath = 'images/avatars';
+        $destPath = 'upload/avatars';
 
         if(!file_exists(public_path() . '/' . $destPath)){
             File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
@@ -59,6 +59,7 @@ class UsersController extends Controller
         $user = Auth::user();
         $user->avatar = $destPath . '/' . $fileName;
         $user->save();
-        return Redirect::route('index');
+        // return Redirect::route('index');
+        return Redirect::back();
     }
 }

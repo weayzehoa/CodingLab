@@ -51,6 +51,7 @@
                                                 <li>overlayScrollbars</li>
                                                 <li>particles.js</li>
                                                 <li>select2</li>
+                                                <li>ekko-lightbox</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -63,10 +64,11 @@
                                                 <li>ARCANEDEV/noCAPTCHA - Google 驗證器</li>
                                                 <li>mews/captcha - 圖形驗證</li>
                                                 <li>gregwar/captcha - 圖形驗證</li>
-                                                <li>barryvdh/laravel-debugbar - 除錯Bar</li>
+                                                <li>barryvdh/laravel-debugbar - 除錯 Bar</li>
                                                 <li>proengsoft/laravel-jsvalidation - 共用驗證</li>
                                                 <li>Laravel-activitylog - 紀錄用戶行為</li>
                                                 <li>laravel/socialite - 第三方登入</li>
+                                                <li>ixudra/curl - Curl 套件</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -33,18 +33,24 @@ class HomeController extends Controller
     }
 
     /*
-        跨資料庫測試
+        台北市公園資訊跨資料庫測試
         use DB;
-        使用cUrl
-        use Ixudra\Curl\Facades\Curl;
     */
     public function parktaipei()
     {
         $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
+        return view('parktaipei',compact('parks'));
+    }
+
+    /*
+        台北市公園資訊Curl測試
+        use Ixudra\Curl\Facades\Curl;
+    */
+    public function parktaipei2()
+    {
         $jsonString = Curl::to('https://parks.taipei/parks/api/')->get();
         $parks2 = json_decode($jsonString);
-
-        return view('parktaipei',compact('parks','parks2'));
+        return view('parktaipei2',compact('parks2'));
     }
 
     public function post()

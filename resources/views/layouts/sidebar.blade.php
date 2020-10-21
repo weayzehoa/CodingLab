@@ -11,7 +11,7 @@
                 </a>
             </div>
             <div class="info">
-                <a href="javascript:" class="d-block">{{ Auth::user()->name ?? '' }}</a>
+                <a href="{{ route('users.profile') }}" class="d-block">{{ Auth::user()->name ?? '' }}</a>
             </div>
             @else
             <div class="info">
@@ -22,28 +22,79 @@
         @endauth
         <nav id="sidebar" class="mt-2 nav-compact">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item">
-                    <a href="{{ route('parktaipei') }}" class="nav-link">
-                        <i class="nav-icon far fa-list-alt"></i>
-                        <p>台北市公園資訊</p>
+                <li class="nav-header">後端實驗室</li>
+                <li class="nav-item has-treeview">
+                    <a href="javascript:" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            台北市公園資訊
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('parktaipei') }}" class="nav-link">
+                                <i class="nav-icon far fa-list-alt"></i>
+                                <p>跨資料庫讀取</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('parktaipei2') }}" class="nav-link">
+                                <i class="nav-icon far fa-list-alt"></i>
+                                <p>Curl抓取</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header">前端實驗室</li>
+                <li class="nav-item">
+                    <a href="javascript:" class="nav-link"><i class="nav-icon fas fa-tools"></i>TEST-1</a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ url('posts') }}" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
-                        <p>會員文章</p>
-                        <span class="right badge badge-info">{{ $posts_total ?? '' }}</span>
+                    <a href="javascript:" class="nav-link"><i class="nav-icon fas fa-tools"></i>TEST-2</a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="javascript:" class="nav-link">
+                        <i class="nav-icon fas fa-tools"></i>
+                        <p>
+                            TEST3
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-users nav-icon"></i>
+                                <p>TEST3-1</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-users nav-icon"></i>
+                                <p>TEST3-2</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-
-                @auth
-                <li class="nav-item">
-                    <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); $('#logout-form').submit();"><i class="nav-icon fas fa-door-open text-danger"></i> 登出</a>
-                    <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                <li class="nav-header">整合測試</li>
+                <li class="nav-item has-treeview">
+                    <a href="javascript:" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            會員專區
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('posts') }}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>會員文章</p>
+                                <span class="right badge badge-info">{{ $posts_total ?? '' }}</span>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                @endauth
             </ul>
         </nav>
     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', '台北公園資訊')
+@section('title', '台北公園資訊(Curl)')
 
 @section('content')
 
@@ -10,35 +10,33 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">台北公園資訊資料撈取方式</h3>
-                    <i class="fas fa-info text-danger"></i> 這邊用了站內跨資料庫方式讀取資料。並且使用 DataTable 套件來呈現。
+                    <i class="fas fa-info text-danger"></i> 這邊使用Curl方式直接抓取資料。並且使用 DataTable 套件來呈現。
                 </div>
             </div>
-            @if($parks)
-            <div class="card card-blue card-outline">
+            @if($parks2)
+            <div class="card card-info card-outline">
                 <div class="card-header">
-                    <h3 class="card-title">台北公園資訊 (跨資料庫撈取)</h3>
+                    <h3 class="card-title">台北公園資訊 (Curl串接資料)</h3>
                 </div>
                 <div class="card-body">
-                    <table id="myTable" class="table table-bordered table-striped text-xs">
+                    <table id="myTable2" class="table table-bordered table-striped text-xs">
                         <thead>
                             <tr>
                                 <th width="18%">公園名稱</th>
                                 <th width="18%">英文名稱</th>
                                 <th width="7%">類型</th>
-                                <th width="7%">行政區</th>
                                 <th width="25%">位置</th>
                                 <th width="15%">管理單位</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $parks as $park )
+                            @foreach ( $parks2 as $park2 )
                             <tr>
-                                <td>{{ $park->pm_name }}</td>
-                                <td>{{ $park->pm_name_eng }}</td>
-                                <td>{{ $park->pm_type }}</td>
-                                <td>{{ $park->pm_regions }}</td>
-                                <td>{{ $park->pm_location }}</td>
-                                <td>{{ $park->pm_unit }}</td>
+                                <td>{{ $park2->pm_name }}</td>
+                                <td>{{ $park2->pm_name_eng }}</td>
+                                <td>{{ $park2->pm_type }}</td>
+                                <td>{{ $park2->pm_location }}</td>
+                                <td>{{ $park2->pm_unit }}</td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -65,7 +63,7 @@
 @section('CustomScript')
 <script>
     $(document).ready(function() {
-        $('#myTable').DataTable({
+        $('#myTable2').DataTable({
             paging: true,
             searching: true,
             ordering: true,

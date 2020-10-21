@@ -5,38 +5,35 @@
             <span class="brand-text font-weight-light">CodingLab</span>
         </a>
 
-        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="#" title="側邊選單" class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i>側邊選單</a>
+                    <a href="#" title="側邊選單" class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i></a>
                 </li>
-                <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理系統</a></li>
                 <li class="nav-item"><a href="{{ url('aboutme') }}" class="nav-link">關於我</a></li>
                 <li class="nav-item"><a href="https://roger.rvt.idv.tw" class="nav-link" target="_blank">我的筆記</a></li>
                 <li class="nav-item dropdown">
-                <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">參考資料</a>
-                <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
-                    <li><a href="https://template.rvt.idv.tw/AdminLTE-3.0.5/" class="dropdown-item" target="_blank">AdminLTE參考樣板</a></li>
-                    <li class="dropdown-divider"></li>
-                    <li class="dropdown-submenu dropdown-hover">
-                        <a id="devSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            class="dropdown-item dropdown-toggle">線上參考文件</a>
-                        <ul aria-labelledby="devSubMenu2" class="dropdown-menu border-0 shadow">
-                            <li>
-                                <a tabindex="-3" href="https://laravel.com/docs" class="dropdown-item" target="_blank">Laravel Document</a>
-                            </li>
-                            <li>
-                                <a tabindex="-2" href="https://fontawesome.com/icons?d=gallery&m=free" class="dropdown-item" target="_blank">Font Awesome 5</a>
-                            </li>
-                            <li>
-                                <a tabindex="-1" href="https://adminlte.io/docs/3.0" class="dropdown-item" target="_blank">AdminLTE 3 Document</a>
-                            </li>
-                            {{-- <li class="dropdown-submenu">
+                    <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">參考資料</a>
+                    <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="https://template.rvt.idv.tw/AdminLTE-3.0.5/" class="dropdown-item" target="_blank">AdminLTE參考樣板</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-submenu dropdown-hover">
+                            <a id="devSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">線上參考文件</a>
+                            <ul aria-labelledby="devSubMenu2" class="dropdown-menu border-0 shadow">
+                                <li>
+                                    <a tabindex="-3" href="https://laravel.com/docs" class="dropdown-item" target="_blank">Laravel Document</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-2" href="https://fontawesome.com/icons?d=gallery&m=free" class="dropdown-item" target="_blank">Font Awesome 5</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="https://adminlte.io/docs/3.0" class="dropdown-item" target="_blank">AdminLTE 3 Document</a>
+                                </li>
+                                {{-- <li class="dropdown-submenu">
                                 <a id="devSubMenu3" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false" class="dropdown-item dropdown-toggle">第三層保留</a>
                                 <ul aria-labelledby="devSubMenu3" class="dropdown-menu border-0 shadow">
@@ -44,11 +41,52 @@
                                     <li><a href="#" class="dropdown-item">3rd level</a></li>
                                 </ul>
                             </li> --}}
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item"><a href="{{ url('test') }}" class="nav-link">測試用</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="frontLabMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">前端實驗</a>
+                    <ul aria-labelledby="frontLabMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="#" class="dropdown-item">TEST1</a></li>
+                        <li><a href="#" class="dropdown-item">TEST2</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-submenu dropdown-hover">
+                            <a id="frontLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">TEST3</a>
+                            <ul aria-labelledby="frontLabMenu2" class="dropdown-menu border-0 shadow">
+                                <li>
+                                    <a tabindex="-3" href="#" class="dropdown-item">TEST3-1</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-2" href="#" class="dropdown-item">TEST3-1</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="backLabMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">後端實驗</a>
+                    <ul aria-labelledby="backLabMenu1" class="dropdown-menu border-0 shadow">
+                        <li class="dropdown-submenu dropdown-hover">
+                            <a id="backLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">台北市公園資料</a>
+                            <ul aria-labelledby="backLabMenu2" class="dropdown-menu border-0 shadow">
+                                <li>
+                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">跨資料庫讀取</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-2" href="{{ route('parktaipei2') }}" class="dropdown-item">Curl抓取</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="allLabMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">整合測試</a>
+                    <ul aria-labelledby="allLabMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="{{ url('posts') }}" class="dropdown-item">會員文章</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理</a></li>
             </ul>
         </div>
         <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">

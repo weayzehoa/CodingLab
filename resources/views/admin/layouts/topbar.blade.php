@@ -3,6 +3,9 @@
         <li class="nav-item">
             <a href="#" title="縮小側邊選單" class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i></a>
         </li>
+        <li class="nav-item">
+            <a href="{{ url('/') }}" class="nav-link text-primary" target="_blank">前台首頁</a>
+        </li>
         <li class="nav-item dropdown">
             <a id="homeSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">首頁管理</a>

@@ -80,7 +80,7 @@
                                             <div class="card-body">
                                                 <ul>
                                                     <li>語言技能：PHP</li>
-                                                    <li>程式框架：CodeIgniter、Laravel</li>
+                                                    <li>程式框架：Laravel</li>
                                                     <li>資料庫：MySQL</li>
                                                     <li>伺服器：Apache</li>
                                                 </ul>
@@ -94,7 +94,7 @@
                                                 <ul>
                                                     <li>資訊安全弱點掃描處理</li>
                                                     <li>Git 操作及伺服器建置</li>
-                                                    <li>CentOS 伺服器建置與管理</li>
+                                                    <li>CentOS 伺服器建置管理</li>
                                                     <li>網路規劃與管理</li>
                                                 </ul>
                                             </div>

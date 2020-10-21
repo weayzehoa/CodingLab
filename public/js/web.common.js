@@ -24,8 +24,12 @@
     $('#topbar a').each(function () {
         if (this.href == url) {
             $(this).addClass('active').addClass('active text-yellow');
-            if ($(this).parents('ul').length == 2) {
+            if ($(this).parents('ul').length == 2) { //第一層ul
                 $(this).parent().parent().parent().children('a').addClass('active text-yellow');
+            }
+            if ($(this).parents('ul').length == 3) { //第二層ul
+                $(this).parent().parent().parent().children('a').addClass('bg-blue');
+                $(this).parent().parent().parent().parent().parent().children('a').addClass('text-yellow');
             }
         }
     });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post as PostEloquent;
 use App\PostType as PostTypeEloquent;
+use App\Park as ParkEloquent;
 use Redirect;
 use View;
 use DB;
@@ -36,11 +37,11 @@ class HomeController extends Controller
 
     /*
         台北市公園資訊跨資料庫測試1
-        use DB;
+        use App\Parks;
     */
     public function parktaipei()
     {
-        $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
+        $parks = ParkEloquent::all();
         if(!empty($_GET['type'])){
             switch ($_GET['type']) {
                 case 'json':
@@ -81,7 +82,7 @@ class HomeController extends Controller
     public function parktaipei3()
     {
         $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
-        return view('parktaipei',compact('parks'));
+        return view('parktaipei3',compact('parks'));
     }
 
     public function post()

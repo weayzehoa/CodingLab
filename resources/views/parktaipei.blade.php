@@ -9,8 +9,8 @@
         <div class="container bg-white">
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">台北公園資訊資料撈取方式</h3>
-                    <i class="fas fa-info text-danger"></i> 這邊用了站內跨資料庫方式讀取資料。並且使用 DataTable 套件來呈現。<br>
+                    <h3 class="profile-username text-center">台北公園資訊資料</h3>
+                    <i class="fas fa-info text-danger"></i> 這邊直接讀取Parks資料表所有資料。並且使用 DataTable 套件來呈現部分資料。<br>
                     <i class="fas fa-info text-primary"></i> 將資料轉換成 JSON、CSV、ODS、XML 並提供下載
                 </div>
             </div>
@@ -57,12 +57,12 @@
                         <tbody>
                             @foreach ( $parks ?? '' as $park )
                             <tr>
-                                <td>{{ $park->pm_name }}</td>
-                                <td>{{ $park->pm_name_eng }}</td>
-                                <td>{{ $park->pm_type }}</td>
-                                <td>{{ $park->pm_regions }}</td>
-                                <td>{{ $park->pm_location }}</td>
-                                <td>{{ $park->pm_unit }}</td>
+                                <td>{{ $park->name }}</td>
+                                <td>{{ $park->engname }}</td>
+                                <td>{{ $park->type }}</td>
+                                <td>{{ $park->dist }}</td>
+                                <td>{{ $park->location }}</td>
+                                <td>{{ $park->unit }}</td>
                             </tr>
                             @endforeach
                         </tbody>

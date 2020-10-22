@@ -35,17 +35,36 @@ class HomeController extends Controller
     }
 
     /*
-        台北市公園資訊跨資料庫測試
+        台北市公園資訊跨資料庫測試1
         use DB;
     */
     public function parktaipei()
     {
         $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
-        return view('parktaipei',compact('parks'));
+        if(!empty($_GET['type'])){
+            switch ($_GET['type']) {
+                case 'json':
+                    $jsonData = json_encode($parks,true);
+                    $filename=mb_convert_encoding('臺北市公園基本資料', 'big5', 'UTF-8').'.json';
+                    return response()
+                            ->json($parks)
+                            ->header('Content-Type','application/json; charset=utf-8');
+                    break;
+                case 'json2':
+                    $jsonData = json_encode($parks,true);
+                    return view('parktaipei',compact('jsonData'));
+                    break;
+                default:
+                    # code...
+                    break;
+            }
+        }else{
+            return view('parktaipei',compact('parks'));
+        }
     }
 
     /*
-        台北市公園資訊Curl測試
+        台北市公園資訊Curl測試2
         use Ixudra\Curl\Facades\Curl;
     */
     public function parktaipei2()
@@ -53,6 +72,16 @@ class HomeController extends Controller
         $jsonString = Curl::to('https://parks.taipei/parks/api/')->get();
         $parks2 = json_decode($jsonString);
         return view('parktaipei2',compact('parks2'));
+    }
+
+    /*
+        台北市公園資訊跨資料庫測試3
+        use DB;
+    */
+    public function parktaipei3()
+    {
+        $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
+        return view('parktaipei',compact('parks'));
     }
 
     public function post()

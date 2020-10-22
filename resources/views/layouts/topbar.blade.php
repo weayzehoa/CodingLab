@@ -4,11 +4,9 @@
             {{-- <img src="../../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
             <span class="brand-text font-weight-light">CodingLab</span>
         </a>
-
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -71,7 +69,10 @@
                             <a id="backLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">台北市公園資料</a>
                             <ul aria-labelledby="backLabMenu2" class="dropdown-menu border-0 shadow">
                                 <li>
-                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">跨資料庫讀取</a>
+                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">資料轉換</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-3" href="{{ route('parktaipei3') }}" class="dropdown-item">跨資料庫讀取</a>
                                 </li>
                                 <li>
                                     <a tabindex="-2" href="{{ route('parktaipei2') }}" class="dropdown-item">Curl抓取</a>

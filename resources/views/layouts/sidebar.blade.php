@@ -35,6 +35,12 @@
                         <li class="nav-item">
                             <a href="{{ route('parktaipei') }}" class="nav-link">
                                 <i class="nav-icon far fa-list-alt"></i>
+                                <p>資料轉換</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('parktaipei3') }}" class="nav-link">
+                                <i class="nav-icon far fa-list-alt"></i>
                                 <p>跨資料庫讀取</p>
                             </a>
                         </li>

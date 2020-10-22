@@ -24,6 +24,7 @@ Route::get('aboutme', function () { return view('aboutme'); });
 //台北市公園資訊
 Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
 Route::get('parktaipei2', 'HomeController@parktaipei2')->name('parktaipei2');
+Route::get('parktaipei3', 'HomeController@parktaipei3')->name('parktaipei3');
 
 //測試用
 Route::get('test', function () { return view('test'); });

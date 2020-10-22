@@ -55,7 +55,7 @@ class HomeController extends Controller
                     return view('parktaipei',compact('jsonData'));
                     break;
                 default:
-                    # code...
+                    return view('parktaipei');
                     break;
             }
         }else{

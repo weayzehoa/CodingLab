@@ -205,5 +205,5 @@
 
 @section('script')
     {{-- Select2 --}}
-    <script src="{{ asset('vendor/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
 @endsection

@@ -9,7 +9,7 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">會員文章清單</h3>
-                    <i class="fas fa-info text-danger"></i>
+                    <i class="fas fa-info text-danger"></i> 會員文章使用 Fake 工廠產生 文章、類別、留言及對應會員資料，一個簡易的部落格及留言系統。
                 </div>
             </div>
             <div class="card card-primary card-outline">

@@ -19,9 +19,10 @@
                     <h3 class="card-title">台北公園資訊資料轉換下載</h3><br>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('parktaipei') }}" class="btn btn-warning">DataTable模式</a>
-                    <a href="{{ route('parktaipei') }}?type=json2" class="btn btn-info">JSON 格式 (顯示於下方)</a>
-                    <a href="{{ route('parktaipei') }}?type=json" class="btn btn-primary" target="_blank">JSON 格式 (另開視窗)</a>
+                    <a href="{{ route('parktaipei') }}" class="btn btn-warning">DataTable 模式</a>
+                    <a href="{{ route('parktaipei') }}?type=json2" class="btn btn-info">JSON (顯示於下方)</a>
+                    <a href="{{ route('parktaipei') }}?type=json" class="btn btn-primary" target="_blank">JSON (另開視窗)</a>
+                    <a href="{{ route('parktaipei') }}?type=jsondownload" class="btn btn-primary">JSON 下載</a>
                     <a href="{{ route('parktaipei') }}?type=csv" class="btn btn-success">CSV</a>
                     <a href="{{ route('parktaipei') }}?type=ods" class="btn btn-secondary">ODS</a>
                     <a href="{{ route('parktaipei') }}?type=xml" class="btn btn-warning">XML</a>

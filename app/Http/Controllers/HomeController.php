@@ -9,6 +9,8 @@ use App\Park as ParkEloquent;
 use Redirect;
 use View;
 use DB;
+use File;
+use Response;
 use Ixudra\Curl\Facades\Curl;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
@@ -50,6 +52,16 @@ class HomeController extends Controller
                     return response()
                             ->json($parks)
                             ->header('Content-Type','application/json; charset=utf-8');
+                    break;
+                case 'jsondownload':
+                    $jsonData = json_encode($parks,true);
+                    $fileName='臺北市公園基本資料.json';
+                    $destPath = 'upload';
+                    if(!file_exists(public_path() . '/' . $destPath)){
+                        File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
+                    }
+                    File::put(public_path('/upload/'.$fileName),$jsonData);
+                    return response()->download(public_path('/upload/'.$fileName))->deleteFileAfterSend();;
                     break;
                 case 'json2':
                     $jsonData = json_encode($parks,true);

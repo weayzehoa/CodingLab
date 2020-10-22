@@ -20,6 +20,7 @@
         "laravel/tinker": "^2.0",
         "mews/captcha": "^3.2",
         "proengsoft/laravel-jsvalidation": "^4.3",
+        "simplesoftwareio/simple-qrcode": "~4",
         "spatie/laravel-activitylog": "^3.16"
     },
     "require-dev": {

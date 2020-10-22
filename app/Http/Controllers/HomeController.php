@@ -9,6 +9,8 @@ use Redirect;
 use View;
 use DB;
 use Ixudra\Curl\Facades\Curl;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 class HomeController extends Controller
 {
     /**
@@ -28,8 +30,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
-        // return Redirect::action('PostsController@index');
+        $qrCode = QrCode::color(0, 0, 255)->generate(env('APP_URL'));
+        return view('welcome', compact('qrCode'));
     }
 
     /*

@@ -71,6 +71,7 @@
                                                 <li>Laravel-activitylog - 紀錄用戶行為</li>
                                                 <li>laravel/socialite - 第三方登入</li>
                                                 <li>ixudra/curl - Curl 套件</li>
+                                                <li>simplesoftwareio/simple-qrcode - QrCode 套件</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -94,6 +95,24 @@
                                     <b>你的瀏覽器資訊: </b><br>{{ $_SERVER['HTTP_USER_AGENT'] }}
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <h3 class="profile-username text-center">我的筆記</h3>
+                            <hr>
+                            <div class="text-center">
+                                {!! QrCode::size(100)->color(255, 0, 0)->generate('https://roger.rvt.idv.tw'); !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                            <h3 class="profile-username text-center">本站 QrCode</h3>
+                            <hr>
+                            <div class="text-center">
+                                {{ $qrCode }}
+                            </div>
                         </div>
                     </div>
                 </div>

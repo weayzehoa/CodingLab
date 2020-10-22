@@ -15,7 +15,8 @@
                             <i class="fas fa-info text-primary"></i> 此網站主要是用來做 Laravel 程式設計練習及測試用，平常大部分功能都可以正常運作，但也有可能我在做其他試驗時會莫名其妙壞掉。<br>
                             <i class="fas fa-info text-danger"></i> <span class="text-danger">此網站內容來源僅供測試研究用，並非真實完整資料或資訊，請勿以此網站內容當作依據參考，網站內容若有不妥請來信告知移除。</span><br>
                             <i class="fas fa-info text-purple"></i> 版面設計不是我強項，可能有些地方不是很美觀或存在錯版問題，請見諒。<br>
-                            <i class="fas fa-info text-info"></i> 後台管理帳號 admin@mail.com 密碼 admin，前台測試帳號 user@mail.com 密碼 user 或 使用第三方登入測試 (可能隨時會被清除)
+                            <i class="fas fa-info text-info"></i> 前台測試帳號 user@mail.com (可管理所有文章) 密碼 user 或 guest@mail.com (一般訪客) 密碼 guest 使用第三方帳號登入測試 (可能隨時會被清除)<br>
+                            <i class="fas fa-info text-info"></i> 後台管理帳號 admin@mail.com 密碼 admin (可任意管理所有資料)
                         </div>
                     </div>
                 </div>
@@ -68,10 +69,11 @@
                                                 <li>gregwar/captcha - 圖形驗證</li>
                                                 <li>barryvdh/laravel-debugbar - 除錯 Bar</li>
                                                 <li>proengsoft/laravel-jsvalidation - 共用驗證</li>
-                                                <li>Laravel-activitylog - 紀錄用戶行為</li>
+                                                <li>laravel-activitylog - 紀錄用戶行為</li>
                                                 <li>laravel/socialite - 第三方登入</li>
                                                 <li>ixudra/curl - Curl 套件</li>
                                                 <li>simplesoftwareio/simple-qrcode - QrCode 套件</li>
+                                                <li>laravel/excel - 匯入匯出 試算表 套件</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -10,7 +10,8 @@ use DB;
 use File;
 use Response;
 use Ixudra\Curl\Facades\Curl;
-
+use App\Exports\ParksExport;
+use Maatwebsite\Excel\Facades\Excel;
 class ParksController extends Controller
 {
     /**
@@ -139,16 +140,28 @@ class ParksController extends Controller
     */
     public function csv()
     {
-        $parks = ParkEloquent::all();
-        return view('parks.index',compact('parks'));
+        return Excel::download(new ParksExport, 'parks.csv');
+    }
+    /*
+        下載 XLS 檔案
+    */
+    public function xls()
+    {
+        return Excel::download(new ParksExport, 'parks.xls');
+    }
+    /*
+        下載 XLSX 檔案
+    */
+    public function xlsx()
+    {
+        return Excel::download(new ParksExport, 'parks.xlsx');
     }
     /*
         下載 ODS 檔案
     */
     public function ods()
     {
-        $parks = ParkEloquent::all();
-        return view('parks.index',compact('parks'));
+        return Excel::download(new ParksExport, 'parks.ods');
     }
     /*
         下載 XML 檔案

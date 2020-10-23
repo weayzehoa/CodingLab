@@ -28,6 +28,8 @@ Route::prefix('parks')->name('parks.')->group(function(){
     Route::get('openJson', 'ParksController@openJson')->name('openJson');
     Route::get('downJson', 'ParksController@downJson')->name('downJson');
     Route::get('csv', 'ParksController@csv')->name('csv');
+    Route::get('xls', 'ParksController@xls')->name('xls');
+    Route::get('xlsx', 'ParksController@xlsx')->name('xlsx');
     Route::get('ods', 'ParksController@ods')->name('ods');
     Route::get('xml', 'ParksController@xml')->name('xml');
     Route::get('cdb', 'ParksController@cdb')->name('cdb');

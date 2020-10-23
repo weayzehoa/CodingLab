@@ -67,6 +67,14 @@
     }, 2000);
 
     //背景動畫
-    particlesJS.load('particles-js', 'js/particles.json');
+    var particlesJSfile = '';
+    if(path.length == 4){
+        particlesJSfile = '../../js/particles.json'
+    }else if(path.length == 3){
+        particlesJSfile = '../js/particles.json';
+    }else{
+        particlesJSfile = 'js/particles.json';
+    }
+    particlesJS.load('particles-js', particlesJSfile);
 
 })(jQuery);

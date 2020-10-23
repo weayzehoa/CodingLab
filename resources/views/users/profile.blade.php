@@ -93,7 +93,7 @@
 @section('css')
 {{-- 這邊放置 CSS 用 (在頁面上方) --}}
 {{-- iCheck for checkboxes and radio inputs --}}
-  <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 @endsection
 
 @section('script')
@@ -103,7 +103,6 @@
 @section('CustomScript')
 {{-- 這邊放置 Script 程式用 (在頁面下方) --}}
 <script>
-    particlesJS.load('particles-js', '../js/particles.json');
     imgclass = '.myavatar'; //img的class名稱
     myavatar = $(imgclass).attr('src');
     $('input[name=avatar]').change(function (x) {

@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', '空白頁面')
+@section('title', '背景動畫測試')
 
 @section('content')
 <div class="fog">

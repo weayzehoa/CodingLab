@@ -122,16 +122,12 @@
         </div>
     </section>
 </div>
-<div id="particles-js"></div>
 @endsection
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/web.custom.css') }}">
 @endsection
 
 @section('script')
-{{-- VincentGarreau/particles.js --}}
-<script src="{{ asset('vendor/particles.js/particles.min.js') }}"></script>
 @endsection
 
 @section('CustomScript')
@@ -152,7 +148,5 @@
         document.getElementById('showtime').innerHTML = NowNow + '（' + dayNames[d] + '）';
         setTimeout('ShowTime()', 1000);
     }
-    //背景動畫
-    particlesJS.load('particles-js', './js/particles.json');
 </script>
 @endsection

@@ -85,7 +85,4 @@
 
 @section('CustomScript')
 {{-- 這邊放置 Script 程式用 (在頁面下方) --}}
-<script>
-    particlesJS.load('particles-js', '../js/particles.json');
-</script>
 @endsection

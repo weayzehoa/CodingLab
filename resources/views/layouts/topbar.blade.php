@@ -72,10 +72,10 @@
                                     <a tabindex="-3" href="{{ url('parks') }}" class="dropdown-item">站內資料處理</a>
                                 </li>
                                 <li>
-                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">跨資料庫讀取</a>
+                                    <a tabindex="-3" href="{{ url('parks/cdb') }}" class="dropdown-item">跨資料庫讀取</a>
                                 </li>
                                 <li>
-                                    <a tabindex="-2" href="{{ route('parktaipei2') }}" class="dropdown-item">Curl抓取</a>
+                                    <a tabindex="-3" href="{{ url('parks/curl') }}" class="dropdown-item">Curl抓取</a>
                                 </li>
                             </ul>
                         </li>

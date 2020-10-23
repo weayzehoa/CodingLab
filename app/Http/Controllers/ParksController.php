@@ -9,6 +9,7 @@ use View;
 use DB;
 use File;
 use Response;
+use Ixudra\Curl\Facades\Curl;
 
 class ParksController extends Controller
 {
@@ -138,6 +139,23 @@ class ParksController extends Controller
             return view('parktaipei',compact('parks'));
         }
     }
-
-
+    /*
+        台北市公園資訊跨資料庫測試
+        use DB;
+    */
+    public function cdb()
+    {
+        $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
+        return view('parks.cdb',compact('parks'));
+    }
+    /*
+        台北市公園資訊Curl測試2
+        use Ixudra\Curl\Facades\Curl;
+    */
+    public function curl()
+    {
+        $jsonString = Curl::to('https://parks.taipei/parks/api/')->get();
+        $parks2 = json_decode($jsonString);
+        return view('parks.curl',compact('parks2'));
+    }
 }

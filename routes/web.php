@@ -22,15 +22,14 @@ Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
 
 //台北市公園資訊
+Route::prefix('parks')->name('parks.')->group(function(){
+    Route::get('cdb', 'ParksController@cdb')->name('cdb');
+    Route::get('curl', 'ParksController@curl')->name('curl');
+});
 Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 
-//跨資料庫
-Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
-//Curl
-Route::get('parktaipei2', 'HomeController@parktaipei2')->name('parktaipei2');
-
 //測試用
-Route::get('test', function () { return view('test'); });
+// Route::get('test', function () { return view('test'); });
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

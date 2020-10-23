@@ -39,13 +39,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('parktaipei') }}" class="nav-link">
+                            <a href="{{ url('parks/cdb') }}" class="nav-link">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>跨資料庫讀取</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('parktaipei2') }}" class="nav-link">
+                            <a href="{{ url('parks/curl') }}" class="nav-link">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>Curl抓取</p>
                             </a>

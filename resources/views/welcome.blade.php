@@ -55,6 +55,7 @@
                                                 <li>ekko-lightbox</li>
                                                 <li>WoW.js</li>
                                                 <li>animate.css</li>
+                                                <li>Leaflet.js for OpenStreetMap</li>
                                             </ul>
                                         </div>
                                     </div>

@@ -44,6 +44,9 @@ Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 Route::get('wowbgtest', function () { return view('wowbgtest'); });
 //JS Clock 測試
 Route::get('clocktest', function () { return view('clocktest'); });
+//OpenStreetMap
+Route::get('openstreetmap', function () { return view('openstreetmap'); })->name('openstreetmap');
+Route::get('googlemap', function () { return view('googlemap'); })->name('googlemap');
 
 //圖形驗證碼刷新用 (使用套件內建路徑)
 // Route::get('/captcha', 'HomeController@captcha')->name('captcha');

@@ -50,13 +50,13 @@
                         <li><a href="{{ url('clocktest') }}" class="dropdown-item">JS Clock 測試</a></li>
                         <li class="dropdown-divider"></li>
                         <li class="dropdown-submenu dropdown-hover">
-                            <a id="frontLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">TEST3</a>
+                            <a id="frontLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">地圖</a>
                             <ul aria-labelledby="frontLabMenu2" class="dropdown-menu border-0 shadow">
                                 <li>
-                                    <a tabindex="-3" href="#" class="dropdown-item">TEST3-1</a>
+                                    <a tabindex="-3" href="{{ url('openstreetmap') }}" class="dropdown-item">Open Street Map</a>
                                 </li>
                                 <li>
-                                    <a tabindex="-2" href="#" class="dropdown-item">TEST3-1</a>
+                                    <a tabindex="-2" href="{{ url('googlemap') }}" class="dropdown-item">Google Map</a>
                                 </li>
                             </ul>
                         </li>

@@ -63,21 +63,21 @@
                     <a href="javascript:" class="nav-link">
                         <i class="nav-icon fas fa-tools"></i>
                         <p>
-                            TEST3
+                            地圖
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('openstreetmap') }}" class="nav-link">
                                 <i class="fas fa-users nav-icon"></i>
-                                <p>TEST3-1</p>
+                                <p>Open Street Map</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ url('googlemap') }}" class="nav-link">
                                 <i class="fas fa-users nav-icon"></i>
-                                <p>TEST3-2</p>
+                                <p>Google Map</p>
                             </a>
                         </li>
                     </ul>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51f45479fdc70790036b8121e7647564",
+    "content-hash": "9f6c67db682130c62f48a4028c139aae",
     "packages": [
         {
             "name": "arcanedev/no-captcha",
@@ -227,6 +227,71 @@
             "description": "BaconQrCode is a QR code generator for PHP.",
             "homepage": "https://github.com/Bacon/BaconQrCode",
             "time": "2020-07-30T16:40:58+00:00"
+        },
+        {
+            "name": "bmatovu/laravel-xml",
+            "version": "v1.0.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mtvbrianking/laravel-xml.git",
+                "reference": "5e5e80d7d95fb6c33b78a0bd137d1edbdfe6258c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mtvbrianking/laravel-xml/zipball/5e5e80d7d95fb6c33b78a0bd137d1edbdfe6258c",
+                "reference": "5e5e80d7d95fb6c33b78a0bd137d1edbdfe6258c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.3.0|~5.4.0|~5.5.0|~5.6.0|~5.7.0|~5.8.0|^6.0",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.3.0|~3.4.0|~3.5.0|~3.6.0|~3.7.0|~3.8.0|^4.0",
+                "phpunit/phpunit": "~5.0|~5.7|~6.0|^7.0|^7.5|^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Bmatovu\\LaravelXml\\LaravelXmlServiceProvider"
+                    ],
+                    "aliases": {
+                        "Xml": "Bmatovu\\LaravelXml\\LaravelXml"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Bmatovu\\LaravelXml\\": "src/"
+                },
+                "files": [
+                    "src/Support/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Matovu",
+                    "email": "mtvbrianking@gmail.com",
+                    "homepage": "http://bmatovu.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel XML Support",
+            "homepage": "https://github.com/mtvbrianking/laravel-xml",
+            "keywords": [
+                "laravel",
+                "middleware",
+                "package",
+                "response",
+                "support",
+                "xml"
+            ],
+            "time": "2019-09-04T12:24:57+00:00"
         },
         {
             "name": "ckeditor/ckeditor",

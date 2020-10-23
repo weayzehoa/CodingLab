@@ -22,9 +22,12 @@ Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
 
 //台北市公園資訊
+Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
+
+//跨資料庫
 Route::get('parktaipei', 'HomeController@parktaipei')->name('parktaipei');
+//Curl
 Route::get('parktaipei2', 'HomeController@parktaipei2')->name('parktaipei2');
-Route::get('parktaipei3', 'HomeController@parktaipei3')->name('parktaipei3');
 
 //測試用
 Route::get('test', function () { return view('test'); });

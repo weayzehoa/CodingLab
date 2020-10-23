@@ -69,10 +69,10 @@
                             <a id="backLabMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">台北市公園資料</a>
                             <ul aria-labelledby="backLabMenu2" class="dropdown-menu border-0 shadow">
                                 <li>
-                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">資料轉換</a>
+                                    <a tabindex="-3" href="{{ url('parks') }}" class="dropdown-item">站內資料處理</a>
                                 </li>
                                 <li>
-                                    <a tabindex="-3" href="{{ route('parktaipei3') }}" class="dropdown-item">跨資料庫讀取</a>
+                                    <a tabindex="-3" href="{{ route('parktaipei') }}" class="dropdown-item">跨資料庫讀取</a>
                                 </li>
                                 <li>
                                     <a tabindex="-2" href="{{ route('parktaipei2') }}" class="dropdown-item">Curl抓取</a>

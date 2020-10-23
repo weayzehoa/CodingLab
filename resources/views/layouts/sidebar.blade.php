@@ -33,13 +33,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('parktaipei') }}" class="nav-link">
+                            <a href="{{ url('parks') }}" class="nav-link">
                                 <i class="nav-icon far fa-list-alt"></i>
-                                <p>資料轉換</p>
+                                <p>站內資料處理</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('parktaipei3') }}" class="nav-link">
+                            <a href="{{ route('parktaipei') }}" class="nav-link">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>跨資料庫讀取</p>
                             </a>

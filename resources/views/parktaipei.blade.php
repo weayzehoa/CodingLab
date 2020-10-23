@@ -9,36 +9,11 @@
         <div class="container bg-white">
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
-                    <h3 class="profile-username text-center">台北公園資訊資料</h3>
-                    <i class="fas fa-info text-danger"></i> 這邊直接讀取Parks資料表所有資料。並且使用 DataTable 套件來呈現部分資料。<br>
-                    <i class="fas fa-info text-primary"></i> 將資料轉換成 JSON、CSV、ODS、XML 並提供下載
+                    <h3 class="profile-username text-center">台北公園資訊資料撈取方式</h3>
+                    <i class="fas fa-info text-danger"></i> 這邊用了站內跨資料庫方式讀取資料。並且使用 DataTable 套件來呈現。
                 </div>
             </div>
-            <div class="card card-blue card-outline">
-                <div class="card-header">
-                    <h3 class="card-title">台北公園資訊資料轉換下載</h3><br>
-                </div>
-                <div class="card-body">
-                    <a href="{{ route('parktaipei') }}" class="btn btn-warning">DataTable 模式</a>
-                    <a href="{{ route('parktaipei') }}?type=json2" class="btn btn-info">JSON (顯示於下方)</a>
-                    <a href="{{ route('parktaipei') }}?type=json" class="btn btn-primary" target="_blank">JSON (另開視窗)</a>
-                    <a href="{{ route('parktaipei') }}?type=jsondownload" class="btn btn-primary">JSON 下載</a>
-                    <a href="{{ route('parktaipei') }}?type=csv" class="btn btn-success">CSV</a>
-                    <a href="{{ route('parktaipei') }}?type=ods" class="btn btn-secondary">ODS</a>
-                    <a href="{{ route('parktaipei') }}?type=xml" class="btn btn-warning">XML</a>
-                </div>
-            </div>
-            @if($jsonData ?? '')
-            <div class="card card-blue card-outline">
-                <div class="card-header">
-                    <h3 class="card-title">JSON 資料</h3>
-                </div>
-                <div class="card-body">
-                    {{ $jsonData ?? '' }}
-                </div>
-            </div>
-            @endif
-            @if($parks ?? '')
+            @if($parks)
             <div class="card card-blue card-outline">
                 <div class="card-header">
                     <h3 class="card-title">台北公園資訊 (跨資料庫撈取)</h3>
@@ -56,14 +31,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $parks ?? '' as $park )
+                            @foreach ( $parks as $park )
                             <tr>
-                                <td>{{ $park->name }}</td>
-                                <td>{{ $park->engname }}</td>
-                                <td>{{ $park->type }}</td>
-                                <td>{{ $park->dist }}</td>
-                                <td>{{ $park->location }}</td>
-                                <td>{{ $park->unit }}</td>
+                                <td>{{ $park->pm_name }}</td>
+                                <td>{{ $park->pm_name_eng }}</td>
+                                <td>{{ $park->pm_type }}</td>
+                                <td>{{ $park->pm_regions }}</td>
+                                <td>{{ $park->pm_location }}</td>
+                                <td>{{ $park->pm_unit }}</td>
                             </tr>
                             @endforeach
                         </tbody>

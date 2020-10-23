@@ -100,45 +100,65 @@ class ParksController extends Controller
         //
     }
 
-
     /*
-        台北市公園資訊跨資料庫測試1
-        use App\Parks;
+        顯示Json資料
     */
-    public function parktaipei()
+    public function showJson()
     {
         $parks = ParkEloquent::all();
-        if(!empty($_GET['type'])){
-            switch ($_GET['type']) {
-                case 'json':
-                    $jsonData = json_encode($parks,true);
-                    $filename=mb_convert_encoding('臺北市公園基本資料', 'big5', 'UTF-8').'.json';
-                    return response()
-                            ->json($parks)
-                            ->header('Content-Type','application/json; charset=utf-8');
-                    break;
-                case 'jsondownload':
-                    $jsonData = json_encode($parks,true);
-                    $fileName='臺北市公園基本資料.json';
-                    $destPath = 'upload';
-                    if(!file_exists(public_path() . '/' . $destPath)){
-                        File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
-                    }
-                    File::put(public_path('/upload/'.$fileName),$jsonData);
-                    return response()->download(public_path('/upload/'.$fileName))->deleteFileAfterSend();;
-                    break;
-                case 'json2':
-                    $jsonData = json_encode($parks,true);
-                    return view('parktaipei',compact('jsonData'));
-                    break;
-                default:
-                    return view('parktaipei');
-                    break;
-            }
-        }else{
-            return view('parktaipei',compact('parks'));
-        }
+        $jsonData = json_encode($parks,true);
+        return view('parks.index',compact('jsonData'));
     }
+    /*
+        另開視窗，顯示Json資料
+    */
+    public function openJson()
+    {
+        $parks = ParkEloquent::all();
+        return response()
+        ->json($parks)
+        ->header('Content-Type','application/json; charset=utf-8');
+    }
+    /*
+        下載Json檔案
+    */
+    public function downJson()
+    {
+        $parks = ParkEloquent::all();
+        $jsonData = json_encode($parks,true);
+        $fileName='臺北市公園基本資料.json';
+        $destPath = 'upload';
+        if(!file_exists(public_path() . '/' . $destPath)){
+            File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
+        }
+        File::put(public_path('/upload/'.$fileName),$jsonData);
+        return response()->download(public_path('/upload/'.$fileName))->deleteFileAfterSend();
+    }
+    /*
+        下載 CSV 檔案
+    */
+    public function csv()
+    {
+        $parks = ParkEloquent::all();
+        return view('parks.index',compact('parks'));
+    }
+    /*
+        下載 ODS 檔案
+    */
+    public function ods()
+    {
+        $parks = ParkEloquent::all();
+        return view('parks.index',compact('parks'));
+    }
+    /*
+        下載 XML 檔案
+    */
+    public function xml()
+    {
+        $parks = ParkEloquent::all();
+        return view('parks.index',compact('parks'));
+    }
+
     /*
         台北市公園資訊跨資料庫測試
         use DB;

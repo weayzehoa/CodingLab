@@ -23,6 +23,13 @@ Route::get('aboutme', function () { return view('aboutme'); });
 
 //台北市公園資訊
 Route::prefix('parks')->name('parks.')->group(function(){
+    Route::get('showJson', 'ParksController@showJson')->name('showJson');
+    Route::post('Json', 'ParksController@Json')->name('Json');
+    Route::get('openJson', 'ParksController@openJson')->name('openJson');
+    Route::get('downJson', 'ParksController@downJson')->name('downJson');
+    Route::get('csv', 'ParksController@csv')->name('csv');
+    Route::get('ods', 'ParksController@ods')->name('ods');
+    Route::get('xml', 'ParksController@xml')->name('xml');
     Route::get('cdb', 'ParksController@cdb')->name('cdb');
     Route::get('curl', 'ParksController@curl')->name('curl');
 });

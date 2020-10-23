@@ -74,6 +74,7 @@
                                                 <li>ixudra/curl - Curl 套件</li>
                                                 <li>simplesoftwareio/simple-qrcode - QrCode 套件</li>
                                                 <li>laravel/excel - 匯入匯出 試算表 套件</li>
+                                                <li>bmatovu/laravel-xml (v1.0 for Laravel6)- 匯入匯出 XML 套件</li>
                                             </ul>
                                         </div>
                                     </div>

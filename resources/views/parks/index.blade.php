@@ -19,15 +19,19 @@
                     <h3 class="card-title">台北公園資訊資料轉換下載</h3><br>
                 </div>
                 <div class="card-body">
+                    <div class="mb-3">
                     <a href="{{ route('parks.index') }}" class="btn btn-warning">DataTable 模式</a>
                     <a href="{{ route('parks.showJson') }}" class="btn btn-primary">JSON (顯示於下方)</a>
                     <a href="{{ route('parks.openJson') }}" class="btn btn-primary" target="_blank">JSON (另開視窗)</a>
-                    <a href="{{ route('parks.downJson') }}" class="btn btn-primary">JSON 下載</a>
+                    </div>
+                    <div><span>檔案下載</span>
+                    <a href="{{ route('parks.downJson') }}" class="btn btn-primary">JSON</a>
                     <a href="{{ route('parks.csv') }}" class="btn btn-success">CSV</a>
                     <a href="{{ route('parks.xls') }}" class="btn btn-success">XLS</a>
                     <a href="{{ route('parks.xlsx') }}" class="btn btn-success">XLSX</a>
                     <a href="{{ route('parks.ods') }}" class="btn btn-secondary">ODS</a>
                     <a href="{{ route('parks.xml') }}" class="btn btn-warning">XML</a>
+                    </div>
                 </div>
             </div>
             @if($jsonData ?? '')

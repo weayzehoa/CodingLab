@@ -140,28 +140,32 @@ class ParksController extends Controller
     */
     public function csv()
     {
-        return Excel::download(new ParksExport, 'parks.csv');
+        $fileName='臺北市公園基本資料.csv';
+        return Excel::download(new ParksExport, $fileName);
     }
     /*
         下載 XLS 檔案
     */
     public function xls()
     {
-        return Excel::download(new ParksExport, 'parks.xls');
+        $fileName='臺北市公園基本資料.xls';
+        return Excel::download(new ParksExport, $fileName);
     }
     /*
         下載 XLSX 檔案
     */
     public function xlsx()
     {
-        return Excel::download(new ParksExport, 'parks.xlsx');
+        $fileName='臺北市公園基本資料.xlsx';
+        return Excel::download(new ParksExport, $fileName);
     }
     /*
         下載 ODS 檔案
     */
     public function ods()
     {
-        return Excel::download(new ParksExport, 'parks.ods');
+        $fileName='臺北市公園基本資料.ods';
+        return Excel::download(new ParksExport, $fileName);
     }
     /*
         下載 XML 檔案
@@ -169,7 +173,14 @@ class ParksController extends Controller
     public function xml()
     {
         $parks = ParkEloquent::all();
-        return view('parks.index',compact('parks'));
+        $xml = response()->xml(['users' => $parks->toArray()]);
+        $fileName='臺北市公園基本資料.xml';
+        $destPath = 'upload';
+        if(!file_exists(public_path() . '/' . $destPath)){
+            File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
+        }
+        File::put(public_path('/upload/'.$fileName),$xml);
+        return response()->download(public_path('/upload/'.$fileName))->deleteFileAfterSend();
     }
 
     /*

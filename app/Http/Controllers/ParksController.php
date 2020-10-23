@@ -173,7 +173,7 @@ class ParksController extends Controller
     public function xml()
     {
         $parks = ParkEloquent::all();
-        $xml = response()->xml(['users' => $parks->toArray()]);
+        $xml = response()->xml(['parks' => $parks->toArray()]);
         $fileName='臺北市公園基本資料.xml';
         $destPath = 'upload';
         if(!file_exists(public_path() . '/' . $destPath)){

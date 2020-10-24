@@ -6,7 +6,22 @@
 <div class="fog">
     <div class="fixedbg"></div>
     <div class="fog_container">
-    <div id="particles-js"></div>
+        <div id="particles-js">
+            <div class="content-wrapper">
+                <section class="content">
+                    <div class="container">
+                        <div class="container bg-white">
+                            <div class="card card-danger card-outline">
+                                <div class="card-body box-profile">
+                                    <h3 class="profile-username text-center">背景動畫測試</h3>
+                                    <i class="fas fa-info text-danger"></i>使用 WoW.js 及 animate.css 搭配 particles.js 套件而成，可移動滑鼠來造成背景移動效果<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
         <div class="fog_img"></div>
     </div>
     <div class="mountain"></div>

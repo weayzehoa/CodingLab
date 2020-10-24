@@ -9,7 +9,10 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">會員文章清單</h3>
-                    <i class="fas fa-info text-danger"></i> 會員文章使用 Fake 工廠產生 文章、類別、留言及對應會員資料，一個簡易的部落格及留言系統。
+                    <i class="fas fa-info text-danger"></i> 會員文章使用 Fake 工廠產生 文章、類別、留言及對應會員資料，一個簡易的部落格及留言系統。<br>
+                    <i class="fas fa-info text-danger"></i> 後台管理系統可管理所有會員文章相關資料，包括修改會員文章、管理會員及刪除留言。<br>
+                    <i class="fas fa-info text-danger"></i> 前台會員若具有管理權則可以管理所有會員文章相關資料，包括修改或刪除會員文章及留言。<br>
+                    <i class="fas fa-info text-danger"></i> 使用會員文章時，帳號需經過email驗證後才能使用，包括新增、編輯或刪除。
                 </div>
             </div>
             <div class="card card-primary card-outline">

@@ -12,7 +12,7 @@
                     <div class="card card-danger card-outline">
                         <div class="card-body box-profile">
                             <h3 class="profile-username text-center">JavaScript 時鐘測試</h3>
-                            <i class="fas fa-info text-danger"></i>
+                            <i class="fas fa-info text-danger"></i> 使用 JavaScript 及 CSS 製作的時鐘。<br>
                         </div>
                     </div>
                     <div class="row">

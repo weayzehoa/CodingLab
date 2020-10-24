@@ -11,6 +11,7 @@
                 <div class="card card-danger card-outline">
                     <div class="card-body box-profile">
                         <h3 class="profile-username text-center">Open Street Map</h3>
+                        <i class="fas fa-info text-danger"></i>使用 Leaflet.js for OpenStreetMap 套件並搭配 Open Street Map 地圖<br>
                     </div>
                 </div>
                 <div class="card card-primary card-outline">

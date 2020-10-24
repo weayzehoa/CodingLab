@@ -11,6 +11,7 @@
                 <div class="card card-danger card-outline">
                     <div class="card-body box-profile">
                         <h3 class="profile-username text-center">Google Map</h3>
+                        <i class="fas fa-info text-danger"></i>使用 Google API 及 Google Map 相關工具產生地圖資訊。<br>
                     </div>
                 </div>
                 <div class="card card-primary card-outline">

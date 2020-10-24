@@ -10,7 +10,7 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">台北公園資訊資料撈取方式</h3>
-                    <i class="fas fa-info text-danger"></i> 這邊使用Curl方式直接抓取資料。並且使用 DataTable 套件來呈現。
+                    <i class="fas fa-info text-danger"></i> 這邊使用 ixudra/curl - Curl 套件直接抓取資料。並且使用 DataTable 套件來呈現。
                 </div>
             </div>
             @if($parks2)

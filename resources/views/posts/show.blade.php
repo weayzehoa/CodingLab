@@ -9,7 +9,8 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">會員文章頁面</h3>
-                    <i class="fas fa-info text-danger"></i>
+                    <i class="fas fa-info text-danger"></i>沒有登入時可以瀏覽，一般會員可以留言，前台會員可修改或刪除自己的文章及留言。<br>
+                    <i class="fas fa-info text-danger"></i>發表留言需登入會員。
                 </div>
             </div>
             <div class="col-md-10 offset-md-1">

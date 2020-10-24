@@ -13,40 +13,35 @@
                 </div>
             </div>
             <div class="col-md-6 offset-md-3">
-                    <div class="card card-primary card-outline">
-                        <div class="card-body">
-                            <form action="{{ route('users.uploadAvatar') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="form-group row">
-                                    <label class="col-md-12 col-form-label text-md-center">目前頭像</label>
-                                    <div class="col-md-8 offset-md-2 text-center">
-                                        <img src="{{ Auth::user()->getAvatarUrl() }}" class="rounded-circle" style="max-height: 150px; max-width: 150px;">
-                                    </div>
+                <div class="card card-primary card-outline">
+                    <div class="card-body">
+                        <form action="{{ route('users.uploadAvatar') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group row">
+                                <label class="col-md-12 col-form-label text-md-center">目前頭像</label>
+                                <div class="col-md-8 offset-md-2 text-center">
+                                    <img src="{{ Auth::user()->getAvatarUrl() }}" class="rounded-circle" style="max-height: 150px; max-width: 150px;">
                                 </div>
-
-                                <div class="form-group row text-center">
-                                    <label for="avatar" class="col-md-12 col-form-label">更換頭像</label>
-                                    <div class="col-md-6 offset-md-3">
-                                        <input type="file" id="avatar" name="avatar" class="form-control-file" accept="image/*" required>
-                                    </div>
-                                    <p class="form-text text-muted col-md-12">圖片檔(jpeg, png, bmp, gif, svg)</p>
+                            </div>
+                            <div class="form-group row text-center">
+                                <label for="avatar" class="col-md-12 col-form-label">更換頭像</label>
+                                <div class="col-md-6 offset-md-3">
+                                    <input type="file" id="avatar" name="avatar" class="form-control-file" accept="image/*" required>
                                 </div>
-
-                                <div class="form-group row text-center mt-3 mb-0">
-                                    <div class="col-md-8 offset-md-2">
-                                        <button type="submit" class="btn btn-md btn-outline-success btn-block">儲存</button>
-                                    </div>
+                                <p class="form-text text-muted col-md-12">圖片檔(jpeg, png, bmp, gif, svg)</p>
+                            </div>
+                            <div class="form-group row text-center mt-3 mb-0">
+                                <div class="col-md-8 offset-md-2">
+                                    <button type="submit" class="btn btn-md btn-outline-success btn-block">儲存</button>
                                 </div>
-                            </form>
-
-                        </div>
-                        <div class="card-footer bg-primary">
-                        </div>
+                            </div>
+                        </form>
                     </div>
+                    <div class="card-footer bg-primary">
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </section>
 </div>
 @endsection

@@ -61,7 +61,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function getAvatarUrl(){
         //空資料使用預設圖片
         if(empty($this->avatar)){
-            return URL::asset('images/avatars/default.png');
+            return URL::asset('img/noavatar.png');
         }else{
             //若不是網址則直接回傳
             if(!preg_match("/^[a-zA-z]+:\/\//", $this->avatar)){

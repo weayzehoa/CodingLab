@@ -20,6 +20,7 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('search', 'HomeController@search')->name('search');
 Route::get('aboutme', function () { return view('aboutme'); });
+Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 
 //台北市公園資訊
 Route::prefix('parks')->name('parks.')->group(function(){

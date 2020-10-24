@@ -65,6 +65,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //註冊成功紀錄
+        $email = $data['email'];
+        $log = "$email 會員註冊";
+        activity('前台會員')->log($log);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

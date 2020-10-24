@@ -31,8 +31,8 @@ class SocialController extends Controller
     public function getSocialCallback($provider, Request $request){
         if($request->exists('error_code')){
             return Redirect::route('login')->withErrors([
-                    'msg' => $provider . '登入或綁定失敗，請重新再試'
-                ]);
+                'msg' => $provider . '登入或綁定失敗，請重新再試'
+            ]);
         }
         //取得第三方登入使用者資料
         $socialite_user = Socialite::with($provider)->user();
@@ -42,7 +42,6 @@ class SocialController extends Controller
         if(!empty($s_u)){
             $login_user = $s_u->user;
         }else{
-
             if (empty($socialite_user->email)) {
                 return Redirect::route('login')->withErrors([
                     'msg' => '很抱歉，我們無法從您的' . $provider . '帳號抓到信箱，請用其他方式註冊帳號謝謝!'
@@ -72,11 +71,17 @@ class SocialController extends Controller
                     'provider' => $provider,
                     'user_id' => $login_user->id
                 ]);
+                //紀錄
+                $log = "使用 $provider 註冊";
+                activity('前台會員')->causedBy($login_user)->log($log);
             }
         }
         //登入
         if(!is_null($login_user)){
             Auth::login($login_user);
+            //紀錄
+            $log = "使用 $provider 登入";
+            activity('前台會員')->causedBy($login_user)->log($log);
             return Redirect::route('index');
         }
         return App::abort(500);

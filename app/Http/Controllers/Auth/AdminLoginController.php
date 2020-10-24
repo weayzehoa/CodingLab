@@ -55,9 +55,14 @@ class AdminLoginController extends Controller
             return redirect()->intended(route('admin.dashboard'));
         }
 
-        //登入失敗紀錄
-        $adminuser = AdminEloquent::where('email','=',$request->email)->first();
-        activity('後台管理')->causedBy($adminuser)->log('登入失敗');
+        //登入失敗紀錄 (可能會有機器人嘗試登入造成太多紀錄，取消紀錄登入失敗功能)
+        // $adminuser = AdminEloquent::where('email','=',$request->email)->first();
+        // if($adminuser){
+        //     activity('後台管理')->causedBy($adminuser)->log('登入失敗');
+        // }else{
+        //     $log = '查無管理者登入失敗';
+        //     activity('後台管理')->log($log);
+        // }
 
         // 驗證失敗 返回並拋出表單內容 只拋出 email 與 remember 欄位資料,
         // withErrors(['email' => trans('auth.failed')])用來覆蓋掉email欄位的錯誤訊息

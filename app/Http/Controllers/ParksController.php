@@ -103,6 +103,7 @@ class ParksController extends Controller
 
     /*
         顯示Json資料
+        使用原生方式將資料編碼成json格式
     */
     public function showJson()
     {
@@ -112,6 +113,7 @@ class ParksController extends Controller
     }
     /*
         另開視窗，顯示Json資料
+        使用response將資料編碼成json格式
     */
     public function openJson()
     {
@@ -122,6 +124,7 @@ class ParksController extends Controller
     }
     /*
         下載Json檔案
+        使用原生方式將資料編碼成json格式並將檔案儲存後提供下載，下載完成直接刪除該檔案
     */
     public function downJson()
     {
@@ -137,6 +140,7 @@ class ParksController extends Controller
     }
     /*
         下載 CSV 檔案
+        使用laravel/excel - 匯入匯出 試算表 套件拋出csv檔案
     */
     public function csv()
     {
@@ -145,6 +149,7 @@ class ParksController extends Controller
     }
     /*
         下載 XLS 檔案
+        使用laravel/excel - 匯入匯出 試算表 套件拋出xls檔案
     */
     public function xls()
     {
@@ -153,6 +158,7 @@ class ParksController extends Controller
     }
     /*
         下載 XLSX 檔案
+        使用laravel/excel - 匯入匯出 試算表 套件拋出xlsx檔案
     */
     public function xlsx()
     {
@@ -161,6 +167,7 @@ class ParksController extends Controller
     }
     /*
         下載 ODS 檔案
+        使用laravel/excel - 匯入匯出 試算表 套件拋出ods檔案
     */
     public function ods()
     {
@@ -169,6 +176,7 @@ class ParksController extends Controller
     }
     /*
         下載 XML 檔案
+        使用 bmatovu/laravel-xml (v1.0 for Laravel6)- 匯入匯出 XML 套件，儲存後拋出xml檔案，並刪除該檔案
     */
     public function xml()
     {

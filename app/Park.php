@@ -24,7 +24,7 @@ class Park extends Model
     // // protected static $logAttributesToIgnore = [ 'type'];
 
     // //只記錄有改變的欄位
-    protected static $logOnlyDirty = true;
+    // protected static $logOnlyDirty = true;
 
     // //無異動資料則不增加空資料,若沒設定 $ogOnlyDirty = true 時使用
     // protected static $submitEmptyLogs = false;

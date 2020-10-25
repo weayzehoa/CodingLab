@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="card-body">
-                <h2>抱歉，目前只有會員文章完成，其餘皆是空頁面，請見諒。</h2>
+                <h2>目前已完成會員文章、維護紀錄功能，其餘皆是空頁面。</h2>
             </div>
             <div class="card-footer">
             </div>

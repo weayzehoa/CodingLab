@@ -111,6 +111,17 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('/members', function () { return view('admin.members'); });
     Route::get('/admins', function () { return view('admin.admins'); });
     Route::get('/mails', function () { return view('admin.mails'); });
-    Route::get('/logs', function () { return view('admin.logs'); });
-    Route::get('/aboutme', function () { return view('admin.aboutme'); });
+
+    //後台維護紀錄功能，Controller 雖然用resource但限定只有 index與show function,
+    //限定部分也可以寫在 controller 的建構式中用 middleware 來限定.
+    /*
+        public function __construct(){
+            $this->middleware('admin', [
+                'except' => [
+                    'index', 'show'
+                ]
+            ]);
+        }
+    */
+    Route::resource('/logs', 'Admin\LogsController', ['only' => ['index','show']]);
 }) ;

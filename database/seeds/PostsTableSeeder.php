@@ -16,8 +16,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        //在users資料表建立10筆
-        $users = factory(UserEloquent::class, 10)->create();
         //在post_type資料表建立5筆
         $postTypes = factory(PostTypeEloquent::class, 5)->create();
         //在posts資料表建立50筆, 且用each方法一個一個處理

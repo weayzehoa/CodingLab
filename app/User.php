@@ -7,16 +7,24 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use URL; //新增
 use App\Post as PostEloquent;
+use App\SocialUser as SocialUserEloquent;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Support\Facades\Lang;
 
 use App\Notifications\VerifyEmailNotification as VerifyEmailNotification;
-
+//使用記錄功能
+use Spatie\Activitylog\Traits\LogsActivity;
 class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
+    use LogsActivity;
+
+    //要記錄的欄位 ['*'] 全部
+    protected static $logAttributes = ['*'];
+    // //log_name 欄位資料
+    protected static $logName = '會員資料';
 
     /**
      * The attributes that are mass assignable.
@@ -24,7 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'gender', 'tel', 'address'
+        'name', 'email', 'password', 'avatar', 'gender', 'tel', 'address','active'
     ];
 
     /**
@@ -49,7 +57,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function posts(){
         return $this->hasMany(PostEloquent::class);
     }
-    //與COMMENT關聯
+    //與SocialUser關聯
     public function socialuser(){
         return $this->hasOne(SocialUserEloquent::class);
     }

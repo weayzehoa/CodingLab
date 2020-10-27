@@ -74,7 +74,8 @@ Route::resource('posts/types', 'PostTypesController', ['except' => ['index']]);
 Route::prefix('users')->name('users.')->group(function(){
     Route::get('profile', 'UsersController@profile')->name('profile');
     Route::post('profile', 'UsersController@updateProfile')->name('updateProfile');
-    Route::get('avatar', 'UsersController@showAvatar')->middleware('verified')->middleware('password.confirm')->name('showAvatar');
+    // Route::get('avatar', 'UsersController@showAvatar')->middleware('verified')->middleware('password.confirm')->name('showAvatar');
+    Route::get('avatar', 'UsersController@showAvatar')->name('showAvatar');
     Route::post('avatar', 'UsersController@uploadAvatar')->name('uploadAvatar');
 });
 
@@ -108,9 +109,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('/news', function () { return view('admin.news'); });
     Route::get('/marquees', function () { return view('admin.marquees'); });
     Route::get('/carousels', function () { return view('admin.carousels'); });
-    Route::get('/members', function () { return view('admin.members'); });
     Route::get('/admins', function () { return view('admin.admins'); });
     Route::get('/mails', function () { return view('admin.mails'); });
+
+    Route::post('members/active/{id}', 'Admin\UsersController@active');
+    Route::get('members/search', 'Admin\UsersController@search');
+    Route::resource('members', 'Admin\UsersController');
 
     //後台維護紀錄功能，Controller 雖然用resource但限定只有 index與show function,
     //限定部分也可以寫在 controller 的建構式中用 middleware 來限定.
@@ -123,5 +127,5 @@ Route::prefix('admin')->name('admin.')->group(function() {
             ]);
         }
     */
-    Route::resource('/logs', 'Admin\LogsController', ['only' => ['index','show']]);
+    Route::resource('logs', 'Admin\LogsController', ['only' => ['index','show']]);
 }) ;

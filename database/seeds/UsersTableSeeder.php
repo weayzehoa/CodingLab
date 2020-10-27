@@ -6,27 +6,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UsersTableSeeder extends Seeder
 {
-    // $destPath = 'upload/avatars';
-
-    // $avatar1 = array('avatar.png','avatar4.png','avatar5.png','user1-128x128.jpg','user6-128x128.jpg','user8-128x128.jpg','user2-160x160.jpg');
-    // $avatar2 = array('avatar2.png','avatar3.png','user3-128x128.jpg','user4-128x128.jpg','user5-128x128.jpg','user7-128x128.jpg');
-    // $gender = mt_rand(1, 2);
-    // if($gender == 1){
-    //     $no = mt_rand(0, 6);
-    //     $file = $avatar1[$no];
-    // }else{
-    //     $no = mt_rand(0, 5);
-    //     $file = $avatar1[$no];
-    // }
-    // $ext = explode('.',$file)[1];
-    // $fileName = (Carbon::now()->timestamp) . '.' . $ext;
-    // $avatar = $destPath.'/'.$fileName;
-    // $destPath = 'upload/avatars';
-    // if(!file_exists(public_path() . '/' . $destPath)){
-    //     Storage::makeDirectory(public_path() . '/' . $destPath, 0755, true);
-    // }
-    // Storage::copy(asset("/img/$file") , public_path() . '/' . $avatar );
-
     /**
      * Run the database seeds.
      *

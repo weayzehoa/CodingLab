@@ -27,5 +27,6 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'address' => $faker->address,
         'tel' => $faker->phoneNumber,
+        'avatar' => 'upload/avatars/'.$faker->file(public_path() . '/img/samples/avatar', public_path() . '/upload/avatars' , false),
     ];
 });

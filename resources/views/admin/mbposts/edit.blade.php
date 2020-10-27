@@ -169,7 +169,7 @@
                                 <div class="card-body box-profile">
                                     <div class="text-center">
                                         <img class="profile-user-img img-fluid img-circle"
-                                            src="{{ ($post->user->avatar ? url($post->user->avatar) : $post->user->gender == 1) ? url('img/samples/avatar/avatar5.png') : url('img/samples/avatar/avatar2.png') }}"
+                                            src="{{ $post->user->avatar ? asset($post->user->avatar) : asset('img/noavatar.png') }}"
                                             alt="User profile picture">
                                     </div>
                                     <h3 class="profile-username text-center">{{ $post->user->name }}</h3>
@@ -207,7 +207,7 @@
                             <div class="post clearfix">
                                 <div class="user-block">
                                     <img class="img-circle img-bordered-sm"
-                                        src="{{ ($comment->user->avatar ? url($comment->user->avatar) : $comment->user->gender == 1) ? url('img/samples/avatar/avatar5.png') : url('img/samples/avatar/avatar2.png') }}"
+                                        src="{{ $comment->user->avatar ? asset($comment->user->avatar) : asset('img/noavatar.png') }}"
                                         alt="User Image">
                                     <span class="username">
                                         <a href="#">{{ $comment->user->name }}</a>

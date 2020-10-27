@@ -111,8 +111,7 @@
                                                     {{ $post->id }}
                                                 </td>
                                                 <td class="text-left align-middle">
-                                                    <a
-                                                        href="{{ route('admin.mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
+                                                    <a href="{{ route('admin.mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
                                                 </td>
                                                 <td class="text-left align-middle">{{ $post->postType->name }}</td>
                                                 <td class="text-left align-middle">{{ $post->User->name }}</td>

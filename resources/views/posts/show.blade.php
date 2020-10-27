@@ -69,8 +69,14 @@
                                             <div class="card col-md-12 mb-3">
                                                 <div class="card-body">
                                                     <div class="row">
-                                                        <div class="col-md-8">
-                                                            {{ $comment->user->name }} 在 {{ $comment->created_at }} 說道：
+                                                        <div class="user-block">
+                                                            <img class="img-circle img-bordered-sm"
+                                                                src="{{ $comment->user->avatar ? asset($comment->user->avatar) : asset('img/noavatar.png') }}"
+                                                                alt="User Image">
+                                                            <span class="username">
+                                                                <a href="#">{{ $comment->user->name }}</a>
+                                                            </span>
+                                                            <span class="description">{{ $comment->created_at }} 留言</span>
                                                         </div>
                                                         <div class="col-md-4">
                                                             @auth

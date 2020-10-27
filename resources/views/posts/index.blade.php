@@ -44,23 +44,35 @@
                             @endif
                             @foreach($posts as $post)
                             <div class="card card-info card-outline mb-3">
+                                <div class="card-hearder">
+                                </div>
                                 <div class="card-body">
                                     <div class="container-fluid p-0">
                                         <div class="row">
+                                            <div class="user-block">
+                                                <img class="img-circle img-bordered-sm" src="{{ $post->user->avatar ? asset($post->user->avatar) : asset('img/noavatar.png') }}" alt="User Image">
+                                                <span class="username text-primary">{{ $post->user->name }}</span>
+                                                <span class="description">{{ $post->created_at }} 發表</span>
+                                            </div>
                                             <div class="col-md-12">
-                                                <h4 class="card-title">{{ $post->title }}</h4>
+                                                <h3>{{ $post->title }}</h3>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 @if($post->postType != null)
+                                                {{-- <span class="badge badge-secondary ml-2">
+                                                    {{ $post->postType->name }}
+                                                </span> --}}
+                                                @endif
+                                            </div>
+                                            <div class="col-md-4 text-right">
+                                                @if($post->postType != null)
                                                 <span class="badge badge-secondary ml-2">
                                                     {{ $post->postType->name }}
                                                 </span>
                                                 @endif
-                                            </div>
-                                            <div class="col-md-4 text-right">
-                                                {{ $post->created_at->toDateString() }}
+                                                {{-- {{ $post->created_at->toDateString() }} --}}
                                             </div>
                                         </div>
                                         <hr class="my-2 mx-0">

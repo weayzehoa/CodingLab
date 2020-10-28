@@ -6,7 +6,7 @@
         <li class="nav-item">
             <a href="{{ url('/') }}" class="nav-link text-primary" target="_blank">前台首頁</a>
         </li>
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a id="homeSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">首頁管理</a>
             <ul aria-labelledby="homeSubMenu1" class="dropdown-menu border-0 shadow">
@@ -14,9 +14,9 @@
                 <li><a href="{{ url('admin/marquees') }}" class="dropdown-item">跑馬燈管理</a></li>
                 <li><a href="{{ url('admin/carousels') }}" class="dropdown-item">輪播管理</a></li>
             </ul>
-        </li>
+        </li> --}}
         {{-- 選單及內容管理 --}}
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a id="menuSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">選單及內容管理</a>
             <ul aria-labelledby="menuSubMenu1" class="dropdown-menu border-0 shadow">
@@ -44,7 +44,7 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+        </li> --}}
         {{-- 會員管理 --}}
         <li class="nav-item dropdown">
             <a id="memberSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
@@ -59,13 +59,13 @@
             <a id="systemSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">系統管理</a>
             <ul aria-labelledby="systemSubMenu1" class="dropdown-menu border-0 shadow ">
-                <li><a href="{{ url('admin/admins') }}" class="dropdown-item">管理員管理</a></li>
-                <li><a href="{{ url('admin/mails') }}" class="dropdown-item">發信管理</a></li>
+                {{-- <li><a href="{{ url('admin/admins') }}" class="dropdown-item">管理員管理</a></li> --}}
+                {{-- <li><a href="{{ url('admin/mails') }}" class="dropdown-item">發信管理</a></li> --}}
                 <li><a href="{{ url('admin/logs') }}" class="dropdown-item">維護紀錄</a></li>
             </ul>
         </li>
         {{-- 統計圖表 --}}
-        <li class="nav-item dropdown">
+        {{-- <li class="nav-item dropdown">
             <a id="accSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                 class="nav-link dropdown-toggle">統計圖表</a>
             <ul aria-labelledby="accSubMenu1" class="dropdown-menu border-0 shadow">
@@ -85,7 +85,7 @@
                     </ul>
                 </li>
             </ul>
-        </li>
+        </li> --}}
     </ul>
     {{-- SEARCH FORM --}}
     <form class="form-inline ml-3">

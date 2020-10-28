@@ -16,7 +16,7 @@
         </div>
         <nav id="sidebar" class="mt-2 nav-compact">
             <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-flat" data-widget="treeview" role="menu" data-accordion="false">
-                <li class="nav-item has-treeview menu-open">
+                {{-- <li class="nav-item has-treeview menu-open">
                     <a href="javascript:" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
@@ -53,7 +53,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
                 {{-- <li class="nav-header">選單及內容管理</li> --}}
                 {{-- <li class="nav-item has-treeview menu-open">
                     <a href="javascript:" class="nav-link">
@@ -155,6 +155,24 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-header">產品管理專區</li>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="javascript:" class="nav-link">
+                        <i class="nav-icon fas fa-tools"></i>
+                        <p>
+                            產品專區
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ url('admin/products') }}" class="nav-link ">
+                                <i class="nav-icon far fa-list-alt"></i>
+                                <p>產品管理</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="nav-header">系統管理專區</li>
                 <li class="nav-item has-treeview menu-open">
                     <a href="javascript:" class="nav-link">
@@ -165,18 +183,18 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ url('admin/admins') }}" class="nav-link">
                                 <i class="fas fa-users nav-icon"></i>
                                 <p>管理員管理</p>
                             </a>
-                        </li>
-                        <li class="nav-item">
+                        </li> --}}
+                        {{-- <li class="nav-item">
                             <a href="{{ url('admin/mails') }}" class="nav-link ">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>信件管理</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ url('admin/logs') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
@@ -185,7 +203,7 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">統計圖表專區</li>
+                {{-- <li class="nav-header">統計圖表專區</li>
                 <li class="nav-item has-treeview">
                     <a href="javascript:" class="nav-link">
                         <i class="nav-icon fas fa-chart-pie"></i>
@@ -231,7 +249,7 @@
                             </ul>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
 
                 <li class="nav-item">
                     <a href="{{ route('admin.logout') }}" class="nav-link">

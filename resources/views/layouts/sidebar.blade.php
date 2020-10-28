@@ -99,6 +99,14 @@
                                 <span class="right badge badge-info">{{ $posts_total ?? '' }}</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ url('shopping') }}" class="nav-link">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    shopping購物
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

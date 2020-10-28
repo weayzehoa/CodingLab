@@ -85,6 +85,7 @@
                     <a id="allLabMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">整合測試</a>
                     <ul aria-labelledby="allLabMenu1" class="dropdown-menu border-0 shadow">
                         <li><a href="{{ url('posts') }}" class="dropdown-item">會員文章</a></li>
+                        <li><a href="{{ url('shopping') }}" class="dropdown-item">shopping購物</a></li>
                     </ul>
                 </li>
                 <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link">後台管理</a></li>

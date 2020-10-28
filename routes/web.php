@@ -42,6 +42,9 @@ Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 // Route::get('test', function () { return view('test'); });
 
 //背景動畫測試
+Route::get('shopping', function () { return view('shopping'); });
+
+//背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });
 //JS Clock 測試
 Route::get('clocktest', function () { return view('clocktest'); });
@@ -111,6 +114,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('/carousels', function () { return view('admin.carousels'); });
     Route::get('/admins', function () { return view('admin.admins'); });
     Route::get('/mails', function () { return view('admin.mails'); });
+    Route::get('/products', function () { return view('admin.products'); });
 
     Route::post('members/active/{id}', 'Admin\UsersController@active');
     Route::get('members/search', 'Admin\UsersController@search');

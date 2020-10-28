@@ -35,7 +35,8 @@
                 </div>
             </div>
             <div class="card-body">
-                <h2>目前已完成會員管理、會員文章、維護紀錄功能，其餘皆是空頁面。</h2>
+                <h2>目前已完成會員管理、會員文章、維護紀錄功能。</h2>
+                <h2>Shopping購物建構中。</h2>
             </div>
             <div class="card-footer">
             </div>

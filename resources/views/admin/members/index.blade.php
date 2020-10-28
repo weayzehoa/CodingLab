@@ -102,9 +102,9 @@
                                         <td class="text-center align-middle">{{ $user->email_verified_at ?? '尚未驗證'  }}</td>
                                         <td class="text-center align-middle">{{ $user->created_at }}</td>
                                         <td class="text-center align-middle">
-                                            <a href="javascript:" class="btn btn-sm btn-primary">{{ $user->postsTotal }}</a>
+                                            <a href="javascript:" class="btn btn-sm btn-primary">{{ $user->postsTotal ?? 0 }}</a>
                                         </td>
-                                        <td class="text-center align-middle"><a href="javascript:" class="btn btn-sm btn-info">{{ $user->commentsTotal }}</a></td>
+                                        <td class="text-center align-middle"><a href="javascript:" class="btn btn-sm btn-info">{{ $user->commentsTotal ?? 0 }}</a></td>
                                         <td class="text-center align-middle">
                                             <div class="custom-control custom-switch custom-switch-on-success">
                                                 <form action="{{ url('admin/members/active/' . $user->id) }}"

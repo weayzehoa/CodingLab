@@ -91,10 +91,10 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th class="text-left" width="25">編號</th>
+                                            <th class="text-left" width="5">編號</th>
+                                            <th class="text-left" width="15%">會員</th>
                                             <th class="text-left" width="25">標題</th>
                                             <th class="text-left" width="10%">類別</th>
-                                            <th class="text-left" width="15%">會員</th>
                                             <th class="text-center" width="8%">審核狀態</th>
                                             <th class="text-center" width="10%">上線日期</th>
                                             <th class="text-center" width="10%">下線日期</th>
@@ -107,14 +107,23 @@
                                     <tbody>
                                         @foreach ($posts as $post)
                                             <tr>
-                                                <td class="text-left align-middle">
+                                                <td class="text-center align-middle">
                                                     {{ $post->id }}
+                                                </td>
+                                                <td class="text-left align-middle">
+                                                    <div class="user-panel d-flex">
+                                                        <div class="image">
+                                                            <img src="{{ $post->User->avatar ? asset($post->User->avatar) : asset('img/noavatar.png') }}" class="img-circle elevation-2" alt="User Image">
+                                                        </div>
+                                                        <div class="info">
+                                                            <span class="username"><a href="{{ route('admin.members.edit', $post->User->id ) }}">{{ $post->User->name }}</a></span>
+                                                        </div>
+                                                    </div>
                                                 </td>
                                                 <td class="text-left align-middle">
                                                     <a href="{{ route('admin.mbposts.edit', $post->id) }}"><b>{{ $post->title }}</b></a>
                                                 </td>
                                                 <td class="text-left align-middle">{{ $post->postType->name }}</td>
-                                                <td class="text-left align-middle">{{ $post->User->name }}</td>
                                                 <td class="text-center align-middle">
                                                     @if ($post->approved == 0)
                                                         <span class="center badge badge-secondary text-sm">Pendding</span>

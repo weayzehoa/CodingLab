@@ -6,12 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\User as UserEloquent;
+use App\SocialUser as SocialUserEloquent;
 use App\Post as PostEloquent;
+use App\PostType as PostTypeEloquent;
 use App\Comment as CommentEloquent;
 use App\SocialUser;
 use View;
 use Redirect;
 use File;
+use Carbon\Carbon;
+use App\Http\Requests\Admin\MemberUpdateRequest;
 
 class UsersController extends Controller
 {
@@ -57,7 +61,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.members.edit');
+        return view('admin.members.create');
     }
 
     /**
@@ -91,7 +95,16 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        return Redirect::back();
+        //先找出要編輯的會員資料並拋出到編輯頁面
+        $user = UserEloquent::findOrFail($id);
+        // $post_types = PostTypeEloquent::orderBy('name' , 'ASC')->get();
+        $posts = UserEloquent::find($user->id)->posts()->paginate(10);
+        // $user->social = SocialUserEloquent::where('user_id', $user->id)->get();
+        //該User所有留言(包含post中)
+        // $comments = CommentEloquent::where('user_id',$user->id)->orderBy('created_at','DESC')->paginate(5);
+        // $comments_total = CommentEloquent::where('user_id',$user->id)->count();
+        // dd($user);
+        return View::make('admin.members.edit', compact('user','posts'));
     }
 
     /**
@@ -101,9 +114,29 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MemberUpdateRequest $request, $id)
     {
-        //
+        //透過id找出使用者資料
+        $user = UserEloquent::findOrFail($id);
+        $user->fill($request->all());
+
+        //如果有檔案且檢驗過關
+        //若有檔案時須放在下方, fill特定檔案欄位覆蓋掉 $request->all() 的欄位資料
+        if($request->hasFile('avatar')){
+            $file = $request->file('avatar');
+            $destPath = 'upload/avatars';
+            if(!file_exists(public_path() . '/' . $destPath)){
+                File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
+            }
+            $ext = $file->getClientOriginalExtension();
+            $fileName = (Carbon::now()->timestamp) . '.' . $ext;
+            $file->move(public_path() . '/' . $destPath, $fileName);
+            $avatar = $destPath . '/' . $fileName;
+            $user->fill(['avatar' => $avatar]);
+        }
+
+        $user->save();
+        return Redirect::back();
     }
 
     /**
@@ -165,5 +198,24 @@ class UsersController extends Controller
         $keyword = $request->keyword;
         $users = UserEloquent::where('name', 'LIKE', "%$keyword%")->orWhere('email', 'LIKE', "%$keyword%")->orderBy('created_at', 'DESC')->paginate(10);
         return View::make('admin.members.index', compact('users', 'keyword'));
+    }
+
+    //單獨上傳頭像
+    public function uploadAvatar(UserAvatarRequest $request){
+        if(!$request->hasFile('avatar')){
+            return Redirect::back();
+        }
+        $file = $request->file('avatar');
+        $destPath = 'upload/avatars';
+        if(!file_exists(public_path() . '/' . $destPath)){
+            File::makeDirectory(public_path() . '/' . $destPath, 0755, true);
+        }
+        $ext = $file->getClientOriginalExtension();
+        $fileName = (Carbon::now()->timestamp) . '.' . $ext;
+        $file->move(public_path() . '/' . $destPath, $fileName);
+        $user = Auth::user();
+        $user->avatar = $destPath . '/' . $fileName;
+        $user->save();
+        return Redirect::back();
     }
 }

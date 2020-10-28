@@ -229,6 +229,51 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">所有留言</h3>
+                        </div>
+                        <div class="card-body box-profile">
+                            <div class="card-body">
+                                {{-- 文字不斷行 table中加上 class="text-nowrap" --}}
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-left" width="40">留言內容</th>
+                                            <th class="text-left" width="40">文章標題</th>
+                                            <th class="text-center" width="10%">發佈日期</th>
+                                            <th class="text-center" width="10%">刪除</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($comments as $comment)
+                                        <tr>
+                                            <td class="text-left align-middle">{{ $comment->content }}</td>
+                                            <td class="text-left align-middle">
+                                                <a href="{{ route('admin.mbposts.edit', $comment->post->id) }}"><b>{{ $comment->post->title }}</b></a>
+                                            </td>
+                                            <td class="text-center align-middle">{{ $comment->created_at }}</td>
+                                            <td class="text-center align-middle">
+                                                <form action="{{ route('admin.comments.destroy', $comment->id ) }}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" name="_method" value="DELETE">
+                                                    <button type="submit" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="post clearfix float-right">
+                                @isset($comments)
+                                {{ $comments->render() }}
+                                @endisset
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

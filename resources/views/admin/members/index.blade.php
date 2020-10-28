@@ -32,7 +32,7 @@
                             <div class="float-left">
                                 <div class="input-group">
                                     <div class="input-group-append">
-                                        <a href="{{ route('admin.members.create') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus mr-1"></i>新增</a>
+                                        {{-- <a href="{{ route('admin.members.create') }}" class="btn btn-sm btn-primary"><i class="fas fa-plus mr-1"></i>新增</a> --}}
                                     </div>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                                     <img src="{{ $user->avatar ? asset($user->avatar) : asset('img/noavatar.png') }}" class="img-circle elevation-2" alt="User Image">
                                                 </div>
                                                 <div class="info">
-                                                    <span class="username"><a href="{{ route('admin.members.show', $user->id ) }}">{{ $user->name }}</a></span>
+                                                    <span class="username"><a href="{{ route('admin.members.edit', $user->id ) }}">{{ $user->name }}</a></span>
                                                 </div>
                                             </div>
                                         </td>

@@ -144,6 +144,7 @@
                             <a href="{{ url('admin/members') }}" class="nav-link active">
                                 <i class="nav-icon fas fa-address-card"></i>
                                 <p>會員管理</p>
+                                <span class="right badge badge-info">{{ $users_total ?? '' }}</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -169,6 +170,7 @@
                             <a href="{{ url('admin/products') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>產品管理</p>
+                                <span class="right badge badge-info">{{ $products_total ?? '' }}</span>
                             </a>
                         </li>
                     </ul>
@@ -199,6 +201,7 @@
                             <a href="{{ url('admin/logs') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>維護紀錄</p>
+                                <span class="right badge badge-info">{{ $logs_total ?? '' }}</span>
                             </a>
                         </li>
                     </ul>

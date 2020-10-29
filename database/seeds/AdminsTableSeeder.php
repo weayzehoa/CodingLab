@@ -27,5 +27,7 @@ class AdminsTableSeeder extends Seeder
             'access' => '1111111111',
             'right' => 0,
         ]);
+        //在admin資料表建立18筆
+        $admins = factory(AdminEloquent::class, 18)->create();
     }
 }

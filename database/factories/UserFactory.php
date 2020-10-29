@@ -27,10 +27,12 @@ $factory->define(User::class, function (Faker $faker) {
         $imageUrl = $faker->gravatarUrl();
     */
     $faker->addProvider(new Gravatar($faker));
+    $genderNo = mt_rand(1, 2);
+    $genderNo == 1 ? $name = $faker->name($gender = 'male') : $name = $faker->name($gender = 'female');
 
     return [
-        'name' => $faker->name,
-        'gender' => mt_rand(1, 2),
+        'name' => $name,
+        'gender' => $genderNo,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpsdO0rOQ5byMi.Ye4oKwea3Ro9llC/.og/at2.uheWG/igi', // password

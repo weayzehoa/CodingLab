@@ -114,9 +114,12 @@ $factory->define(User::class, function (Faker $faker) {
         $faker->imageGenerator(null, 640, 480, 'png', false, true, '#1f1f1f', '#ff2222')
      */
 
+    $gender = mt_rand(1, 2);
+    $gender == 1 ? $name = $faker->name($gender = 'male') : $name = $faker->name($gender = 'female');
+
     return [
-        'name' => $faker->name,
-        'gender' => mt_rand(1, 2),
+        'name' => $name,
+        'gender' => $gender,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpsdO0rOQ5byMi.Ye4oKwea3Ro9llC/.og/at2.uheWG/igi', // password

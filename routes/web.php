@@ -41,8 +41,8 @@ Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 //測試用
 // Route::get('test', function () { return view('test'); });
 
-//背景動畫測試
-Route::get('shopping', function () { return view('shopping'); });
+//Shopping購物
+Route::resource('shopping', 'ShoppingController');
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

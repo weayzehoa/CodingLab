@@ -21,6 +21,7 @@ class CreateProductImagesTable extends Migration
             $table->string('filepath')->comment('圖片名稱及路徑');
             $table->string('ext')->nullable()->comment('副檔名');
             $table->string('size')->nullable()->comment('檔案大小');
+            $table->unsignedInteger('product_id')->comment('產品代號');
             $table->timestamps();
         });
     }

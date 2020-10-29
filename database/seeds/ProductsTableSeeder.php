@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 
 use App\Product as ProductEloquent;
 use App\ProductType as ProductTypeEloquent;
+use App\ProductImage as ProductImageEloquent;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -23,5 +24,6 @@ class ProductsTableSeeder extends Seeder
             $product->type = $productTypes[mt_rand(0, (count($productTypes)-1))]->id;
             $product->save();
         });
+        $productImages = factory(ProductImageEloquent::class, 500)->create();
     }
 }

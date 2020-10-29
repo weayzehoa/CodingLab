@@ -18,6 +18,8 @@ class CreateProductsTable extends Migration
             $table->integer('no')->comment('產品編號')->unique();
             $table->string('title')->comment('產品標題');
             $table->string('name')->comment('產品名稱');
+            $table->string('image')->comment('產品圖片');
+            $table->string('imagepath')->comment('圖片路徑');
             $table->text('description')->nullable()->comment('產品描述');
             $table->text('content')->nullable()->comment('產品內容');
             $table->integer('type')->unsigned()->comment('分類代號');

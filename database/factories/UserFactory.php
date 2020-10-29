@@ -5,6 +5,7 @@
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
+use Ottaviano\Faker\Gravatar as Gravatar;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    $faker->addProvider(new Gravatar($faker));
     return [
         'name' => $faker->name,
         'gender' => mt_rand(1, 2),
@@ -27,6 +29,7 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'address' => $faker->address,
         'tel' => $faker->phoneNumber,
-        'avatar' => 'upload/avatars/'.$faker->file(public_path() . '/img/samples/avatar', public_path() . '/upload/avatars' , false),
+        // 'avatar' => 'upload/avatars/'.$faker->file(public_path() . '/img/samples/avatar', public_path() . '/upload/avatars' , false),
+        'avatar' => $faker->gravatarUrl(),
     ];
 });

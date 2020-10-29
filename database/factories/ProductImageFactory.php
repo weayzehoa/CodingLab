@@ -10,8 +10,8 @@ $factory->define(App\ProductImage::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'description' => $faker->text($maxNbChars = 100),
-        'filename' => $faker->imageUrl(640,480, false, true),
-        'filepath' => $faker->imageUrl(640,480, false, true),
+        'filename' => $faker->imageUrl(640,480, true),
+        'filepath' => $faker->imageUrl(640,480, true),
         'ext' => '',
         'size' => '',
         'product_id' => mt_rand(1, 50),

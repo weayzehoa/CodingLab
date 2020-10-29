@@ -26,9 +26,9 @@ class Product extends Model
     // //log_name 欄位資料
     protected static $logName = '產品資料';
 
-    //與product_images資料表一對一關聯
-	public function productImages(){
-		return $this->belongsTo(ProductImageEloquent::class);
+    //與product_images資料表一對多關聯
+	public function productImage(){
+		return $this->hasMany(ProductImageEloquent::class);
 	}
     //type欄位與product_types資料表一對一關聯
 	public function productType(){

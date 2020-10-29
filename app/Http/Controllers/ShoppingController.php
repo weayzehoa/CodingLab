@@ -3,9 +3,30 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product as ProductEloquent;
+use App\ProductImage as ProductImageEloquent;
+use Carbon\Carbon; //時間格式套件
+use Auth;   //使用者驗證
+use View;   //視圖
+use Redirect; //轉向
 
 class ShoppingController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth', [
+            'except' => [
+                'index', 'show'
+            ]
+        ]);
+
+        //檢查email是否驗證過
+        $this->middleware('verified', [
+            'except' => [
+                'index', 'show'
+            ]
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +34,8 @@ class ShoppingController extends Controller
      */
     public function index()
     {
-        return view('shopping');
+        $products = ProductEloquent::paginate(12);
+        return View::make('shopping.index', compact('products'));
     }
 
     /**

@@ -16,7 +16,7 @@ class ProductImage extends Model
 
     //可讓使用者新增編輯的欄位名稱
       protected $fillable = [
-        'title', 'description', 'filename', 'filepath', 'ext', 'size',
+        'title', 'description', 'filename', 'filepath', 'ext', 'size','product_id'
     ];
 
     // //要記錄的欄位 ['*'] 全部

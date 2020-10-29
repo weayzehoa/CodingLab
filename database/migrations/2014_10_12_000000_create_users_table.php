@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->comment('密碼');
             $table->string('tel')->nullable()->comment('電話');
             $table->string('address')->nullable()->comment('地址');
-            $table->string('avatar')->nullable()->comment('頭像'); //頭像功能,可為空值
+            $table->string('avatar',500)->nullable()->comment('頭像'); //頭像功能,可為空值
             $table->boolean('type')->unsigned()->default(0)->comment('類型'); //身分判別 0 為一般使用者
             $table->boolean('active')->unsigned()->default(1)->comment('啟用');; //1 為啟用 0 為停用
             $table->rememberToken();

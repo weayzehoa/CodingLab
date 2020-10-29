@@ -32,6 +32,7 @@
         "laravel/ui": "^1.0",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
+        "ottaviano/faker-gravatar": "^0.1.2",
         "phpunit/phpunit": "^8.0"
     },
     "config": {

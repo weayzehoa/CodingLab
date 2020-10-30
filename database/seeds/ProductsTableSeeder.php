@@ -5,6 +5,7 @@ use Illuminate\Database\Seeder;
 use App\Product as ProductEloquent;
 use App\ProductType as ProductTypeEloquent;
 use App\ProductImage as ProductImageEloquent;
+use App\ProductComment as ProductCommentEloquent;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -25,5 +26,7 @@ class ProductsTableSeeder extends Seeder
             $product->save();
         });
         $productImages = factory(ProductImageEloquent::class, 500)->create();
+        //留言資料
+        $comments = factory(ProductCommentEloquent::class, 300)->create();
     }
 }

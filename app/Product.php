@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\productImage as ProductImageEloquent;
 //關聯產品類別資料表
 use App\productType as ProductTypeEloquent;
+//關聯產品類別資料表
+use App\productComment as ProductCommentEloquent;
 //使用記錄功能
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -33,5 +35,9 @@ class Product extends Model
     //type欄位與product_types資料表一對一關聯
 	public function productType(){
 		return $this->belongsTo(ProductTypeEloquent::class, 'type');
+    }
+    //關聯productComments
+    public function productComment(){
+        return $this->hasMany(ProductCommentEloquent::class);
     }
 }

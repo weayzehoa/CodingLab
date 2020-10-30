@@ -62,12 +62,25 @@
                             <div class="nav nav-tabs" id="product-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">產品描述</a>
                                 <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">會員留言</a>
-                                <a class="nav-item nav-link text-danger" id="product-rating-tab" data-toggle="tab" href="#product-cart" role="tab" aria-controls="product-cart" aria-selected="false">購物車</a>
+                                @if(Auth::user())<a class="nav-item nav-link text-danger" id="product-rating-tab" data-toggle="tab" href="#product-cart" role="tab" aria-controls="product-cart" aria-selected="false">購物車</a>@endauth
                             </div>
                         </nav>
                         <div class="tab-content p-3" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">{{ $product->content }} </div>
-                            <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> Vivamus rhoncus nisl sed venenatis luctus. Sed condimentum risus ut tortor feugiat laoreet. Suspendisse potenti. Donec et finibus sem, ut commodo lectus. Cras eget neque dignissim, placerat orci interdum, venenatis odio. Nulla turpis elit, consequat eu eros ac, consectetur fringilla urna. Duis gravida ex pulvinar mauris ornare, eget porttitor enim vulputate. Mauris hendrerit, massa nec aliquam cursus, ex elit euismod lorem, vehicula rhoncus nisl dui sit amet eros. Nulla turpis lorem, dignissim a sapien eget, ultrices venenatis dolor. Curabitur vel turpis at magna elementum hendrerit vel id dui. Curabitur a ex ullamcorper, ornare velit vel, tincidunt ipsum. </div>
+                            <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab">{!! $product->content !!}</div>
+                            <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab">
+                                @foreach ($product->productComment as $comment)
+                                <div class="post clearfix">
+                                    <div class="user-block">
+                                        <img class="img-circle img-bordered-sm" src="{{ $comment->user->avatar ? asset($comment->user->avatar) : asset('img/noavatar.png') }}" alt="User Image">
+                                        <span class="username">
+                                            <a href="javascript:">{{ $comment->user->name }}</a>
+                                        </span>
+                                        <span class="description">{{ $comment->created_at }} 留言</span>
+                                    </div>
+                                    <p>{{ $comment->content }}</p>
+                                </div>
+                                @endforeach
+                            </div>
                             <div class="tab-pane fade" id="product-cart" role="tabpanel" aria-labelledby="product-cart-tab">
                                 <div class="mt-4">
                                     <a href="{{ url('shopping/cart') }}" class="btn btn-danger btn-lg btn-flat float-right">

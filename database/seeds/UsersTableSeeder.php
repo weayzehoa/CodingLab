@@ -18,6 +18,7 @@ class UsersTableSeeder extends Seeder
             'name' => '使用者',
             'gender' => 1,
             'email' => 'user@mail.com',
+            'email_verified_at' => now(),
             'password' => bcrypt('user'),
             'type' => 1,
             'address' => '地球',

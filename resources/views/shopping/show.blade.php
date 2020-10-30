@@ -47,11 +47,8 @@
                                     <div class="input-group input-group-lg">
                                         <input class="form-control col-6" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
                                         <span class="input-group-append mr-3">
-                                            <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-plus fa-lg mr-2"></i>Go!</button>
+                                            <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-arrow-down fa-lg mr-2"></i></i>加入購物車</button>
                                         </span>
-                                        <a href="{{ url('shopping/cart') }}" class="form-control btn btn-danger btn-flat float-right">
-                                            <i class="fas fa-cart-plus fa-lg mr-2"></i>結帳
-                                        </a>
                                     </div>
                                 </form>
                             </div>
@@ -83,8 +80,11 @@
                             </div>
                             <div class="tab-pane fade" id="product-cart" role="tabpanel" aria-labelledby="product-cart-tab">
                                 <div class="mt-4">
-                                    <a href="{{ url('shopping/cart') }}" class="btn btn-danger btn-lg btn-flat float-right">
-                                        <i class="fas fa-cart-plus fa-lg mr-2"></i>結帳
+                                    <a href="{{ url('shopping/cart') }}" class="btn btn-danger btn-lg btn-flat">
+                                        <i class="fas fa-shopping-cart fa-lg mr-2"></i></i>查看購物車
+                                    </a>
+                                    <a href="{{ url('shopping/cart') }}" class="btn btn-primary btn-lg btn-flat mr-3">
+                                        <i class="fas fa-cash-register fa-lg mr-2"></i></i>結帳買單
                                     </a>
                                 </div>
                             </div>

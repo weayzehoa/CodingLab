@@ -43,6 +43,7 @@ Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 
 //Shopping購物
 Route::get('/shopping/cart', function () { return view('shopping.cart'); });
+Route::post('/shopping/cart', 'ShoppingController@addToCart')->name('shopping.cart');
 Route::resource('shopping', 'ShoppingController');
 
 //背景動畫測試

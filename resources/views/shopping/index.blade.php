@@ -11,8 +11,10 @@
                 <div class="card card-danger card-outline">
                     <div class="card-body box-profile">
                         <h3 class="profile-username text-center">Shopping購物測試</h3>
-                        <i class="fas fa-info text-danger"></i> 此部分主要目的做一個簡易的Shopping購物測試，尚未登入前，可將物品放入購物車，登入後可以做結帳，透過串接第三方金流並產生出訂單。<br>
-                        <i class="fas fa-info text-danger"></i> 產品內容與圖片皆使用隨機產生圖文資料。資料內容並不正確，只有金額是正確。
+                        <i class="fas fa-info text-danger"></i> 此部分主要目的做一個簡易的Shopping購物測試<br>
+                        <i class="fas fa-info text-danger"></i> 產品內容與圖片皆使用隨機產生圖文資料。資料內容並不正確。點擊標題或圖片可以進入產品頁面。<br>
+                        <i class="fas fa-info text-danger"></i> 輸入數量並點擊購物車，將檢查是否有登入，若無則轉入登入頁面，若有則檢查是否通過驗證過帳號，通過驗證帳號則將資料放入購物車。<br>
+                        <i class="fas fa-info text-primary"></i> 請使用 帳號 user@mail.com 密碼 user (已通過驗證) 或 帳號 guest@mail.com 密碼 guest (未通過驗證) 來做測試.
                     </div>
                 </div>
                 <div class="card card-primary card-outline">
@@ -24,13 +26,23 @@
                             <div class="col-3">
                                 <div class="card">
                                     <div class="card-header">
-                                        {{ $product->name }}
+                                        <a href="{{ route('shopping.show', $product->id) }}">{{ $product->name }}</a>
                                     </div>
                                     <div class="card-body">
-                                        <img width="100%" src="{{ $product->imagepath }}">
+                                        <a href="{{ route('shopping.show', $product->id) }}"><img width="100%" src="{{ $product->imagepath }}"></a>
                                     </div>
                                     <div class="card-footer">
-                                        原價：{{ $product->defaultprice }} 特賣：{{ $product->saleprice }}
+                                        <div>特惠價：{{ $product->saleprice }}</div>
+                                        <form action="{{ route('shopping.cart') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="productId" value="{{ $product->id }}">
+                                            <div class="input-group input-group-sm">
+                                                <input class="form-control col-9" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
+                                                <span class="input-group-append">
+                                                  <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-plus fa-lg mr-2"></i>Go!</button>
+                                                </span>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

@@ -67,7 +67,8 @@ class ShoppingController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = ProductEloquent::findOrFail($id);
+        return View::make('shopping.show', compact('product'));
     }
 
     /**
@@ -102,5 +103,11 @@ class ShoppingController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addToCart(Request $request)
+    {
+        // dd($request);
+        return View::make('shopping.cart');
     }
 }

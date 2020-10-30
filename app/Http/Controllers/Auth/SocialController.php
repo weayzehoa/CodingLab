@@ -59,13 +59,19 @@ class SocialController extends Controller
                 // return Redirect::route('login')->withErrors([
                 //     'message' => "抱歉!! email帳號: $user->email 已被綁定了，請使用其他登入方式"
                 // ]);
-            }else{ //如果沒有使用者紀錄 將資料建立在 User 資料表中
+            }else{
+                //如果沒有使用者紀錄 將資料建立在 User 資料表中
                 $login_user = UserEloquent::create([
                     'email' => $socialite_user->email,
                     'password' => bcrypt(Str::random(8)),
                     'name' => $socialite_user->name,
                     'avatar' => $socialite_user->avatar,
                 ]);
+
+                //直接讓第三方驗證的帳號通過email驗證
+                $login_user->email_verified_at = date('Y-m-d H:i:s');
+                $login_user->save();
+
                 $login_user->socialUser = SocialUserEloquent::create([
                     'provider_user_id' => $socialite_user->id,
                     'provider' => $provider,

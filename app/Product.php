@@ -4,11 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 //關聯產品圖片資料表
-use App\productImage as ProductImageEloquent;
+use App\ProductImage as ProductImageEloquent;
 //關聯產品類別資料表
-use App\productType as ProductTypeEloquent;
-//關聯產品類別資料表
-use App\productComment as ProductCommentEloquent;
+use App\ProductType as ProductTypeEloquent;
+//關聯產品留言資料表
+use App\ProductComment as ProductCommentEloquent;
 //使用記錄功能
 use Spatie\Activitylog\Traits\LogsActivity;
 

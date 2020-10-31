@@ -11,7 +11,7 @@
                 <div class="card card-danger card-outline">
                     <div class="card-body box-profile">
                         <h3 class="profile-username text-center">Shopping購物測試</h3>
-                        <i class="fas fa-info text-danger"></i> 此部分主要目的做一個簡易的Shopping購物測試<br>
+                        <i class="fas fa-info text-danger"></i> 此部分主要目的做一個簡易的Shopping購物測試，並非完整購物系統，可能存在一些盲點及錯誤。<br>
                         <i class="fas fa-info text-danger"></i> 產品內容與圖片皆使用隨機產生圖文資料。資料內容並不正確。點擊標題或圖片可以進入產品頁面。<br>
                         <i class="fas fa-info text-danger"></i> 輸入數量並點擊購物車，將檢查是否有登入，若無則轉入登入頁面，若有則檢查是否通過驗證過帳號，通過驗證帳號則將資料放入購物車。<br>
                         <i class="fas fa-info text-primary"></i> 請使用 帳號 user@mail.com 密碼 user (已通過驗證) 或 帳號 guest@mail.com 密碼 guest (未通過驗證) 來做測試.

@@ -14,6 +14,6 @@ $factory->define(App\ProductImage::class, function (Faker $faker) {
         'filepath' => $faker->imageUrl(640,480, true),
         'ext' => '',
         'size' => '',
-        'product_id' => mt_rand(1, 50),
+        'product_id' => '',
     ];
 });

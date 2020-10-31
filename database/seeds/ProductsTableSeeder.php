@@ -28,17 +28,25 @@ class ProductsTableSeeder extends Seeder
         });
 
         //產品圖片
-        $productImages = factory(ProductImageEloquent::class, 500)->create();
+        // $productImages = factory(ProductImageEloquent::class, 500)->create();
 
         //留言資料
         $comments = factory(ProductCommentEloquent::class, 300)->create();
 
         //產品價格
         foreach ($products as $product) {
+            $productId = $product->id;
+
+            //產品圖片(每個產品5張圖片) 在create()中帶入要複寫的欄位資料
+            factory(ProductImageEloquent::class, 5)->create(['product_id' => $productId]);
+
+            //產品價格
             ProductPriceEloquent::create([
                  'price'        => mt_rand(50, 90),
                  'product_id'   => $product->id,
              ]);
         }
+
+        //產品圖片
     }
 }

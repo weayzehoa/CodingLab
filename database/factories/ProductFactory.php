@@ -22,7 +22,6 @@ $factory->define(App\Product::class, function (Faker $faker) {
         'content' => $content,
         'type' => mt_rand(1, 5),
         'defaultprice' => 100,
-        'saleprice' => 90,
         'isshow' => mt_rand(0, 1),
         'istop' => mt_rand(0, 1),
         'onlinedate' => new DateTime(),

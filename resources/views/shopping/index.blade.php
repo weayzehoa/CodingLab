@@ -32,10 +32,12 @@
                                         <a href="{{ route('shopping.show', $product->id) }}"><img width="100%" src="{{ $product->imagepath }}"></a>
                                     </div>
                                     <div class="card-footer">
-                                        <div>特惠價：{{ $product->saleprice }}</div>
+                                        <div>特惠價：{!! $product->price->price !!}</div>
                                         <form action="{{ route('shopping.cart') }}" method="POST">
                                             @csrf
+                                            {{-- 帶入產品ID與PriceID 作交叉驗證 避免造假 --}}
                                             <input type="hidden" name="productId" value="{{ $product->id }}">
+                                            <input type="hidden" name="priceId" value="{{ $product->price->id }}">
                                             <div class="input-group input-group-sm">
                                                 <input class="form-control col-9" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
                                                 <span class="input-group-append">

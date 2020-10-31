@@ -29,12 +29,13 @@
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
+                            類別：{{ $product->productType->title }}
                             <h3 class="my-3">{{ $product->title }}</h3>
                             <p>{{ $product->description }}</p>
                             <hr>
                             <div class="bg-gray py-2 px-3 mt-4">
                                 <h2 class="mb-0">
-                                    $NT: {{ $product->saleprice }} 元
+                                    $NT: {{ $product->price->price }} 元
                                 </h2>
                                 <h4 class="mt-0">
                                     <small>原價: {{ $product->defaultprice }} 元</small>
@@ -44,6 +45,7 @@
                                 <form action="{{ route('shopping.cart') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="productId" value="{{ $product->id }}">
+                                    <input type="hidden" name="priceId" value="{{ $product->price->id }}">
                                     <div class="input-group input-group-lg">
                                         <input class="form-control col-6" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
                                         <span class="input-group-append mr-3">

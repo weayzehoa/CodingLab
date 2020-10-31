@@ -5,9 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Product as ProductEloquent;;
 use App\User as UserEloquent;;
+//使用記錄功能
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class ProductComment extends Model
 {
+    use LogsActivity;
+
     protected $fillable = [
         'product_id', 'user_id', 'content',
     ];

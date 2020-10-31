@@ -35,6 +35,10 @@ class ShoppingController extends Controller
     public function index()
     {
         $products = ProductEloquent::paginate(12);
+        foreach($products as $product){
+            //找出產品最新的價格
+            $product->price = ProductEloquent::find($product->id)->productPrice()->orderBy('created_at','DESC')->first();
+        }
         return View::make('shopping.index', compact('products'));
     }
 
@@ -68,6 +72,7 @@ class ShoppingController extends Controller
     public function show($id)
     {
         $product = ProductEloquent::findOrFail($id);
+        $product->price = ProductEloquent::find($product->id)->productPrice()->orderBy('created_at','DESC')->first();
         return View::make('shopping.show', compact('product'));
     }
 

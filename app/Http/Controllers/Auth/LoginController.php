@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -43,6 +43,7 @@ class LoginController extends Controller
     //登入
     public function login(Request $request)
     {
+        // dd($request);
         // 驗證表單資料
         $this->validate($request, [
             'email'   => 'required|email',
@@ -55,8 +56,11 @@ class LoginController extends Controller
             //登入成功紀錄
             $user = UserEloquent::find(Auth::guard()->id());
             activity('前台會員')->causedBy($user)->log('登入成功');
+
             //驗證無誤轉入 index
-            return redirect()->intended(route('index'));
+            // return redirect()->intended(route('index'));
+            //驗證無誤轉入 登入前那一頁
+            return Redirect::intended();
         }
 
         //登入失敗紀錄 (可能會有機器人嘗試登入造成太多紀錄，取消紀錄登入失敗功能)

@@ -88,7 +88,10 @@ class SocialController extends Controller
             //紀錄
             $log = "使用 $provider 登入";
             activity('前台會員')->causedBy($login_user)->log($log);
-            return Redirect::route('index');
+
+            // return Redirect::route('index');
+            //返回登入前那一頁
+            return Redirect::intended();
         }
         return App::abort(500);
     }

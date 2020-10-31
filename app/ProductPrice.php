@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Product as ProductEloquent;
+use App\Cart as CartEloquent;
+
 //使用記錄功能
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -23,7 +25,11 @@ class ProductPrice extends Model
     protected static $logName = '產品價格';
 
     //建立產品價格與產品資料間的關聯
-    public function product(){
+    public function products(){
         return $this->hasMany(ProductEloquent::class);
+    }
+    //建立產品價格與購物車資料間的關聯
+    public function cart(){
+        return $this->belongsTo(CartEloquent::class);
     }
 }

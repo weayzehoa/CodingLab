@@ -5,9 +5,10 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use URL; //新增
+use URL;
 use App\Post as PostEloquent;
 use App\SocialUser as SocialUserEloquent;
+use App\Cart as CartEloquent;
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
@@ -53,6 +54,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
+    //與Cart關聯
+    public function carts(){
+        return $this->hasMany(CartEloquent::class);
+    }
     //與POST關聯
     public function posts(){
         return $this->hasMany(PostEloquent::class);

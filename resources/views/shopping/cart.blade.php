@@ -9,13 +9,16 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">購物車頁面</h3>
+                    <i class="fas fa-info text-danger"></i> 當使用者登入後，會將其所有購物車資料列出，並計算出總共金額。<br>
+                    <i class="fas fa-info text-danger"></i> 按下結帳按鈕，進入訂單畫面，並將所有購物車資料轉換為訂單資料。(尚未完成)<br>
+                    <i class="fas fa-info text-danger"></i> 訂單資料付款方式預定串接第三方金流(尚未完成)。<br>
                 </div>
             </div>
             <div class="card card-primary card-outline">
                 {{-- alert訊息 --}}
                 @include('admin.layouts.alert_message')
                 <div class="card-body">
-                    @if($carts)
+                    @if($carts->first())
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -83,9 +86,9 @@
                     <h3>目前購物車是空的，去瞎拚一下吧！</h3>
                     @endif
                     <hr>
-                    @if($carts)
                     <div class="card-footer">
                         <div class="float-right">
+                            @if($carts->first())
                             <a href="{{ url('cart') }}" class="btn btn-danger btn-lg btn-flat mr-3">
                                 <i class="fas fa-cash-register fa-lg mr-2"></i>結帳買單
                             </a>

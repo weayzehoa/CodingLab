@@ -11,8 +11,17 @@ use App\ProductPrice as ProductPriceEloquent;
 //使用記錄功能
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class Carts extends Model
+class Cart extends Model
 {
+    use LogsActivity;
+
+    protected $fillable = [
+        'user_id', 'product_price_id','qty',
+    ];
+
+    protected static $logAttributes = ['*'];
+    protected static $logName = '購物車';
+
     //與users資料表一對一關聯
     public function user(){
         return $this->belongsTo(UserEloquent::class);

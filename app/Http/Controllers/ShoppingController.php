@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product as ProductEloquent;
+use App\Cart as CartEloquent;
 use App\ProductImage as ProductImageEloquent;
 use Carbon\Carbon; //時間格式套件
 use Auth;   //使用者驗證
@@ -73,7 +74,8 @@ class ShoppingController extends Controller
     {
         $product = ProductEloquent::findOrFail($id);
         $product->price = ProductEloquent::find($product->id)->productPrice()->orderBy('created_at','DESC')->first();
-        return View::make('shopping.show', compact('product'));
+        $cart = CartEloquent::where('user_id',Auth::user()->id)->where('product_price_id',$product->price->id)->first();
+        return View::make('shopping.show', compact('product','cart'));
     }
 
     /**
@@ -108,11 +110,5 @@ class ShoppingController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function addToCart(Request $request)
-    {
-        // dd($request);
-        return View::make('shopping.cart');
     }
 }

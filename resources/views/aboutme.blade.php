@@ -351,7 +351,7 @@
                                         <div class=" col-md-6">
                                             <div class="card">
                                                 <div class="card-header bg-primary">
-                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://weayzehoa.rvt.idv.tw/" target="_blank" title="個人練習作品" class="text-yellow">個人練習作品</a></h3>
+                                                    <h3 class="card-title"><i class="fas fa-synagogue mr-2"></i><a href="https://weayzehoa.rvt.idv.tw/" target="_blank" title="個人練習作品" class="text-yellow">學員時期個人練習作品</a></h3>
                                                 </div>
                                                 <div class="card-body">
                                                     <a href="{{ asset('img/aboutme/weayzehoa.jpg') }}" data-toggle="lightbox" data-title="個人練習作品" data-gallery="gallery">

@@ -99,12 +99,22 @@
                                 <span class="right badge badge-info">{{ $posts_total ?? '' }}</span>
                             </a>
                         </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="javascript:" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            shopping購物
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('shopping') }}" class="nav-link">
                                 <i class="nav-icon fas fa-users"></i>
-                                <p>
-                                    shopping購物
-                                </p>
+                                <p>產品清單</p>
+                                <span class="right badge badge-info">{{ $products_total ?? '' }}</span>
                             </a>
                         </li>
                     </ul>

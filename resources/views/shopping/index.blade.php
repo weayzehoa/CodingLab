@@ -18,8 +18,10 @@
                     </div>
                 </div>
                 <div class="card card-primary card-outline">
+                    {{-- alert訊息 --}}
+                    @include('admin.layouts.alert_message')
                     <div class="card-body">
-                        {{-- 這邊開始放置 內容頁面 --}}
+                       {{-- 這邊開始放置 內容頁面 --}}
                         @if($products)
                         <div class="row">
                             @foreach($products as $product)
@@ -33,16 +35,21 @@
                                     </div>
                                     <div class="card-footer">
                                         <div>特惠價：{!! $product->price->price !!}</div>
-                                        <form action="{{ route('shopping.cart') }}" method="POST">
+                                        <form action="{{ route('cart.store') }}" method="POST">
                                             @csrf
                                             {{-- 帶入產品ID與PriceID 作交叉驗證 避免造假 --}}
                                             <input type="hidden" name="productId" value="{{ $product->id }}">
                                             <input type="hidden" name="priceId" value="{{ $product->price->id }}">
                                             <div class="input-group input-group-sm">
-                                                <input class="form-control col-9" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
+                                                <input class="form-control col-9 {{ $errors->has('qty') ? ' is-invalid' : '' }}" type="number" id="qty{{ $product->id }}" name="qty" value="" placeholder="輸入數量點購物車">
                                                 <span class="input-group-append">
                                                   <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-plus fa-lg mr-2"></i>Go!</button>
                                                 </span>
+                                                @if ($errors->has('qty'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('qty') }}</strong>
+                                                </span>
+                                                @endif
                                             </div>
                                         </form>
                                     </div>
@@ -53,7 +60,7 @@
                     </div>
                         <div class="row justify-content-center">
                         <div class="text-center">
-                            <!-- 判斷有無傳入 keyword 有的話 利用 render 方式 自動建立可以點擊的分頁頁碼 -->
+                            {{-- 判斷有無傳入 keyword 有的話 利用 render 方式 自動建立可以點擊的分頁頁碼 --}}
                             @isset($keyword)
                             {{ $products->appends(['keyword' => $keyword])->render() }}
                             @else

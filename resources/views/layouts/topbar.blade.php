@@ -129,8 +129,14 @@
             </li>
             @endauth
             <li class="nav-item">
-                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-th-large"></i></a>
+                <a class="nav-link" href="{{ url('cart') }}">
+                    <i class="fas fa-shopping-cart mr-1"></i>
+                    <span class="badge badge-danger navbar-badge">{{ $carts_total ?? '' }}</span>
+                  </a>
             </li>
+            {{-- <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i class="fas fa-th-large"></i></a>
+            </li> --}}
             <li class="nav-item">
                 <a href="javascript:" id="fullscreen-button" title="擴展成全螢幕" class="nav-link" data-widget="fullscreen" data-slide="true" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
@@ -141,4 +147,4 @@
 </nav>
 
 {{-- Control Sidebar  --}}
-<aside class="control-sidebar control-sidebar-dark"></aside>
+{{-- <aside class="control-sidebar control-sidebar-dark"></aside> --}}

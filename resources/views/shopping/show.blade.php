@@ -16,6 +16,8 @@
             </div>
             <div class="card card-primary card-outline">
                 <div class="card-body">
+                    {{-- alert訊息 --}}
+                    @include('admin.layouts.alert_message')
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <h3 class="d-inline-block d-sm-none">{{ $product->name }}</h3>
@@ -42,16 +44,25 @@
                                 </h4>
                             </div>
                             <div class="mt-4">
-                                <form action="{{ route('shopping.cart') }}" method="POST">
+                                <form action="{{ route('cart.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="productId" value="{{ $product->id }}">
                                     <input type="hidden" name="priceId" value="{{ $product->price->id }}">
                                     <div class="input-group input-group-lg">
-                                        <input class="form-control col-6" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
+                                        <input class="form-control col-6 {{ $errors->has('qty') ? ' is-invalid' : '' }}" type="number" id="qty" name="qty" value="" placeholder="輸入數量點購物車" required>
                                         <span class="input-group-append mr-3">
                                             <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-arrow-down fa-lg mr-2"></i></i>加入購物車</button>
                                         </span>
+                                        @if ($errors->has('qty'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('qty') }}</strong>
+                                        </span>
+                                        @endif
                                     </div>
+                                    @if($cart)
+                                    <hr>
+                                    <span class="text-primary">你的購物車已有此產品，共 {{ $cart->qty }} 個，是否還要加購？<br>請在輸入框中輸入數量並按【加入購物車】按鈕來增加數量。</span>
+                                    @endif
                                 </form>
                             </div>
                         </div>
@@ -61,7 +72,6 @@
                             <div class="nav nav-tabs" id="product-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">產品描述</a>
                                 <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">會員留言</a>
-                                @if(Auth::user())<a class="nav-item nav-link text-danger" id="product-rating-tab" data-toggle="tab" href="#product-cart" role="tab" aria-controls="product-cart" aria-selected="false">購物車</a>@endauth
                             </div>
                         </nav>
                         <div class="tab-content p-3" id="nav-tabContent">
@@ -79,16 +89,6 @@
                                     <p>{{ $comment->content }}</p>
                                 </div>
                                 @endforeach
-                            </div>
-                            <div class="tab-pane fade" id="product-cart" role="tabpanel" aria-labelledby="product-cart-tab">
-                                <div class="mt-4">
-                                    <a href="{{ url('shopping/cart') }}" class="btn btn-danger btn-lg btn-flat">
-                                        <i class="fas fa-shopping-cart fa-lg mr-2"></i></i>查看購物車
-                                    </a>
-                                    <a href="{{ url('shopping/cart') }}" class="btn btn-primary btn-lg btn-flat mr-3">
-                                        <i class="fas fa-cash-register fa-lg mr-2"></i></i>結帳買單
-                                    </a>
-                                </div>
                             </div>
                         </div>
                     </div>

@@ -13,6 +13,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Http\Response;
 
+use App\ProductPrice as ProductPriceEloquent;
+
 class LogsController extends Controller
 {
     public function __construct(){
@@ -91,6 +93,11 @@ class LogsController extends Controller
                     }else{
                         $log->subject_type == 'App\Post' ? $log->subject_type = 'posts' : '';
                         $log->subject_type == 'App\Park' ? $log->subject_type = 'parks' : '';
+                        $log->subject_type == 'App\Product' ? $log->subject_type = 'products' : '';
+                        $log->subject_type == 'App\ProductType' ? $log->subject_type = 'product_types' : '';
+                        $log->subject_type == 'App\ProductPrice' ? $log->subject_type = 'product_prices' : '';
+                        $log->subject_type == 'App\ProductImage' ? $log->subject_type = 'product_images' : '';
+                        $log->subject_type == 'App\Cart' ? $log->subject_type = 'carts' : '';
                         $sid = $log->subject_id;
                         if($log->subject_type){
                             $subjectData = DB::table($log->subject_type)->where('id','=',$sid)->get()->toArray();
@@ -98,8 +105,14 @@ class LogsController extends Controller
                                 foreach ($subjectData as $subject) {
                                     if(!empty($subject->title)){
                                         $log->title = $subject->title;
-                                    }else{
+                                    }elseif(!empty($subject->title)){
                                         $log->title = $subject->name;
+                                    }elseif(!empty($subject->qty)){
+                                        $productPriceId = $subject->product_price_id;
+                                        $product = ProductPriceEloquent::find($productPriceId)->product;
+                                        $log->title = "產品 $product->name 數量 $subject->qty ";
+                                    }else{
+                                        $log->title = '';
                                     }
                                 }
                             }else{

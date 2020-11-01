@@ -42,9 +42,12 @@ Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 // Route::get('test', function () { return view('test'); });
 
 //Shopping購物
-Route::get('/shopping/cart', function () { return view('shopping.cart'); });
-Route::post('/shopping/cart', 'ShoppingController@addToCart')->name('shopping.cart');
+Route::get('/shopping/cart', 'CartController@addToCart');
+// Route::post('/shopping/cart', 'ShoppingController@addToCart')->name('shopping.cart');
 Route::resource('shopping', 'ShoppingController');
+
+//購物車
+Route::resource('cart','CartController');
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

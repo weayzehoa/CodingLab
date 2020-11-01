@@ -153,6 +153,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'qty'       => 'Quantity',
+    ],
 
 ];

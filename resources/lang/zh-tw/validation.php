@@ -184,5 +184,6 @@ return [
         'type'                  => '類別',
         'onlinedate'            => '上線日期',
         'offlinedate'           => '下線日期',
+        'qty'                   => '數量',
     ],
 ];

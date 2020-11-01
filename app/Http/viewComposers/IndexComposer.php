@@ -10,7 +10,7 @@ use App\Cart as CartEloquent;
 use Auth;
 use Spatie\Activitylog\Models\Activity as ActivityEloquent;
 
-class AdminIndexComposer
+class IndexComposer
 {
     public function compose(View $view){
         $post_types = PostTypeEloquent::orderBy('name', 'ASC')->count();

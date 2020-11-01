@@ -1,4 +1,4 @@
-@if ($message = Session::get('success'))
+@if ($message = Session::pull('success'))
 <div class="row justify-content-center">
     <div class="alert-float alert alert-success alert-dismissible fade show col-6" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -9,7 +9,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('error'))
+@if ($message = Session::pull('error'))
 <div class="row justify-content-center">
     <div class="alert-float alert alert-danger alert-dismissible fade show col-6" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -20,7 +20,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('warning'))
+@if ($message = Session::pull('warning'))
 <div class="row justify-content-center">
     <div class="alert-float alert alert-warning alert-dismissible fade show col-6" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -31,7 +31,7 @@
 </div>
 @endif
 
-@if ($message = Session::get('info'))
+@if ($message = Session::pull('info'))
 <div class="row justify-content-center">
     <div class="alert-float alert alert-info alert-dismissible fade show col-6" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">

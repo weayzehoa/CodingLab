@@ -25,8 +25,8 @@ class ProductPrice extends Model
     protected static $logName = '產品價格';
 
     //建立產品價格與產品資料間的關聯
-    public function products(){
-        return $this->hasMany(ProductEloquent::class);
+    public function product(){
+        return $this->belongsTo(ProductEloquent::class);
     }
     //建立產品價格與購物車資料間的關聯
     public function cart(){

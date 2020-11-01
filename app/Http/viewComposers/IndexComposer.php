@@ -13,7 +13,7 @@ use Spatie\Activitylog\Models\Activity as ActivityEloquent;
 class IndexComposer
 {
     public function compose(View $view){
-        $post_types = PostTypeEloquent::orderBy('name', 'ASC')->count();
+        $post_types = PostTypeEloquent::orderBy('name', 'ASC')->get();
         $posts_total = PostEloquent::count();
         $post_types_total = PostTypeEloquent::count();
         $users_total = UserEloquent::count();

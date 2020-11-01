@@ -72,9 +72,12 @@ class ShoppingController extends Controller
      */
     public function show($id)
     {
+        $cart = '';
         $product = ProductEloquent::findOrFail($id);
         $product->price = ProductEloquent::find($product->id)->productPrice()->orderBy('created_at','DESC')->first();
-        $cart = CartEloquent::where('user_id',Auth::user()->id)->where('product_price_id',$product->price->id)->first();
+        if(Auth::user()){
+            $cart = CartEloquent::where('user_id',Auth::user()->id)->where('product_price_id',$product->price->id)->first();
+        }
         return View::make('shopping.show', compact('product','cart'));
     }
 

@@ -55,9 +55,9 @@
                                 <li>
                                     <a tabindex="-3" href="{{ url('openstreetmap') }}" class="dropdown-item">Open Street Map</a>
                                 </li>
-                                <li>
+                                {{-- <li>
                                     <a tabindex="-2" href="{{ url('googlemap') }}" class="dropdown-item">Google Map</a>
-                                </li>
+                                </li> --}}
                             </ul>
                         </li>
                     </ul>

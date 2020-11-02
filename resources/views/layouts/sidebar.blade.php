@@ -74,12 +74,12 @@
                                 <p>Open Street Map</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ url('googlemap') }}" class="nav-link">
                                 <i class="fas fa-users nav-icon"></i>
                                 <p>Google Map</p>
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 <li class="nav-header">整合測試</li>

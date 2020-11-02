@@ -53,6 +53,9 @@
                                         <span class="input-group-append mr-3">
                                             <button type="submit" class="btn btn-info btn-flat"><i class="fas fa-cart-arrow-down fa-lg mr-2"></i></i>加入購物車</button>
                                         </span>
+                                        <span class="input-group-append">
+                                            <a href="{{ url('shopping') }}" class="btn btn-primary">產品清單</a>
+                                        </span>
                                         @if ($errors->has('qty'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('qty') }}</strong>

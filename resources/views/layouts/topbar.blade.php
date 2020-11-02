@@ -1,7 +1,6 @@
 <nav id="topbar" class="main-header navbar navbar-expand navbar-dark bg-navy">
     <div class="container">
         <a href="{{ route('index') }}" class="navbar-brand">
-            {{-- <img src="../../img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
             <span class="brand-text font-weight-light">CodingLab</span>
         </a>
         <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,9 +54,9 @@
                                 <li>
                                     <a tabindex="-3" href="{{ url('openstreetmap') }}" class="dropdown-item">Open Street Map</a>
                                 </li>
-                                {{-- <li>
+                                <li>
                                     <a tabindex="-2" href="{{ url('googlemap') }}" class="dropdown-item">Google Map</a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </li>
                     </ul>

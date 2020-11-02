@@ -68,10 +68,10 @@
                                         @foreach ($logs as $log)
                                             <tr>
                                                 <td class="text-center align-middle">{{ $log->id }}</td>
-                                                <td class="text-left align-middle">{{ $log->name }}</td>
-                                                <td class="text-left align-middle">{{ $log->email }}</td>
-                                                <td class="text-left align-middle">{{ $log->log_name }}</td>
-                                                <td class="text-left align-middle">
+                                                <td class="text-center align-middle">{{ $log->name ?? '系統管理員' }}</td>
+                                                <td class="text-center align-middle">{{ $log->email ?? '系統管理員'}}</td>
+                                                <td class="text-center align-middle">{{ $log->log_name }}</td>
+                                                <td class="text-center align-middle">
                                                     @if($log->description == '新增' || $log->description == '修改' || $log->description == '刪除')
                                                     <a href="{{ $log->url }}"><b>{{ $log->description }}</b></a>
                                                     @else

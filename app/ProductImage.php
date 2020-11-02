@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 use App\Product as ProductEloquent;
 
 //使用記錄功能
-use Spatie\Activitylog\Traits\LogsActivity;
+// use Spatie\Activitylog\Traits\LogsActivity;
 
 class ProductImage extends Model
 {
-    use LogsActivity;
+    // use LogsActivity;
 
     //可讓使用者新增編輯的欄位名稱
       protected $fillable = [

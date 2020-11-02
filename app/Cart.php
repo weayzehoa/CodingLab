@@ -9,11 +9,11 @@ use App\User as UserEloquent;
 use App\ProductPrice as ProductPriceEloquent;
 
 //使用記錄功能
-use Spatie\Activitylog\Traits\LogsActivity;
+// use Spatie\Activitylog\Traits\LogsActivity;
 
 class Cart extends Model
 {
-    use LogsActivity;
+    // use LogsActivity;
 
     protected $fillable = [
         'user_id', 'product_price_id','qty',

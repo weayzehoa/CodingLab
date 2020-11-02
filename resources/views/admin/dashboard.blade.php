@@ -36,7 +36,8 @@
             </div>
             <div class="card-body">
                 <h2>目前已完成會員管理、會員文章、維護紀錄功能。</h2>
-                <h2>Shopping購物建構中。</h2>
+                <h3>2020/11/01 前台購物車功能完成。</h3>
+                <h3>前台訂單系統建構中。</h3>
             </div>
             <div class="card-footer">
             </div>

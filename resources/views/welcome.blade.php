@@ -16,7 +16,8 @@
                             <i class="fas fa-info text-danger"></i> <span class="text-danger">此網站內容來源僅供測試研究用，並非真實完整資料或資訊，請勿以此網站內容當作依據參考，網站內容若有不妥請來信告知移除。</span><br>
                             <i class="fas fa-info text-purple"></i> 版面設計不是我強項，可能有些地方不是很美觀或存在錯版問題，請見諒。<br>
                             <i class="fas fa-info text-info"></i> 前台測試帳號 user@mail.com (可管理所有文章) 密碼 user 或 guest@mail.com (一般訪客) 密碼 guest 使用第三方帳號登入測試 (可能隨時會被清除)<br>
-                            <i class="fas fa-info text-info"></i> 後台管理帳號 admin@mail.com 密碼 admin (可任意管理所有資料)
+                            <i class="fas fa-info text-primary"></i> 後台管理帳號 admin@mail.com 密碼 admin (可任意管理所有資料)<br>
+                            <i class="fas fa-info text-danger"></i> 此網站站原始碼同步放置於我的GitHub
                         </div>
                     </div>
                 </div>

@@ -17,9 +17,10 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->comment('使用者代號');
             $table->integer('total')->comment('金額');
-            $table->char('payMethod')->comment('付款方式');
+            $table->char('payMethod')->nullable()->comment('付款方式');
             $table->char('status')->comment('狀態');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

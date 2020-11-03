@@ -25,7 +25,7 @@ class CartController extends Controller
      */
     public function index()
     {
-        $carts = CartEloquent::where('user_id',Auth::user()->id)->get();
+        $carts = CartEloquent::where('user_id',Auth::user()->id)->whereNull('status')->get();
         $total = null;
         foreach($carts as $cart){
             $total = $total + $cart->productPrice->price * $cart->qty;
@@ -62,7 +62,7 @@ class CartController extends Controller
 
         //檢查購物車是否有該筆資料
         //購物車若有該筆資料則用更新的方式，沒有則建立一筆
-        $cart = CartEloquent::where('product_price_id',$priceId)->first();
+        $cart = CartEloquent::where('product_price_id',$priceId)->whereNull('status')->first();
         if($cart){
             $newQty = $cart->qty + $qty;
             $cart->update(['qty' => $newQty]);

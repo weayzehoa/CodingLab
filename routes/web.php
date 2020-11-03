@@ -42,6 +42,7 @@ Route::resource('cart','CartController');
 
 //訂單
 Route::resource('order','OrderController');
+Route::resource('po','ProductOrderController');
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

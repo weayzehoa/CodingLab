@@ -111,6 +111,13 @@
                     </li>
                     <li class="dropdown-divider"></li>
                     <li>
+                        <a href="{{ route('cart.index') }}" class="dropdown-item">購物車</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('order.index') }}" class="dropdown-item">我的訂單</a>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li>
                         {{-- 登出按鈕 下方表單被CSS隱藏, 當按下按鈕後 利用onclick將表單送出到 路由 logout 執行 --}}
                         <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault(); $('#logout-form').submit();"><i class="nav-icon fas fa-door-open text-danger"></i> 登出</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

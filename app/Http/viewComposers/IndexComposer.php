@@ -19,7 +19,10 @@ class IndexComposer
         $users_total = UserEloquent::count();
         $logs_total = ActivityEloquent::count();
         $products_total = ProductEloquent::count();
-        Auth::user() ? $carts_total = CartEloquent::where('user_id', Auth::user()->id)->count() : $carts_total = '';
+        Auth::user() ? $carts_total = CartEloquent::where([
+            'user_id' => Auth::user()->id,
+            'status' => null,
+            ])->count() : $carts_total = '';
 
         $view->with('post_types', $post_types);
         $view->with('posts_total', $posts_total);

@@ -9,9 +9,8 @@
             <div class="card card-danger card-outline">
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">購物車頁面</h3>
-                    <i class="fas fa-info text-danger"></i> 當使用者登入後，會將其所有購物車資料列出，並計算出總共金額。<br>
-                    <i class="fas fa-info text-danger"></i> 按下結帳按鈕，進入訂單畫面，並將所有購物車資料轉換為訂單資料。(尚未完成)<br>
-                    <i class="fas fa-info text-danger"></i> 訂單資料付款方式預定串接第三方金流(尚未完成)。<br>
+                    <i class="fas fa-info text-danger"></i> 當使用者登入後，會將該使用者所有購物車未購買的資料列出，並計算出總共金額。<br>
+                    <i class="fas fa-info text-danger"></i> 按下結帳按鈕，進入訂單畫面，並將所有購物車資料轉換為訂單資料。<br>
                 </div>
             </div>
             <div class="card card-primary card-outline">
@@ -89,7 +88,7 @@
                     <div class="card-footer">
                         <div class="float-right">
                             @if($carts->first())
-                            <a href="{{ url('cart') }}" class="btn btn-danger btn-lg btn-flat mr-3">
+                            <a href="{{ route('order.create') }}" class="btn btn-danger btn-lg btn-flat mr-3">
                                 <i class="fas fa-cash-register fa-lg mr-2"></i>結帳買單
                             </a>
                             @endif
@@ -176,15 +175,5 @@
             alert('請輸入數字');
         }
     });
-
-        // $('input[name=qty]').change(function (e) {
-        //     let val = $(this).val();
-        //     reg = new RegExp('^[0-9]+$');
-        //     if(val.match(reg)){
-        //         $(this).parent().parent().submit();
-        //     }else{
-        //         alert('請輸入數字');
-        //     }
-        // });
 </script>
 @endsection

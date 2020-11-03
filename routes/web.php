@@ -11,10 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 //首頁及搜尋，連接Home控制器路由
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('home', 'HomeController@index')->name('home');
@@ -35,15 +31,10 @@ Route::prefix('parks')->name('parks.')->group(function(){
     Route::get('xml', 'ParksController@xml')->name('xml');
     Route::get('cdb', 'ParksController@cdb')->name('cdb');
     Route::get('curl', 'ParksController@curl')->name('curl');
+    Route::resource('/', 'ParksController', ['only' => ['index', 'show']]);
 });
-Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
-
-//測試用
-// Route::get('test', function () { return view('test'); });
 
 //Shopping購物
-Route::get('/shopping/cart', 'CartController@addToCart');
-// Route::post('/shopping/cart', 'ShoppingController@addToCart')->name('shopping.cart');
 Route::resource('shopping', 'ShoppingController');
 
 //購物車
@@ -108,7 +99,8 @@ Route::prefix('admin')->name('admin.')->group(function() {
     //後台登入後資訊看板
     Route::get('dashboard', 'AdminController@dashboard')->name('dashboard');
 
-    //相關的路由放在 resource 之前較好，避免與 resource 的 get 衝突
+    //後台會員文章管理
+    //放在 resource 之前較好，避免與 resource 的 get 衝突
     Route::get('mbposts/search','Admin\MemberPostsController@search');
     Route::get('mbposts/selectType','Admin\MemberPostsController@selectType');
     Route::post('mbposts/isshow/{id}','Admin\MemberPostsController@isshow');
@@ -117,27 +109,27 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('mbposts/sortdown/{id}','Admin\MemberPostsController@sortdown');
     Route::resource('mbposts', 'Admin\MemberPostsController');
     Route::resource('comments', 'Admin\CommentsController');
-    Route::get('/news', function () { return view('admin.news'); });
-    Route::get('/marquees', function () { return view('admin.marquees'); });
-    Route::get('/carousels', function () { return view('admin.carousels'); });
-    Route::get('/admins', function () { return view('admin.admins'); });
-    Route::get('/mails', function () { return view('admin.mails'); });
-    Route::get('/products', function () { return view('admin.products'); });
 
+    // Route::get('/news', function () { return view('admin.news'); });
+    // Route::get('/marquees', function () { return view('admin.marquees'); });
+    // Route::get('/carousels', function () { return view('admin.carousels'); });
+    // Route::get('/admins', function () { return view('admin.admins'); });
+    // Route::get('/mails', function () { return view('admin.mails'); });
+    // Route::get('/products', function () { return view('admin.products'); });
+
+    //後台會員管理
     Route::post('members/active/{id}', 'Admin\UsersController@active');
     Route::get('members/search', 'Admin\UsersController@search');
     Route::resource('members', 'Admin\UsersController');
 
     //後台維護紀錄功能，Controller 雖然用resource但限定只有 index與show function,
     //限定部分也可以寫在 controller 的建構式中用 middleware 來限定.
-    /*
-        public function __construct(){
-            $this->middleware('admin', [
-                'except' => [
-                    'index', 'show'
-                ]
-            ]);
-        }
-    */
     Route::resource('logs', 'Admin\LogsController', ['only' => ['index','show']]);
 }) ;
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+//測試用
+// Route::get('test', function () { return view('test'); });

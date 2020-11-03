@@ -49,6 +49,9 @@ Route::resource('shopping', 'ShoppingController');
 //購物車
 Route::resource('cart','CartController');
 
+//訂單
+Route::resource('order','OrderController');
+
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });
 //JS Clock 測試

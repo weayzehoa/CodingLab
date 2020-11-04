@@ -15,7 +15,7 @@ use App\Http\Requests\OrderRequest;
 use Auth;
 use View;
 use Redirect;
-use SESSION;
+use Session;;
 
 use ECPay_PaymentMethod;
 

@@ -11,7 +11,8 @@
                     <h3 class="profile-username text-center">訂單列表頁面</h3>
                     <i class="fas fa-info text-danger"></i> 此頁面，會將該使用者所有訂單資料列出。<br>
                     <i class="fas fa-info text-danger"></i> 付款方式出現按鈕代表尚未選擇付款方式，訂單狀態將呈現已下單。<br>
-                    <i class="fas fa-info text-danger"></i> 付款頁面可選擇貨到付款、第三方支付(尚未完成)，若完成付款將轉變為待出貨，並且關閉刪除按鈕。<br>
+                    <i class="fas fa-info text-danger"></i> 按付款按鈕將會連接到【綠界】第三方支付，若完成付款，訂單狀態將轉變為待出貨，並且關閉刪除按鈕。<br>
+                    <i class="fas fa-info text-danger"></i> 【綠界】第三方支付測試用信用卡號 4311-9522-2222-2222 檢驗碼 222，輸入MM/YY大於當下年月即可。<br>
                 </div>
             </div>
             <div class="card card-primary card-outline">
@@ -25,9 +26,9 @@
                                 <th class="text-center" width="5%">#</th>
                                 <th class="text-center" width="55%">內容</th>
                                 <th class="text-right" width="10%">總金額</th>
-                                <th class="text-center" width="10%">付款方式</th>
+                                {{-- <th class="text-center" width="10%">付款方式</th> --}}
                                 <th class="text-center" width="10%">訂單狀態</th>
-                                <th class="text-center" width="10%">操作</th>
+                                <th class="text-center" width="15%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,22 +62,29 @@
                                     </table>
                                 </td>
                                 <td class="text-right align-middle">{{ number_format($order->total) }} 元</td>
-                                <td class="text-center align-middle">
-                                    <a href="#" class="btn btn-sm btn-primary">去付款</a>
-                                </td>
+                                {{-- <td class="text-center align-middle">
+
+                                </td> --}}
                                 <td class="text-center align-middle">已下單</td>
                                 <td class="text-center align-middle">
                                     @if($order->status == '已下單')
-                                    <form action="{{ route('order.destroy', $order->id) }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <a href="{{ route('order.show', $order->id) }}" type="button" class="btn btn-sm btn-primary">
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        <form action="{{ route('order.pay') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="orderid" value="{{ $order->id }}">
+                                            <button type="submit" class="btn btn-sm btn-info mr-1">付款</button>
+                                        </form>
+                                        <a href="{{ route('order.show', $order->id) }}" type="button" class="btn btn-sm btn-primary mr-1">
                                             <i class="fas fa-list"></i>
                                         </a>
-                                        <button type="submit" class="btn btn-sm btn-danger">
-                                            <i class="far fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                        <form action="{{ route('order.destroy', $order->id) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <button type="submit" class="btn btn-sm btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </form>
+                                    </div>
                                     @else
                                     <span>訂單已進入出貨程序不能修改</span>
                                     @endif

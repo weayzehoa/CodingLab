@@ -41,12 +41,12 @@ Route::resource('shopping', 'ShoppingController');
 Route::resource('cart','CartController');
 
 //付款串接綠界測試帳號
-Route::post('order/pay','OrderController@pay');
+Route::post('order/pay','OrderController@pay')->name('order.pay');
 Route::post('order/paycallback','OrderController@paycallback');
 Route::get('order/paysuccess','OrderController@paysuccess');
 
 //訂單
-Route::resource('order','OrderController');
+Route::resource('order','OrderController')->middleware('auth');
 
 //ProductOrder資料表控制器, 只使用update及destory
 Route::resource('po','ProductOrderController');

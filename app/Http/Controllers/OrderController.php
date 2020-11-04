@@ -254,6 +254,6 @@ class OrderController extends Controller
     public function paysuccess()
     {
         SESSION::put('success','付款成功');
-        return Redirect::url('order');
+        return Redirect::route('order');
     }
 }

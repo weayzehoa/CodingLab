@@ -123,7 +123,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     // Route::get('/carousels', function () { return view('admin.carousels'); });
     // Route::get('/admins', function () { return view('admin.admins'); });
     // Route::get('/mails', function () { return view('admin.mails'); });
-    // Route::get('/products', function () { return view('admin.products'); });
+    Route::get('/products', function () { return view('admin.products'); });
 
     //後台會員管理
     Route::post('members/active/{id}', 'Admin\UsersController@active');

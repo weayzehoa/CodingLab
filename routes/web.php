@@ -49,7 +49,7 @@ Route::get('order/paysuccess','OrderController@paysuccess');
 Route::resource('order','OrderController');
 
 //ProductOrder資料表控制器, 只使用update及destory
-Route::resource('po','ProductOrderController', ['only' => ['update', 'destory']]);
+Route::resource('po','ProductOrderController');
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

@@ -40,9 +40,16 @@ Route::resource('shopping', 'ShoppingController');
 //購物車
 Route::resource('cart','CartController');
 
+//付款串接綠界測試帳號
+Route::post('order/pay','OrderController@pay');
+Route::post('order/paycallback','OrderController@paycallback');
+Route::get('order/paysuccess','OrderController@paysuccess');
+
 //訂單
 Route::resource('order','OrderController');
-Route::resource('po','ProductOrderController');
+
+//ProductOrder資料表控制器, 只使用update及destory
+Route::resource('po','ProductOrderController', ['only' => ['update', 'destory']]);
 
 //背景動畫測試
 Route::get('wowbgtest', function () { return view('wowbgtest'); });

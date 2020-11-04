@@ -148,4 +148,22 @@ class OrderController extends Controller
         OrderEloquent::findOrFail($id)->delete();
         return Redirect::back();
     }
+
+    //建立訂單與付款資料傳送至綠界
+    public function pay()
+    {
+        return Redirect::back();
+    }
+
+    //綠界返回資料使用
+    public function paycallback()
+    {
+        return Redirect::back();
+    }
+
+    //綠界畫面顯示付款成功返回商店時引導回來網址.
+    public function paysuccess()
+    {
+        return Redirect::back();
+    }
 }

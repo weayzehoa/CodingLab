@@ -98,6 +98,7 @@ class LogsController extends Controller
                         $log->subject_type == 'App\ProductPrice' ? $log->subject_type = 'product_prices' : '';
                         $log->subject_type == 'App\ProductImage' ? $log->subject_type = 'product_images' : '';
                         $log->subject_type == 'App\Cart' ? $log->subject_type = 'carts' : '';
+                        $log->subject_type == 'App\Order' ? $log->subject_type = 'orders' : '';
                         $sid = $log->subject_id;
                         if($log->subject_type){
                             $subjectData = DB::table($log->subject_type)->where('id','=',$sid)->get()->toArray();

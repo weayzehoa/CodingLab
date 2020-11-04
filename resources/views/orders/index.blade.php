@@ -65,7 +65,7 @@
                                 {{-- <td class="text-center align-middle">
 
                                 </td> --}}
-                                <td class="text-center align-middle">已下單</td>
+                                <td class="text-center align-middle">{{ $order->status }}</td>
                                 <td class="text-center align-middle">
                                     @if($order->status == '已下單')
                                     <div class="d-flex align-items-center justify-content-end">

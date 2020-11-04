@@ -246,7 +246,6 @@ class OrderController extends Controller
     //綠界返回資料使用
     public function paycallback(Request $request)
     {
-        dd($request);
         $order = OrderEloquent::where('payMethod',$request->MerchantTradeNo)->update(['status' => '待出貨' ]);
     }
 
@@ -254,6 +253,6 @@ class OrderController extends Controller
     public function paysuccess()
     {
         SESSION::put('success','付款成功');
-        return Redirect::route('order');
+        return Redirect::route('order.index');
     }
 }

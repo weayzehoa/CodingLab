@@ -56,7 +56,6 @@
         "classmap": [
             "database/seeds",
             "database/factories",
-            "app/Http/ViewComposers/",
             "app/ECPaySDK"
         ]
     },

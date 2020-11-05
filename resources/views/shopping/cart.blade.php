@@ -110,7 +110,7 @@
                             <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg btn-flat mr-3">
                                 <i class="fas fa-shopping-cart fa-lg mr-2"></i>{{ $carts->first() ? '繼續購物' : '去瞎拚' }}
                             </a>
-                            <a href="{{ url('order') }}" class="btn btn-danger btn-lg btn-flat float-right">
+                            <a href="{{ url('order') }}" class="btn btn-danger btn-lg btn-flat">
                                 <i class="fas fa-cash-register fa-lg mr-2"></i>我的訂單
                             </a>
                         </div>

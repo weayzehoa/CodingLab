@@ -11,7 +11,8 @@
                     <h3 class="profile-username text-center">訂單頁面</h3>
                     <i class="fas fa-info text-danger"></i> 此頁面，會將使用者選擇修改訂單的資料列出，並計算出總共金額。<br>
                     <i class="fas fa-info text-danger"></i> 使用者可以調整訂單的產品數量或刪除不需要的產品，若所有產品都被刪除，則該筆訂單也將被刪除。<br>
-                    <i class="fas fa-info text-danger"></i> 按下確定修改按鈕，會將頁面上所有資料更新至訂單中。<br>
+                    <i class="fas fa-info text-danger"></i> 按付款按鈕將會連接到【綠界】第三方支付，若完成付款，將返回訂單列表畫面。<br>
+                    <i class="fas fa-info text-danger"></i> 【綠界】第三方支付測試用信用卡號 4311-9522-2222-2222 檢驗碼 222，輸入MM/YY大於當下年月即可。<br>
                 </div>
             </div>
             <div class="card card-primary card-outline">
@@ -92,11 +93,21 @@
                     <hr>
                     <div class="card-footer">
                         <div class="input-group">
-                            <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg btn-flat mr-3">
+
+                        </div>
+                        <div class="float-left">
+                            <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg mr-3">
                                 <i class="fas fa-shopping-cart fa-lg mr-2"></i>繼續購物
                             </a>
                         </div>
-                    </div>
+                        <div class="float-right">
+                            <form action="{{ route('order.pay') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="orderid" value="{{ $order->id }}">
+                                <button type="submit" class="btn btn-lg btn-danger"><i class="fas fa-cash-register fa-lg mr-2"></i>付款</button>
+                            </form>
+                        </div>
+                </div>
                 </div>
             </div>
         </div>

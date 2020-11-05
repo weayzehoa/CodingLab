@@ -11,7 +11,7 @@
                     <h3 class="profile-username text-center">訂單列表頁面</h3>
                     <i class="fas fa-info text-danger"></i> 此頁面，會將該使用者所有訂單資料列出。<br>
                     <i class="fas fa-info text-danger"></i> 付款方式出現按鈕代表尚未選擇付款方式，訂單狀態將呈現已下單。<br>
-                    <i class="fas fa-info text-danger"></i> 按付款按鈕將會連接到【綠界】第三方支付，若完成付款，訂單狀態將轉變為待出貨，並且關閉刪除按鈕。<br>
+                    <i class="fas fa-info text-danger"></i> 按付款按鈕將會連接到【綠界】第三方支付，若完成付款，訂單狀態將轉變為待出貨，並且關閉操作按鈕。<br>
                     <i class="fas fa-info text-danger"></i> 【綠界】第三方支付測試用信用卡號 4311-9522-2222-2222 檢驗碼 222，輸入MM/YY大於當下年月即可。<br>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th class="text-center" width="5%">#</th>
+                                <th class="text-center" width="10%">訂單編號</th>
                                 <th class="text-center" width="55%">內容</th>
                                 <th class="text-right" width="10%">總金額</th>
                                 {{-- <th class="text-center" width="10%">付款方式</th> --}}
@@ -34,7 +34,7 @@
                         <tbody>
                             @foreach($orders as $order)
                             <tr>
-                                <td class="text-center align-middle">{{ $order->id }}</td>
+                                <td class="text-center align-middle"><a href="{{ route('order.show', $order->id) }}">{{ $order->no }}</a><br>{{ $order->created_at }}</td>
                                 <td class="text-left align-middle">
                                     <table class="table table-sm">
                                         <thead>
@@ -99,9 +99,14 @@
                 </div>
                 <hr>
                 <div class="card-footer">
-                    <div class="float-right">
+                    <div class="float-left">
                         <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg btn-flat mr-3">
-                            <i class="fas fa-shopping-cart fa-lg mr-2"></i>去瞎拚
+                            <i class="fas fa-cart-plus fa-lg mr-2"></i>{{ $orders->first() ? '產品清單' : '去瞎拚' }}
+                        </a>
+                    </div>
+                    <div class="float-left">
+                        <a href="{{ url('cart') }}" class="btn btn-danger btn-lg btn-flat float-right">
+                            <i class="fas fa-shopping-cart fa-lg mr-2"></i>購物車
                         </a>
                     </div>
                 </div>

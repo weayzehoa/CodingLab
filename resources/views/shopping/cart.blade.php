@@ -10,7 +10,7 @@
                 <div class="card-body box-profile">
                     <h3 class="profile-username text-center">購物車頁面</h3>
                     <i class="fas fa-info text-danger"></i> 當使用者登入後，會將該使用者所有購物車未購買的資料列出，並計算出總共金額。<br>
-                    <i class="fas fa-info text-danger"></i> 按下結帳按鈕，進入訂單畫面，並將所有購物車資料轉換為訂單資料。<br>
+                    <i class="fas fa-info text-danger"></i> 按確定下單按鈕，將所有購物車資料轉換為訂單資料，並進入到訂單清單畫面。<br>
                 </div>
             </div>
             <div class="card card-primary card-outline">
@@ -90,12 +90,28 @@
                     <div class="card-footer">
                         <div class="float-right">
                             @if($carts->first())
-                            <a href="{{ route('order.create') }}" class="btn btn-danger btn-lg btn-flat mr-3">
+                            {{-- <a href="{{ route('order.create') }}" class="btn btn-danger btn-lg btn-flat mr-3">
                                 <i class="fas fa-cash-register fa-lg mr-2"></i>結帳買單
-                            </a>
+                            </a> --}}
+                            <form class="float-right" action="{{ route('order.store') }}" method="POST">
+                                @csrf
+                                @foreach($carts as $cart)
+                                <input type="hidden" name="productId[]" value="{{ $cart->productPrice->product->id }}">
+                                <input type="hidden" name="price[]" value="{{ $cart->productPrice->price }}">
+                                <input type="hidden" name="qty[]" value="{{ $cart->qty }}">
+                                @endforeach
+                                <button type="submit" class="btn btn-danger btn-lg btn-flat mr-3">
+                                    <i class="fas fa-cash-register fa-lg mr-2"></i>確定下單
+                                </button>
+                            </form>
                             @endif
+                        </div>
+                        <div>
                             <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg btn-flat mr-3">
                                 <i class="fas fa-shopping-cart fa-lg mr-2"></i>{{ $carts->first() ? '繼續購物' : '去瞎拚' }}
+                            </a>
+                            <a href="{{ url('order') }}" class="btn btn-danger btn-lg btn-flat float-right">
+                                <i class="fas fa-cash-register fa-lg mr-2"></i>我的訂單
                             </a>
                         </div>
                     </div>

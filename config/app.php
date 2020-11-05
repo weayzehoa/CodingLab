@@ -164,15 +164,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-        //第三方登入用
-        Laravel\Socialite\SocialiteServiceProvider::class,
-        //Google reCaptcha 驗證器
-        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
-        //圖形驗證
-        Mews\Captcha\CaptchaServiceProvider::class,
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -181,7 +172,19 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Package Service Providers...
+         */
+        //第三方登入用
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        //Google reCaptcha 驗證器
+        Arcanedev\NoCaptcha\NoCaptchaServiceProvider::class,
+        //圖形驗證
+        Mews\Captcha\CaptchaServiceProvider::class,
+        //CSV, Excel, ODS 匯入匯出轉換
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        //Request 紀錄器
+        LittleBookBoy\Request\Recorder\RequestRecorderServiceProvider::class,
     ],
 
     /*
@@ -237,7 +240,7 @@ return [
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         //Mews\Captcha 圖形驗證
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
-
+        //CSV, Excel, ODS 匯入匯出轉換
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 

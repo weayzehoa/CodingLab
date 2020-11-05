@@ -81,6 +81,7 @@
                                                 <li>bluemmb/Faker-PicsumPhotos - 隨機 產生 PicsumPhotos 連結套件</li>
                                                 <li>aalaap/faker-youtube - 隨機 產生 Youtube 連結套件</li>
                                                 <li>bheller/images-generator - 隨機 產生 圖片 套件</li>
+                                                <li>littlebookboy/laravel-request-recorder - Request 紀錄器 套件</li>
                                             </ul>
                                         </div>
                                     </div>

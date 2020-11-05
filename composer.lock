@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "44624b254a0d4d99abf9233ffd794df6",
+    "content-hash": "2d55a1e1829b341dc97184326dd6ac21",
     "packages": [
         {
             "name": "aalaap/faker-youtube",
@@ -2094,6 +2094,52 @@
                 "source": "https://github.com/thephpleague/oauth1-client/tree/v1.8.2"
             },
             "time": "2020-09-28T09:39:08+00:00"
+        },
+        {
+            "name": "littlebookboy/laravel-request-recorder",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/littlebookboy/laravel-request-recorder.git",
+                "reference": "02872cdad8559f8ecf284bb19c6ba7cc9634c55d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/littlebookboy/laravel-request-recorder/zipball/02872cdad8559f8ecf284bb19c6ba7cc9634c55d",
+                "reference": "02872cdad8559f8ecf284bb19c6ba7cc9634c55d",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LittleBookBoy\\Request\\Recorder\\RequestRecorderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LittleBookBoy\\Request\\Recorder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Ching Yuan Su",
+                    "email": "kevin2pig@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Help you have a easy way to record your every request and response information.",
+            "homepage": "https://github.com/littlebookboy/laravel-request-recorder",
+            "support": {
+                "issues": "https://github.com/littlebookboy/laravel-request-recorder/issues",
+                "source": "https://github.com/littlebookboy/laravel-request-recorder/tree/master"
+            },
+            "time": "2018-01-16T02:14:31+00:00"
         },
         {
             "name": "maatwebsite/excel",

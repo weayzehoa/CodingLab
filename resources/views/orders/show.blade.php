@@ -18,7 +18,7 @@
                 {{-- alert訊息 --}}
                 @include('admin.layouts.alert_message')
                 <div class="card-header">
-                    <span>訂單編號：{{ $order->id }}</span>
+                    <span>訂單編號：{{ $order->no }}</span>
                     <span class="float-right">訂單日期：{{ $order->created_at }}</span>
                 </div>
                 <div class="card-body">

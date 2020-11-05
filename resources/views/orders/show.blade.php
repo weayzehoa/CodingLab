@@ -55,6 +55,7 @@
                                     </div>
                                 </td>
                                 <td class="text-center align-middle">{{ $po->price }}</td>
+                                @if($order->status != '已下單')
                                 <td class="align-middle">
                                     <form action="{{ route('po.destroy', $po->id) }}" method="POST">
                                         @csrf
@@ -75,6 +76,9 @@
                                         </div>
                                     </form>
                                 </td>
+                                @else
+                                <td class="text-center align-middle">{{ $po->qty }}</td>
+                                @endif
                                 <td class="text-right align-middle">{{ number_format($po->price * $po->qty)." 元" }}</td>
                             </tr>
                             @endforeach
@@ -92,14 +96,12 @@
                     @endif
                     <hr>
                     <div class="card-footer">
-                        <div class="input-group">
-
-                        </div>
                         <div class="float-left">
                             <a href="{{ url('shopping') }}" class="btn btn-primary btn-lg mr-3">
                                 <i class="fas fa-shopping-cart fa-lg mr-2"></i>繼續購物
                             </a>
                         </div>
+                        @if($order->status == '已下單')
                         <div class="float-right">
                             <form action="{{ route('order.pay') }}" method="POST">
                                 @csrf
@@ -107,7 +109,12 @@
                                 <button type="submit" class="btn btn-lg btn-danger"><i class="fas fa-cash-register fa-lg mr-2"></i>付款</button>
                             </form>
                         </div>
-                </div>
+                        @else
+                        <div class="float-right">
+                            <span>{{ $order->payMethod}}<br>付款完成不能修改</span>
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>

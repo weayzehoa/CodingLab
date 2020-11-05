@@ -21,7 +21,7 @@ class Order extends Model
     protected static $logName = '訂單資料';
 
     protected $fillable = [
-        'user_id', 'payMethod','total', 'status'
+        'user_id', 'payMethod','total', 'status','no'
     ];
 
     //使用軟刪除

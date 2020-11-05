@@ -23,7 +23,11 @@ class OrderController extends Controller
 {
     //透過中介層檢驗
     public function __construct(){
-        $this->middleware('auth');
+        $this->middleware('auth', [
+            'except' => [
+                'paycallback', 'paysuccess'
+            ]
+        ]);
     }
 
     /**

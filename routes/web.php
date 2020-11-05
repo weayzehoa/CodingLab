@@ -46,7 +46,7 @@ Route::post('order/paycallback','OrderController@paycallback');
 Route::get('order/paysuccess','OrderController@paysuccess');
 
 //訂單
-Route::resource('order','OrderController')->middleware('auth');
+Route::resource('order','OrderController');
 
 //ProductOrder資料表控制器, 只使用update及destory
 Route::resource('po','ProductOrderController');

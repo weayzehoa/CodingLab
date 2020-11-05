@@ -22,9 +22,9 @@ use ECPay_PaymentMethod;
 class OrderController extends Controller
 {
     //透過中介層檢驗
-    // public function __construct(){
-    //     $this->middleware('auth');
-    // }
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.

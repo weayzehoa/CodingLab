@@ -55,7 +55,7 @@
                                     </div>
                                 </td>
                                 <td class="text-center align-middle">{{ $po->price }}</td>
-                                @if($order->status != '已下單')
+                                @if($order->status == '已下單')
                                 <td class="align-middle">
                                     <form action="{{ route('po.destroy', $po->id) }}" method="POST">
                                         @csrf

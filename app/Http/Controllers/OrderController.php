@@ -178,7 +178,7 @@ class OrderController extends Controller
             $obj->ServiceURL  = "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5";    //服務位置
             $obj->HashKey     = '5294y06JbISpM5x9' ;                                            //測試用Hashkey，請自行帶入ECPay提供的HashKey
             $obj->HashIV      = 'v77hoKGq4kWxNNIS' ;                                            //測試用HashIV，請自行帶入ECPay提供的HashIV
-            $obj->MerchantID  = '2000214';                                                      //測試用MerchantID，(有OTP) 2000132 (無OTP) 2000214
+            $obj->MerchantID  = '2000132';                                                      //測試用MerchantID，(有OTP) 2000132 (無OTP) 2000214
             $obj->EncryptType = '1';                                                            //CheckMacValue加密類型，請固定填入1，使用SHA256加密
 
             //基本參數(請依系統規劃自行調整)

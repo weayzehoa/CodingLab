@@ -12,16 +12,16 @@ return [
     'recorder' => [
         'enabled' => true,
         'group' => 'web',
-        'except' => ['GET'],
-        'skip_routes' => [
-            [
-                'route_name' => 'route.name1',
-                'http_code' => ['*']
-            ],
-            [
-                'route_name' => 'route.name2',
-                'http_code' => ['409', '422']
-            ],
-        ]
+        // 'except' => ['GET'],
+        // 'skip_routes' => [
+        //     [
+        //         'route_name' => 'route.name1',
+        //         'http_code' => ['*']
+        //     ],
+        //     [
+        //         'route_name' => 'route.name2',
+        //         'http_code' => ['409', '422']
+        //     ],
+        // ]
     ]
 ];

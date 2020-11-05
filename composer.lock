@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2d55a1e1829b341dc97184326dd6ac21",
+    "content-hash": "651bb2abaa8c54aafffb1fd523e30504",
     "packages": [
         {
             "name": "aalaap/faker-youtube",
@@ -2094,6 +2094,92 @@
                 "source": "https://github.com/thephpleague/oauth1-client/tree/v1.8.2"
             },
             "time": "2020-09-28T09:39:08+00:00"
+        },
+        {
+            "name": "linecorp/line-bot-sdk",
+            "version": "6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/line/line-bot-sdk-php.git",
+                "reference": "88fc4afb3c50315708b1c4487845d9c03c44a62b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/88fc4afb3c50315708b1c4487845d9c03c44a62b",
+                "reference": "88fc4afb3c50315708b1c4487845d9c03c44a62b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-sockets": "*",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "ext-posix": "*",
+                "orchestra/testbench": "*",
+                "phpmd/phpmd": "~2.9",
+                "phpunit/phpunit": "^4.8.36||^5||^6||^7",
+                "squizlabs/php_codesniffer": "~3.5"
+            },
+            "suggest": {
+                "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
+                "roave/better-reflection": "Required by apigen/apigen:dev-master"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LINE\\Laravel\\LINEBotServiceProvider"
+                    ],
+                    "aliases": {
+                        "LINEBot": "LINE\\Laravel\\Facade\\LINEBot"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LINE\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "moznion",
+                    "email": "moznion@gmail.com",
+                    "role": "Retired"
+                },
+                {
+                    "name": "Satoru Yoshihara",
+                    "email": "vaduz0@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Satoshi Shibuya",
+                    "email": "satosby@gmail.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Shunsuke Mori",
+                    "email": "morimorim7180@gmail.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "SDK of the LINE BOT API for PHP",
+            "homepage": "https://github.com/line/line-bot-sdk-php",
+            "keywords": [
+                "bot",
+                "line",
+                "sdk"
+            ],
+            "support": {
+                "issues": "https://github.com/line/line-bot-sdk-php/issues",
+                "source": "https://github.com/line/line-bot-sdk-php/tree/6.0.0"
+            },
+            "time": "2020-10-16T06:03:35+00:00"
         },
         {
             "name": "littlebookboy/laravel-request-recorder",

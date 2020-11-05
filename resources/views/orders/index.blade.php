@@ -86,7 +86,7 @@
                                         </form>
                                     </div>
                                     @else
-                                    <span>訂單已進入出貨程序不能修改</span>
+                                    <span>{{ $order->payMethod}}<br>付款完成不能修改</span>
                                     @endif
                                 </td>
                             </tr>

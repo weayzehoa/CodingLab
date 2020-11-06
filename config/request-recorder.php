@@ -11,7 +11,7 @@ return [
      */
     'recorder' => [
         'enabled' => true,
-        'group' => 'web',
+        'group' => 'api',
         // 'except' => ['GET'],
         // 'skip_routes' => [
         //     [

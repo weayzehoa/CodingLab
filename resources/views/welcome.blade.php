@@ -74,14 +74,16 @@
                                                 <li>laravel-activitylog - 紀錄用戶行為</li>
                                                 <li>laravel/socialite - 第三方登入</li>
                                                 <li>ixudra/curl - Curl 套件</li>
-                                                <li>simplesoftwareio/simple-qrcode - QrCode 套件</li>
-                                                <li>laravel/excel - 匯入匯出 試算表 套件</li>
-                                                <li>bmatovu/laravel-xml (v1.0 for Laravel6)- 匯入匯出 XML 套件</li>
-                                                <li>ottaviano/faker-gravatar - 隨機 Gravatar 套件</li>
-                                                <li>bluemmb/Faker-PicsumPhotos - 隨機 產生 PicsumPhotos 連結套件</li>
-                                                <li>aalaap/faker-youtube - 隨機 產生 Youtube 連結套件</li>
-                                                <li>bheller/images-generator - 隨機 產生 圖片 套件</li>
-                                                <li>littlebookboy/laravel-request-recorder - Request 紀錄器 套件</li>
+                                                <li>simplesoftwareio/simple-qrcode - QrCode</li>
+                                                <li>laravel/excel - 匯入匯出 試算表</li>
+                                                <li>bmatovu/laravel-xml (v1.0 for Laravel6)- 匯入匯出 XML</li>
+                                                <li>ottaviano/faker-gravatar - 隨機 Gravatar</li>
+                                                <li>bluemmb/Faker-PicsumPhotos - 隨機 產生 PicsumPhotos 連結</li>
+                                                <li>aalaap/faker-youtube - 隨機 產生 Youtube 連結</li>
+                                                <li>bheller/images-generator - 隨機 產生 圖片</li>
+                                                <li>littlebookboy/laravel-request-recorder - Request 紀錄器</li>
+                                                <li>linecorp/line-bot-sdk - Line Messaging API</li>
+                                                <li>predis/predis - Redis</li>
                                             </ul>
                                         </div>
                                     </div>

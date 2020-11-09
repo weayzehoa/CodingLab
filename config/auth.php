@@ -41,11 +41,19 @@ return [
             'provider' => 'users',
         ],
 
+        //關閉舊的認證方式
+        // 'api' => [
+        //     'driver' => 'token',
+        //     'provider' => 'users',
+        //     'hash' => false,
+        // ],
+
+        //前台api認證改由JWT認證
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
-            'hash' => false,
         ],
+
         //提供給後台管理登入用
         'admin' => [
             'driver' => 'session',

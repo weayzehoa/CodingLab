@@ -19,3 +19,10 @@ use Illuminate\Http\Request;
 
 //LineBot Hooks
 Route::post('/linebot', 'API\LineBotController@hooks');
+
+//User Auth API
+Route::post('login', 'API\UserLoginController@login');
+Route::post('logout', 'API\UserLoginController@logout');
+Route::post('refresh', 'API\UserLoginController@refresh');
+Route::post('me', 'API\UserLoginController@me');
+

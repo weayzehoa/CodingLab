@@ -84,6 +84,7 @@
                                                 <li>littlebookboy/laravel-request-recorder - Request 紀錄器</li>
                                                 <li>linecorp/line-bot-sdk - Line Messaging API</li>
                                                 <li>predis/predis - Redis</li>
+                                                <li>tymon/jwt-auth - JWT 套件</li>
                                             </ul>
                                         </div>
                                     </div>

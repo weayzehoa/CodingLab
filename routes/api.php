@@ -26,3 +26,7 @@ Route::post('logout', 'API\UserLoginController@logout');
 Route::post('refresh', 'API\UserLoginController@refresh');
 Route::post('me', 'API\UserLoginController@me');
 
+//Post API
+// Route::get('posts', 'API\PostController@index');
+Route::apiResource('posts', 'API\PostController');
+

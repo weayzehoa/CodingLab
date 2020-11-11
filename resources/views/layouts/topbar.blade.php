@@ -16,6 +16,7 @@
                 <li class="nav-item dropdown">
                     <a id="devSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">參考資料</a>
                     <ul aria-labelledby="devSubMenu1" class="dropdown-menu border-0 shadow">
+                        <li><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Status" class="dropdown-item" target="_blank">HTTP 狀態碼</a></li>
                         <li><a href="https://template.rvt.idv.tw/AdminLTE-3.0.5/" class="dropdown-item" target="_blank">AdminLTE參考樣板</a></li>
                         <li class="dropdown-divider"></li>
                         <li class="dropdown-submenu dropdown-hover">

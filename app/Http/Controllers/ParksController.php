@@ -12,6 +12,7 @@ use Response;
 use Ixudra\Curl\Facades\Curl;
 use App\Exports\ParksExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Redis;
 class ParksController extends Controller
 {
     /**
@@ -64,7 +65,25 @@ class ParksController extends Controller
      */
     public function show($id)
     {
-        //
+        $getParks = Redis::get('parks');
+        if($getParks){
+            $parks = json_decode($getParks);
+            foreach($parks as $park){
+                if($park->id == $id){
+                    $response = $park;
+                }
+            }
+        }else{
+            $parks = ParkEloquent::all();
+            Redis::set('parks', $parks);
+            foreach($parks as $park){
+                if($park->id == $id){
+                    $response = $park;
+                }
+            }
+        }
+        $park = $response;
+        return view('parks.show',compact('park'));
     }
 
     /**
@@ -75,7 +94,7 @@ class ParksController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**

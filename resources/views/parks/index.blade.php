@@ -66,7 +66,7 @@
                         <tbody>
                             @foreach ( $parks ?? '' as $park )
                             <tr>
-                                <td>{{ $park->name }}</td>
+                                <td><a href="{{ route('parks.show', $park->id) }}">{{ $park->name }}</a></td>
                                 <td>{{ $park->engname }}</td>
                                 <td>{{ $park->type }}</td>
                                 <td>{{ $park->dist }}</td>

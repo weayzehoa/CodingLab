@@ -31,8 +31,8 @@ Route::prefix('parks')->name('parks.')->group(function(){
     Route::get('xml', 'ParksController@xml')->name('xml');
     Route::get('cdb', 'ParksController@cdb')->name('cdb');
     Route::get('curl', 'ParksController@curl')->name('curl');
-    Route::resource('/', 'ParksController', ['only' => ['index', 'show']]);
 });
+Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 
 //Shopping購物
 Route::resource('shopping', 'ShoppingController');

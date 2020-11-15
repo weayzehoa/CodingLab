@@ -1,12 +1,12 @@
 {
   "name": "sweetalert2",
   "homepage": "https://github.com/sweetalert2/sweetalert2",
-  "version": "10.9.0",
-  "_release": "10.9.0",
+  "version": "10.10.0",
+  "_release": "10.10.0",
   "_resolution": {
     "type": "version",
-    "tag": "v10.9.0",
-    "commit": "b20958f0a6aaeefd73ee899c97c5633d88bbc9ef"
+    "tag": "v10.10.0",
+    "commit": "3d92fe3b3b058df202b830b72aa8344fff5ce878"
   },
   "_source": "https://github.com/sweetalert2/sweetalert2.git",
   "_target": "^10.3.5",

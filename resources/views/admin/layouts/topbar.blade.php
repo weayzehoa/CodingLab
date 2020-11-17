@@ -86,6 +86,9 @@
                 </li>
             </ul>
         </li> --}}
+        <li class="nav-item">
+            <a href="{{ url('admin/mails/sendmail') }}" class="nav-link">發送信件</a>
+        </li>
     </ul>
     {{-- SEARCH FORM --}}
     <form class="form-inline ml-3">

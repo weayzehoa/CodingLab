@@ -118,6 +118,11 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::resource('mbposts', 'Admin\MemberPostsController');
     Route::resource('comments', 'Admin\CommentsController');
 
+    //後台管理員寄信功能
+    Route::get('mails/sendmail','Admin\MailsController@adminSendMailForm');
+    Route::post('mails/sendmail','Admin\MailsController@sendmail')->name('sendmail');
+    // Route::resource('mails', 'Admin\MailsController');
+
     // Route::get('/news', function () { return view('admin.news'); });
     // Route::get('/marquees', function () { return view('admin.marquees'); });
     // Route::get('/carousels', function () { return view('admin.carousels'); });

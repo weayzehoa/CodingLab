@@ -198,6 +198,12 @@
                             </a>
                         </li> --}}
                         <li class="nav-item">
+                            <a href="{{ url('admin/mails/sendmail') }}" class="nav-link ">
+                                <i class="nav-icon far fa-list-alt"></i>
+                                <p>發送信件</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('admin/logs') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>維護紀錄</p>

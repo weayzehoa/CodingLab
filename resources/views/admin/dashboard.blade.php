@@ -6,8 +6,8 @@
 
 <div class="content-wrapper">
     <div class="content-header">
-            {{-- alert訊息 --}}
-            @include('admin.layouts.alert_message')
+        {{-- alert訊息 --}}
+        @include('admin.layouts.alert_message')
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">

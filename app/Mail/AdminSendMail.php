@@ -30,9 +30,9 @@ class AdminSendMail extends Mailable
      */
     public function build()
     {
-        return $this->view('admin.mails.contents.adminsendmailbody');
+        return $this->subject($this->details['subject'])
+                    ->view('admin.mails.contents.adminsendmailbody');
                     // ->from($this->details['from'], $this->details['name'])
-                    // ->subject($this->details['subject'])
                     // ->text('emails.orders.shipped_plain')
                     // ->with([
                     //     'Name' => $this->details->name,

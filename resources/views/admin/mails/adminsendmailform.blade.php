@@ -43,6 +43,15 @@
                                     @endif
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">主旨</label>
+                                    <input type="text" class="form-control {{ $errors->has('subject') ? ' is-invalid' : '' }}" id="subject" name="subject" value="" placeholder="輸入主旨">
+                                    @if ($errors->has('subject'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('subject') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">標題</label>
                                     <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" id="title" name="title" value="" placeholder="輸入標題">
                                     @if ($errors->has('title'))

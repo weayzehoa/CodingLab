@@ -28,6 +28,7 @@ class AdminSendMailRequest extends FormRequest
     {
         return [
             'email'=>'required|email',
+            'subject'=>'required|string|max:100',
             'title'=>'required|string|max:100',
             'content'=>'required|string|max:1000',
         ];

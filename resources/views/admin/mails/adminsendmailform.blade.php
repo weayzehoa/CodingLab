@@ -83,25 +83,9 @@
 @endsection
 
 @section('css')
-{{-- iCheck for checkboxes and radio inputs --}}
-<link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-{{-- Select2 --}}
-<link rel="stylesheet" href="{{ asset('vendor/select2/dist/css/select2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendor/select2-bootstrap4-theme/dist/select2-bootstrap4.min.css') }}">
-{{-- 時分秒日曆 --}}
-<link rel="stylesheet" href="{{ asset('vendor/jquery-ui/jquery-ui.min.css') }}">
-<link rel="stylesheet" href="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.css') }}">
 @endsection
 
 @section('script')
-{{-- Select2 --}}
-<script src="{{ asset('vendor/select2/dist/js/select2.full.min.js') }}"></script>
-{{-- Bootstrap Switch --}}
-<script src="{{ asset('vendor/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
-{{-- 時分秒日曆 --}}
-<script src="{{ asset('vendor/jquery-ui/jquery-ui.min.js') }}"></script>
-<script src="{{ asset('vendor/jquery-Timepicker/dist/jquery-ui-timepicker-addon.min.js') }}"></script>
-<script src="{{ asset('vendor/jquery-Timepicker/dist/i18n/jquery-ui-timepicker-zh-TW.js') }}"></script>
 {{-- Jquery Validation Plugin --}}
 <script src="{{ asset('vendor/jsvalidation/js/jsvalidation.js')}}"></script>
 {{-- Ckeditor 4.x --}}
@@ -109,11 +93,19 @@
 @endsection
 
 @section('JsValidator')
-{!! JsValidator::formRequest('App\Http\Requests\PostRequest', '#myform'); !!}
-{{-- {!! JsValidator::formRequest('App\Http\Requests\PostRequest'); !!} --}}
+{!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendMailRequest', '#myform'); !!}
 @endsection
 
 @section('CustomScript')
 {{-- 程式碼太長時可以將所有程式碼集中到一個.js檔案後再引進 --}}
-<script src="{{ asset('js/admin.mbpost.edit.js')}}"></script>
+<script>
+    (function($) {
+        "use strict";
+        var editor = CKEDITOR.replace( 'content');
+        editor.on( 'required', function( evt ) {
+            editor.showNotification( '請輸入資料再按儲存.', 'warning' );
+            evt.cancel();
+        } );
+    })(jQuery);
+</script>
 @endsection

@@ -11,8 +11,12 @@ use File;
 use Carbon\Carbon;
 use Mail;
 use Session;
+use Notification;
 
 use App\Http\Requests\Admin\AdminSendMailRequest;
+use App\Http\Requests\Admin\AdminSendNoteRequest;
+use App\Notifications\Admin\AdminSendNoteNotification as AdminSendNoteNotification;
+
 use App\Mail\AdminSendMail;
 
 class MailsController extends Controller
@@ -52,6 +56,32 @@ class MailsController extends Controller
         }
 
         $message = "信件已寄出給 $request->email";
+        Session::put('success',$message);
+
+        return view('admin.mails.adminsendmailform');
+    }
+
+    /**
+     * Notifications 測試
+     */
+    public function sendnote(AdminSendNoteRequest $request)
+    {
+        // dd($request);
+        try{
+            /**
+             * 發送 notification 到一個沒有存在 database 中, 特定的接收方時,
+             * 可以使用 Notification facade 的 method 來指定 channel
+             * 這邊的route('mail')指的是通道
+             */
+            Notification::route('mail', $request->email)
+                        ->notify(new AdminSendNoteNotification($request));
+        }
+        catch(Exception $e){
+            $message = "信件寄出失敗";
+            Session::put('error',$message);
+        }
+
+        $message = "通知已寄出給 $request->email";
         Session::put('success',$message);
 
         return view('admin.mails.adminsendmailform');

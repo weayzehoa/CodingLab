@@ -121,6 +121,7 @@ Route::prefix('admin')->name('admin.')->group(function() {
     //後台管理員寄信功能
     Route::get('mails/sendmail','Admin\MailsController@adminSendMailForm');
     Route::post('mails/sendmail','Admin\MailsController@sendmail')->name('sendmail');
+    Route::post('mails/sendnote','Admin\MailsController@sendnote')->name('sendnote');
     // Route::resource('mails', 'Admin\MailsController');
 
     // Route::get('/news', function () { return view('admin.news'); });

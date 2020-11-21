@@ -127,6 +127,57 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">發送信件隊列測試</h3>
+                        </div>
+                        <form id="sendqueuesform" action="{{ route('admin.sendqueues') }}" method="POST" role="form">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <input type="email" class="form-control {{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="" placeholder="輸入Email">
+                                    @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label>主旨</label>
+                                    <input type="text" class="form-control {{ $errors->has('subject') ? ' is-invalid' : '' }}" name="subject" value="發送信件隊列測試主旨" placeholder="輸入主旨">
+                                    @if ($errors->has('subject'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('subject') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">標題</label>
+                                    <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="發送信件隊列測試標題" placeholder="輸入標題">
+                                    @if ($errors->has('title'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('title') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <label>內容</label>
+                                    <textarea class="form-control {{ $errors->has('content') ? ' is-invalid' : '' }} " rows="3" id="sendqueues" name="content" placeholder="Enter ...">發送信件隊列測試內容!!發送信件隊列測試內容!!</textarea>
+                                    @if ($errors->has('content'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('content') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary">發送</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -146,6 +197,7 @@
 @section('JsValidator')
 {!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendMailRequest', '#myform'); !!}
 {!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendNoteRequest', '#sendnoteform'); !!}
+{!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendQueuesRequest', '#sendqueuesform'); !!}
 @endsection
 
 @section('CustomScript')
@@ -162,6 +214,11 @@
         sendNoteEditor.on( 'required', function( sendNoteEvt ) {
             sendNoteEditor.showNotification( '請輸入資料再按儲存.', 'warning' );
             sendNoteEvt.cancel();
+        } );
+        var sendQueuesEditor = CKEDITOR.replace( 'sendqueues');
+        sendQueuesEditor.on( 'required', function( sendQueuesEvt ) {
+            sendQueuesEditor.showNotification( '請輸入資料再按儲存.', 'warning' );
+            sendQueuesEvt.cancel();
         } );
     })(jQuery);
 </script>

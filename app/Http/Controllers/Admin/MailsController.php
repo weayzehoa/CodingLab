@@ -15,9 +15,11 @@ use Notification;
 
 use App\Http\Requests\Admin\AdminSendMailRequest;
 use App\Http\Requests\Admin\AdminSendNoteRequest;
+use App\Http\Requests\Admin\AdminSendQueuesRequest;
 use App\Notifications\Admin\AdminSendNoteNotification as AdminSendNoteNotification;
 
 use App\Mail\AdminSendMail;
+use App\Jobs\AdminSendEmail;
 
 class MailsController extends Controller
 {
@@ -82,6 +84,30 @@ class MailsController extends Controller
         }
 
         $message = "通知已寄出給 $request->email";
+        Session::put('success',$message);
+
+        return view('admin.mails.adminsendmailform');
+    }
+
+    /**
+     * Queues 測試
+     */
+    public function sendqueues(AdminSendQueuesRequest $request)
+    {
+        // dd($request);
+        try{
+            /**
+             * 不能直接將 Closure 的 $request 塞進去
+             */
+            AdminSendEmail::dispatch($request->all()); //放入隊列
+            // AdminSendEmail::dispatchNow($request->all()); //馬上執行
+        }
+        catch(Exception $e){
+            $message = "信件寄出失敗";
+            Session::put('error',$message);
+        }
+
+        $message = "信件已寄出給 $request->email";
         Session::put('success',$message);
 
         return view('admin.mails.adminsendmailform');

@@ -42,11 +42,14 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
-        $this->mapApiRoutes();
-
+        //給WEB用網域
         $this->mapWebRoutes();
 
-        //
+        //給API用網域
+        $this->mapApiRoutes();
+
+        // //給後台用網域
+        // $this->mapAdminRoutes();
     }
 
     /**
@@ -61,6 +64,14 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
+
+        // Route::group([
+        //     'domain' => config('domain.Web'),
+        //     'middleware' => 'web',
+        //     'namespace' => $this->namespace,
+        // ], function ($router) {
+        //     require base_path('routes/web.php');
+        // });
     }
 
     /**
@@ -73,8 +84,34 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapApiRoutes()
     {
         Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/api.php'));
+        ->middleware('api')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/api.php'));
+
+        // Route::group([
+        //     'domain' => config('domain.Api'),
+        //     'middleware' => 'api',
+        //     'namespace' => $this->namespace,
+        // ], function ($router) {
+        //     require base_path('routes/api.php');
+        // });
     }
+
+    // /**
+    //  * Define the "admin" routes for the application.
+    //  *
+    //  * These routes are typically stateless.
+    //  *
+    //  * @return void
+    //  */
+    // protected function mapAdminRoutes()
+    // {
+    //     Route::group([
+    //         'domain' => config('domain.Admin'),
+    //         'middleware' => 'admin',
+    //         'namespace' => $this->namespace,
+    //     ], function ($router) {
+    //         require base_path('routes/admin.php');
+    //     });
+    // }
 }

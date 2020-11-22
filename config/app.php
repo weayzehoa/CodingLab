@@ -244,4 +244,13 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Domain Setting
+    |--------------------------------------------------------------------------
+    */
+    'WebDomain' => env('WEB_DOMAIN', 'localhost'),
+    'ApiDomain' => env('API_DOMAIN', 'api.localhost'),
+    'AdminDomain' => env('ADMIN_DOMAIN', 'admin.localhost'),
+
 ];

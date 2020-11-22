@@ -28,5 +28,5 @@ Route::post('me', 'API\UserLoginController@me');
 
 //Post API
 // Route::get('posts', 'API\PostController@index');
-Route::apiResource('posts', 'API\PostController');
+// Route::apiResource('posts', 'API\PostController');
 

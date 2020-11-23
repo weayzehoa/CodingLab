@@ -13,6 +13,7 @@ use Ixudra\Curl\Facades\Curl;
 use App\Exports\ParksExport;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Redis;
+use PDF;
 class ParksController extends Controller
 {
     /**
@@ -208,6 +209,23 @@ class ParksController extends Controller
         }
         File::put(public_path('/upload/'.$fileName),$xml);
         return response()->download(public_path('/upload/'.$fileName))->deleteFileAfterSend();
+    }
+
+    /*
+        下載 PDF 檔案
+        使用 barryvdh/laravel-dompdf - 匯入匯出 PDF 套件
+    */
+    public function pdf()
+    {
+        // 取出資料
+        // $parks = ParkEloquent::all();
+        $parks = ParkEloquent::paginate(50);
+        //設定為橫式, 使用 wt011 字型
+        $pdf = PDF::loadView('parks.pdf_view', compact('parks'))
+                    ->setPaper('A4', 'landscape')
+                    ->setOptions(['defaultFont' => 'wt011']);
+        //將資料拋出直接下載
+        return $pdf->download('臺北市公園基本資料.pdf');
     }
 
     /*

@@ -85,6 +85,7 @@
                                                 <li>linecorp/line-bot-sdk - Line Messaging API</li>
                                                 <li>predis/predis - Redis</li>
                                                 <li>tymon/jwt-auth - JWT 套件</li>
+                                                <li>barryvdh/laravel-dompdf - 匯出 PDF 套件</li>
                                             </ul>
                                         </div>
                                     </div>

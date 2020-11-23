@@ -31,6 +31,7 @@ Route::prefix('parks')->name('parks.')->group(function(){
     Route::get('xml', 'ParksController@xml')->name('xml');
     Route::get('cdb', 'ParksController@cdb')->name('cdb');
     Route::get('curl', 'ParksController@curl')->name('curl');
+    Route::get('pdf', 'ParksController@pdf')->name('pdf');
 });
 Route::resource('parks', 'ParksController', ['only' => ['index', 'show']]);
 

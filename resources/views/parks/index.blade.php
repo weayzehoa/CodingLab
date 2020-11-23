@@ -13,7 +13,8 @@
                     <i class="fas fa-info text-danger"></i> 這邊直接讀取站內 Parks 資料表所有資料。並且使用 DataTable 套件來呈現部分資料。<br>
                     <i class="fas fa-info text-primary"></i> 使用 Laravel 本身提供的 Response to JSON 及 FileSystem 將資料轉換成 JSON 並提供下載。<br>
                     <i class="fas fa-info text-primary"></i> 使用 laravel/excel - 匯入匯出 試算表 套件，將資料轉換成 CSV、XLS、XLSX、ODS 並提供下載。<br>
-                    <i class="fas fa-info text-primary"></i> 使用 bmatovu/laravel-xml (v1.0 for Laravel6) - 匯入匯出 XML 套件，將資料轉換成 XML 並提供下載。
+                    <i class="fas fa-info text-primary"></i> 使用 bmatovu/laravel-xml (v1.0 for Laravel6) - 匯入匯出 XML 套件，將資料轉換成 XML 並提供下載。<br>
+                    <i class="fas fa-info text-primary"></i> 使用 barryvdh/laravel-dompdf - 匯出 PDF 套件，將資料轉換成 PDF 並提供下載。(由於資料太多，只取50筆作為範例)
                 </div>
             </div>
             <div class="card card-blue card-outline">
@@ -33,6 +34,7 @@
                     <a href="{{ route('parks.xlsx') }}" class="btn btn-success">XLSX</a>
                     <a href="{{ route('parks.ods') }}" class="btn btn-secondary">ODS</a>
                     <a href="{{ route('parks.xml') }}" class="btn btn-warning">XML</a>
+                    <a href="{{ route('parks.pdf') }}" class="btn btn-danger">PDF(50筆)</a>
                     </div>
                 </div>
             </div>

@@ -185,6 +185,8 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         //Request 紀錄器
         LittleBookBoy\Request\Recorder\RequestRecorderServiceProvider::class,
+        //PDF 匯出
+        Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*
@@ -242,6 +244,8 @@ return [
         'Captcha' => Mews\Captcha\Facades\Captcha::class,
         //CSV, Excel, ODS 匯入匯出轉換
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        // PDF 匯出
+        'PDF' => Barryvdh\DomPDF\ServiceProvider::class,
     ],
 
     /*

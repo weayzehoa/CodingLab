@@ -126,6 +126,10 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::post('mails/sendqueues','Admin\MailsController@sendqueues')->name('sendqueues');
     // Route::resource('mails', 'Admin\MailsController');
 
+    //後台圖片上傳功能測試
+    Route::get('images/upload','Admin\ImagesController@imagesUploadForm');
+    Route::post('images/upload','Admin\ImagesController@imagesUpload')->name('imageUpload');
+
     // Route::get('/news', function () { return view('admin.news'); });
     // Route::get('/marquees', function () { return view('admin.marquees'); });
     // Route::get('/carousels', function () { return view('admin.carousels'); });

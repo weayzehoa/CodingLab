@@ -89,6 +89,9 @@
         <li class="nav-item">
             <a href="{{ url('admin/mails/sendmail') }}" class="nav-link">發送信件</a>
         </li>
+        <li class="nav-item">
+            <a href="{{ url('admin/images/upload') }}" class="nav-link">圖片上傳</a>
+        </li>
     </ul>
     {{-- SEARCH FORM --}}
     <form class="form-inline ml-3">

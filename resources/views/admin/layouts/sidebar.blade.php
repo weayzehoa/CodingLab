@@ -204,6 +204,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ url('admin/images/upload') }}" class="nav-link ">
+                                <i class="nav-icon far fa-list-alt"></i>
+                                <p>圖片上傳</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ url('admin/logs') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>維護紀錄</p>

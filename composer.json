@@ -11,6 +11,7 @@
         "php": "^7.2",
         "aalaap/faker-youtube": "^1.2",
         "arcanedev/no-captcha": "10.x",
+        "aws/aws-sdk-php": "^3.164",
         "barryvdh/laravel-dompdf": "^0.8.7",
         "bheller/images-generator": "^1.0",
         "bluemmb/faker-picsum-photos-provider": "^1.0",

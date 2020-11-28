@@ -10,8 +10,10 @@ use Redirect;
 use Carbon\Carbon;
 use Session;
 use AWS;
+use Nexmo;
 
 use App\Http\Requests\Admin\AdminSendSMSRequest;
+use App\Http\Requests\Admin\AdminSendNexmosmsRequest;
 
 class SMSController extends Controller
 {
@@ -49,6 +51,32 @@ class SMSController extends Controller
                         'StringValue' => 'Transactional',   //性質 Transactional (交易類) Promotional (行銷類)
                     ]
                ],
+            ]);
+        } catch (Exception $e) {
+            $message = "簡訊傳送失敗";
+            Session::put('error', $message);
+        }
+
+        $message = "簡訊已傳送給 $request->phone";
+        Session::put('success', $message);
+
+        return view('admin.sms.adminsendSMSform');
+    }
+    /**
+     * 透過 Nexmo 傳送 SMS
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function nexmosms(AdminSendNexmosmsRequest $request)
+    {
+        $phone = '886' . ltrim($request->phone, "0");       //去除掉左邊 0 並加上國碼
+        $content = $request->content;                       //訊息內容
+        try {
+            Nexmo::message()->send([                        //使用 Nexmo 類 傳送 SMS
+                'to'   => $phone,                           //傳送對象
+                'from' => env('NEXMO_FROM'),                //從哪邊傳來
+                'text' => $content,                         //訊息內容
             ]);
         } catch (Exception $e) {
             $message = "簡訊傳送失敗";

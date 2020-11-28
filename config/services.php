@@ -47,4 +47,12 @@ return [
         'client_secret' => env('GITHUB_API_SECRET'),
         'redirect' => env('GITHUB_CALLBACK'),
     ],
+
+    'nexmo' => [
+        'key' => env('NEXMO_KEY'),
+        'secret' => env('NEXMO_SECRET'),
+        'sms_from' => env('NEXMO_FROM'),
+        'ttl' => 600,   //存活時間
+        'retry_after' => 120,   //下次傳送等待時間(避免濫發)
+    ],
 ];

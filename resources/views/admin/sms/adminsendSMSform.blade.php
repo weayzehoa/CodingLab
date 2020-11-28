@@ -65,6 +65,44 @@
                         </form>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">透過 Nexmo 發送簡訊</h3>
+                        </div>
+                        <form id="nexmosms" action="{{ route('admin.nexmosms') }}" method="POST" role="form">
+                            @csrf
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">To</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text"><i class="fas fa-phone"></i></span><span class="input-group-text">+886</span>
+                                        </div>
+                                        <input class="form-control {{ $errors->has('phone') ? ' is-invalid' : '' }}" type="number" name="phone" pattern="[0-9]" placeholder="輸入行動電話號碼">
+                                        @if ($errors->has('phone'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('phone') }}</strong>
+                                        </span>
+                                        @endif
+                                      </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>內容</label>
+                                    <textarea class="form-control {{ $errors->has('content') ? ' is-invalid' : '' }} " rows="3" name="content" placeholder="輸入訊息內容"></textarea>
+                                    @if ($errors->has('content'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('content') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-primary">發送</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -81,6 +119,7 @@
 
 @section('JsValidator')
 {!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendSMSRequest', '#myform'); !!}
+{!! JsValidator::formRequest('App\Http\Requests\Admin\AdminSendNexmosmsRequest', '#nexmosms'); !!}
 @endsection
 
 @section('CustomScript')

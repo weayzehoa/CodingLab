@@ -187,6 +187,8 @@ return [
         LittleBookBoy\Request\Recorder\RequestRecorderServiceProvider::class,
         //PDF 匯出
         Barryvdh\DomPDF\ServiceProvider::class,
+        //AWS
+        Aws\Laravel\AwsServiceProvider::class,
     ],
 
     /*
@@ -246,6 +248,8 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         // PDF 匯出
         'PDF' => Barryvdh\DomPDF\ServiceProvider::class,
+        // AWS
+        'AWS' => Aws\Laravel\AwsServiceProvider::class,
     ],
 
     /*

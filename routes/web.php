@@ -130,6 +130,12 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::get('images/upload','Admin\ImagesController@imagesUploadForm');
     Route::post('images/upload','Admin\ImagesController@imagesUpload')->name('imageUpload');
 
+    //後台發送簡訊功能測試
+    Route::get('sms/sendsms','Admin\SMSController@adminSendSMSForm');
+    Route::post('sms/awssms','Admin\SMSController@awssms')->name('awssms');
+    Route::post('sms/nexmo','Admin\SMSController@nexmosms')->name('nexmosms');
+
+
     // Route::get('/news', function () { return view('admin.news'); });
     // Route::get('/marquees', function () { return view('admin.marquees'); });
     // Route::get('/carousels', function () { return view('admin.carousels'); });

@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API Documentation",
-        "description": "",
+        "description": "My API Documentation description",
         "contact": {
             "email": "admin@mail.com"
         },
@@ -22,9 +22,9 @@
         "/api/login": {
             "post": {
                 "tags": [
-                    "Login"
+                    "USER"
                 ],
-                "summary": "Login",
+                "summary": "User Login",
                 "operationId": "login",
                 "parameters": [
                     {
@@ -56,25 +56,49 @@
                     },
                     "400": {
                         "description": "Bad Request"
-                    },
-                    "404": {
-                        "description": "not found"
-                    },
-                    "403": {
-                        "description": "Forbidden"
                     }
                 }
             }
         },
         "/api/me": {
             "post": {
+                "tags": [
+                    "USER"
+                ],
                 "summary": "GET Curent User Information",
                 "operationId": "users",
                 "responses": {
                     "200": {
                         "description": "Success"
                     }
-                }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/logout": {
+            "post": {
+                "tags": [
+                    "USER"
+                ],
+                "summary": "Log the user out (Invalidate the token).",
+                "operationId": "users",
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "security": [
+                    {
+                        "apiAuth": []
+                    }
+                ]
             }
         },
         "/api/users": {
@@ -89,6 +113,18 @@
                         "description": "Success"
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "apiAuth": {
+                "type": "http",
+                "description": "Login with email and password to get the authentication token",
+                "name": "Token based Based",
+                "in": "header",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
             }
         }
     },

@@ -5,8 +5,16 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator;
+use App\User as UserEloquent;
 
 use Illuminate\Support\Facades\Auth;
+
+/**
+ *  @OA\Tag(
+ *      name="USER",
+ *      description="OPERATIONS ABOUT USER"
+ *  )
+ */
 
 class UserLoginController extends Controller
 {
@@ -26,6 +34,46 @@ class UserLoginController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
+     /**
+     *  @OA\Post(
+     *      path="/api/login",
+     *      summary="User Login",
+     *      tags={"USER"},
+     *      operationId="login",
+     *
+     *      @OA\Parameter(
+     *          name="email",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *               type="string"
+     *          )
+     *      ),
+     *      @OA\Parameter(
+     *          name="password",
+     *          in="query",
+     *          required=true,
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *           description="Success",
+     *          @OA\MediaType(
+     *               mediaType="application/json",
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated"
+     *      ),
+     *      @OA\Response(
+     *         response=400,
+     *         description="Bad Request"
+     *      ),
+     *  )
+     **/
     public function login()
     {
         $credentials = request(['email', 'password']);
@@ -55,6 +103,19 @@ class UserLoginController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
+    /**
+     *  @OA\POST(
+     *      path="/api/me",
+     *      summary="GET Curent User Information",
+     *      tags={"USER"},
+     *      operationId="users",
+     *      security={{ "apiAuth": {} }},
+     *      @OA\Response(
+     *          response=200,
+     *          description="Success"
+     *      ),
+     *  )
+     */
     public function me()
     {
         return response()->json(auth('api')->user());
@@ -65,10 +126,27 @@ class UserLoginController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
+    /**
+     *  @OA\POST(
+     *      path="/api/logout",
+     *      summary="Log the user out (Invalidate the token).",
+     *      tags={"USER"},
+     *      operationId="users",
+     *      security={{ "apiAuth": {} }},
+     *      @OA\Response(
+     *          response=200,
+     *          description="Success"
+     *      ),
+     *      @OA\Response(
+     *          response=401,
+     *          description="Unauthenticated"
+     *      ),
+     *  )
+     */
     public function logout()
     {
         //找出登入者資料
-        // $user = auth('api')->user();
+        $user = auth('api')->user();
 
         //JWT RAW data
         // $payload = auth('api')->payload();
@@ -78,13 +156,14 @@ class UserLoginController extends Controller
         // return $this->respondWithToken($newtoken);
 
         //抓取是否有返回token
-        $token = request(['token']);
-        //如果沒返回token則給出錯誤訊息
-        if(!$token){
+        // $token = request(['token']);
+
+        //如果沒使用者存在則給出錯誤訊息
+        if (!$user) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
         //登出並清除token
-        auth()->logout();
+        auth('api')->logout();
         return response()->json(['message' => 'Successfully logged out'], 200);
     }
 
@@ -113,5 +192,23 @@ class UserLoginController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth('api')->factory()->getTTL() * 60
         ]);
+    }
+
+    /**
+     *  @OA\Get(
+     *      path="/api/users",
+     *      tags={"USER"},
+     *      summary="GET LIST OF USERS",
+     *      operationId="users",
+     *      @OA\Response(
+     *          response=200,
+     *          description="Success"
+     *      )
+     *  )
+     */
+    public function users()
+    {
+        $users = UserEloquent::all();
+        return response()->json($users, 200);
     }
 }

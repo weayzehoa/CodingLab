@@ -203,12 +203,12 @@
                                 <p>發送信件</p>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ url('admin/sms/sendsms') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>
                                 <p>發送簡訊</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ url('admin/images/upload') }}" class="nav-link ">
                                 <i class="nav-icon far fa-list-alt"></i>

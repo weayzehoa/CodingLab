@@ -89,9 +89,9 @@
         <li class="nav-item">
             <a href="{{ url('admin/mails/sendmail') }}" class="nav-link">發送信件</a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a href="{{ url('admin/sms/sendsms') }}" class="nav-link">發送簡訊</a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a href="{{ url('admin/images/upload') }}" class="nav-link">圖片上傳</a>
         </li>

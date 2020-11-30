@@ -131,9 +131,9 @@ Route::prefix('admin')->name('admin.')->group(function() {
     Route::post('images/upload','Admin\ImagesController@imagesUpload')->name('imageUpload');
 
     //後台發送簡訊功能測試
-    Route::get('sms/sendsms','Admin\SMSController@adminSendSMSForm');
-    Route::post('sms/awssms','Admin\SMSController@awssms')->name('awssms');
-    Route::post('sms/nexmosms','Admin\SMSController@nexmosms')->name('nexmosms');
+    // Route::get('sms/sendsms','Admin\SMSController@adminSendSMSForm');
+    // Route::post('sms/awssms','Admin\SMSController@awssms')->name('awssms');
+    // Route::post('sms/nexmosms','Admin\SMSController@nexmosms')->name('nexmosms');
 
 
     // Route::get('/news', function () { return view('admin.news'); });

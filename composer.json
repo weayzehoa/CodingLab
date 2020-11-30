@@ -18,6 +18,7 @@
         "bluemmb/faker-picsum-photos-provider": "^1.0",
         "bmatovu/laravel-xml": "^1.0",
         "ckeditor/ckeditor": "^4.15",
+        "darkaonline/l5-swagger": "6.*",
         "fideloper/proxy": "^4.0",
         "gregwar/captcha": "1.*",
         "ixudra/curl": "^6.21",

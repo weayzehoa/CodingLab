@@ -89,6 +89,8 @@
                                                 <li>league/flysystem-aws-s3-v3 - AWS S3 套件</li>
                                                 <li>aws/aws-sdk-php-laravel - AWS SDK 套件</li>
                                                 <li>Nexmo/nexmo-laravel - Nexmo 套件</li>
+                                                <li>laravel/scout - 全文搜尋 套件</li>
+                                                <li>algolia/algoliasearch-client-php - Algolia 驅動</li>
                                             </ul>
                                         </div>
                                     </div>

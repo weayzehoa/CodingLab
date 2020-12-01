@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 //直接使用記錄功能
 use Spatie\Activitylog\Traits\LogsActivity;
 
+//使用 Scout 做搜尋
+use Laravel\Scout\Searchable;
 class Park extends Model
 {
     use LogsActivity;
+    use Searchable;
 
     //可新增編輯的欄位名稱
     protected $fillable = [
@@ -31,4 +34,14 @@ class Park extends Model
 
     // //log_name 欄位資料
     protected static $logName = '公園資料';
+
+    /**
+     * 取得模型的索引名稱。
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'parks_index';
+    }
 }

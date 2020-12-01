@@ -23,19 +23,28 @@
                 </div>
                 <div class="card-body">
                     <div class="mb-3">
-                    <a href="{{ route('parks.index') }}" class="btn btn-warning">DataTable 模式</a>
-                    <a href="{{ route('parks.showJson') }}" class="btn btn-primary">JSON (顯示於下方)</a>
-                    <a href="{{ route('parks.openJson') }}" class="btn btn-primary" target="_blank">JSON (另開視窗)</a>
+                        <a href="{{ route('parks.index') }}" class="btn btn-warning">DataTable 模式</a>
+                        <a href="{{ route('parks.showJson') }}" class="btn btn-primary">JSON (顯示於下方)</a>
+                        <a href="{{ route('parks.openJson') }}" class="btn btn-primary" target="_blank">JSON (另開視窗)</a>
                     </div>
-                    <div><span>檔案下載</span>
-                    <a href="{{ route('parks.downJson') }}" class="btn btn-primary">JSON</a>
-                    <a href="{{ route('parks.csv') }}" class="btn btn-success">CSV</a>
-                    <a href="{{ route('parks.xls') }}" class="btn btn-success">XLS</a>
-                    <a href="{{ route('parks.xlsx') }}" class="btn btn-success">XLSX</a>
-                    <a href="{{ route('parks.ods') }}" class="btn btn-secondary">ODS</a>
-                    <a href="{{ route('parks.xml') }}" class="btn btn-warning">XML</a>
-                    <a href="{{ route('parks.pdf') }}" class="btn btn-danger">PDF(50筆)</a>
+                    <div class="mb-3"><span>檔案下載</span>
+                        <a href="{{ route('parks.downJson') }}" class="btn btn-primary">JSON</a>
+                        <a href="{{ route('parks.csv') }}" class="btn btn-success">CSV</a>
+                        <a href="{{ route('parks.xls') }}" class="btn btn-success">XLS</a>
+                        <a href="{{ route('parks.xlsx') }}" class="btn btn-success">XLSX</a>
+                        <a href="{{ route('parks.ods') }}" class="btn btn-secondary">ODS</a>
+                        <a href="{{ route('parks.xml') }}" class="btn btn-warning">XML</a>
+                        <a href="{{ route('parks.pdf') }}" class="btn btn-danger">PDF(50筆)</a>
                     </div>
+                    <form action="{{ route('parks.search') }}" method="GET" class="form-inline" role="search">
+                        <div><span>資料搜尋</span>
+                            <input type="search" class="form-control form-control-sm mr-sm-2  ml-2" name="keyword" value="{{ $keyword ?? '' }}" placeholder="輸入關鍵字" aria-label="Search">
+                            <button type="submit" class="btn btn-sm btn-outline-info my-2 my-sm-0">
+                                <i class="fas fa-search"></i>
+                                搜尋
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
             @if($jsonData ?? '')

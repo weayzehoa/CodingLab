@@ -237,6 +237,7 @@ class ParksController extends Controller
         $parks = DB::connection('parktaipei')->table('parkmanagement')->get();
         return view('parks.cdb',compact('parks'));
     }
+
     /*
         台北市公園資訊Curl測試2
         use Ixudra\Curl\Facades\Curl;
@@ -246,5 +247,15 @@ class ParksController extends Controller
         $jsonString = Curl::to('https://parks.taipei/parks/api/')->get();
         $parks2 = json_decode($jsonString);
         return view('parks.curl',compact('parks2'));
+    }
+
+    /*
+        台北市公園資訊 搜尋功能
+    */
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+        $parks = ParkEloquent::search($keyword)->get();
+        return view('parks.index',compact('parks','keyword'));
     }
 }

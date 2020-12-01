@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.2",
         "aalaap/faker-youtube": "^1.2",
+        "algolia/algoliasearch-client-php": "^2.7",
         "arcanedev/no-captcha": "10.x",
         "aws/aws-sdk-php": "^3.164",
         "aws/aws-sdk-php-laravel": "^3.6",
@@ -24,6 +25,7 @@
         "ixudra/curl": "^6.21",
         "laravel-lang/lang": "~5.0",
         "laravel/framework": "^6.18.35",
+        "laravel/scout": "^8.4",
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "~1.0",

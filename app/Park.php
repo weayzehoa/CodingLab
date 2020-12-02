@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
 //使用 Scout 做搜尋
-// use Laravel\Scout\Searchable;
+use Laravel\Scout\Searchable;
 
 use App\Es\ParksIndexConfigurator;
-use ScoutElastic\Searchable;
+// use ScoutElastic\Searchable;
 
 class Park extends Model
 {
@@ -41,37 +41,37 @@ class Park extends Model
     // //log_name 欄位資料
     protected static $logName = '公園資料';
 
-    // /**
-    //  * 取得模型的索引名稱。
-    //  *
-    //  * @return string
-    //  */
-    // public function searchableAs()
-    // {
-    //     return 'parks_index';
-    // }
-
-    //使用es配置
-    protected $indexConfigurator = ParksIndexConfigurator::class;
-
-    //對應可搜尋的欄位
-    protected $mapping = [
-        'properties' => [
-            'name' => [
-                'type' => 'text',
-            ],
-            'overview' => [
-                'type' => 'text',
-            ],
-        ]
-    ];
-
-    //將資料寫入Elasticsearch host
-    public function toSearchableArray()
+    /**
+     * 取得模型的索引名稱。
+     *
+     * @return string
+     */
+    public function searchableAs()
     {
-        return [
-            'name'=> $this->name,
-            'overview' => strip_tags($this->overview),
-        ];
+        return 'parks_index';
     }
+
+    // //使用es配置
+    // protected $indexConfigurator = ParksIndexConfigurator::class;
+
+    // //對應可搜尋的欄位
+    // protected $mapping = [
+    //     'properties' => [
+    //         'name' => [
+    //             'type' => 'text',
+    //         ],
+    //         'overview' => [
+    //             'type' => 'text',
+    //         ],
+    //     ]
+    // ];
+
+    // //將資料寫入Elasticsearch host
+    // public function toSearchableArray()
+    // {
+    //     return [
+    //         'name'=> $this->name,
+    //         'overview' => strip_tags($this->overview),
+    //     ];
+    // }
 }

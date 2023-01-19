@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffdee83272444a68c994e677f04c6fe7",
+    "content-hash": "ef7549259464a7389f520d5d88a6ae91",
     "packages": [
         {
             "name": "aalaap/faker-youtube",
@@ -3290,46 +3290,36 @@
         },
         {
             "name": "linecorp/line-bot-sdk",
-            "version": "6.1.0",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/line/line-bot-sdk-php.git",
-                "reference": "a3d3385aabed6e53071766587491d6e7fd2021e8"
+                "reference": "e1515090eaf2106efdbdf51b1a6adf812844f54f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/a3d3385aabed6e53071766587491d6e7fd2021e8",
-                "reference": "a3d3385aabed6e53071766587491d6e7fd2021e8",
+                "url": "https://api.github.com/repos/line/line-bot-sdk-php/zipball/e1515090eaf2106efdbdf51b1a6adf812844f54f",
+                "reference": "e1515090eaf2106efdbdf51b1a6adf812844f54f",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
-                "ext-sockets": "*",
-                "php": ">=5.6"
+                "php": ">=5.5"
             },
             "require-dev": {
-                "ext-posix": "*",
-                "orchestra/testbench": "*",
-                "phpmd/phpmd": "~2.9",
-                "phpunit/phpunit": "^4.8.36||^5||^6||^7",
-                "squizlabs/php_codesniffer": "~3.5"
+                "indigophp/hash-compat": "~1.1.0",
+                "phpmd/phpmd": "~2.4",
+                "phpunit/phpunit": "^4.8.24||^5||^6",
+                "squizlabs/php_codesniffer": "~2.6||^3",
+                "symfony/config": "^3.3",
+                "symfony/dependency-injection": "^3.3"
             },
             "suggest": {
                 "apigen/apigen": "Install with roave/better-reflection:dev-master to generate docs",
                 "roave/better-reflection": "Required by apigen/apigen:dev-master"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LINE\\Laravel\\LINEBotServiceProvider"
-                    ],
-                    "aliases": {
-                        "LINEBot": "LINE\\Laravel\\Facade\\LINEBot"
-                    }
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "LINE\\": "src/"
@@ -3354,11 +3344,6 @@
                     "name": "Satoshi Shibuya",
                     "email": "satosby@gmail.com",
                     "role": "Maintainer"
-                },
-                {
-                    "name": "Shunsuke Mori",
-                    "email": "morimorim7180@gmail.com",
-                    "role": "Maintainer"
                 }
             ],
             "description": "SDK of the LINE BOT API for PHP",
@@ -3370,9 +3355,9 @@
             ],
             "support": {
                 "issues": "https://github.com/line/line-bot-sdk-php/issues",
-                "source": "https://github.com/line/line-bot-sdk-php/tree/6.1.0"
+                "source": "https://github.com/line/line-bot-sdk-php/tree/3.6.0"
             },
-            "time": "2020-12-10T11:44:18+00:00"
+            "time": "2018-10-26T03:59:54+00:00"
         },
         {
             "name": "littlebookboy/laravel-request-recorder",
@@ -11000,5 +10985,5 @@
         "php": "^7.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

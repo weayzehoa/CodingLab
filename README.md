@@ -1,4 +1,4 @@
 My CodingLab Website Project by Laravel
 
-Demo 網站
+Demo 測試網站
 https://codinglab.rvt.idv.tw

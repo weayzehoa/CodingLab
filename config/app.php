@@ -183,8 +183,6 @@ return [
         Mews\Captcha\CaptchaServiceProvider::class,
         //CSV, Excel, ODS 匯入匯出轉換
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        //Request 紀錄器
-        LittleBookBoy\Request\Recorder\RequestRecorderServiceProvider::class,
         //PDF 匯出
         Barryvdh\DomPDF\ServiceProvider::class,
         //AWS
